@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1208</width>
+    <height>849</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+#centralwidget {
+    background-color: #f4f5eb;
+    border-image: url(&quot;E:/MyFinalProject_BackgroundUi/images/thongbao_anh.jpg&quot;); 
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>610</y>
+      <width>261</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame {
+    background-color: #2d5a52;
+    border-radius: 60px;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>32</x>
+       <y>30</y>
+       <width>201</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Segoe UI</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    /* Màu kem bạn yêu cầu (lấy từ ảnh) */
+    background-color: #f5f5dc; 
+    
+    /* Bo tròn góc - chỉnh số này cho khớp với khung sau */
+    border-radius: 40px; 
+    
+    /* Viền nút (có thể để 'none' nếu muốn nút phẳng lì) */
+    border: 1px solid #dcdcdc; 
+    
+    /* Chỉnh lề và font chữ nếu cần */
+    padding: 5px;
+    font-family: &quot;Segoe UI&quot;;
+    color: #333333;
+}
+
+/* Hiệu ứng khi di chuột vào cho đỡ bị đơ */
+QPushButton:hover {
+    background-color: #efefd0; /* Tối hơn một chút khi hover */
+}
+
+/* Hiệu ứng khi click chuột */
+QPushButton:pressed {
+    background-color: #e5e5c0;
+}</string>
+     </property>
+     <property name="text">
+      <string>Đăng ký</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1208</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
