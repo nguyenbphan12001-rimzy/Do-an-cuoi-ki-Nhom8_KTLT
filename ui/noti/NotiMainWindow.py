@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1208, 849)
+        MainWindow.resize(1266, 841)
         MainWindow.setStyleSheet("\n"
 "#centralwidget {\n"
 "    background-color: #f4f5eb;\n"
@@ -20,8 +20,14 @@ class Ui_MainWindow(object):
 "}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName("gridLayout")
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout.addItem(spacerItem)
         self.frame = QtWidgets.QFrame(parent=self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(490, 610, 261, 161))
+        self.frame.setMinimumSize(QtCore.QSize(260, 160))
         self.frame.setStyleSheet("QFrame {\n"
 "    background-color: #2d5a52;\n"
 "    border-radius: 60px;\n"
@@ -32,7 +38,13 @@ class Ui_MainWindow(object):
         self.pushButton = QtWidgets.QPushButton(parent=self.frame)
         self.pushButton.setGeometry(QtCore.QRect(32, 30, 201, 101))
         font = QtGui.QFont()
-        font.setFamily("Segoe UI")
+        font.setFamily("Times New Roman")
+        font.setPointSize(30)
+        font.setBold(False)
+        font.setUnderline(False)
+        font.setWeight(50)
+        font.setStrikeOut(False)
+        font.setKerning(False)
         self.pushButton.setFont(font)
         self.pushButton.setStyleSheet("QPushButton {\n"
 "    /* Màu kem bạn yêu cầu (lấy từ ảnh) */\n"
@@ -46,7 +58,7 @@ class Ui_MainWindow(object):
 "    \n"
 "    /* Chỉnh lề và font chữ nếu cần */\n"
 "    padding: 5px;\n"
-"    font-family: \"Segoe UI\";\n"
+"   \n"
 "    color: #333333;\n"
 "}\n"
 "\n"
@@ -60,9 +72,18 @@ class Ui_MainWindow(object):
 "    background-color: #e5e5c0;\n"
 "}")
         self.pushButton.setObjectName("pushButton")
+        self.horizontalLayout.addWidget(self.frame)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout.addItem(spacerItem1)
+        self.gridLayout.addLayout(self.horizontalLayout, 2, 0, 1, 1)
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.gridLayout.addItem(spacerItem2, 1, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1208, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1266, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
