@@ -1,11 +1,5 @@
 <RCC>
-  <qresource prefix="images">
-    <file>Booking.png</file>
-    <file>Confirm.png</file>
-    <file>Dashboard.png</file>
-    <file>Home.png</file>
-  <qresource prefix="pics">
-    <file>Payments.png</file>
+  <qresource prefix="Payment">
     <file>Payment.png</file>
   </qresource>
 </RCC>
