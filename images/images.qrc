@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="pics">
+    <file>Payments.png</file>
+    <file>Payment.png</file>
+  </qresource>
+</RCC>
