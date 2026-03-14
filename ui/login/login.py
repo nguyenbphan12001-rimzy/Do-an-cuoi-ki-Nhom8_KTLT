@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Nam_1\K25411_KTLT\project\ui\login.ui'
+# Form implementation generated from reading ui file 'D:\Nam_1\K25411_KTLT\project\ui\login\login.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -14,7 +14,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(582, 376)
         MainWindow.setStyleSheet("#centralwidget{\n"
-"border-image: url(D:/Nam_1/K25411_KTLT/project/images/4.png);\n"
+"border-image: url(D:/Nam_1/K25411_KTLT/project/images/login.png);\n"
 "}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")

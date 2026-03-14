@@ -14,7 +14,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(582, 376)
         MainWindow.setStyleSheet("#centralwidget{\n"
-"border-image: url(D:/Nam_1/K25411_KTLT/project/images/4.png);\n"
+"border-image: url(D:/Nam_1/K25411_KTLT/project/images/login.png);\n"
 "}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")

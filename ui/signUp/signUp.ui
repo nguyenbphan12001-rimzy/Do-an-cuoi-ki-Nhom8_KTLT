@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#centralwidget{
-border-image: url(D:/Nam_1/K25411_KTLT/project/images/7.png);
+border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">

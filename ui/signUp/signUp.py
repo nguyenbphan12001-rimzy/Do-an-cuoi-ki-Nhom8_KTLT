@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Nam_1\K25411_KTLT\project\ui\signUp.ui'
+# Form implementation generated from reading ui file 'D:\Nam_1\K25411_KTLT\project\ui\signUp\signUp.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -14,7 +14,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(616, 449)
         MainWindow.setStyleSheet("#centralwidget{\n"
-"border-image: url(D:/Nam_1/K25411_KTLT/project/images/7.png);\n"
+"border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);\n"
 "}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
