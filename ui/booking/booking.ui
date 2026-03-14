@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>2000</width>
-    <height>1000</height>
+    <width>1500</width>
+    <height>827</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,10 +25,10 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>480</y>
-      <width>400</width>
-      <height>287</height>
+      <x>60</x>
+      <y>390</y>
+      <width>341</width>
+      <height>221</height>
      </rect>
     </property>
     <property name="maximumSize">
@@ -52,7 +52,7 @@
         <enum>QLayout::SetMinAndMaxSize</enum>
        </property>
        <item>
-        <widget class="QRadioButton" name="radioButton_2">
+        <widget class="QRadioButton" name="radioButtonTudo">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -81,7 +81,7 @@ border: 3px solid  #58827d;</string>
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="radioButton_4">
+        <widget class="QRadioButton" name="radioButtonYoga">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -118,7 +118,7 @@ border: 3px solid  #58827d;
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="radioButton_3">
+        <widget class="QRadioButton" name="radioButtonPilates">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -147,7 +147,7 @@ border: 3px solid  #58827d;</string>
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="radioButton">
+        <widget class="QRadioButton" name="radioButtonBoxing">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -183,10 +183,10 @@ border: 3px solid  #58827d;</string>
    <widget class="QGroupBox" name="groupBox_4">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>780</y>
-      <width>400</width>
-      <height>181</height>
+      <x>60</x>
+      <y>610</y>
+      <width>351</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="font">
@@ -201,7 +201,7 @@ border: 3px solid  #58827d;</string>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_12">
        <item>
-        <widget class="QRadioButton" name="radioButton_6">
+        <widget class="QRadioButton" name="radioButtonYes">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -230,7 +230,7 @@ border: 3px solid  #58827d;</string>
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="radioButton_5">
+        <widget class="QRadioButton" name="radioButtonNo">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -263,13 +263,13 @@ border: 3px solid  #58827d;</string>
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pushButtonDoneBooking">
     <property name="geometry">
      <rect>
-      <x>1470</x>
-      <y>830</y>
-      <width>300</width>
-      <height>81</height>
+      <x>1200</x>
+      <y>640</y>
+      <width>241</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -301,10 +301,10 @@ border: 3px solid  #58827d;</string>
    <widget class="QGroupBox" name="groupBox_5">
     <property name="geometry">
      <rect>
-      <x>1470</x>
-      <y>690</y>
-      <width>300</width>
-      <height>111</height>
+      <x>1200</x>
+      <y>530</y>
+      <width>241</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -315,7 +315,7 @@ border: 3px solid  #58827d;</string>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_9">
      <item>
-      <widget class="QComboBox" name="comboBox">
+      <widget class="QComboBox" name="comboBoxRoom">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -398,10 +398,10 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QGroupBox" name="groupBox_6">
     <property name="geometry">
      <rect>
-      <x>1470</x>
-      <y>490</y>
-      <width>300</width>
-      <height>162</height>
+      <x>1200</x>
+      <y>390</y>
+      <width>241</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="font">
@@ -449,7 +449,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="comboBox_3">
+      <widget class="QComboBox" name="comboBoxTime">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -511,13 +511,13 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      </item>
     </layout>
    </widget>
-   <widget class="QListWidget" name="listWidget">
+   <widget class="QListWidget" name="listWidgetHuanLuyenVien">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>630</y>
-      <width>800</width>
-      <height>321</height>
+      <x>420</x>
+      <y>500</y>
+      <width>761</width>
+      <height>251</height>
      </rect>
     </property>
     <property name="maximumSize">
@@ -536,9 +536,9 @@ border: 3px solid  #58827d;</string>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>490</y>
-      <width>820</width>
+      <x>420</x>
+      <y>390</y>
+      <width>761</width>
       <height>90</height>
      </rect>
     </property>
@@ -558,7 +558,7 @@ border: 3px solid  #58827d;</string>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_19">
      <item>
-      <widget class="QComboBox" name="comboBox_2">
+      <widget class="QComboBox" name="comboBoxHuanLuyenVien">
        <property name="minimumSize">
         <size>
          <width>700</width>
@@ -586,7 +586,7 @@ border: 3px solid  #58827d;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>2000</width>
+     <width>1500</width>
      <height>26</height>
     </rect>
    </property>
