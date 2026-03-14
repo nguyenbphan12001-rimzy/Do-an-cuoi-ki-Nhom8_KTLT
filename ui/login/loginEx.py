@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import QMainWindow
 
-from project.ui.login import Ui_MainWindow
-from project.ui.signUpEx import SignUpEx
+from ui.login.login import Ui_MainWindow
+from ui.signUp.signUpEx import SignUpEx
 
 
 class LoginEx(Ui_MainWindow):

@@ -1,4 +1,4 @@
-from project.ui.signUp import Ui_MainWindow
+from ui.signUp.signUp import Ui_MainWindow
 
 
 class SignUpEx(Ui_MainWindow):

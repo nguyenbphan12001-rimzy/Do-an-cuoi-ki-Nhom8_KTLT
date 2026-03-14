@@ -1,9 +1,11 @@
 from PyQt6.QtWidgets import QApplication,QMainWindow
 
-from project.ui.loginEx import LoginEx
+from ui.login.loginEx import LoginEx
 
 app=QApplication([])
 gui=LoginEx()
-gui.setupUi(QMainWindow())
-gui.showWindow()
+my_window = QMainWindow()
+gui.setupUi(my_window)
+my_window.showMaximized()
+
 app.exec()
