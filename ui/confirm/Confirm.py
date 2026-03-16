@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Nam1\KTLT\Do-an-cuoi-ki-Nhom8_KTLT\ui\confirm\Confirm.ui'
+# Form implementation generated from reading ui file 'D:\Nam1\KTLT\DoAn\ui\confirm\Confirm.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -15,7 +15,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(1000, 500)
         MainWindow.setMinimumSize(QtCore.QSize(0, 0))
         MainWindow.setStyleSheet("QMainWindow{\n"
-"border-image:url(:/images/Confirm.png);\n"
+"border-image:url(:/pic/Confirm.png);\n"
 "background-image:rbg(0,255,255);}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")

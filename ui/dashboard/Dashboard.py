@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Nam1\KTLT\Do-an-cuoi-ki-Nhom8_KTLT\ui\dashboard\Dashboard.ui'
+# Form implementation generated from reading ui file 'D:\Nam1\KTLT\DoAn\ui\dashboard\Dashboard.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -15,9 +15,8 @@ class Ui_MainWindow(object):
         MainWindow.resize(1000, 500)
         MainWindow.setMinimumSize(QtCore.QSize(0, 0))
         MainWindow.setStyleSheet("QMainWindow{\n"
-"border-image:url(:/images/Dashboard.png);\n"
-"background-image:rbg(0,255,255);\n"
-"}")
+"border-image:url(:/pic/Dashboard.png);\n"
+"background-image:rgb(0,255,255);}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -38,7 +37,7 @@ class Ui_MainWindow(object):
 "border-radius: 30px;\n"
 "border: 3px solid  #0f433d;")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("D:\\Nam1\\KTLT\\Do-an-cuoi-ki-Nhom8_KTLT\\ui\\dashboard\\../images/manager.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("D:\\Nam1\\KTLT\\DoAn\\ui\\dashboard\\../images/manager.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonAdmin.setIcon(icon)
         self.pushButtonAdmin.setIconSize(QtCore.QSize(50, 50))
         self.pushButtonAdmin.setObjectName("pushButtonAdmin")

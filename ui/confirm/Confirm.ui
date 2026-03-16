@@ -21,7 +21,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow{
-border-image:url(:/images/Confirm.png);
+border-image:url(:/pic/Confirm.png);
 background-image:rbg(0,255,255);}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -154,7 +154,7 @@ border: 3px solid  #58827d;</string>
   </widget>
  </widget>
  <resources>
-  <include location="../images/images.qrc"/>
+  <include location="../../images/images.qrc"/>
  </resources>
  <connections/>
 </ui>
