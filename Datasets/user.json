@@ -3,6 +3,7 @@
         {
             "username": "Lâm Tâm Như",
             "password": "lamtamnhu123",
+            "role": "admin",
             "phone_number": "0911172457",
             "email": "nhulam123@gmail.com",
             "gender": "F",
@@ -11,6 +12,7 @@
         {
             "username": "Nguyễn Minh Anh",
             "password": "minhanh456",
+            "role": "user",
             "phone_number": "0912345678",
             "email": "minhanh@gmail.com",
             "gender": "F",
@@ -19,6 +21,7 @@
         {
             "username": "Trần Quốc Bảo",
             "password": "quocbao789",
+            "role": "user",
             "phone_number": "0913456789",
             "email": "quocbao@gmail.com",
             "gender": "M",
@@ -27,6 +30,7 @@
         {
             "username": "Phạm Gia Huy",
             "password": "giahuy321",
+            "role": "user",
             "phone_number": "0914567890",
             "email": "giahuy@gmail.com",
             "gender": "M",
@@ -35,6 +39,7 @@
         {
             "username": "Lê Thu Trang",
             "password": "thutrang654",
+            "role": "user",
             "phone_number": "0915678901",
             "email": "thutrang@gmail.com",
             "gender": "F",
@@ -43,6 +48,7 @@
         {
             "username": "Võ Hoàng Nam",
             "password": "hoangnam987",
+            "role": "user",
             "phone_number": "0916789012",
             "email": "hoangnam@gmail.com",
             "gender": "M",
@@ -51,6 +57,7 @@
         {
             "username": "Đặng Ngọc Lan",
             "password": "ngoclan852",
+            "role": "user",
             "phone_number": "0917890123",
             "email": "ngoclan@gmail.com",
             "gender": "F",
@@ -59,6 +66,7 @@
         {
             "username": "Bùi Thanh Tùng",
             "password": "thanhtung147",
+            "role": "user",
             "phone_number": "0918901234",
             "email": "thanhtung@gmail.com",
             "gender": "M",
@@ -67,6 +75,7 @@
         {
             "username": "Phan Mỹ Linh",
             "password": "mylinh369",
+            "role": "user",
             "phone_number": "0919012345",
             "email": "mylinh@gmail.com",
             "gender": "F",
@@ -75,6 +84,7 @@
         {
             "username": "Đỗ Đức Anh",
             "password": "ducanh258",
+            "role": "user",
             "phone_number": "0910123456",
             "email": "ducanh@gmail.com",
             "gender": "M",

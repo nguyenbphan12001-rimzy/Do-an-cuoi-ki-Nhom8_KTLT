@@ -36,5 +36,5 @@ class SignUpEx(Ui_MainWindow):
             return
         QMessageBox.information(self.MainWindow, "Success", "Account created successfully")
         # đóng signup quay về login
-        self.MainWindow.close()
+        self.MainWindow.hide()
 

@@ -1,10 +1,10 @@
-from PyQt6.QtMultimedia import QWindowCapture
+# from PyQt6.QtMultimedia import QWindowCapture
 from PyQt6.QtWidgets import QMainWindow
 
 from ui.admin.adminEx import AdminEx
 from ui.booking.BookingMainWindowEx import BookingMainWindowEx
 from ui.dashboard.Dashboard import Ui_MainWindow
-from ui.home.HomeEx import HomeEx
+# from ui.home.HomeEx import HomeEx
 from ui.member.MemberMainWindowEx import MemberMainWindowEx
 import os
 
@@ -45,6 +45,7 @@ class DashboardEx(Ui_MainWindow):
         self.admin_window.showMaximized()
         self.admin_ui.showWindow()
     def process_logout(self):
+        from ui.home.HomeEx import HomeEx  # import trong function
         self.logout_window=QMainWindow()
         self.logout_ui=HomeEx()
         self.logout_ui.setupUi(self.logout_window)
