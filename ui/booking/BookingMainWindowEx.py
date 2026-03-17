@@ -4,7 +4,7 @@ from PyQt6.QtCore import Qt
 from models.trainers import Trainers
 from ui.booking.booking import Ui_MainWindow
 from models.rooms import Rooms
-
+from PyQt6.QtCore import QDate  # Đảm bảo có QDate ở đây
 
 class BookingMainWindowEx(Ui_MainWindow):
     def setupUi(self, MainWindow):
@@ -68,6 +68,11 @@ class BookingMainWindowEx(Ui_MainWindow):
         self.radioButtonYoga.toggled.connect(self.cap_nhat_danh_sach_phong)
         self.radioButtonPilates.toggled.connect(self.cap_nhat_danh_sach_phong)
         self.radioButtonBoxing.toggled.connect(self.cap_nhat_danh_sach_phong)
+        # ... (các dòng kết nối nút Lĩnh vực) ...
+        # Thiết lập ngày mặc định là 18/03/2026
+        default_date = QDate(2026, 3, 18)
+        self.dateEdit.setDate(default_date)
+
 
     def showWindow(self):
         self.MainWindow.show()
@@ -159,3 +164,5 @@ class BookingMainWindowEx(Ui_MainWindow):
         for phong in self.danh_sach_phong.list:
             if phong.category == mon_tap:
                 self.comboBoxRoom.addItem(phong.name)
+
+
