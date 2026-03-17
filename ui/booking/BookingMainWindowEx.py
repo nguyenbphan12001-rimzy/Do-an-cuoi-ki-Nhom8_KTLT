@@ -11,6 +11,12 @@ class BookingMainWindowEx(Ui_MainWindow):
         self.MainWindow = MainWindow
         # self.pushButtonDoneBooking.clicked.connect(self.process_booking)
 
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+
+        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "Booking.png")).replace("\\", "/")
+
+        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
+
 
     def showWindow(self):
         self.MainWindow.show()

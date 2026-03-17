@@ -13,6 +13,12 @@ class DashboardEx(Ui_MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.setupSignalAndSlot()
+
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+
+        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "Dashboard.png")).replace("\\", "/")
+
+        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
     def showWindow(self):
         self.MainWindow.show()
     def setupSignalAndSlot(self):
