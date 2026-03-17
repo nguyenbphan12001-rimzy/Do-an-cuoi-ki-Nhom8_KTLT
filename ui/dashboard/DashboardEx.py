@@ -54,8 +54,15 @@ class DashboardEx(Ui_MainWindow):
         self.admin_ui.setupUi(self.admin_window)
         self.admin_window.showMaximized()
         self.admin_ui.showWindow()
+    def process_member(self):
+        self.member_window=QMainWindow()
+        self.member_ui=MemberMainWindowEx()
+        self.member_ui.setupUi(self.member_window)
+        self.member_window.show()
+        self.member_ui.showWindow()
     def process_logout(self):
         from ui.home.HomeEx import HomeEx  # import trong function
+        self.MainWindow.close()
         self.logout_window=QMainWindow()
         self.logout_ui=HomeEx()
         self.logout_ui.setupUi(self.logout_window)
