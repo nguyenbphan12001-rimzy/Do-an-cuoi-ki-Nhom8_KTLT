@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/">
+    <file>package.jpg</file>
     <file>logofacebook.jpg</file>
     <file>noti.jpg</file>
     <file>hoivien_anh(update).jpg</file>
