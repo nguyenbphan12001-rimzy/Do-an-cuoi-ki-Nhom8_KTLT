@@ -49,7 +49,7 @@ background-image:rgb(0,255,255);}</string>
            <widget class="QPushButton" name="pushButtonAdmin">
             <property name="minimumSize">
              <size>
-              <width>250</width>
+              <width>170</width>
               <height>70</height>
              </size>
             </property>
@@ -79,7 +79,7 @@ border: 3px solid  #0f433d;</string>
            <widget class="QPushButton" name="pushButtonLogOut">
             <property name="minimumSize">
              <size>
-              <width>250</width>
+              <width>170</width>
               <height>70</height>
              </size>
             </property>

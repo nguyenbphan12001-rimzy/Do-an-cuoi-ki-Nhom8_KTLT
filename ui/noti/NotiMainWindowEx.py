@@ -19,3 +19,4 @@ class NotiMainWindowEx(Ui_MainWindow):
 
     def showWindow(self):
         self.MainWindow.show()
+

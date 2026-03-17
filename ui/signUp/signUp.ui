@@ -109,7 +109,7 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_11">
+            <widget class="QLineEdit" name="lineEditName">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -139,7 +139,7 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_12">
+            <widget class="QLineEdit" name="lineEditEmail">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -166,7 +166,7 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_13">
+            <widget class="QLineEdit" name="lineEditContactNo">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -193,7 +193,7 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_14">
+            <widget class="QLineEdit" name="lineEditPassword">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -220,7 +220,7 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_15">
+            <widget class="QLineEdit" name="lineEditConfirm">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -259,7 +259,7 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_3">
+            <widget class="QPushButton" name="pushButtonCreate">
              <property name="minimumSize">
               <size>
                <width>0</width>

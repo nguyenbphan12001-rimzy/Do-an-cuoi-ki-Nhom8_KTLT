@@ -1,14 +1,21 @@
-from PyQt6.QtWidgets import QMainWindow
+from PyQt6.QtWidgets import QMainWindow, QMessageBox
 
-from ui.login.login import Ui_MainWindow
-from ui.signUp.signUpEx import SignUpEx
+from project.ui.login.login import Ui_MainWindow
+from project.ui.signUp.signUpEx import SignUpEx
 
 
+# from ui.login.login import Ui_MainWindow
+
+
+# from ui.signUp.signUpEx import SignUpEx
 class LoginEx(Ui_MainWindow):
     def setupUi(self,MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow=MainWindow
         self.pushButtonSignUp.clicked.connect(self.open_signup)
+        self.pushButtonSignUp.clicked.connect(self.open_signup)
+        self.pushButtonLogin.clicked.connect(self.handle_login)
+        self.pushButtonForgetPassword.clicked.connect(self.forget_password)
     def showWindow(self):
         self.MainWindow.show()
 
@@ -19,4 +26,49 @@ class LoginEx(Ui_MainWindow):
         self.signup_window.show()  # hiển thị
         self.MainWindow.close()  # đóng cửa sổ login
 
+    def handle_login(self):
+        username = self.lineEditUsername.text()
+        password = self.lineEditPassword.text()
+        if username == "" or password == "":
+            QMessageBox.warning(self.MainWindow, "Error", "Please enter username and password")
+            return
+        # kiểm tra login as
+        role = ""
+        if self.radioButtonAdmin.isChecked():
+            role = "admin"
+        elif self.radioButtonUser.isChecked():
+            role = "user"
+        else:
+            QMessageBox.warning(self.MainWindow, "Error", "Please choose login role")
+            return
+        if username == "admin" and password == "123" and role == "admin":
+            QMessageBox.information(self.MainWindow, "Success", "Login as Admin success")
+
+        elif username == "user" and password == "123" and role == "user":
+            QMessageBox.information(self.MainWindow, "Success", "Login as User success")
+
+        else:
+            QMessageBox.warning(self.MainWindow, "Login Failed", "Wrong username or password")
+
+    def forget_password(self):
+        username = self.lineEditUsername.text()
+
+        if username == "":
+            QMessageBox.warning(self.MainWindow, "Warning", "Please enter username first")
+            return
+
+        # ví dụ dữ liệu demo
+        if username == "admin":
+            password = "123"
+        elif username == "user":
+            password = "123"
+        else:
+            QMessageBox.warning(self.MainWindow, "Error", "Username not found")
+            return
+
+        QMessageBox.information(
+            self.MainWindow,
+            "Your Password",
+            f"Your password is: {password}"
+        )
 
