@@ -2,8 +2,8 @@ import json
 import os
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
 
-from project.ui.login.login import Ui_MainWindow
-from project.ui.signUp.signUpEx import SignUpEx
+from ui.login.login import Ui_MainWindow
+from ui.signUp.signUpEx import SignUpEx
 # from ui.dashboard.DashboardEx import DashboardEx
 
 
@@ -12,6 +12,12 @@ class LoginEx(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
+
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+
+        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "login.png")).replace("\\", "/")
+
+        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
 
         self.pushButtonSignUp.clicked.connect(self.open_signup)
         self.pushButtonLogin.clicked.connect(self.handle_login)

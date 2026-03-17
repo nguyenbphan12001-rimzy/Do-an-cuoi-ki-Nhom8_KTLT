@@ -1,7 +1,7 @@
 # from ui.signUp.signUp import Ui_MainWindow
 from PyQt6.QtWidgets import QMessageBox
 
-from project.ui.signUp.signUp import Ui_MainWindow
+from ui.signUp.signUp import Ui_MainWindow
 
 
 class SignUpEx(Ui_MainWindow):
