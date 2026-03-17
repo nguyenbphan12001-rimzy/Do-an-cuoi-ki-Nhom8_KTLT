@@ -1,6 +1,7 @@
 <RCC>
   <qresource prefix="pic">
     <file>signup.png</file>
+    <file>hoivien_anh(update).jpg</file>
     <file>login.png</file>
     <file>Booking.png</file>
     <file>Confirm.png</file>
