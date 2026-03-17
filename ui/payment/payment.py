@@ -1,5 +1,3 @@
-# Form implementation generated from reading ui file 'D:\DO AN KTLT\ui\payment\payment.ui'
-#
 # Created by: PyQt6 UI code generator 6.10.0
 #
 # WARNING: Any manual changes made to this file will be lost when pyuic6 is
