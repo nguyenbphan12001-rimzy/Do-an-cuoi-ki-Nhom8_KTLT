@@ -1,18 +1,24 @@
-import json
+from datetime import datetime
 import os
 
 from PyQt6.QtWidgets import QMessageBox, QMainWindow
 
-
+from models.members import Members
 from ui.member.MemberMainWindow import Ui_MainWindow
 
 
 
 class MemberMainWindowEx(Ui_MainWindow):
+    def __init__(self,member=None):
+        self.member=member
+        file_member="../../Datasets/member.json"
+        self.mb=Members()
+        self.mb.import_json(file_member)
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.setupSignalAndSlot()
+        self.load_member()
 
         current_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -46,3 +52,23 @@ class MemberMainWindowEx(Ui_MainWindow):
         self.registration_ui.setupUi(self.registration_window)
         self.registration_window.show()
         self.MainWindow.close()
+
+    def load_member(self):
+        if not self.member:
+            return
+        self.lineEditName.setText(self.member.name)
+        self.lineEditID.setText(self.member.id)
+        self.lineEditPhone.setText(self.member.phone)
+        self.lineEditGender.setText(self.member.gender)
+        self.lineEditGoi.setText(self.member.goi)
+        #xử lý trạng thái
+        today=datetime.today().date()
+        expire_date=self.member.expire_date
+        if isinstance(expire_date,str):
+            expire_date=datetime.strptime(expire_date,"%d/%m/%Y").date()
+        if expire_date>=today:
+            self.lineEditStatus.setText("CÒN HẠN")
+            self.lineEditStatus.setStyleSheet("color:green;font-weight:bold;")
+        else:
+            self.lineEditStatus.setText("HẾT HẠN")
+            self.lineEditStatus.setStyleSheet("color:red;font-weight:bold;")

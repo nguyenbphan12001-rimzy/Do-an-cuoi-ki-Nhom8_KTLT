@@ -7,5 +7,4 @@ gui=DashboardEx()
 my_window = QMainWindow()
 gui.setupUi(my_window)
 my_window.showMaximized()
-
 app.exec()

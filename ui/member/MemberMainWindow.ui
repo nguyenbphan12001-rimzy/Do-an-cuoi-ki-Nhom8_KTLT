@@ -41,9 +41,9 @@ background-iamge:rgb(0,255,255);}</string>
          <widget class="QLabel" name="label">
           <property name="styleSheet">
            <string notr="true">background-color:#cbddd1;
-font: 87 18pt &quot;Noto Sans HK Black&quot;;
+font: 87 18pt &quot;Noto Sans TC Black&quot;;
 border-radius: 20px;
-border: 3px solid</string>
+border: 3px ;</string>
           </property>
           <property name="text">
            <string>THÔNG TIN HỘI VIÊN</string>
@@ -230,13 +230,13 @@ border: 3px solid  #0f433d;</string>
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">font: 87 12pt &quot;Noto Sans HK Black&quot;;
+                <string notr="true">font: 87 18pt &quot;Noto Sans HK Black&quot;;
 background-color:#f6f6e9;
-border-radius: 10px;
+border-radius: 20px;
 border: 3px ;</string>
                </property>
                <property name="text">
-                <string>Thống kê Tập luyện</string>
+                <string>Thông tin gói tập</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>

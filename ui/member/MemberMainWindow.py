@@ -28,9 +28,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.addItem(spacerItem)
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setStyleSheet("background-color:#cbddd1;\n"
-"font: 87 18pt \"Noto Sans HK Black\";\n"
+"font: 87 18pt \"Noto Sans TC Black\";\n"
 "border-radius: 20px;\n"
-"border: 3px solid")
+"border: 3px ;")
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
         self.verticalLayout_7.addWidget(self.label)
@@ -129,9 +129,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.addItem(spacerItem2)
         self.label_9 = QtWidgets.QLabel(parent=self.widget)
         self.label_9.setMinimumSize(QtCore.QSize(0, 60))
-        self.label_9.setStyleSheet("font: 87 12pt \"Noto Sans HK Black\";\n"
+        self.label_9.setStyleSheet("font: 87 18pt \"Noto Sans HK Black\";\n"
 "background-color:#f6f6e9;\n"
-"border-radius: 10px;\n"
+"border-radius: 20px;\n"
 "border: 3px ;")
         self.label_9.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_9.setObjectName("label_9")
@@ -245,7 +245,7 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", "Gender:"))
         self.label_6.setText(_translate("MainWindow", "Gói tập:"))
         self.label_7.setText(_translate("MainWindow", "Trạng thái:"))
-        self.label_9.setText(_translate("MainWindow", "Thống kê Tập luyện"))
+        self.label_9.setText(_translate("MainWindow", "Thông tin gói tập"))
         self.label_10.setText(_translate("MainWindow", "Ngày đăng ký"))
         self.label_11.setText(_translate("MainWindow", "Ngày gia hạn"))
         self.labelNgayDKy.setText(_translate("MainWindow", "8/3/2026"))
