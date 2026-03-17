@@ -19,7 +19,7 @@
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">QWidget#centralwidget {
-    border-image: url(:/pic/D:/TuduylaptrinhN1/Do-an-cuoi-ki-Nhom8_KTLT/images/Booking.png) 0 0 0 0 stretch stretch;
+    border-image:url(:/pic/Booking.png) 0 0 0 0 stretch stretch;
 }</string>
    </property>
    <widget class="QGroupBox" name="groupBox">
@@ -593,7 +593,6 @@ border: 3px solid  #58827d;</string>
   </widget>
  </widget>
  <resources>
-  <include location="C:/Users/Thao Nguyen/Downloads/photo.qrc"/>
   <include location="../../images/images.qrc"/>
  </resources>
  <connections/>
