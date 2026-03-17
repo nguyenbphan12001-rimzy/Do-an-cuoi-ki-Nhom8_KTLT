@@ -1,5 +1,3 @@
-import json
-import os
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
 
 from ui.login.login import Ui_MainWindow
@@ -77,7 +75,6 @@ class LoginEx(Ui_MainWindow):
         except Exception as e:
             QMessageBox.critical(self.MainWindow, "Lỗi", f"Không đọc được file!\n{e}")
             return
-
         # 👉 FLAG kiểm tra
         found = False
 
