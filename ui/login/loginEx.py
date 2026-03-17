@@ -1,6 +1,5 @@
 import json
 import os
-
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
 
 from ui.login.login import Ui_MainWindow
@@ -14,12 +13,6 @@ class LoginEx(Ui_MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
 
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-
-        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "login.png")).replace("\\", "/")
-
-        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
-
         self.pushButtonSignUp.clicked.connect(self.open_signup)
         self.pushButtonLogin.clicked.connect(self.handle_login)
         self.pushButtonForgetPassword.clicked.connect(self.forget_password)
@@ -32,16 +25,19 @@ class LoginEx(Ui_MainWindow):
 
     # 🔹 SIGNUP
     def open_signup(self):
+        print("CLICK SIGNUP")  # 👈 xem có chạy không
+        from PyQt6.QtWidgets import QMainWindow
+
         self.signup_window = QMainWindow()
-        self.signup = SignUpEx()
+        self.signup = SignUpEx(self.MainWindow)
+
         self.signup.setupUi(self.signup_window)
 
-        self.signup_window.show()
-        self.MainWindow.close()
+        self.signup_window.show()  # 👈 DÙNG CÁI NÀY (QUAN TRỌNG)
+
+        self.MainWindow.hide()
 
     def open_dashboard(self, role, username):
-        print("👉 Đang mở dashboard...")
-
         from ui.dashboard.DashboardEx import DashboardEx  # 👈 chuyển vào đây
         self.dashboard_window = QMainWindow()
         self.dashboard = DashboardEx()
@@ -50,9 +46,7 @@ class LoginEx(Ui_MainWindow):
         # 👉 truyền dữ liệu nếu muốn
         self.dashboard_window.setWindowTitle(f"Dashboard - {username} ({role})")
 
-        self.dashboard_window.showMaximized()
-        print("👉 Đang mở dashboard...")
-
+        self.dashboard_window.show()
         self.MainWindow.hide()
     def handle_login(self):
         username = self.lineEditUsername.text().strip()
@@ -78,6 +72,7 @@ class LoginEx(Ui_MainWindow):
         except Exception as e:
             QMessageBox.critical(self.MainWindow, "Lỗi", f"Không đọc được file!\n{e}")
             return
+
         # 👉 FLAG kiểm tra
         found = False
 
