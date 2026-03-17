@@ -1,13 +1,10 @@
+import os
+
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
-
-from project.ui.login.login import Ui_MainWindow
-from project.ui.signUp.signUpEx import SignUpEx
+from ui.login.login import Ui_MainWindow
 
 
-# from ui.login.login import Ui_MainWindow
-
-
-# from ui.signUp.signUpEx import SignUpEx
+from ui.signUp.signUpEx import SignUpEx
 class LoginEx(Ui_MainWindow):
     def setupUi(self,MainWindow):
         super().setupUi(MainWindow)
@@ -16,6 +13,11 @@ class LoginEx(Ui_MainWindow):
         self.pushButtonSignUp.clicked.connect(self.open_signup)
         self.pushButtonLogin.clicked.connect(self.handle_login)
         self.pushButtonForgetPassword.clicked.connect(self.forget_password)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+
+        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "login.png")).replace("\\", "/")
+
+        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
     def showWindow(self):
         self.MainWindow.show()
 
