@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="pic">
+    <file>Booking.png</file>
     <file>Confirm.png</file>
     <file>Home.png</file>
     <file>Dashboard.png</file>

@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow{
-border-image:url(:/images/Home.png);
+border-image:url(:/pic/Home.png);
 background-color: rbg(0,255,255);
 }</string>
   </property>
@@ -156,7 +156,7 @@ border: 3px solid  #0f433d;</string>
   </widget>
  </widget>
  <resources>
-  <include location="../images/images.qrc"/>
+  <include location="../../images/images.qrc"/>
  </resources>
  <connections/>
 </ui>
