@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\DO AN KTLT\payment\payment.ui'
+# Form implementation generated from reading ui file 'D:\DO AN KTLT\ui\payment\payment.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -14,7 +14,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(2000, 1000)
         MainWindow.setStyleSheet("QWidget#centralwidget {\n"
-"    border-image: url(:/pics/Payment.png) 0 0 0 0 stretch stretch;\n"
+"    border-image: url(:/pic/Payment.png) 0 0 0 0 stretch stretch;\n"
 "}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")

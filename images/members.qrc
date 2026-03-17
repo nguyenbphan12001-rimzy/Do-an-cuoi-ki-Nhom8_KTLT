@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="/">
+    <file>logofacebook.jpg</file>
+    <file>noti.jpg</file>
+    <file>hoivien_anh(update).jpg</file>
+    <file>fit lifestyle.jpg</file>
+    <file>muitenlogo.jpg</file>
+  </qresource>
+</RCC>

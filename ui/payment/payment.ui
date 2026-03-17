@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget#centralwidget {
-    border-image: url(:/pics/Payment.png) 0 0 0 0 stretch stretch;
+    border-image: url(:/pic/Payment.png) 0 0 0 0 stretch stretch;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -149,7 +149,7 @@ border: 3px solid  #58827d;</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../images/images.qrc"/>
+  <include location="../../images/images.qrc"/>
  </resources>
  <connections/>
 </ui>

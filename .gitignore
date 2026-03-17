@@ -1,3 +1,16 @@
-.idea/
+# Chặn folder Git rác
+Git/
+
+# Chặn folder flowchart (nếu mày còn để trong project)
+flowchart/
+
+# Chặn đống file backup của drawio
+*drawio.bkp
+
+# Chặn rác Python
+.venv/
 __pycache__/
 *.pyc
+
+# Chặn file resource lỗi DLL
+members_rc.py

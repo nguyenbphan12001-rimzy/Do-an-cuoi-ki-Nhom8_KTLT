@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="pic">
+    <file>signup.png</file>
+    <file>login.png</file>
+    <file>Booking.png</file>
     <file>Confirm.png</file>
     <file>Home.png</file>
     <file>Dashboard.png</file>
