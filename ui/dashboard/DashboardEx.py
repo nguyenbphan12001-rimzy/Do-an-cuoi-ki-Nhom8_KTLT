@@ -28,6 +28,7 @@ class DashboardEx(Ui_MainWindow):
         self.pushButtonDkyHoivien.clicked.connect(self.process_hoivien)
         self.pushButtonAdmin.clicked.connect(self.process_admin)
         self.pushButtonLogOut.clicked.connect(self.process_logout)
+        # self.pushButtonMember.clicked.connect(self.process_member)
     def process_booking(self):
         self.booking_window=QMainWindow()
         self.booking_ui=BookingMainWindowEx()

@@ -21,6 +21,10 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.label = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label.setText("")
+        self.label.setObjectName("label")
+        self.verticalLayout_2.addWidget(self.label)
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
@@ -30,24 +34,33 @@ class Ui_MainWindow(object):
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.pushButtonAdmin = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonAdmin.setMinimumSize(QtCore.QSize(170, 70))
+        self.pushButtonAdmin.setMinimumSize(QtCore.QSize(100, 70))
+        self.pushButtonAdmin.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.pushButtonAdmin.setStyleSheet("color:#0f433d;\n"
 "background-color: #f6f6e9;\n"
-"font: 87 20pt \"Noto Sans HK Black\";\n"
+"font: 87 15pt \"Noto Sans HK Black\";\n"
 "border-radius: 30px;\n"
 "border: 3px solid  #0f433d;")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("D:\\TuduylaptrinhN1\\Do-an-cuoi-ki-Nhom8_KTLT\\ui\\dashboard\\../images/manager.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButtonAdmin.setIcon(icon)
-        self.pushButtonAdmin.setIconSize(QtCore.QSize(50, 50))
+        self.pushButtonAdmin.setIconSize(QtCore.QSize(30, 50))
         self.pushButtonAdmin.setObjectName("pushButtonAdmin")
         self.horizontalLayout.addWidget(self.pushButtonAdmin)
+        self.pushButtonMember = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonMember.setMinimumSize(QtCore.QSize(100, 70))
+        self.pushButtonMember.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.pushButtonMember.setStyleSheet("color:#0f433d;\n"
+"background-color: rgb(165, 185, 172);\n"
+"font: 87 15pt \"Noto Sans HK Black\";\n"
+"border-radius: 30px;\n"
+"border: 3px solid #f6f6e9;")
+        self.pushButtonMember.setIconSize(QtCore.QSize(30, 50))
+        self.pushButtonMember.setObjectName("pushButtonMember")
+        self.horizontalLayout.addWidget(self.pushButtonMember)
         self.pushButtonLogOut = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonLogOut.setMinimumSize(QtCore.QSize(170, 70))
+        self.pushButtonLogOut.setMinimumSize(QtCore.QSize(100, 70))
         self.pushButtonLogOut.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.pushButtonLogOut.setStyleSheet("color:#f6f6e9;\n"
 "background-color: #0f433d;\n"
-"font: 87 20pt \"Noto Sans HK Black\";\n"
+"font: 87 15pt \"Noto Sans HK Black\";\n"
 "border-radius: 30px;\n"
 "border: 3px solid  #58827d;")
         self.pushButtonLogOut.setIconSize(QtCore.QSize(30, 50))
@@ -64,7 +77,7 @@ class Ui_MainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setObjectName("gridLayout")
         self.pushButtonDkyHoivien = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonDkyHoivien.setMinimumSize(QtCore.QSize(350, 70))
+        self.pushButtonDkyHoivien.setMinimumSize(QtCore.QSize(300, 60))
         self.pushButtonDkyHoivien.setStyleSheet("color:#0f433d;\n"
 "background-color: #f6f6e9;\n"
 "font: 87 20pt \"Noto Sans HK Black\";\n"
@@ -89,7 +102,7 @@ class Ui_MainWindow(object):
         spacerItem9 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.gridLayout.addItem(spacerItem9, 2, 1, 1, 1)
         self.pushButtonDatlich = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonDatlich.setMinimumSize(QtCore.QSize(350, 70))
+        self.pushButtonDatlich.setMinimumSize(QtCore.QSize(300, 60))
         self.pushButtonDatlich.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.pushButtonDatlich.setStyleSheet("color:#f6f6e9;\n"
 "background-color: #0f433d;\n"
@@ -118,6 +131,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButtonAdmin.setText(_translate("MainWindow", "Admin"))
-        self.pushButtonLogOut.setText(_translate("MainWindow", "Đăng xuất"))
+        self.pushButtonMember.setText(_translate("MainWindow", "Member"))
+        self.pushButtonLogOut.setText(_translate("MainWindow", "Exit"))
         self.pushButtonDkyHoivien.setText(_translate("MainWindow", " Đăng ký hội viên"))
         self.pushButtonDatlich.setText(_translate("MainWindow", "Đặt lịch ngay"))
