@@ -14,3 +14,8 @@ __pycache__/
 
 # Chặn file resource lỗi DLL
 members_rc.py
+.venv/
+venv/
+ENV/
+.idea/
+.venv/
