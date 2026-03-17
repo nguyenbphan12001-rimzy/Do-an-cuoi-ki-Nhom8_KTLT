@@ -19,7 +19,7 @@
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">QWidget#centralwidget {
-    border-image: url(:/pic/Payment.png) 0 0 0 0 stretch stretch;
+    border-image: url(:/pic/D:/TuduylaptrinhN1/Do-an-cuoi-ki-Nhom8_KTLT/images/Booking.png) 0 0 0 0 stretch stretch;
 }</string>
    </property>
    <widget class="QGroupBox" name="groupBox">
