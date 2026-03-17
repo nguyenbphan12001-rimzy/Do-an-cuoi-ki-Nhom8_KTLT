@@ -1,18 +1,5 @@
-# class User:
-#     def __init__(self,username=None,password=None,role=None, phone_number=None, email=None, gender=None, status=None):
-#         self.username = username
-#         self.password = password
-#         self.phone_number = phone_number
-#         self.email = email
-#         self.gender = gender
-#         self.status = status
-#         self.role = role
-#     def __str__(self):
-#         infor = f"{self.username}\t{self.password}\t{self.role}\t{self.phone_number}\t{self.email}\t{self.gender}\t{self.status}"
-#         return infor
-
-class User:
-    def __init__(self, username="", password="", role="user",
+class Trainer:
+    def __init__(self, username="", password="", role="trainer",
                  phone_number="", email="", gender="", status=""):
         self.username = username
         self.password = password
@@ -28,10 +15,10 @@ class User:
     # 🔥 convert từ JSON → object
     @staticmethod
     def from_dict(data: dict):
-        return User(
+        return Trainer(
             username=data.get("username", ""),
             password=data.get("password", ""),
-            role=data.get("role", "user"),
+            role=data.get("role", "trainer"), # Mặc định là trainer
             phone_number=data.get("phone_number", ""),
             email=data.get("email", ""),
             gender=data.get("gender", ""),

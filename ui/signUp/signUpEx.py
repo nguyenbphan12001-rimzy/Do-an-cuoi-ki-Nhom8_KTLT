@@ -1,9 +1,7 @@
 # from ui.signUp.signUp import Ui_MainWindow
 from PyQt6.QtWidgets import QMessageBox
 
-from project.ui.signUp.signUp import Ui_MainWindow
-
-
+from ui.signUp.signUp import Ui_MainWindow
 class SignUpEx(Ui_MainWindow):
     def setupUi(self,MainWindow):
         super().setupUi(MainWindow)
@@ -36,5 +34,5 @@ class SignUpEx(Ui_MainWindow):
             return
         QMessageBox.information(self.MainWindow, "Success", "Account created successfully")
         # đóng signup quay về login
-        self.MainWindow.close()
+        self.MainWindow.hide()
 
