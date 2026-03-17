@@ -7,7 +7,16 @@
             "phone_number": "0981111222",
             "email": "trongbang.pt@gmail.com",
             "gender": "M",
-            "status": "Gym"
+            "status": "Tự do",
+            "available_dates": [
+                "18/03/2026",
+                "20/03/2026",
+                "22/03/2026"
+            ],
+            "available_times": [
+                "7h - 9h",
+                "17h - 19h"
+            ]
         },
         {
             "username": "Trần Thị Hà",
@@ -16,7 +25,16 @@
             "phone_number": "0982222333",
             "email": "ha.yoga@gmail.com",
             "gender": "F",
-            "status": "Yoga"
+            "status": "Yoga",
+            "available_dates": [
+                "18/03/2026",
+                "19/03/2026",
+                "21/03/2026"
+            ],
+            "available_times": [
+                "5h - 7h",
+                "15h - 17h"
+            ]
         },
         {
             "username": "Nguyễn Tuấn Anh",
@@ -25,7 +43,16 @@
             "phone_number": "0983333444",
             "email": "tuananh.boxing@gmail.com",
             "gender": "M",
-            "status": "Boxing"
+            "status": "Boxing",
+            "available_dates": [
+                "19/03/2026",
+                "20/03/2026",
+                "22/03/2026"
+            ],
+            "available_times": [
+                "9h - 11h",
+                "19h - 21h"
+            ]
         },
         {
             "username": "Lê Thị Ngọc",
@@ -34,7 +61,16 @@
             "phone_number": "0984444555",
             "email": "ngoc.pilates@gmail.com",
             "gender": "F",
-            "status": "Pilates"
+            "status": "Pilates",
+            "available_dates": [
+                "18/03/2026",
+                "21/03/2026",
+                "22/03/2026"
+            ],
+            "available_times": [
+                "7h - 9h",
+                "13h - 15h"
+            ]
         },
         {
             "username": "Phạm Quốc Việt",
@@ -43,7 +79,16 @@
             "phone_number": "0985555666",
             "email": "viet.crossfit@gmail.com",
             "gender": "M",
-            "status": "Crossfit"
+            "status": "Tự do",
+            "available_dates": [
+                "20/03/2026",
+                "21/03/2026",
+                "23/03/2026"
+            ],
+            "available_times": [
+                "15h - 17h",
+                "19h - 21h"
+            ]
         },
         {
             "username": "Đỗ Minh Khang",
@@ -52,7 +97,17 @@
             "phone_number": "0986666777",
             "email": "khang.gym@gmail.com",
             "gender": "M",
-            "status": "Gym"
+            "status": "Tự do",
+            "available_dates": [
+                "18/03/2026",
+                "19/03/2026",
+                "21/03/2026"
+            ],
+            "available_times": [
+                "9h - 11h",
+                "13h - 15h",
+                "17h - 19h"
+            ]
         },
         {
             "username": "Vũ Thu Thảo",
@@ -61,7 +116,17 @@
             "phone_number": "0987777888",
             "email": "thao.zumba@gmail.com",
             "gender": "F",
-            "status": "Zumba"
+            "status": "Yoga",
+            "available_dates": [
+                "22/03/2026",
+                "24/03/2026",
+                "18/03/2026"
+            ],
+            "available_times": [
+                "17h - 19h",
+                "19h - 21h",
+                "5h - 7h"
+            ]
         },
         {
             "username": "Hoàng Đức Hải",
@@ -70,7 +135,16 @@
             "phone_number": "0988888999",
             "email": "hai.kickboxing@gmail.com",
             "gender": "M",
-            "status": "Kickboxing"
+            "status": "Boxing",
+            "available_dates": [
+                "19/03/2026",
+                "20/03/2026",
+                "25/03/2026"
+            ],
+            "available_times": [
+                "5h - 7h",
+                "7h - 9h"
+            ]
         },
         {
             "username": "Ngô Mai Phương",
@@ -79,7 +153,16 @@
             "phone_number": "0989999000",
             "email": "phuong.yoga@gmail.com",
             "gender": "F",
-            "status": "Yoga"
+            "status": "Pilates",
+            "available_dates": [
+                "18/03/2026",
+                "20/03/2026",
+                "22/03/2026"
+            ],
+            "available_times": [
+                "9h - 11h",
+                "15h - 17h"
+            ]
         },
         {
             "username": "Đinh Trọng Đại",
@@ -88,7 +171,17 @@
             "phone_number": "0980000111",
             "email": "dai.thehinh@gmail.com",
             "gender": "M",
-            "status": "Thể hình"
+            "status": "Tự do",
+            "available_dates": [
+                "21/03/2026",
+                "22/03/2026",
+                "18/03/2026"
+            ],
+            "available_times": [
+                "13h - 15h",
+                "17h - 19h",
+                "7h - 9h"
+            ]
         }
     ]
 }

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1500</width>
-    <height>827</height>
+    <width>1371</width>
+    <height>871</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -526,6 +526,11 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
       <height>16777215</height>
      </size>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(203, 221, 209);
 color: rgb(255, 255, 255);
@@ -586,7 +591,7 @@ border: 3px solid  #58827d;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1500</width>
+     <width>1371</width>
      <height>26</height>
     </rect>
    </property>

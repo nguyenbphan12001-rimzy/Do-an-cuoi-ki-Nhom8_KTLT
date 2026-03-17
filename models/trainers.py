@@ -50,6 +50,9 @@ class Trainers(MyCollections):
             exist_trainer.email = trainer.email
             exist_trainer.gender = trainer.gender
             exist_trainer.status = trainer.status
+            # 🔥 Cập nhật thêm ngày và giờ
+            exist_trainer.available_dates = trainer.available_dates
+            exist_trainer.available_times = trainer.available_times
 
         self.export_json(self.filename)
 
