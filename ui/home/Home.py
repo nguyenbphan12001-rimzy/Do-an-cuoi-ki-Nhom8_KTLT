@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Nam1\KTLT\Do-an-cuoi-ki-Nhom8_KTLT\ui\home\Home.ui'
+# Form implementation generated from reading ui file 'D:\Nam1\KTLT\DoAn\ui\home\Home.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -14,8 +14,8 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1000, 500)
         MainWindow.setStyleSheet("QMainWindow{\n"
-"border-image:url(:/images/Home.png);\n"
-"background-color: rbg(0,255,255);\n"
+"border-image:url(:/pic/Home.png);\n"
+"background-color: rgb(0,255,255);\n"
 "}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
