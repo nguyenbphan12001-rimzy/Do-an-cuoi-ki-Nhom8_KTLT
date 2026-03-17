@@ -2,6 +2,8 @@
 from PyQt6.QtWidgets import QMessageBox
 import json
 import os
+from PyQt6.QtGui import QIntValidator
+
 from ui.signUp.signUp import Ui_MainWindow
 
 
@@ -16,6 +18,7 @@ class SignUpEx(Ui_MainWindow):
 
         # connect nút
         self.pushButtonCreate.clicked.connect(self.create_account)
+        self.lineEditContactNo.setValidator(QIntValidator())
 
     def showWindow(self):
         self.MainWindow.show()
@@ -31,6 +34,9 @@ class SignUpEx(Ui_MainWindow):
         # kiểm tra rỗng
         if name == "" or email == "" or phone == "" or password == "" or confirm == "":
             QMessageBox.warning(self.MainWindow, "Error", "Please fill all fields")
+            return
+        if not (phone.isdigit() and len(phone) == 10):
+            QMessageBox.warning(self.MainWindow, "Error", "Contact No must be 10-digit number")
             return
 
         # kiểm tra password trùng

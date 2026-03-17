@@ -15,7 +15,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(1000, 500)
         MainWindow.setStyleSheet("QMainWindow{\n"
 "border-image:url(:/pic/Home.png);\n"
-"background-image:rgb(0,255,255);}")
+"background-color:rgb(0,255,255);}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)

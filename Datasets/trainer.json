@@ -1,0 +1,94 @@
+{
+    "Datasets": [
+        {
+            "username": "Lý Trọng Bằng",
+            "password": "trongbang123",
+            "role": "trainer",
+            "phone_number": "0981111222",
+            "email": "trongbang.pt@gmail.com",
+            "gender": "M",
+            "status": "Gym"
+        },
+        {
+            "username": "Trần Thị Hà",
+            "password": "thiha456",
+            "role": "trainer",
+            "phone_number": "0982222333",
+            "email": "ha.yoga@gmail.com",
+            "gender": "F",
+            "status": "Yoga"
+        },
+        {
+            "username": "Nguyễn Tuấn Anh",
+            "password": "tuananh789",
+            "role": "trainer",
+            "phone_number": "0983333444",
+            "email": "tuananh.boxing@gmail.com",
+            "gender": "M",
+            "status": "Boxing"
+        },
+        {
+            "username": "Lê Thị Ngọc",
+            "password": "thingoc321",
+            "role": "trainer",
+            "phone_number": "0984444555",
+            "email": "ngoc.pilates@gmail.com",
+            "gender": "F",
+            "status": "Pilates"
+        },
+        {
+            "username": "Phạm Quốc Việt",
+            "password": "quocviet654",
+            "role": "trainer",
+            "phone_number": "0985555666",
+            "email": "viet.crossfit@gmail.com",
+            "gender": "M",
+            "status": "Crossfit"
+        },
+        {
+            "username": "Đỗ Minh Khang",
+            "password": "minhkhang987",
+            "role": "trainer",
+            "phone_number": "0986666777",
+            "email": "khang.gym@gmail.com",
+            "gender": "M",
+            "status": "Gym"
+        },
+        {
+            "username": "Vũ Thu Thảo",
+            "password": "thuthao852",
+            "role": "trainer",
+            "phone_number": "0987777888",
+            "email": "thao.zumba@gmail.com",
+            "gender": "F",
+            "status": "Zumba"
+        },
+        {
+            "username": "Hoàng Đức Hải",
+            "password": "duchai147",
+            "role": "trainer",
+            "phone_number": "0988888999",
+            "email": "hai.kickboxing@gmail.com",
+            "gender": "M",
+            "status": "Kickboxing"
+        },
+        {
+            "username": "Ngô Mai Phương",
+            "password": "maiphuong369",
+            "role": "trainer",
+            "phone_number": "0989999000",
+            "email": "phuong.yoga@gmail.com",
+            "gender": "F",
+            "status": "Yoga"
+        },
+        {
+            "username": "Đinh Trọng Đại",
+            "password": "trongdai258",
+            "role": "trainer",
+            "phone_number": "0980000111",
+            "email": "dai.thehinh@gmail.com",
+            "gender": "M",
+            "status": "Thể hình"
+        }
+    ]
+}

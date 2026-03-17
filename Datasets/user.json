@@ -125,6 +125,15 @@
             "role": "user",
             "gender": "M",
             "status": "Không"
+        },
+        {
+            "username": "tuyết mai",
+            "email": "tm@gmail.com",
+            "phone_number": "01234987978",
+            "password": "tm123",
+            "role": "user",
+            "gender": "M",
+            "status": "Không"
         }
     ]
 }

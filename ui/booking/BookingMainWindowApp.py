@@ -8,6 +8,5 @@ my_window = QMainWindow()
 gui.setupUi(my_window)
 my_window.showMaximized()
 
-# gui.showWindow()
 
 app.exec()
