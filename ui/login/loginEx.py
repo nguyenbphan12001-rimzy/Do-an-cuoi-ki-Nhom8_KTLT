@@ -2,8 +2,8 @@ import json
 import os
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
 
-from project.ui.login.login import Ui_MainWindow
-from project.ui.signUp.signUpEx import SignUpEx
+from ui.login.login import Ui_MainWindow
+from ui.signUp.signUpEx import SignUpEx
 # from ui.dashboard.DashboardEx import DashboardEx
 
 
@@ -25,16 +25,19 @@ class LoginEx(Ui_MainWindow):
 
     # 🔹 SIGNUP
     def open_signup(self):
+        print("CLICK SIGNUP")  # 👈 xem có chạy không
+        from PyQt6.QtWidgets import QMainWindow
+
         self.signup_window = QMainWindow()
-        self.signup = SignUpEx()
+        self.signup = SignUpEx(self.MainWindow)
+
         self.signup.setupUi(self.signup_window)
 
-        self.signup_window.show()
-        self.MainWindow.close()
+        self.signup_window.show()  # 👈 DÙNG CÁI NÀY (QUAN TRỌNG)
+
+        self.MainWindow.hide()
 
     def open_dashboard(self, role, username):
-        print("👉 Đang mở dashboard...")
-
         from ui.dashboard.DashboardEx import DashboardEx  # 👈 chuyển vào đây
         self.dashboard_window = QMainWindow()
         self.dashboard = DashboardEx()
@@ -44,8 +47,6 @@ class LoginEx(Ui_MainWindow):
         self.dashboard_window.setWindowTitle(f"Dashboard - {username} ({role})")
 
         self.dashboard_window.show()
-        print("👉 Đang mở dashboard...")
-
         self.MainWindow.hide()
     def handle_login(self):
         username = self.lineEditUsername.text().strip()

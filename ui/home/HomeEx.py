@@ -27,8 +27,14 @@ class HomeEx(Ui_MainWindow):
         self.login_ui=LoginEx()
         self.login_ui.setupUi(self.login_window)
         self.login_ui.showWindow()
+
     def process_signup(self):
-        self.signup_window=QMainWindow()
-        self.signup_ui=SignUpEx()
+        self.signup_window = QMainWindow()
+
+        # 👇 truyền MainWindow hiện tại vào
+        self.signup_ui = SignUpEx(self.MainWindow)
+
         self.signup_ui.setupUi(self.signup_window)
-        self.signup_ui.showWindow()
+        self.signup_window.show()
+
+        self.MainWindow.hide()  # (tuỳ bạn muốn ẩn Home hay không)

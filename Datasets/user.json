@@ -89,6 +89,42 @@
             "email": "ducanh@gmail.com",
             "gender": "M",
             "status": "Không"
+        },
+        {
+            "username": "hoa hải đường",
+            "email": "hhd@gmail.com",
+            "phone_number": "0987654321",
+            "password": "hhd123",
+            "role": "user",
+            "gender": "M",
+            "status": "Không"
+        },
+        {
+            "username": "Ngân",
+            "email": "ngan@gmail.com",
+            "phone_number": "928374983",
+            "password": "ngan123",
+            "role": "user",
+            "gender": "M",
+            "status": "Không"
+        },
+        {
+            "username": "hoa mai",
+            "email": "hm@gmail.com",
+            "phone_number": "097878734",
+            "password": "hm123",
+            "role": "user",
+            "gender": "M",
+            "status": "Không"
+        },
+        {
+            "username": "hoa anh đào",
+            "email": "had@gmail.com",
+            "phone_number": "0236732234",
+            "password": "had123",
+            "role": "user",
+            "gender": "M",
+            "status": "Không"
         }
     ]
 }
