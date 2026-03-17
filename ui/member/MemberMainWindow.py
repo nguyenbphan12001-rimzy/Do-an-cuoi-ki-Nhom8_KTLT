@@ -75,38 +75,38 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
         self.verticalLayout_10 = QtWidgets.QVBoxLayout()
         self.verticalLayout_10.setObjectName("verticalLayout_10")
-        self.lineEdit_4 = QtWidgets.QLineEdit(parent=self.widget_2)
-        self.lineEdit_4.setStyleSheet("border-radius: 20px;\n"
+        self.lineEditName = QtWidgets.QLineEdit(parent=self.widget_2)
+        self.lineEditName.setStyleSheet("border-radius: 20px;\n"
 "border: 3px solid  #0f433d;")
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.verticalLayout_10.addWidget(self.lineEdit_4)
-        self.lineEdit_3 = QtWidgets.QLineEdit(parent=self.widget_2)
-        self.lineEdit_3.setStyleSheet("border-radius: 20px;\n"
+        self.lineEditName.setObjectName("lineEditName")
+        self.verticalLayout_10.addWidget(self.lineEditName)
+        self.lineEditID = QtWidgets.QLineEdit(parent=self.widget_2)
+        self.lineEditID.setStyleSheet("border-radius: 20px;\n"
 "background-color: #cbddd1;\n"
 "border: 3px solid  #0f433d;")
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.verticalLayout_10.addWidget(self.lineEdit_3)
-        self.lineEdit_2 = QtWidgets.QLineEdit(parent=self.widget_2)
-        self.lineEdit_2.setStyleSheet("border-radius: 20px;\n"
+        self.lineEditID.setObjectName("lineEditID")
+        self.verticalLayout_10.addWidget(self.lineEditID)
+        self.lineEditPhone = QtWidgets.QLineEdit(parent=self.widget_2)
+        self.lineEditPhone.setStyleSheet("border-radius: 20px;\n"
 "border: 3px solid  #0f433d;")
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.verticalLayout_10.addWidget(self.lineEdit_2)
-        self.lineEdit_5 = QtWidgets.QLineEdit(parent=self.widget_2)
-        self.lineEdit_5.setStyleSheet("border-radius: 20px;background-color:#cbddd1;\n"
+        self.lineEditPhone.setObjectName("lineEditPhone")
+        self.verticalLayout_10.addWidget(self.lineEditPhone)
+        self.lineEditGender = QtWidgets.QLineEdit(parent=self.widget_2)
+        self.lineEditGender.setStyleSheet("border-radius: 20px;background-color:#cbddd1;\n"
 "border: 3px solid  #0f433d;")
-        self.lineEdit_5.setObjectName("lineEdit_5")
-        self.verticalLayout_10.addWidget(self.lineEdit_5)
-        self.lineEdit = QtWidgets.QLineEdit(parent=self.widget_2)
-        self.lineEdit.setStyleSheet("border-radius: 20px;\n"
+        self.lineEditGender.setObjectName("lineEditGender")
+        self.verticalLayout_10.addWidget(self.lineEditGender)
+        self.lineEditGoi = QtWidgets.QLineEdit(parent=self.widget_2)
+        self.lineEditGoi.setStyleSheet("border-radius: 20px;\n"
 "border: 3px solid  #0f433d;")
-        self.lineEdit.setObjectName("lineEdit")
-        self.verticalLayout_10.addWidget(self.lineEdit)
-        self.lineEdit_6 = QtWidgets.QLineEdit(parent=self.widget_2)
-        self.lineEdit_6.setStyleSheet("background-color: #cbddd1;\n"
+        self.lineEditGoi.setObjectName("lineEditGoi")
+        self.verticalLayout_10.addWidget(self.lineEditGoi)
+        self.lineEditStatus = QtWidgets.QLineEdit(parent=self.widget_2)
+        self.lineEditStatus.setStyleSheet("background-color: #cbddd1;\n"
 "border-radius: 20px;\n"
 "border: 3px solid  #0f433d;")
-        self.lineEdit_6.setObjectName("lineEdit_6")
-        self.verticalLayout_10.addWidget(self.lineEdit_6)
+        self.lineEditStatus.setObjectName("lineEditStatus")
+        self.verticalLayout_10.addWidget(self.lineEditStatus)
         self.horizontalLayout_7.addLayout(self.verticalLayout_10)
         self.horizontalLayout_6.addLayout(self.horizontalLayout_7)
         self.verticalLayout_9.addWidget(self.widget_2)
@@ -155,14 +155,16 @@ class Ui_MainWindow(object):
         self.label_11.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_11.setObjectName("label_11")
         self.gridLayout.addWidget(self.label_11, 0, 1, 1, 1)
-        self.lineEdit_7 = QtWidgets.QLineEdit(parent=self.widget_3)
-        self.lineEdit_7.setStyleSheet("font: 87 10pt \"Noto Sans HK Black\";")
-        self.lineEdit_7.setObjectName("lineEdit_7")
-        self.gridLayout.addWidget(self.lineEdit_7, 1, 0, 1, 1)
-        self.lineEdit_8 = QtWidgets.QLineEdit(parent=self.widget_3)
-        self.lineEdit_8.setStyleSheet("font: 87 10pt \"Noto Sans HK Black\";")
-        self.lineEdit_8.setObjectName("lineEdit_8")
-        self.gridLayout.addWidget(self.lineEdit_8, 1, 1, 1, 1)
+        self.labelNgayDKy = QtWidgets.QLabel(parent=self.widget_3)
+        self.labelNgayDKy.setStyleSheet("font: 87 10pt \"Noto Sans HK Black\";")
+        self.labelNgayDKy.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.labelNgayDKy.setObjectName("labelNgayDKy")
+        self.gridLayout.addWidget(self.labelNgayDKy, 1, 0, 1, 1)
+        self.labelNgayGiahan = QtWidgets.QLabel(parent=self.widget_3)
+        self.labelNgayGiahan.setStyleSheet("font: 87 10pt \"Noto Sans HK Black\";")
+        self.labelNgayGiahan.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.labelNgayGiahan.setObjectName("labelNgayGiahan")
+        self.gridLayout.addWidget(self.labelNgayGiahan, 1, 1, 1, 1)
         self.horizontalLayout_9.addLayout(self.gridLayout)
         self.verticalLayout_11.addWidget(self.widget_3)
         self.verticalLayout_5.addLayout(self.verticalLayout_11)
@@ -171,30 +173,41 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
-        self.pushButtonLogOut = QtWidgets.QPushButton(parent=self.widget)
-        self.pushButtonLogOut.setMinimumSize(QtCore.QSize(170, 50))
-        self.pushButtonLogOut.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.pushButtonLogOut.setStyleSheet("color:rgb(0, 94, 69);\n"
+        self.pushButtonGiahan = QtWidgets.QPushButton(parent=self.widget)
+        self.pushButtonGiahan.setMinimumSize(QtCore.QSize(170, 50))
+        self.pushButtonGiahan.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.pushButtonGiahan.setStyleSheet("color:rgb(0, 94, 69);\n"
 "background-color: #f6f6e9;\n"
 "font: 12pt \"MS Shell Dlg 2\";\n"
 "border-radius: 20px;\n"
 "border: 3px solid  #58827d;")
-        self.pushButtonLogOut.setIconSize(QtCore.QSize(30, 50))
-        self.pushButtonLogOut.setObjectName("pushButtonLogOut")
-        self.horizontalLayout_8.addWidget(self.pushButtonLogOut)
-        self.pushButtonAdmin = QtWidgets.QPushButton(parent=self.widget)
-        self.pushButtonAdmin.setMinimumSize(QtCore.QSize(170, 50))
-        self.pushButtonAdmin.setStyleSheet("color:#0f433d;\n"
+        self.pushButtonGiahan.setIconSize(QtCore.QSize(30, 50))
+        self.pushButtonGiahan.setObjectName("pushButtonGiahan")
+        self.horizontalLayout_8.addWidget(self.pushButtonGiahan)
+        self.pushButtonKhonggiahan = QtWidgets.QPushButton(parent=self.widget)
+        self.pushButtonKhonggiahan.setMinimumSize(QtCore.QSize(170, 50))
+        self.pushButtonKhonggiahan.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.pushButtonKhonggiahan.setStyleSheet("color:#0f433d;\n"
+"background-color: #cbddd1;\n"
+"font: 12pt \"MS Shell Dlg 2\";\n"
+"border-radius: 20px;\n"
+"border: 3px solid  #58827d;")
+        self.pushButtonKhonggiahan.setIconSize(QtCore.QSize(30, 50))
+        self.pushButtonKhonggiahan.setObjectName("pushButtonKhonggiahan")
+        self.horizontalLayout_8.addWidget(self.pushButtonKhonggiahan)
+        self.pushButtonChinh = QtWidgets.QPushButton(parent=self.widget)
+        self.pushButtonChinh.setMinimumSize(QtCore.QSize(170, 50))
+        self.pushButtonChinh.setStyleSheet("color:#0f433d;\n"
 "background-color: #f6f6e9;\n"
 "font: 12pt \"MS Shell Dlg 2\";\n"
 "border-radius: 20px;\n"
 "border: 3px solid  #0f433d;")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("D:\\Nam1\\KTLT\\DoAn\\ui\\member\\../images/manager.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButtonAdmin.setIcon(icon)
-        self.pushButtonAdmin.setIconSize(QtCore.QSize(50, 50))
-        self.pushButtonAdmin.setObjectName("pushButtonAdmin")
-        self.horizontalLayout_8.addWidget(self.pushButtonAdmin)
+        self.pushButtonChinh.setIcon(icon)
+        self.pushButtonChinh.setIconSize(QtCore.QSize(50, 50))
+        self.pushButtonChinh.setObjectName("pushButtonChinh")
+        self.horizontalLayout_8.addWidget(self.pushButtonChinh)
         self.verticalLayout_4.addLayout(self.horizontalLayout_8)
         self.verticalLayout_3.addLayout(self.verticalLayout_4)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
@@ -233,7 +246,10 @@ class Ui_MainWindow(object):
         self.label_6.setText(_translate("MainWindow", "Gói tập:"))
         self.label_7.setText(_translate("MainWindow", "Trạng thái:"))
         self.label_9.setText(_translate("MainWindow", "Thống kê Tập luyện"))
-        self.label_10.setText(_translate("MainWindow", "Buổi tập còn lại"))
-        self.label_11.setText(_translate("MainWindow", "Ngày đăng ký"))
-        self.pushButtonLogOut.setText(_translate("MainWindow", "GIA HẠN GÓI TẬP"))
-        self.pushButtonAdmin.setText(_translate("MainWindow", "CHỈNH SỬA HỒ SƠ"))
+        self.label_10.setText(_translate("MainWindow", "Ngày đăng ký"))
+        self.label_11.setText(_translate("MainWindow", "Ngày gia hạn"))
+        self.labelNgayDKy.setText(_translate("MainWindow", "8/3/2026"))
+        self.labelNgayGiahan.setText(_translate("MainWindow", "1/4/2026"))
+        self.pushButtonGiahan.setText(_translate("MainWindow", "GIA HẠN GÓI TẬP"))
+        self.pushButtonKhonggiahan.setText(_translate("MainWindow", "KHÔNG GIA HẠN"))
+        self.pushButtonChinh.setText(_translate("MainWindow", "CHỈNH SỬA HỒ SƠ"))

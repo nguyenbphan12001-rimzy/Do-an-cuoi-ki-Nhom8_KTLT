@@ -1,3 +1,5 @@
+from PyQt6.QtWidgets import QMainWindow
+
 from ui.payment.payment import Ui_MainWindow
 import os
 

@@ -1,7 +1,8 @@
 import json
 
 from models.Mycollections import MyCollections
-from models.user import User
+from models.member import Member
+
 
 class Members (MyCollections):
     def export_json(self, filename):
@@ -10,10 +11,12 @@ class Members (MyCollections):
         for item in self.list:
             data['Datasets'].append({
                 'username': item.username,
-                'id': item.password,
+                'id': item.id,
                 'phone_number': item.phone_number,
                 'gender': item.gender,
-                'serve':item.serve
+                'serve':item.serve,
+                'register_date':item.register_date,
+                'expire_date':item.expire_date
             })
         with open(filename, 'w', encoding='utf-8') as outfile:
             json.dump(data, outfile, ensure_ascii=False, indent=4)
@@ -29,7 +32,9 @@ class Members (MyCollections):
                 phone_number=item["phone_number"]
                 gender=item["gender"]
                 serve=item["serve"]
-                item = Member(username,id,phone_number,gender,serve)
+                register_date=item["register_date"]
+                expire_date=item["expire_date"]
+                item = Member(username,id,phone_number,gender,serve,register_date,expire_date)
                 self.add_item(item)
 
     def find_item(self, itemId):
@@ -50,6 +55,8 @@ class Members (MyCollections):
             exit_item.phone_number = item.phone_number
             exit_item.gender = item.gender
             exit_item.serve=item.serve
+            exit_item.register_date=item.register_date
+            exit_item.expire_date=item.expire_date
         self.export_json(self.filename)
 
     def remove_item(self, itemId):

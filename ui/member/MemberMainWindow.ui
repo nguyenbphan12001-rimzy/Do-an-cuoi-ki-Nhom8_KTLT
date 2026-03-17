@@ -123,7 +123,7 @@ border: 3px ;</string>
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_10">
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_4">
+                   <widget class="QLineEdit" name="lineEditName">
                     <property name="styleSheet">
                      <string notr="true">border-radius: 20px;
 border: 3px solid  #0f433d;</string>
@@ -131,7 +131,7 @@ border: 3px solid  #0f433d;</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_3">
+                   <widget class="QLineEdit" name="lineEditID">
                     <property name="styleSheet">
                      <string notr="true">border-radius: 20px;
 background-color: #cbddd1;
@@ -140,7 +140,7 @@ border: 3px solid  #0f433d;</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_2">
+                   <widget class="QLineEdit" name="lineEditPhone">
                     <property name="styleSheet">
                      <string notr="true">border-radius: 20px;
 border: 3px solid  #0f433d;</string>
@@ -148,7 +148,7 @@ border: 3px solid  #0f433d;</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_5">
+                   <widget class="QLineEdit" name="lineEditGender">
                     <property name="styleSheet">
                      <string notr="true">border-radius: 20px;background-color:#cbddd1;
 border: 3px solid  #0f433d;</string>
@@ -156,7 +156,7 @@ border: 3px solid  #0f433d;</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit">
+                   <widget class="QLineEdit" name="lineEditGoi">
                     <property name="styleSheet">
                      <string notr="true">border-radius: 20px;
 border: 3px solid  #0f433d;</string>
@@ -164,7 +164,7 @@ border: 3px solid  #0f433d;</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_6">
+                   <widget class="QLineEdit" name="lineEditStatus">
                     <property name="styleSheet">
                      <string notr="true">background-color: #cbddd1;
 border-radius: 20px;
@@ -259,7 +259,7 @@ border: 3px ;</string>
                      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                     </property>
                     <property name="text">
-                     <string>Buổi tập còn lại</string>
+                     <string>Ngày đăng ký</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignCenter</set>
@@ -272,7 +272,7 @@ border: 3px ;</string>
                      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                     </property>
                     <property name="text">
-                     <string>Ngày đăng ký</string>
+                     <string>Ngày gia hạn</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignCenter</set>
@@ -280,16 +280,28 @@ border: 3px ;</string>
                    </widget>
                   </item>
                   <item row="1" column="0">
-                   <widget class="QLineEdit" name="lineEdit_7">
+                   <widget class="QLabel" name="labelNgayDKy">
                     <property name="styleSheet">
                      <string notr="true">font: 87 10pt &quot;Noto Sans HK Black&quot;;</string>
+                    </property>
+                    <property name="text">
+                     <string>8/3/2026</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
                   </item>
                   <item row="1" column="1">
-                   <widget class="QLineEdit" name="lineEdit_8">
+                   <widget class="QLabel" name="labelNgayGiahan">
                     <property name="styleSheet">
                      <string notr="true">font: 87 10pt &quot;Noto Sans HK Black&quot;;</string>
+                    </property>
+                    <property name="text">
+                     <string>1/4/2026</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -307,7 +319,7 @@ border: 3px ;</string>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_8">
              <item>
-              <widget class="QPushButton" name="pushButtonLogOut">
+              <widget class="QPushButton" name="pushButtonGiahan">
                <property name="minimumSize">
                 <size>
                  <width>170</width>
@@ -339,7 +351,39 @@ border: 3px solid  #58827d;</string>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButtonAdmin">
+              <widget class="QPushButton" name="pushButtonKhonggiahan">
+               <property name="minimumSize">
+                <size>
+                 <width>170</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color:#0f433d;
+background-color: #cbddd1;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 20px;
+border: 3px solid  #58827d;</string>
+               </property>
+               <property name="text">
+                <string>KHÔNG GIA HẠN</string>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>50</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButtonChinh">
                <property name="minimumSize">
                 <size>
                  <width>170</width>

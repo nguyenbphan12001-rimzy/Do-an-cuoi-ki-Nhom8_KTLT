@@ -1,12 +1,14 @@
-# from PyQt6.QtMultimedia import QWindowCapture
+
 from PyQt6.QtWidgets import QMainWindow
 
 from ui.admin.adminEx import AdminEx
 from ui.booking.BookingMainWindowEx import BookingMainWindowEx
 from ui.dashboard.Dashboard import Ui_MainWindow
-# from ui.home.HomeEx import HomeEx
-from ui.member.MemberMainWindowEx import MemberMainWindowEx
+
 import os
+
+from ui.member.MemberMainWindowEx import MemberMainWindowEx
+
 
 class DashboardEx(Ui_MainWindow):
     def setupUi(self, MainWindow):

@@ -220,7 +220,7 @@ font-weight: bold;</string>
             <set>Qt::AlignCenter</set>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="pushButtonHaituan">
            <property name="geometry">
             <rect>
              <x>20</x>
@@ -359,7 +359,7 @@ QPushButton:pressed {
             <set>Qt::AlignCenter</set>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="pushButtonMotthang">
            <property name="geometry">
             <rect>
              <x>30</x>
@@ -405,7 +405,7 @@ QPushButton:pressed {
             <string>1 tháng: 499K</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_3">
+          <widget class="QPushButton" name="pushButtonBathang">
            <property name="geometry">
             <rect>
              <x>30</x>
@@ -451,7 +451,7 @@ QPushButton:pressed {
             <string>3 tháng: 1.399K</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_4">
+          <widget class="QPushButton" name="pushButtonSauthang">
            <property name="geometry">
             <rect>
              <x>30</x>
@@ -590,7 +590,7 @@ QPushButton:pressed {
             <set>Qt::AlignCenter</set>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_5">
+          <widget class="QPushButton" name="pushButtonMotnam">
            <property name="geometry">
             <rect>
              <x>30</x>
