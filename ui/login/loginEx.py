@@ -50,7 +50,7 @@ class LoginEx(Ui_MainWindow):
         # 👉 truyền dữ liệu nếu muốn
         self.dashboard_window.setWindowTitle(f"Dashboard - {username} ({role})")
 
-        self.dashboard_window.show()
+        self.dashboard_window.showMaximized()
         print("👉 Đang mở dashboard...")
 
         self.MainWindow.hide()

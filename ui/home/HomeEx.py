@@ -23,11 +23,13 @@ class HomeEx(Ui_MainWindow):
         self.pushButtonLogin.clicked.connect(self.process_login)
         self.pushButtonSignUp.clicked.connect(self.process_signup)
     def process_login(self):
+        self.MainWindow.close()
         self.login_window=QMainWindow()
         self.login_ui=LoginEx()
         self.login_ui.setupUi(self.login_window)
         self.login_ui.showWindow()
     def process_signup(self):
+        self.MainWindow.close()
         self.signup_window=QMainWindow()
         self.signup_ui=SignUpEx()
         self.signup_ui.setupUi(self.signup_window)

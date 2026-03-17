@@ -2,8 +2,6 @@
 from PyQt6.QtWidgets import QMessageBox
 
 from ui.signUp.signUp import Ui_MainWindow
-
-
 class SignUpEx(Ui_MainWindow):
     def setupUi(self,MainWindow):
         super().setupUi(MainWindow)
