@@ -19,8 +19,8 @@
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">QWidget#centralwidget {
-    border-image: url(:/pic/ic4.png) 0 0 0 0 stretch stretch;
-}url(:/pic/ic4.png)</string>
+    border-image: url(:/pic/Payment.png) 0 0 0 0 stretch stretch;
+}</string>
    </property>
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
@@ -594,6 +594,7 @@ border: 3px solid  #58827d;</string>
  </widget>
  <resources>
   <include location="C:/Users/Thao Nguyen/Downloads/photo.qrc"/>
+  <include location="../../images/images.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -16,8 +16,8 @@ class Ui_MainWindow(object):
         MainWindow.setStyleSheet("QMainWindow{border-image:url(:/images/Booking.png);background-image:rbg(0,255,255)}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setStyleSheet("QWidget#centralwidget {\n"
-"    border-image: url(:/pic/ic4.png) 0 0 0 0 stretch stretch;\n"
-"}url(:/pic/ic4.png)")
+"    border-image: url(:/pic/Payment.png) 0 0 0 0 stretch stretch;\n"
+"}")
         self.centralwidget.setObjectName("centralwidget")
         self.groupBox = QtWidgets.QGroupBox(parent=self.centralwidget)
         self.groupBox.setGeometry(QtCore.QRect(60, 390, 341, 221))
