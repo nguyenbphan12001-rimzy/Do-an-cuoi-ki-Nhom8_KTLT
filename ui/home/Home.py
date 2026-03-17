@@ -13,10 +13,8 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1000, 500)
-        MainWindow.setStyleSheet("QMainWindow{\n"
-"border-image:url(:/pic/Home.png);\n"
-"background-color: rgb(0,255,255);\n"
-"}")
+        MainWindow.setStyleSheet("#centralwidget{\n"
+"border-image:url(D:/Nam1/KTLT/DoAn/images/Home.png)}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
