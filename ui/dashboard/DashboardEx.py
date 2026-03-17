@@ -8,6 +8,7 @@ from ui.dashboard.Dashboard import Ui_MainWindow
 import os
 
 from ui.member.MemberMainWindowEx import MemberMainWindowEx
+from ui.registration.Registration_formMainWindowEx import Registration_formMainWindowEx
 
 
 class DashboardEx(Ui_MainWindow):
@@ -28,7 +29,7 @@ class DashboardEx(Ui_MainWindow):
         self.pushButtonDkyHoivien.clicked.connect(self.process_hoivien)
         self.pushButtonAdmin.clicked.connect(self.process_admin)
         self.pushButtonLogOut.clicked.connect(self.process_logout)
-        # self.pushButtonMember.clicked.connect(self.process_member)
+        self.pushButtonMember.clicked.connect(self.process_member)
     def process_booking(self):
         self.booking_window=QMainWindow()
         self.booking_ui=BookingMainWindowEx()
@@ -37,7 +38,7 @@ class DashboardEx(Ui_MainWindow):
         self.booking_ui.showWindow()
     def process_hoivien(self):
         self.hoivien_window = QMainWindow()
-        self.hoivien_ui = MemberMainWindowEx()
+        self.hoivien_ui = Registration_formMainWindowEx()
         self.hoivien_ui.setupUi(self.hoivien_window)
         self.hoivien_window.showMaximized()
         self.hoivien_ui.showWindow()
@@ -47,8 +48,15 @@ class DashboardEx(Ui_MainWindow):
         self.admin_ui.setupUi(self.admin_window)
         self.admin_window.showMaximized()
         self.admin_ui.showWindow()
+    def process_member(self):
+        self.member_window=QMainWindow()
+        self.member_ui=MemberMainWindowEx()
+        self.member_ui.setupUi(self.member_window)
+        self.member_window.show()
+        self.member_ui.showWindow()
     def process_logout(self):
         from ui.home.HomeEx import HomeEx  # import trong function
+        self.MainWindow.close()
         self.logout_window=QMainWindow()
         self.logout_ui=HomeEx()
         self.logout_ui.setupUi(self.logout_window)
