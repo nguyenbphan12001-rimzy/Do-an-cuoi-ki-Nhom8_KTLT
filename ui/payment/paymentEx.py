@@ -123,6 +123,7 @@ class PaymentEx(Ui_MainWindow):
         if hasattr(self, 'lineEditID'):
             sdt = self.lineEditID.text().strip()
 
+        # Kiểm tra xem đã chọn phương thức thanh toán chưa
         if not self.checkBoxBak.isChecked() and not self.checkBoxCard.isChecked():
             QMessageBox.warning(self.MainWindow, "Thông báo", "Vui lòng chọn phương thức thanh toán!")
             return
@@ -131,6 +132,7 @@ class PaymentEx(Ui_MainWindow):
             QMessageBox.warning(self.MainWindow, "Thông báo", "Thiếu thông tin khách hàng!")
             return
 
+        # Thông báo thành công chi tiết
         phuong_thuc = "Ngân hàng" if self.checkBoxBak.isChecked() else "Thẻ tín dụng"
 
         # Dữ liệu chung cho cả 2 hóa đơn

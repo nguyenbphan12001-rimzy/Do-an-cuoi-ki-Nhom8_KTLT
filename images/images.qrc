@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="pic">
+    <file>Registration.png</file>
+    <file>Thongke.png</file>
     <file>payments.png</file>
     <file>signup.png</file>
     <file>hoivien_anh(update).jpg</file>
