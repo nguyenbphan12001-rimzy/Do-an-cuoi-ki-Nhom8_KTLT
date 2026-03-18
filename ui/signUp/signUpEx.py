@@ -1,5 +1,5 @@
 # from ui.signUp.signUp import Ui_MainWindow
-from PyQt6.QtWidgets import QMessageBox
+from PyQt6.QtWidgets import QMessageBox, QMainWindow
 import json
 import os
 from PyQt6.QtGui import QIntValidator
@@ -30,6 +30,17 @@ class SignUpEx(Ui_MainWindow):
       # connect nút
         self.pushButtonCreate.clicked.connect(self.create_account)
         self.lineEditContactNo.setValidator(QIntValidator())
+        self.pushButtonBack.clicked.connect(self.go_back)
+
+    def go_back(self):
+        from ui.home.HomeEx import HomeEx  # 👈 import tại đây (tránh circular)
+
+        self.home_window = QMainWindow()
+        self.home_ui = HomeEx()
+        self.home_ui.setupUi(self.home_window)
+
+        self.home_window.show()
+        self.MainWindow.close()  # hoặc hide()
 
     def showWindow(self):
         self.MainWindow.show()
