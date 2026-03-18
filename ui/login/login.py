@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'login.ui'
+# Form implementation generated from reading ui file 'D:\Nam_1\K25411_KTLT\project\ui\login\login.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -84,6 +84,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lineEditPassword.setFont(font)
+        self.lineEditPassword.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.lineEditPassword.setObjectName("lineEditPassword")
         self.gridLayout_17.addWidget(self.lineEditPassword, 1, 0, 1, 4)
         self.lineEditUsername = QtWidgets.QLineEdit(parent=self.frame_4)
@@ -178,7 +179,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.gridLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 582, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 582, 18))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
