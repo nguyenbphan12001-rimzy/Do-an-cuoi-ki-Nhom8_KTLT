@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'Registration_formMainWindow.ui'
+# Form implementation generated from reading ui file 'D:\Nam1\KTLT\DoAn\ui\registration\Registration_formMainWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -12,329 +12,98 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1398, 683)
-        MainWindow.setMinimumSize(QtCore.QSize(0, 0))
-        MainWindow.setMaximumSize(QtCore.QSize(2022, 1000))
-        MainWindow.setStyleSheet("background-color:#f4f5eb\n"
-"")
+        MainWindow.resize(1607, 837)
+        MainWindow.setStyleSheet("QMainWindow{\n"
+"border-image:url(:/pic/Registration.png);\n"
+"background-iamge:rgb(0,255,255);}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
+        self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.horizontalLayout = QtWidgets.QHBoxLayout()
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
-        self.label_2.setSizePolicy(sizePolicy)
-        self.label_2.setMaximumSize(QtCore.QSize(300, 100))
-        self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("../../images/fit lifestyle.jpg"))
-        self.label_2.setScaledContents(True)
-        self.label_2.setObjectName("label_2")
-        self.horizontalLayout.addWidget(self.label_2)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout.addItem(spacerItem)
-        self.label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label.setMinimumSize(QtCore.QSize(400, 0))
-        self.label.setMaximumSize(QtCore.QSize(400, 200))
+        self.pushButtonBathang = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonBathang.setGeometry(QtCore.QRect(630, 520, 331, 79))
+        self.pushButtonBathang.setMaximumSize(QtCore.QSize(900, 80))
         font = QtGui.QFont()
-        font.setPointSize(-1)
-        font.setBold(True)
-        self.label.setFont(font)
-        self.label.setStyleSheet("background-color: #2d5a52;\n"
-"color: white;\n"
-"border-radius: 25px; /* Bo tròn mạnh */\n"
-"padding: 10px 30px;\n"
-"font-size: 40px;\n"
-"font-weight: bold;")
-        self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label.setObjectName("label")
-        self.horizontalLayout.addWidget(self.label)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout.addItem(spacerItem1)
-        self.label_3 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_3.setMaximumSize(QtCore.QSize(300, 100))
-        self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("../../images/logofacebook.jpg"))
-        self.label_3.setScaledContents(True)
-        self.label_3.setObjectName("label_3")
-        self.horizontalLayout.addWidget(self.label_3)
-        self.verticalLayout_4.addLayout(self.horizontalLayout)
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.label_4 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_4.setMaximumSize(QtCore.QSize(16777215, 150))
-        self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("../../images/muitenlogo.jpg"))
-        self.label_4.setScaledContents(True)
-        self.label_4.setObjectName("label_4")
-        self.verticalLayout_3.addWidget(self.label_4)
-        self.frame_4 = QtWidgets.QFrame(parent=self.centralwidget)
-        self.frame_4.setMinimumSize(QtCore.QSize(0, 180))
-        self.frame_4.setMaximumSize(QtCore.QSize(437, 400))
-        self.frame_4.setStyleSheet("QFrame {\n"
-"    background-color: #2d5a52;\n"
-"    border-radius: 50px;\n"
-"}")
-        self.frame_4.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_4.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_4.setObjectName("frame_4")
-        self.label_11 = QtWidgets.QLabel(parent=self.frame_4)
-        self.label_11.setGeometry(QtCore.QRect(80, 10, 291, 61))
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.label_11.setFont(font)
-        self.label_11.setStyleSheet("QLabel {\n"
-"    background-color: #c2d5ce;\n"
-"    color: black;\n"
-"    border-radius: 30px;\n"
-"    padding: 10px;\n"
-"}")
-        self.label_11.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_11.setObjectName("label_11")
-        self.pushButtonHaituan = QtWidgets.QPushButton(parent=self.frame_4)
-        self.pushButtonHaituan.setGeometry(QtCore.QRect(20, 90, 391, 61))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(30)
-        self.pushButtonHaituan.setFont(font)
-        self.pushButtonHaituan.setStyleSheet("QPushButton {\n"
-"    /* Màu kem bạn yêu cầu (lấy từ ảnh) */\n"
-"    background-color: #f5f5dc; \n"
-"    \n"
-"    /* Bo tròn góc - chỉnh số này cho khớp với khung sau */\n"
-"    border-radius: 25px; \n"
-"    \n"
-"    /* Viền nút (có thể để \'none\' nếu muốn nút phẳng lì) */\n"
-"    border: 1px solid #dcdcdc; \n"
-"    \n"
-"    /* Chỉnh lề và font chữ nếu cần */\n"
-"    padding: 5px;\n"
-"    font-family: \"Segoe UI\";\n"
-"    color: #333333;\n"
-"}\n"
-"\n"
-"/* Hiệu ứng khi di chuột vào cho đỡ bị đơ */\n"
-"QPushButton:hover {\n"
-"    background-color: #efefd0; /* Tối hơn một chút khi hover */\n"
-"}\n"
-"\n"
-"/* Hiệu ứng khi click chuột */\n"
-"QPushButton:pressed {\n"
-"    background-color: #e5e5c0;\n"
-"}")
-        self.pushButtonHaituan.setObjectName("pushButtonHaituan")
-        self.verticalLayout_3.addWidget(self.frame_4)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_3.addItem(spacerItem2)
-        self.horizontalLayout_2.addLayout(self.verticalLayout_3)
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.label_6 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_6.setMaximumSize(QtCore.QSize(16777215, 150))
-        self.label_6.setText("")
-        self.label_6.setPixmap(QtGui.QPixmap("../../images/muitenlogo.jpg"))
-        self.label_6.setScaledContents(True)
-        self.label_6.setObjectName("label_6")
-        self.verticalLayout.addWidget(self.label_6)
-        self.frame_6 = QtWidgets.QFrame(parent=self.centralwidget)
-        self.frame_6.setMinimumSize(QtCore.QSize(0, 340))
-        self.frame_6.setMaximumSize(QtCore.QSize(437, 400))
-        self.frame_6.setStyleSheet("QFrame {\n"
-"    background-color: #2d5a52;\n"
-"    border-radius: 50px;\n"
-"}")
-        self.frame_6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_6.setObjectName("frame_6")
-        self.label_14 = QtWidgets.QLabel(parent=self.frame_6)
-        self.label_14.setGeometry(QtCore.QRect(70, 10, 311, 61))
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.label_14.setFont(font)
-        self.label_14.setStyleSheet("QLabel {\n"
-"    background-color: #c2d5ce;\n"
-"    color: black;\n"
-"    border-radius: 30px;\n"
-"    padding: 10px;\n"
-"}")
-        self.label_14.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_14.setObjectName("label_14")
-        self.pushButtonMotthang = QtWidgets.QPushButton(parent=self.frame_6)
-        self.pushButtonMotthang.setGeometry(QtCore.QRect(30, 90, 391, 61))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(30)
-        self.pushButtonMotthang.setFont(font)
-        self.pushButtonMotthang.setStyleSheet("QPushButton {\n"
-"    /* Màu kem bạn yêu cầu (lấy từ ảnh) */\n"
-"    background-color: #f5f5dc; \n"
-"    \n"
-"    /* Bo tròn góc - chỉnh số này cho khớp với khung sau */\n"
-"    border-radius: 25px; \n"
-"    \n"
-"    /* Viền nút (có thể để \'none\' nếu muốn nút phẳng lì) */\n"
-"    border: 1px solid #dcdcdc; \n"
-"    \n"
-"    /* Chỉnh lề và font chữ nếu cần */\n"
-"    padding: 5px;\n"
-"    font-family: \"Segoe UI\";\n"
-"    color: #333333;\n"
-"}\n"
-"\n"
-"/* Hiệu ứng khi di chuột vào cho đỡ bị đơ */\n"
-"QPushButton:hover {\n"
-"    background-color: #efefd0; /* Tối hơn một chút khi hover */\n"
-"}\n"
-"\n"
-"/* Hiệu ứng khi click chuột */\n"
-"QPushButton:pressed {\n"
-"    background-color: #e5e5c0;\n"
-"}")
-        self.pushButtonMotthang.setObjectName("pushButtonMotthang")
-        self.pushButtonBathang = QtWidgets.QPushButton(parent=self.frame_6)
-        self.pushButtonBathang.setGeometry(QtCore.QRect(30, 170, 391, 61))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(30)
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(22)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.pushButtonBathang.setFont(font)
-        self.pushButtonBathang.setStyleSheet("QPushButton {\n"
-"    /* Màu kem bạn yêu cầu (lấy từ ảnh) */\n"
-"    background-color: #f5f5dc; \n"
-"    \n"
-"    /* Bo tròn góc - chỉnh số này cho khớp với khung sau */\n"
-"    border-radius: 25px; \n"
-"    \n"
-"    /* Viền nút (có thể để \'none\' nếu muốn nút phẳng lì) */\n"
-"    border: 1px solid #dcdcdc; \n"
-"    \n"
-"    /* Chỉnh lề và font chữ nếu cần */\n"
-"    padding: 5px;\n"
-"    font-family: \"Segoe UI\";\n"
-"    color: #333333;\n"
-"}\n"
-"\n"
-"/* Hiệu ứng khi di chuột vào cho đỡ bị đơ */\n"
-"QPushButton:hover {\n"
-"    background-color: #efefd0; /* Tối hơn một chút khi hover */\n"
-"}\n"
-"\n"
-"/* Hiệu ứng khi click chuột */\n"
-"QPushButton:pressed {\n"
-"    background-color: #e5e5c0;\n"
-"}")
+        self.pushButtonBathang.setStyleSheet("color:#0f433d;\n"
+"background-color: #f6f6e9;\n"
+"font: 22pt \"MS Shell Dlg 2\";\n"
+"border-radius: 20px;\n"
+"border: 3px solid  #0f433d;")
         self.pushButtonBathang.setObjectName("pushButtonBathang")
-        self.pushButtonSauthang = QtWidgets.QPushButton(parent=self.frame_6)
-        self.pushButtonSauthang.setGeometry(QtCore.QRect(30, 250, 391, 61))
+        self.pushButtonSauthang = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonSauthang.setGeometry(QtCore.QRect(630, 630, 331, 79))
+        self.pushButtonSauthang.setMaximumSize(QtCore.QSize(900, 80))
         font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(30)
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(22)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.pushButtonSauthang.setFont(font)
-        self.pushButtonSauthang.setStyleSheet("QPushButton {\n"
-"    /* Màu kem bạn yêu cầu (lấy từ ảnh) */\n"
-"    background-color: #f5f5dc; \n"
-"    \n"
-"    /* Bo tròn góc - chỉnh số này cho khớp với khung sau */\n"
-"    border-radius: 25px; \n"
-"    \n"
-"    /* Viền nút (có thể để \'none\' nếu muốn nút phẳng lì) */\n"
-"    border: 1px solid #dcdcdc; \n"
-"    \n"
-"    /* Chỉnh lề và font chữ nếu cần */\n"
-"    padding: 5px;\n"
-"    font-family: \"Segoe UI\";\n"
-"    color: #333333;\n"
-"}\n"
-"\n"
-"/* Hiệu ứng khi di chuột vào cho đỡ bị đơ */\n"
-"QPushButton:hover {\n"
-"    background-color: #efefd0; /* Tối hơn một chút khi hover */\n"
-"}\n"
-"\n"
-"/* Hiệu ứng khi click chuột */\n"
-"QPushButton:pressed {\n"
-"    background-color: #e5e5c0;\n"
-"}")
+        self.pushButtonSauthang.setStyleSheet("color:#0f433d;\n"
+"background-color: #f6f6e9;\n"
+"font: 22pt \"MS Shell Dlg 2\";\n"
+"border-radius: 20px;\n"
+"border: 3px solid  #0f433d;")
         self.pushButtonSauthang.setObjectName("pushButtonSauthang")
-        self.verticalLayout.addWidget(self.frame_6)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout.addItem(spacerItem3)
-        self.horizontalLayout_2.addLayout(self.verticalLayout)
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.label_8 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_8.setMaximumSize(QtCore.QSize(16777215, 150))
-        self.label_8.setText("")
-        self.label_8.setPixmap(QtGui.QPixmap("../../images/muitenlogo.jpg"))
-        self.label_8.setScaledContents(True)
-        self.label_8.setObjectName("label_8")
-        self.verticalLayout_2.addWidget(self.label_8)
-        self.frame_5 = QtWidgets.QFrame(parent=self.centralwidget)
-        self.frame_5.setMinimumSize(QtCore.QSize(0, 180))
-        self.frame_5.setMaximumSize(QtCore.QSize(437, 400))
-        self.frame_5.setStyleSheet("QFrame {\n"
-"    background-color: #2d5a52;\n"
-"    border-radius: 50px;\n"
-"}")
-        self.frame_5.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_5.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_5.setObjectName("frame_5")
-        self.label_13 = QtWidgets.QLabel(parent=self.frame_5)
-        self.label_13.setGeometry(QtCore.QRect(70, 10, 311, 61))
+        self.pushButtonMotnam = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonMotnam.setGeometry(QtCore.QRect(1140, 410, 321, 79))
+        self.pushButtonMotnam.setMaximumSize(QtCore.QSize(900, 80))
         font = QtGui.QFont()
-        font.setPointSize(20)
-        self.label_13.setFont(font)
-        self.label_13.setStyleSheet("QLabel {\n"
-"    background-color: #c2d5ce;\n"
-"    color: black;\n"
-"    border-radius: 30px;\n"
-"    padding: 10px;\n"
-"}")
-        self.label_13.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_13.setObjectName("label_13")
-        self.pushButtonMotnam = QtWidgets.QPushButton(parent=self.frame_5)
-        self.pushButtonMotnam.setGeometry(QtCore.QRect(30, 90, 391, 61))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(30)
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(22)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.pushButtonMotnam.setFont(font)
-        self.pushButtonMotnam.setStyleSheet("QPushButton {\n"
-"    /* Màu kem bạn yêu cầu (lấy từ ảnh) */\n"
-"    background-color: #f5f5dc; \n"
-"    \n"
-"    /* Bo tròn góc - chỉnh số này cho khớp với khung sau */\n"
-"    border-radius: 25px; \n"
-"    \n"
-"    /* Viền nút (có thể để \'none\' nếu muốn nút phẳng lì) */\n"
-"    border: 1px solid #dcdcdc; \n"
-"    \n"
-"    /* Chỉnh lề và font chữ nếu cần */\n"
-"    padding: 5px;\n"
-"    font-family: \"Segoe UI\";\n"
-"    color: #333333;\n"
-"}\n"
-"\n"
-"/* Hiệu ứng khi di chuột vào cho đỡ bị đơ */\n"
-"QPushButton:hover {\n"
-"    background-color: #efefd0; /* Tối hơn một chút khi hover */\n"
-"}\n"
-"\n"
-"/* Hiệu ứng khi click chuột */\n"
-"QPushButton:pressed {\n"
-"    background-color: #e5e5c0;\n"
-"}")
+        self.pushButtonMotnam.setStyleSheet("color:#0f433d;\n"
+"background-color: #f6f6e9;\n"
+"font: 22pt \"MS Shell Dlg 2\";\n"
+"border-radius: 20px;\n"
+"border: 3px solid  #0f433d;")
         self.pushButtonMotnam.setObjectName("pushButtonMotnam")
-        self.verticalLayout_2.addWidget(self.frame_5)
-        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_2.addItem(spacerItem4)
-        self.horizontalLayout_2.addLayout(self.verticalLayout_2)
-        self.verticalLayout_4.addLayout(self.horizontalLayout_2)
+        self.pushButtonMotthang = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonMotthang.setGeometry(QtCore.QRect(630, 410, 331, 80))
+        self.pushButtonMotthang.setMaximumSize(QtCore.QSize(900, 80))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(22)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButtonMotthang.setFont(font)
+        self.pushButtonMotthang.setStyleSheet("color:#0f433d;\n"
+"background-color: #f6f6e9;\n"
+"font: 22pt \"MS Shell Dlg 2\";\n"
+"border-radius: 20px;\n"
+"border: 3px solid  #0f433d;")
+        self.pushButtonMotthang.setObjectName("pushButtonMotthang")
+        self.pushButtonHaituan = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonHaituan.setGeometry(QtCore.QRect(120, 410, 331, 80))
+        self.pushButtonHaituan.setMaximumSize(QtCore.QSize(900, 80))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(22)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButtonHaituan.setFont(font)
+        self.pushButtonHaituan.setStyleSheet("color:#0f433d;\n"
+"background-color: #f6f6e9;\n"
+"font: 22pt \"MS Shell Dlg 2\";\n"
+"border-radius: 20px;\n"
+"border: 3px solid  #0f433d;")
+        self.pushButtonHaituan.setObjectName("pushButtonHaituan")
         MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1607, 26))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -342,12 +111,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "Đăng ký gói tập"))
-        self.label_11.setText(_translate("MainWindow", "Tuần"))
-        self.pushButtonHaituan.setText(_translate("MainWindow", "2 tuần: 299K"))
-        self.label_14.setText(_translate("MainWindow", "Tháng"))
-        self.pushButtonMotthang.setText(_translate("MainWindow", "1 tháng: 499K"))
         self.pushButtonBathang.setText(_translate("MainWindow", "3 tháng: 1.399K"))
         self.pushButtonSauthang.setText(_translate("MainWindow", "6 tháng: 2.499K"))
-        self.label_13.setText(_translate("MainWindow", "Năm"))
         self.pushButtonMotnam.setText(_translate("MainWindow", "1 năm: 4.799K"))
+        self.pushButtonMotthang.setText(_translate("MainWindow", "1 tháng: 499K"))
+        self.pushButtonHaituan.setText(_translate("MainWindow", "2 tuần: 299K"))

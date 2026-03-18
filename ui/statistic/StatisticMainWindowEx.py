@@ -24,6 +24,11 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.pushButtonTKdoanhthu.clicked.connect(self.show_doanhthu)
         self.pushButtonTKluongkhach.clicked.connect(self.show_luongkhach)
         self.pushButtonBack.clicked.connect(self.process_back)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "Thongke.png")).replace(
+            "\\", "/")
+
+        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
 
     def show(self):
         self.MainWindow.show()
