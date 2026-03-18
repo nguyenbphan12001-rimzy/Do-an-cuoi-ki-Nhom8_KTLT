@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Nam_1\K25411_KTLT\project\ui\payment\payment.ui'
+# Form implementation generated from reading ui file 'D:\DO AN KTLT\ui\payment\payment.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -14,7 +14,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(798, 540)
         MainWindow.setStyleSheet("#centralwidget{\n"
-"border-image: url(D:/Nam_1/K25411_KTLT/project/images/payments.png);\n"
+"border-image: url(:/pic/payments.png);\n"
 "}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -27,59 +27,70 @@ class Ui_MainWindow(object):
         self.label.setText("")
         self.label.setObjectName("label")
         self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
-        self.groupBox = QtWidgets.QGroupBox(parent=self.centralwidget)
+        self.groupBox_1 = QtWidgets.QGroupBox(parent=self.centralwidget)
         font = QtGui.QFont()
-        font.setPointSize(20)
-        self.groupBox.setFont(font)
-        self.groupBox.setStyleSheet("background-color: rgb(251, 255, 213)")
-        self.groupBox.setObjectName("groupBox")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.groupBox)
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.groupBox_1.setFont(font)
+        self.groupBox_1.setStyleSheet("background-color: rgb(251, 255, 213)\n"
+"")
+        self.groupBox_1.setObjectName("groupBox_1")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.groupBox_1)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.gridLayout_2 = QtWidgets.QGridLayout()
         self.gridLayout_2.setHorizontalSpacing(10)
         self.gridLayout_2.setVerticalSpacing(15)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.label_2 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_2 = QtWidgets.QLabel(parent=self.groupBox_1)
         font = QtGui.QFont()
-        font.setPointSize(17)
+        font.setPointSize(16)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
         self.gridLayout_2.addWidget(self.label_2, 0, 0, 1, 1)
-        self.label_3 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_3 = QtWidgets.QLabel(parent=self.groupBox_1)
         font = QtGui.QFont()
-        font.setPointSize(17)
+        font.setPointSize(16)
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
         self.gridLayout_2.addWidget(self.label_3, 1, 0, 1, 1)
-        self.lineEdit = QtWidgets.QLineEdit(parent=self.groupBox)
+        self.lineEditName = QtWidgets.QLineEdit(parent=self.groupBox_1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit.sizePolicy().hasHeightForWidth())
-        self.lineEdit.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.lineEditName.sizePolicy().hasHeightForWidth())
+        self.lineEditName.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(20)
-        self.lineEdit.setFont(font)
-        self.lineEdit.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.lineEdit.setObjectName("lineEdit")
-        self.gridLayout_2.addWidget(self.lineEdit, 0, 1, 1, 1)
-        self.lineEdit_2 = QtWidgets.QLineEdit(parent=self.groupBox)
+        font.setPointSize(18)
+        self.lineEditName.setFont(font)
+        self.lineEditName.setStyleSheet("border: 2px solid #143d3a; /* Màu xanh đậm của header */\n"
+"border-radius: 5px;\n"
+"padding: 5px;\n"
+"background-color: white;")
+        self.lineEditName.setObjectName("lineEditName")
+        self.gridLayout_2.addWidget(self.lineEditName, 0, 1, 1, 1)
+        self.lineEditID = QtWidgets.QLineEdit(parent=self.groupBox_1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_2.sizePolicy().hasHeightForWidth())
-        self.lineEdit_2.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.lineEditID.sizePolicy().hasHeightForWidth())
+        self.lineEditID.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(20)
-        self.lineEdit_2.setFont(font)
-        self.lineEdit_2.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.gridLayout_2.addWidget(self.lineEdit_2, 1, 1, 1, 1)
+        font.setPointSize(18)
+        self.lineEditID.setFont(font)
+        self.lineEditID.setStyleSheet("border: 2px solid #143d3a; /* Màu xanh đậm của header */\n"
+"border-radius: 5px;\n"
+"padding: 5px;\n"
+"background-color: white;")
+        self.lineEditID.setObjectName("lineEditID")
+        self.gridLayout_2.addWidget(self.lineEditID, 1, 1, 1, 1)
         self.verticalLayout_3.addLayout(self.gridLayout_2)
-        self.gridLayout.addWidget(self.groupBox, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.groupBox_1, 1, 0, 1, 1)
         self.groupBox_2 = QtWidgets.QGroupBox(parent=self.centralwidget)
         font = QtGui.QFont()
-        font.setPointSize(20)
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
         self.groupBox_2.setFont(font)
         self.groupBox_2.setStyleSheet("background-color: rgb(251, 255, 213)")
         self.groupBox_2.setObjectName("groupBox_2")
@@ -91,55 +102,64 @@ class Ui_MainWindow(object):
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.label_6 = QtWidgets.QLabel(parent=self.groupBox_2)
         font = QtGui.QFont()
-        font.setPointSize(17)
+        font.setPointSize(16)
         self.label_6.setFont(font)
         self.label_6.setObjectName("label_6")
         self.gridLayout_3.addWidget(self.label_6, 2, 0, 1, 1)
-        self.lineEdit_4 = QtWidgets.QLineEdit(parent=self.groupBox_2)
+        self.lineEditTime = QtWidgets.QLineEdit(parent=self.groupBox_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_4.sizePolicy().hasHeightForWidth())
-        self.lineEdit_4.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.lineEditTime.sizePolicy().hasHeightForWidth())
+        self.lineEditTime.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(20)
-        self.lineEdit_4.setFont(font)
-        self.lineEdit_4.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.gridLayout_3.addWidget(self.lineEdit_4, 1, 1, 1, 1)
-        self.lineEdit_5 = QtWidgets.QLineEdit(parent=self.groupBox_2)
+        font.setPointSize(18)
+        self.lineEditTime.setFont(font)
+        self.lineEditTime.setStyleSheet("border: 2px solid #143d3a; /* Màu xanh đậm của header */\n"
+"border-radius: 5px;\n"
+"padding: 5px;\n"
+"background-color: white;")
+        self.lineEditTime.setObjectName("lineEditTime")
+        self.gridLayout_3.addWidget(self.lineEditTime, 1, 1, 1, 1)
+        self.lineEditRoom = QtWidgets.QLineEdit(parent=self.groupBox_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_5.sizePolicy().hasHeightForWidth())
-        self.lineEdit_5.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.lineEditRoom.sizePolicy().hasHeightForWidth())
+        self.lineEditRoom.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(20)
-        self.lineEdit_5.setFont(font)
-        self.lineEdit_5.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.lineEdit_5.setObjectName("lineEdit_5")
-        self.gridLayout_3.addWidget(self.lineEdit_5, 2, 1, 1, 1)
-        self.lineEdit_6 = QtWidgets.QLineEdit(parent=self.groupBox_2)
+        font.setPointSize(18)
+        self.lineEditRoom.setFont(font)
+        self.lineEditRoom.setStyleSheet("border: 2px solid #143d3a; /* Màu xanh đậm của header */\n"
+"border-radius: 5px;\n"
+"padding: 5px;\n"
+"background-color: white;")
+        self.lineEditRoom.setObjectName("lineEditRoom")
+        self.gridLayout_3.addWidget(self.lineEditRoom, 2, 1, 1, 1)
+        self.lineEditPackage = QtWidgets.QLineEdit(parent=self.groupBox_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_6.sizePolicy().hasHeightForWidth())
-        self.lineEdit_6.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.lineEditPackage.sizePolicy().hasHeightForWidth())
+        self.lineEditPackage.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(20)
-        self.lineEdit_6.setFont(font)
-        self.lineEdit_6.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.lineEdit_6.setObjectName("lineEdit_6")
-        self.gridLayout_3.addWidget(self.lineEdit_6, 0, 1, 1, 1)
+        font.setPointSize(16)
+        self.lineEditPackage.setFont(font)
+        self.lineEditPackage.setStyleSheet("border: 2px solid #143d3a; /* Màu xanh đậm của header */\n"
+"border-radius: 5px;\n"
+"padding: 5px;\n"
+"background-color: white;")
+        self.lineEditPackage.setObjectName("lineEditPackage")
+        self.gridLayout_3.addWidget(self.lineEditPackage, 0, 1, 1, 1)
         self.label_4 = QtWidgets.QLabel(parent=self.groupBox_2)
         font = QtGui.QFont()
-        font.setPointSize(17)
+        font.setPointSize(16)
         self.label_4.setFont(font)
         self.label_4.setObjectName("label_4")
         self.gridLayout_3.addWidget(self.label_4, 0, 0, 1, 1)
         self.label_5 = QtWidgets.QLabel(parent=self.groupBox_2)
         font = QtGui.QFont()
-        font.setPointSize(17)
+        font.setPointSize(16)
         self.label_5.setFont(font)
         self.label_5.setObjectName("label_5")
         self.gridLayout_3.addWidget(self.label_5, 1, 0, 1, 1)
@@ -152,7 +172,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.groupBox_3.sizePolicy().hasHeightForWidth())
         self.groupBox_3.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(20)
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
         self.groupBox_3.setFont(font)
         self.groupBox_3.setStyleSheet("background-color: rgb(251, 255, 213)")
         self.groupBox_3.setObjectName("groupBox_3")
@@ -162,17 +184,46 @@ class Ui_MainWindow(object):
         self.gridLayout_4.setHorizontalSpacing(10)
         self.gridLayout_4.setVerticalSpacing(20)
         self.gridLayout_4.setObjectName("gridLayout_4")
-        self.radioButton_2 = QtWidgets.QRadioButton(parent=self.groupBox_3)
+        self.radioButtonFull = QtWidgets.QRadioButton(parent=self.groupBox_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.radioButton_2.sizePolicy().hasHeightForWidth())
-        self.radioButton_2.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.radioButtonFull.sizePolicy().hasHeightForWidth())
+        self.radioButtonFull.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(20)
-        self.radioButton_2.setFont(font)
-        self.radioButton_2.setObjectName("radioButton_2")
-        self.gridLayout_4.addWidget(self.radioButton_2, 1, 1, 1, 1, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        font.setBold(True)
+        font.setWeight(75)
+        self.radioButtonFull.setFont(font)
+        self.radioButtonFull.setStyleSheet("/* 1. Trạng thái bình thường */\n"
+"QRadioButton {\n"
+"    padding: 10px 25px;\n"
+"    border-radius: 18px;\n"
+"    border: 2px solid #d1d1d1;\n"
+"    background-color: white;\n"
+"    color: #333;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* 2. Khi rê chuột vào (Hover) */\n"
+"QRadioButton:hover {\n"
+"    background-color: #f0fdfa;\n"
+"    border-color: #143d3a;\n"
+"}\n"
+"\n"
+"/* 3. Khi được chọn (Checked) */\n"
+"QRadioButton:checked {\n"
+"    color: white;\n"
+"    background-color: #143d3a;\n"
+"    border-color: #143d3a;\n"
+"}\n"
+"\n"
+"/* 4. Ẩn cái chấm tròn mặc định */\n"
+"QRadioButton::indicator {\n"
+"    width: 0px;\n"
+"}")
+        self.radioButtonFull.setObjectName("radioButtonFull")
+        self.gridLayout_4.addWidget(self.radioButtonFull, 1, 1, 1, 1, QtCore.Qt.AlignmentFlag.AlignHCenter)
         self.label_7 = QtWidgets.QLabel(parent=self.groupBox_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -180,52 +231,134 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
         self.label_7.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(22)
+        font.setPointSize(17)
         self.label_7.setFont(font)
         self.label_7.setObjectName("label_7")
         self.gridLayout_4.addWidget(self.label_7, 0, 0, 1, 2)
-        self.checkBox = QtWidgets.QCheckBox(parent=self.groupBox_3)
+        self.checkBoxBak = QtWidgets.QCheckBox(parent=self.groupBox_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.checkBox.sizePolicy().hasHeightForWidth())
-        self.checkBox.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.checkBoxBak.sizePolicy().hasHeightForWidth())
+        self.checkBoxBak.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.checkBox.setFont(font)
+        self.checkBoxBak.setFont(font)
+        self.checkBoxBak.setStyleSheet("/* Trạng thái bình thường */\n"
+"QCheckBox {\n"
+"    spacing: 15px;      /* Khoảng cách giữa ô check và chữ */\n"
+"    padding: 10px;      /* Tạo khoảng trống bên trong thẻ */\n"
+"    background-color: #f9f9f9;\n"
+"    border: 2px solid #e0e0e0;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"\n"
+"/* Khi di chuột qua (Hover) */\n"
+"QCheckBox:hover {\n"
+"    border-color: #143d3a;\n"
+"    background-color: #f0f7f6;\n"
+"}\n"
+"\n"
+"/* Khi được TÍCH CHỌN (Quan trọng nhất) */\n"
+"QCheckBox:checked {\n"
+"    border: 2px solid #143d3a;\n"
+"    background-color: #e8f2f1;\n"
+"}\n"
+"\n"
+"/* Ẩn cái ô vuông mặc định đi để nhìn cho sạch (Tùy chọn) */\n"
+"QCheckBox::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"}")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("D:\\Nam_1\\K25411_KTLT\\project\\ui\\payment\\../../images/bank.jpg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.checkBox.setIcon(icon)
-        self.checkBox.setIconSize(QtCore.QSize(25, 25))
-        self.checkBox.setObjectName("checkBox")
-        self.gridLayout_4.addWidget(self.checkBox, 2, 0, 1, 2)
-        self.radioButton = QtWidgets.QRadioButton(parent=self.groupBox_3)
+        icon.addPixmap(QtGui.QPixmap("D:\\DO AN KTLT\\ui\\payment\\../../images/bank.jpg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.checkBoxBak.setIcon(icon)
+        self.checkBoxBak.setIconSize(QtCore.QSize(60, 60))
+        self.checkBoxBak.setObjectName("checkBoxBak")
+        self.gridLayout_4.addWidget(self.checkBoxBak, 2, 0, 1, 2)
+        self.radioButtonHalf = QtWidgets.QRadioButton(parent=self.groupBox_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.radioButton.sizePolicy().hasHeightForWidth())
-        self.radioButton.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.radioButtonHalf.sizePolicy().hasHeightForWidth())
+        self.radioButtonHalf.setSizePolicy(sizePolicy)
+        self.radioButtonHalf.setMinimumSize(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(20)
-        self.radioButton.setFont(font)
-        self.radioButton.setObjectName("radioButton")
-        self.gridLayout_4.addWidget(self.radioButton, 1, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignHCenter)
-        self.checkBox_2 = QtWidgets.QCheckBox(parent=self.groupBox_3)
+        font.setBold(True)
+        font.setWeight(75)
+        self.radioButtonHalf.setFont(font)
+        self.radioButtonHalf.setStyleSheet("/* 1. Trạng thái bình thường */\n"
+"QRadioButton {\n"
+"    padding: 10px 25px;\n"
+"    border-radius: 18px;\n"
+"    border: 2px solid #d1d1d1;\n"
+"    background-color: white;\n"
+"    color: #333;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* 2. Khi rê chuột vào (Hover) */\n"
+"QRadioButton:hover {\n"
+"    background-color: #f0fdfa;\n"
+"    border-color: #143d3a;\n"
+"}\n"
+"\n"
+"/* 3. Khi được chọn (Checked) */\n"
+"QRadioButton:checked {\n"
+"    color: white;\n"
+"    background-color: #143d3a;\n"
+"    border-color: #143d3a;\n"
+"}\n"
+"\n"
+"/* 4. Ẩn cái chấm tròn mặc định */\n"
+"QRadioButton::indicator {\n"
+"    width: 0px;\n"
+"}")
+        self.radioButtonHalf.setObjectName("radioButtonHalf")
+        self.gridLayout_4.addWidget(self.radioButtonHalf, 1, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.checkBoxCard = QtWidgets.QCheckBox(parent=self.groupBox_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.checkBox_2.sizePolicy().hasHeightForWidth())
-        self.checkBox_2.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.checkBoxCard.sizePolicy().hasHeightForWidth())
+        self.checkBoxCard.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.checkBox_2.setFont(font)
+        self.checkBoxCard.setFont(font)
+        self.checkBoxCard.setStyleSheet("/* Trạng thái bình thường */\n"
+"QCheckBox {\n"
+"    spacing: 15px;      /* Khoảng cách giữa ô check và chữ */\n"
+"    padding: 10px;      /* Tạo khoảng trống bên trong thẻ */\n"
+"    background-color: #f9f9f9;\n"
+"    border: 2px solid #e0e0e0;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"\n"
+"/* Khi di chuột qua (Hover) */\n"
+"QCheckBox:hover {\n"
+"    border-color: #143d3a;\n"
+"    background-color: #f0f7f6;\n"
+"}\n"
+"\n"
+"/* Khi được TÍCH CHỌN (Quan trọng nhất) */\n"
+"QCheckBox:checked {\n"
+"    border: 2px solid #143d3a;\n"
+"    background-color: #e8f2f1;\n"
+"}\n"
+"\n"
+"/* Ẩn cái ô vuông mặc định đi để nhìn cho sạch (Tùy chọn) */\n"
+"QCheckBox::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"}")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("D:\\Nam_1\\K25411_KTLT\\project\\ui\\payment\\../../images/visa.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.checkBox_2.setIcon(icon1)
-        self.checkBox_2.setIconSize(QtCore.QSize(25, 25))
-        self.checkBox_2.setTristate(False)
-        self.checkBox_2.setObjectName("checkBox_2")
-        self.gridLayout_4.addWidget(self.checkBox_2, 3, 0, 1, 2)
+        icon1.addPixmap(QtGui.QPixmap("D:\\DO AN KTLT\\ui\\payment\\../../images/visa.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.checkBoxCard.setIcon(icon1)
+        self.checkBoxCard.setIconSize(QtCore.QSize(60, 60))
+        self.checkBoxCard.setTristate(False)
+        self.checkBoxCard.setObjectName("checkBoxCard")
+        self.gridLayout_4.addWidget(self.checkBoxCard, 3, 0, 1, 2)
         self.label_8 = QtWidgets.QLabel(parent=self.groupBox_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -233,34 +366,64 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.label_8.sizePolicy().hasHeightForWidth())
         self.label_8.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(21)
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
         self.label_8.setFont(font)
         self.label_8.setObjectName("label_8")
         self.gridLayout_4.addWidget(self.label_8, 4, 0, 1, 2)
-        self.lineEdit_3 = QtWidgets.QLineEdit(parent=self.groupBox_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_3.sizePolicy().hasHeightForWidth())
-        self.lineEdit_3.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        self.lineEdit_3.setFont(font)
-        self.lineEdit_3.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.gridLayout_4.addWidget(self.lineEdit_3, 5, 0, 1, 2)
-        self.pushButton = QtWidgets.QPushButton(parent=self.groupBox_3)
+        self.pushButtonCofirm = QtWidgets.QPushButton(parent=self.groupBox_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
-        self.pushButton.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.pushButtonCofirm.sizePolicy().hasHeightForWidth())
+        self.pushButtonCofirm.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(21)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.pushButton.setObjectName("pushButton")
-        self.gridLayout_4.addWidget(self.pushButton, 6, 0, 1, 2)
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButtonCofirm.setFont(font)
+        self.pushButtonCofirm.setStyleSheet("QPushButton {\n"
+"    background-color: #143d3a;    \n"
+"    color: white;                 \n"
+"    /* CÀI ĐẶT BO TRÒN Ở ĐÂY */\n"
+"    border-radius: 20px;          /* Số này càng lớn thì càng tròn */\n"
+"    border: 2px solid #143d3a;    /* Thêm viền để định hình rõ hơn */\n"
+"    \n"
+"    font-weight: bold;\n"
+"    font-size: 18px;              /* Chỉnh cho chữ to lên như bạn muốn */\n"
+"    padding: 10px;                /* Tạo khoảng trống cho chữ thở */\n"
+"}\n"
+"\n"
+"/* Hiệu ứng khi rê chuột */\n"
+"QPushButton:hover {\n"
+"    background-color: #1a524e;\n"
+"    border-color: #1a524e;\n"
+"}\n"
+"\n"
+"/* Hiệu ứng khi nhấn (lún xuống) */\n"
+"QPushButton:pressed {\n"
+"    background-color: #0d2927;\n"
+"    padding-top: 12px; \n"
+"}")
+        self.pushButtonCofirm.setObjectName("pushButtonCofirm")
+        self.gridLayout_4.addWidget(self.pushButtonCofirm, 6, 0, 1, 2)
+        self.lineEditTotalMoney = QtWidgets.QLineEdit(parent=self.groupBox_3)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEditTotalMoney.sizePolicy().hasHeightForWidth())
+        self.lineEditTotalMoney.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(17)
+        self.lineEditTotalMoney.setFont(font)
+        self.lineEditTotalMoney.setStyleSheet("border: 2px solid #143d3a; /* Màu xanh đậm của header */\n"
+"border-radius: 5px;\n"
+"padding: 5px;\n"
+"background-color: white;")
+        self.lineEditTotalMoney.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.lineEditTotalMoney.setObjectName("lineEditTotalMoney")
+        self.gridLayout_4.addWidget(self.lineEditTotalMoney, 5, 0, 1, 2)
         self.verticalLayout_4.addLayout(self.gridLayout_4)
         self.gridLayout.addWidget(self.groupBox_3, 1, 1, 2, 1)
         self.gridLayout.setRowStretch(0, 2)
@@ -269,7 +432,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.gridLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 798, 18))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 798, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
@@ -282,18 +445,18 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.groupBox.setTitle(_translate("MainWindow", "Thông tin khách hàng:"))
+        self.groupBox_1.setTitle(_translate("MainWindow", "1. Thông tin khách hàng:"))
         self.label_2.setText(_translate("MainWindow", "Tên:"))
         self.label_3.setText(_translate("MainWindow", "ID:"))
-        self.groupBox_2.setTitle(_translate("MainWindow", "Dịch vụ đã chọn:"))
+        self.groupBox_2.setTitle(_translate("MainWindow", "2. Dịch vụ đã chọn:"))
         self.label_6.setText(_translate("MainWindow", "Phòng:"))
         self.label_4.setText(_translate("MainWindow", "Gói tập:"))
         self.label_5.setText(_translate("MainWindow", "Thời gian:"))
-        self.groupBox_3.setTitle(_translate("MainWindow", "Thông tin đơn hàng:"))
-        self.radioButton_2.setText(_translate("MainWindow", "Trả 100%"))
+        self.groupBox_3.setTitle(_translate("MainWindow", "3. Thông tin đơn hàng:"))
+        self.radioButtonFull.setText(_translate("MainWindow", "Trả 100%"))
         self.label_7.setText(_translate("MainWindow", "Phương thức thanh toán:"))
-        self.checkBox.setText(_translate("MainWindow", "Ngân hàng"))
-        self.radioButton.setText(_translate("MainWindow", "Cọc 50%"))
-        self.checkBox_2.setText(_translate("MainWindow", "Thẻ tín dụng"))
-        self.label_8.setText(_translate("MainWindow", "Chi tiết thanh toán:"))
-        self.pushButton.setText(_translate("MainWindow", "Xác nhận"))
+        self.checkBoxBak.setText(_translate("MainWindow", "Ngân hàng"))
+        self.radioButtonHalf.setText(_translate("MainWindow", " Cọc 50%"))
+        self.checkBoxCard.setText(_translate("MainWindow", "Thẻ tín dụng"))
+        self.label_8.setText(_translate("MainWindow", "4. Chi tiết thanh toán(VND):"))
+        self.pushButtonCofirm.setText(_translate("MainWindow", "Xác nhận"))
