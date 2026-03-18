@@ -8,7 +8,7 @@ from ui.signUp.signUp import Ui_MainWindow
 
 
 class SignUpEx(Ui_MainWindow):
-    def __init__(self, login_window):
+    def __init__(self, login_window=None):
         super().__init__()   # 👈 QUAN TRỌNG
         self.login_window = login_window
 
@@ -46,10 +46,30 @@ class SignUpEx(Ui_MainWindow):
         if name == "" or email == "" or phone == "" or password == "" or confirm == "":
             QMessageBox.warning(self.MainWindow, "Error", "Please fill all fields")
             return
-        if not (phone.isdigit() and len(phone) == 10):
-            QMessageBox.warning(self.MainWindow, "Error", "Contact No must be 10-digit number")
+        # if not (phone.isdigit() and len(phone) == 10):
+        #     QMessageBox.warning(self.MainWindow, "Error", "Contact No must be 10-digit number")
+        #     return
+
+        phone = self.lineEditContactNo.text()
+
+        # kiểm tra số điện thoại
+        if not phone.isdigit():
+            QMessageBox.warning(self.MainWindow, "Error", "SDT phải bao gồm 10 số")
             return
 
+        if len(phone) != 10:
+            QMessageBox.warning(self.MainWindow, "Error", "SDT phải bao gồm 10 số")
+            return
+
+        if self.radioButtonMale.isChecked():
+            gender = "M"
+        elif self.radioButtonFemale.isChecked():
+            gender = "F"
+        else:
+            gender = ""
+        if not self.radioButtonMale.isChecked() and not self.radioButtonFemale.isChecked():
+            QMessageBox.warning(self.MainWindow, "Error", "Please select gender")
+            return
         # kiểm tra password trùng
         if password != confirm:
             QMessageBox.warning(self.MainWindow, "Error", "Passwords do not match")
@@ -72,7 +92,7 @@ class SignUpEx(Ui_MainWindow):
             "phone_number": phone,
             "password": password,
             "role": "user",
-            "gender": "M",
+            "gender": gender,
             "status": "Không"
         }
 

@@ -13,7 +13,7 @@
 
 class User:
     def __init__(self, username="", password="", role="user",
-                 phone_number="", email="", gender="", status=""):
+                 phone_number="", email="", gender="", status="Normal"):
         self.username = username
         self.password = password
         self.role = role
@@ -23,9 +23,9 @@ class User:
         self.status = status
 
     def __str__(self):
-        return f"{self.username} | {self.role} | {self.phone_number}"
+        return f"{self.username} | {self.role} | {self.phone_number} | {self.status}"
 
-    # 🔥 convert từ JSON → object
+    #convert từ JSON → object
     @staticmethod
     def from_dict(data: dict):
         return User(
@@ -35,10 +35,10 @@ class User:
             phone_number=data.get("phone_number", ""),
             email=data.get("email", ""),
             gender=data.get("gender", ""),
-            status=data.get("status", "")
+            status=data.get("status", "Normal")
         )
 
-    # 🔥 convert object → JSON
+    #convert object → JSON
     def to_dict(self):
         return {
             "username": self.username,

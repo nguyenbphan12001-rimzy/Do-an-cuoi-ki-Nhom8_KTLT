@@ -1,5 +1,6 @@
-from PyQt6.QtWidgets import QMessageBox
+from PyQt6.QtWidgets import QMessageBox, QMainWindow
 
+from ui.payment.paymentEx import PaymentEx
 from ui.registration.Registration_formMainWindow import Ui_MainWindow
 import os
 
@@ -25,4 +26,16 @@ class Registration_formMainWindowEx(Ui_MainWindow):
     def process_goitap(self, ten_goi=None, gia=None):
         reply=QMessageBox.question(self.MainWindow,"Xác nhận",f"Bạn có chắc chắn muốn đăng ký gói {ten_goi} không?\n Giá: {gia} VNĐ",QMessageBox.StandardButton.Yes|QMessageBox.StandardButton.No)
         if reply==QMessageBox.StandardButton.Yes:
+            #Kiểm tra nếu đã là member
+            if self.current_user.get("status")=="Member":
+                QMessageBox.warning(self.MainWindow,"Thông báo", "Bạn đã là hội viên của Fit Lifestyle!")
+                return
             self.showPayment(ten_goi,gia)
+    #Show payment
+    def showPayment(self,ten_goi,gia):
+        self.payment_window=QMainWindow()
+        self.payment_ui=PaymentEx()
+        self.payment_ui.setupUi(self.payment_window)
+        #truyen dữ liệu qua payment
+        # pass
+        self.payment_window.show()

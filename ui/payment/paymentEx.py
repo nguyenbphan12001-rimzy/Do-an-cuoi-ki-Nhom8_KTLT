@@ -11,8 +11,9 @@ class PaymentEx(Ui_MainWindow):
 
         current_dir = os.path.dirname(os.path.abspath(__file__))
 
-        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "Payment.png")).replace("\\", "/")
+        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "payments.png")).replace("\\", "/")
 
         self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
     def showWindow(self):
         self.MainWindow.show()
+
