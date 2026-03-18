@@ -4,7 +4,6 @@ from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from ui.payment.payment import Ui_MainWindow
 
 
-
 class PaymentEx(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
@@ -96,13 +95,13 @@ class PaymentEx(Ui_MainWindow):
                 self.checkBoxBak.setChecked(False)
 
     def process_confirm(self):
-        """Xử lý khi nhấn nút Xác nhận thanh toán"""
+        """Xử lý: Hiện thông báo nhỏ trước -> Nhấn OK -> Hiện màn hình Confirm bự"""
         ten = self.lineEditName.text().strip()
         sdt = ""
         if hasattr(self, 'lineEditID'):
             sdt = self.lineEditID.text().strip()
 
-        # Kiểm tra xem đã chọn phương thức thanh toán chưa
+        # 1. Kiểm tra điều kiện (Validate)
         if not self.checkBoxBak.isChecked() and not self.checkBoxCard.isChecked():
             QMessageBox.warning(self.MainWindow, "Thông báo", "Vui lòng chọn phương thức thanh toán!")
             return
@@ -111,28 +110,30 @@ class PaymentEx(Ui_MainWindow):
             QMessageBox.warning(self.MainWindow, "Thông báo", "Thiếu thông tin khách hàng!")
             return
 
-        # Thông báo thành công chi tiết
+        # 2. Hiển thị thông báo nhỏ (Hộp thoại xác nhận)
         phuong_thuc = "Ngân hàng" if self.checkBoxBak.isChecked() else "Thẻ tín dụng"
         msg = f"Khách hàng: {ten}\nSĐT: {sdt}\nGói: {self.lineEditPackage.text()}\nThanh toán thành công qua {phuong_thuc}!"
 
+        # Dòng này sẽ làm app dừng lại đợi bạn nhấn OK
         QMessageBox.information(self.MainWindow, "Thành công", msg)
 
-    def set_booking_info(self, goi_tap, thoi_gian, phong, gia):
-        """Nhận dữ liệu chi tiết từ màn hình Đặt lịch truyền sang"""
-        self.original_price = gia
+        # 3. Sau khi nhấn OK, đoạn code dưới đây mới chạy để mở màn hình Confirm bự
+        try:
+            from ui.confirm.ConfirmEx import ConfirmEx  # Import tại đây để tránh vòng lặp import
 
-        # Vì form Payment không có ô chứa Phòng riêng, ta gộp nó vào tên Gói tập hiển thị cho đẹp
-        goi_tap_kem_phong = f"{goi_tap} - {phong}"
+            self.confirm_window = QMainWindow()
+            self.confirm_ui = ConfirmEx()
+            self.confirm_ui.setupUi(self.confirm_window)
 
-        self.lineEditPackage.setText(goi_tap_kem_phong)
-        self.lineEditTime.setText(thoi_gian)
+            # Hiển thị màn hình confirm bự
+            self.confirm_ui.showWindow()
 
-        # Mặc định ban đầu chọn Trả 100%
-        self.radioButtonFull.setChecked(True)
-        self.update_price_display()
+            # Xóa màn hình thanh toán
+            self.MainWindow.close()
 
-        # Tự động nạp dữ liệu user
-        self.load_user_data()
+            print("--- Đã chuyển sang màn hình Confirm sau khi nhấn OK")
+        except Exception as e:
+            print(f"Lỗi chuyển màn hình: {e}")
 
     def showWindow(self):
         """Hiển thị full màn hình"""

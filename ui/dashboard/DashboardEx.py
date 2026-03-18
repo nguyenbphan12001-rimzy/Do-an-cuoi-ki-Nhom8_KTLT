@@ -36,6 +36,7 @@ class DashboardEx(Ui_MainWindow):
         self.booking_ui.setupUi(self.booking_window)
         self.booking_window.showMaximized()
         self.booking_ui.showWindow()
+        self.MainWindow.close()
     def process_dkyhoivien(self):
         self.hoivien_window = QMainWindow()
         self.hoivien_ui = Registration_formMainWindowEx()
@@ -44,6 +45,7 @@ class DashboardEx(Ui_MainWindow):
         self.hoivien_ui.current_user=getattr(self,"current_user",None)
         self.hoivien_window.showMaximized()
         self.hoivien_ui.showWindow()
+        self.MainWindow.close()
     def process_member(self):
         self.member_window = QMainWindow()
         self.member_ui = MemberMainWindowEx()
@@ -53,12 +55,14 @@ class DashboardEx(Ui_MainWindow):
         self.member_ui.load_member()
         self.member_window.showMaximized()
         self.member_ui.showWindow()
+        self.MainWindow.close()
     def process_admin(self):
         self.admin_window=QMainWindow()
         self.admin_ui=AdminEx()
         self.admin_ui.setupUi(self.admin_window)
         self.admin_window.showMaximized()
         self.admin_ui.showWindow()
+        self.MainWindow.close()
     def process_logout(self):
         from ui.home.HomeEx import HomeEx  # import trong function
         self.MainWindow.close()
