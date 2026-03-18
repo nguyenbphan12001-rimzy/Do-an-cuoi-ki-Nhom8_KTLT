@@ -98,6 +98,24 @@
             "role": "user",
             "gender": "M",
             "status": "Không"
+        },
+        {
+            "username": "Trần Phạm Kim Ngân",
+            "email": "1222@gmail.com",
+            "phone_number": "0369614707",
+            "password": "123",
+            "role": "user",
+            "gender": "F",
+            "status": "Không"
+        },
+        {
+            "username": "kngan",
+            "email": "kngan@gmail.com",
+            "phone_number": "0124689999",
+            "password": "123",
+            "role": "user",
+            "gender": "F",
+            "status": "Không"
         }
     ]
 }

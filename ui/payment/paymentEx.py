@@ -95,13 +95,13 @@ class PaymentEx(Ui_MainWindow):
                 self.checkBoxBak.setChecked(False)
 
     def process_confirm(self):
-        """Xử lý khi nhấn nút Xác nhận thanh toán"""
+        """Xử lý: Hiện thông báo nhỏ trước -> Nhấn OK -> Hiện màn hình Confirm bự"""
         ten = self.lineEditName.text().strip()
         sdt = ""
         if hasattr(self, 'lineEditID'):
             sdt = self.lineEditID.text().strip()
 
-        # Kiểm tra xem đã chọn phương thức thanh toán chưa
+        # 1. Kiểm tra điều kiện (Validate)
         if not self.checkBoxBak.isChecked() and not self.checkBoxCard.isChecked():
             QMessageBox.warning(self.MainWindow, "Thông báo", "Vui lòng chọn phương thức thanh toán!")
             return
@@ -110,11 +110,30 @@ class PaymentEx(Ui_MainWindow):
             QMessageBox.warning(self.MainWindow, "Thông báo", "Thiếu thông tin khách hàng!")
             return
 
-        # Thông báo thành công chi tiết
+        # 2. Hiển thị thông báo nhỏ (Hộp thoại xác nhận)
         phuong_thuc = "Ngân hàng" if self.checkBoxBak.isChecked() else "Thẻ tín dụng"
         msg = f"Khách hàng: {ten}\nSĐT: {sdt}\nGói: {self.lineEditPackage.text()}\nThanh toán thành công qua {phuong_thuc}!"
 
+        # Dòng này sẽ làm app dừng lại đợi bạn nhấn OK
         QMessageBox.information(self.MainWindow, "Thành công", msg)
+
+        # 3. Sau khi nhấn OK, đoạn code dưới đây mới chạy để mở màn hình Confirm bự
+        try:
+            from ui.confirm.ConfirmEx import ConfirmEx  # Import tại đây để tránh vòng lặp import
+
+            self.confirm_window = QMainWindow()
+            self.confirm_ui = ConfirmEx()
+            self.confirm_ui.setupUi(self.confirm_window)
+
+            # Hiển thị màn hình confirm bự
+            self.confirm_ui.showWindow()
+
+            # Xóa màn hình thanh toán
+            self.MainWindow.close()
+
+            print("--- Đã chuyển sang màn hình Confirm sau khi nhấn OK")
+        except Exception as e:
+            print(f"Lỗi chuyển màn hình: {e}")
 
     def showWindow(self):
         """Hiển thị full màn hình"""
