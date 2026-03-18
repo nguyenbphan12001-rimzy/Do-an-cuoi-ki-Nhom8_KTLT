@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from ui.payment.payment import Ui_MainWindow
 
 
+
 class PaymentEx(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
@@ -121,6 +122,23 @@ class PaymentEx(Ui_MainWindow):
         # Thông báo thành công
         QMessageBox.information(self.MainWindow, "Thành công", f"Giao dịch của khách hàng {ten} đã được ghi nhận!")
         # self.MainWindow.close() # Mở dòng này nếu muốn đóng cửa sổ sau khi xong
+
+    def set_booking_info(self, goi_tap, thoi_gian, phong, gia):
+        """Nhận dữ liệu chi tiết từ màn hình Đặt lịch truyền sang"""
+        self.original_price = gia
+
+        # Vì form Payment không có ô chứa Phòng riêng, ta gộp nó vào tên Gói tập hiển thị cho đẹp
+        goi_tap_kem_phong = f"{goi_tap} - {phong}"
+
+        self.lineEditPackage.setText(goi_tap_kem_phong)
+        self.lineEditTime.setText(thoi_gian)
+
+        # Mặc định ban đầu chọn Trả 100%
+        self.radioButtonFull.setChecked(True)
+        self.update_price_display()
+
+        # Tự động nạp dữ liệu user
+        self.load_user_data()
 
     def showWindow(self):
         """Hiển thị full màn hình"""
