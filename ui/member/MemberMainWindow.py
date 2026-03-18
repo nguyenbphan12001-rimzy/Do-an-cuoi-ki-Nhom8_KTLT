@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1200, 650)
+        MainWindow.resize(1253, 693)
         MainWindow.setStyleSheet("QMainWindow{\n"
 "border-image:url(:/pic/hoivien_anh(update).jpg);\n"
 "background-iamge:rgb(0,255,255);}")
@@ -24,6 +24,17 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.verticalLayout_7 = QtWidgets.QVBoxLayout()
         self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.pushButtonKhonggiahan_2 = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonKhonggiahan_2.setMinimumSize(QtCore.QSize(170, 50))
+        self.pushButtonKhonggiahan_2.setMaximumSize(QtCore.QSize(100, 100))
+        self.pushButtonKhonggiahan_2.setStyleSheet("color:#0f433d;\n"
+"background-color: #cbddd1;\n"
+"font: 18pt \"MS Shell Dlg 2\";\n"
+"border-radius: 20px;\n"
+"border: 3px solid  #58827d;")
+        self.pushButtonKhonggiahan_2.setIconSize(QtCore.QSize(30, 50))
+        self.pushButtonKhonggiahan_2.setObjectName("pushButtonKhonggiahan_2")
+        self.verticalLayout_7.addWidget(self.pushButtonKhonggiahan_2)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_7.addItem(spacerItem)
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
@@ -237,7 +248,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addLayout(self.horizontalLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1200, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1253, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
 
@@ -247,6 +258,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.pushButtonKhonggiahan_2.setText(_translate("MainWindow", "Back"))
         self.label.setText(_translate("MainWindow", "THÔNG TIN HỘI VIÊN"))
         self.label_2.setText(_translate("MainWindow", "Name:"))
         self.label_4.setText(_translate("MainWindow", "SĐT:"))
