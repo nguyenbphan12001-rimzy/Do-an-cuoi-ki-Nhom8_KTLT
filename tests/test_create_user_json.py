@@ -12,7 +12,6 @@ us7 = User("Đặng Ngọc Lan", "ngoclan852","user", "0917890123", "ngoclan@gma
 us8 = User("Bùi Thanh Tùng", "thanhtung147","user", "0918901234", "thanhtung@gmail.com", "M", "Không")
 us9 = User("Phan Mỹ Linh", "mylinh369","user", "0919012345", "mylinh@gmail.com", "F", "Không")
 us10 = User("Đỗ Đức Anh", "ducanh258","user", "0910123456", "ducanh@gmail.com", "M", "Không")
-
 us.add_items([us1, us2, us3, us4, us5, us6, us7, us8, us9, us10])
 print("Danh sách khách hàng đã tham gia đặt lịch:")
 us.print_items()

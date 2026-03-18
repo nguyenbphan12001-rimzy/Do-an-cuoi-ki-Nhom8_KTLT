@@ -17,8 +17,17 @@ class SignUpEx(Ui_MainWindow):
         self.MainWindow = MainWindow
         self.SetupSignalAndSlot()
 
+<<<<<<< HEAD
 
     def SetupSignalAndSlot(self):
+=======
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+
+        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "signup.png")).replace("\\", "/")
+
+        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
+
+>>>>>>> a87ed6cd01a5b589d8435638296e651dc3eee6fa
         # connect nút
         self.pushButtonCreate.clicked.connect(self.create_account)
         self.lineEditContactNo.setValidator(QIntValidator())

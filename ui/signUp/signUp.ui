@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>616</width>
-    <height>449</height>
+    <width>607</width>
+    <height>411</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -110,6 +110,12 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
            </item>
            <item>
             <widget class="QLineEdit" name="lineEditName">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -140,6 +146,12 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
            </item>
            <item>
             <widget class="QLineEdit" name="lineEditEmail">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -167,6 +179,12 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
            </item>
            <item>
             <widget class="QLineEdit" name="lineEditContactNo">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -194,6 +212,12 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
            </item>
            <item>
             <widget class="QLineEdit" name="lineEditPassword">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -221,6 +245,12 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
            </item>
            <item>
             <widget class="QLineEdit" name="lineEditConfirm">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -260,6 +290,12 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
            </item>
            <item>
             <widget class="QPushButton" name="pushButtonCreate">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -312,13 +348,15 @@ color: rgb(236, 255, 104)
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>616</width>
+     <width>607</width>
      <height>18</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../images/images.qrc"/>
+ </resources>
  <connections/>
 </ui>

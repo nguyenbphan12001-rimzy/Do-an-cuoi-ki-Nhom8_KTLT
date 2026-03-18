@@ -15,6 +15,18 @@ class LoginEx(Ui_MainWindow):
         self.SetupSignalAndSlot()
 
 
+<<<<<<< HEAD
+=======
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+
+        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "login.png")).replace("\\", "/")
+
+        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
+
+        self.pushButtonSignUp.clicked.connect(self.open_signup)
+        self.pushButtonLogin.clicked.connect(self.handle_login)
+        self.pushButtonForgetPassword.clicked.connect(self.forget_password)
+>>>>>>> a87ed6cd01a5b589d8435638296e651dc3eee6fa
 
         # 📂 PATH JSON
         BASE_DIR = os.path.dirname(os.path.abspath(__file__))

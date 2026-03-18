@@ -27,6 +27,13 @@ background-image:rgb(0,255,255);}</string>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -49,11 +56,18 @@ background-image:rgb(0,255,255);}</string>
            <widget class="QPushButton" name="pushButtonAdmin">
             <property name="minimumSize">
              <size>
-              <width>170</width>
+              <width>100</width>
               <height>70</height>
              </size>
             </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <property name="styleSheet">
+<<<<<<< HEAD
              <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
 QPushButton {
     color: #0f433d;
@@ -76,27 +90,30 @@ QPushButton:pressed {
     border: 3px solid #0a2e2a; /* Viền cũng tối theo */
     color: #f6f6e9;
 }</string>
+=======
+             <string notr="true">color:#0f433d;
+background-color: #f6f6e9;
+font: 87 15pt &quot;Noto Sans HK Black&quot;;
+border-radius: 30px;
+border: 3px solid  #0f433d;</string>
+>>>>>>> a87ed6cd01a5b589d8435638296e651dc3eee6fa
             </property>
             <property name="text">
              <string>Admin</string>
             </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../images/manager.png</normaloff>../images/manager.png</iconset>
-            </property>
             <property name="iconSize">
              <size>
-              <width>50</width>
+              <width>30</width>
               <height>50</height>
              </size>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButtonLogOut">
+           <widget class="QPushButton" name="pushButtonMember">
             <property name="minimumSize">
              <size>
-              <width>170</width>
+              <width>100</width>
               <height>70</height>
              </size>
             </property>
@@ -107,6 +124,39 @@ QPushButton:pressed {
              </size>
             </property>
             <property name="styleSheet">
+             <string notr="true">color:#0f433d;
+background-color: rgb(165, 185, 172);
+font: 87 15pt &quot;Noto Sans HK Black&quot;;
+border-radius: 30px;
+border: 3px solid #f6f6e9;</string>
+            </property>
+            <property name="text">
+             <string>Member</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>50</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonLogOut">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>70</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+<<<<<<< HEAD
              <string notr="true">/* Trạng thái bình thường (Giữ nguyên 100% của mày) */
 QPushButton {
     color: #f6f6e9;
@@ -127,9 +177,16 @@ QPushButton:pressed {
     background-color: #0a2e2a; /* Nền tối đi khi bấm */
     border: 3px solid #3d5e5b; /* Viền tối đi */
 }</string>
+=======
+             <string notr="true">color:#f6f6e9;
+background-color: #0f433d;
+font: 87 15pt &quot;Noto Sans HK Black&quot;;
+border-radius: 30px;
+border: 3px solid  #58827d;</string>
+>>>>>>> a87ed6cd01a5b589d8435638296e651dc3eee6fa
             </property>
             <property name="text">
-             <string>Đăng xuất</string>
+             <string>Exit</string>
             </property>
             <property name="iconSize">
              <size>
@@ -166,8 +223,8 @@ QPushButton:pressed {
              <widget class="QPushButton" name="pushButtonDkyHoivien">
               <property name="minimumSize">
                <size>
-                <width>350</width>
-                <height>70</height>
+                <width>300</width>
+                <height>60</height>
                </size>
               </property>
               <property name="styleSheet">
@@ -307,8 +364,8 @@ QPushButton:pressed {
              <widget class="QPushButton" name="pushButtonDatlich">
               <property name="minimumSize">
                <size>
-                <width>350</width>
-                <height>70</height>
+                <width>300</width>
+                <height>60</height>
                </size>
               </property>
               <property name="maximumSize">
