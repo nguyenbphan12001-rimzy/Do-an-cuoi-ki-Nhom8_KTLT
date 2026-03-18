@@ -34,7 +34,7 @@ class Ui_MainWindow(object):
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.pushButtonAdmin = QtWidgets.QPushButton(parent=self.centralwidget)
-<<<<<<< HEAD
+
         self.pushButtonAdmin.setMinimumSize(QtCore.QSize(170, 70))
         self.pushButtonAdmin.setStyleSheet("/* Trạng thái bình thường (Code gốc của mày) */\n"
 "QPushButton {\n"
@@ -62,7 +62,7 @@ class Ui_MainWindow(object):
         icon.addPixmap(QtGui.QPixmap("../images/manager.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonAdmin.setIcon(icon)
         self.pushButtonAdmin.setIconSize(QtCore.QSize(50, 50))
-=======
+
         self.pushButtonAdmin.setMinimumSize(QtCore.QSize(100, 70))
         self.pushButtonAdmin.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.pushButtonAdmin.setStyleSheet("color:#0f433d;\n"
@@ -71,7 +71,7 @@ class Ui_MainWindow(object):
 "border-radius: 30px;\n"
 "border: 3px solid  #0f433d;")
         self.pushButtonAdmin.setIconSize(QtCore.QSize(30, 50))
->>>>>>> a87ed6cd01a5b589d8435638296e651dc3eee6fa
+
         self.pushButtonAdmin.setObjectName("pushButtonAdmin")
         self.horizontalLayout.addWidget(self.pushButtonAdmin)
         self.pushButtonMember = QtWidgets.QPushButton(parent=self.centralwidget)
@@ -88,7 +88,7 @@ class Ui_MainWindow(object):
         self.pushButtonLogOut = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButtonLogOut.setMinimumSize(QtCore.QSize(100, 70))
         self.pushButtonLogOut.setMaximumSize(QtCore.QSize(16777215, 16777215))
-<<<<<<< HEAD
+
         self.pushButtonLogOut.setStyleSheet("/* Trạng thái bình thường (Giữ nguyên 100% của mày) */\n"
 "QPushButton {\n"
 "    color: #f6f6e9;\n"
@@ -109,13 +109,13 @@ class Ui_MainWindow(object):
 "    background-color: #0a2e2a; /* Nền tối đi khi bấm */\n"
 "    border: 3px solid #3d5e5b; /* Viền tối đi */\n"
 "}")
-=======
+
         self.pushButtonLogOut.setStyleSheet("color:#f6f6e9;\n"
 "background-color: #0f433d;\n"
 "font: 87 15pt \"Noto Sans HK Black\";\n"
 "border-radius: 30px;\n"
 "border: 3px solid  #58827d;")
->>>>>>> a87ed6cd01a5b589d8435638296e651dc3eee6fa
+
         self.pushButtonLogOut.setIconSize(QtCore.QSize(30, 50))
         self.pushButtonLogOut.setObjectName("pushButtonLogOut")
         self.horizontalLayout.addWidget(self.pushButtonLogOut)
@@ -130,7 +130,7 @@ class Ui_MainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setObjectName("gridLayout")
         self.pushButtonDkyHoivien = QtWidgets.QPushButton(parent=self.centralwidget)
-<<<<<<< HEAD
+
         self.pushButtonDkyHoivien.setMinimumSize(QtCore.QSize(350, 70))
         self.pushButtonDkyHoivien.setStyleSheet("/* Trạng thái bình thường (Code gốc của mày) */\n"
 "QPushButton {\n"
@@ -154,14 +154,14 @@ class Ui_MainWindow(object):
 "    border: 3px solid #0a2e2a; /* Viền cũng tối theo */\n"
 "    color: #f6f6e9;\n"
 "}")
-=======
+
         self.pushButtonDkyHoivien.setMinimumSize(QtCore.QSize(300, 60))
         self.pushButtonDkyHoivien.setStyleSheet("color:#0f433d;\n"
 "background-color: #f6f6e9;\n"
 "font: 87 20pt \"Noto Sans HK Black\";\n"
 "border-radius: 30px;\n"
 "border: 3px solid  #0f433d;")
->>>>>>> a87ed6cd01a5b589d8435638296e651dc3eee6fa
+
         self.pushButtonDkyHoivien.setObjectName("pushButtonDkyHoivien")
         self.gridLayout.addWidget(self.pushButtonDkyHoivien, 1, 3, 1, 1)
         spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)

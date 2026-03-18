@@ -67,7 +67,7 @@ background-image:rgb(0,255,255);}</string>
              </size>
             </property>
             <property name="styleSheet">
-<<<<<<< HEAD
+
              <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
 QPushButton {
     color: #0f433d;
@@ -96,7 +96,7 @@ background-color: #f6f6e9;
 font: 87 15pt &quot;Noto Sans HK Black&quot;;
 border-radius: 30px;
 border: 3px solid  #0f433d;</string>
->>>>>>> a87ed6cd01a5b589d8435638296e651dc3eee6fa
+
             </property>
             <property name="text">
              <string>Admin</string>
@@ -156,7 +156,7 @@ border: 3px solid #f6f6e9;</string>
              </size>
             </property>
             <property name="styleSheet">
-<<<<<<< HEAD
+
              <string notr="true">/* Trạng thái bình thường (Giữ nguyên 100% của mày) */
 QPushButton {
     color: #f6f6e9;
