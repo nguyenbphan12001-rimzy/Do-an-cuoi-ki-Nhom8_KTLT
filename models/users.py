@@ -75,8 +75,6 @@ from models.user import User
 
 
 class Users(MyCollections):
-
-    # 📤 EXPORT JSON
     def export_json(self, filename):
         self.filename = filename
         data = {"Datasets": [user.to_dict() for user in self.list]}
@@ -84,35 +82,27 @@ class Users(MyCollections):
         with open(filename, "w", encoding="utf-8") as outfile:
             json.dump(data, outfile, ensure_ascii=False, indent=4)
 
-    # 📥 IMPORT JSON
     def import_json(self, filename):
         self.filename = filename
         self.list.clear()
-
         try:
             with open(filename, encoding="utf-8") as json_file:
                 data = json.load(json_file)
 
                 for item in data.get("Datasets", []):
-                    user = User.from_dict(item)   # 🔥 QUAN TRỌNG
+                    user = User.from_dict(item)
                     self.add_item(user)
-
         except FileNotFoundError:
             print("File không tồn tại")
         except Exception as e:
             print("Lỗi đọc file:", e)
-
-    # 🔍 TÌM USER
     def find_item(self, username):
         for user in self.list:
             if user.username == username:
                 return user
         return None
-
-    # 💾 SAVE / UPDATE USER
     def save_item(self, user):
         exist_user = self.find_item(user.username)
-
         if exist_user is None:
             self.add_item(user)
         else:
@@ -124,14 +114,21 @@ class Users(MyCollections):
             exist_user.status = user.status
 
         self.export_json(self.filename)
-
-    # ❌ XOÁ USER
     def remove_item(self, username):
         user = self.find_item(username)
-
         if user is None:
             return False
-
         self.list.remove(user)
+        self.export_json(self.filename)
+        return True
+
+    #Cập nhật trạng thái thành member
+    def upgrade_to_member(self,username):
+        user=self.find_item(username)
+        if user is None:
+            return False
+        if user.status=="Member":
+            return False
+        user.status="Member"
         self.export_json(self.filename)
         return True

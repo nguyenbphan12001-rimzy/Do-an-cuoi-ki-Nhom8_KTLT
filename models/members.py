@@ -7,36 +7,25 @@ from models.member import Member
 class Members (MyCollections):
     def export_json(self, filename):
         self.filename = filename
-        data = {'Datasets': []}
-        for item in self.list:
-            data['Datasets'].append({
-                'username': item.username,
-                'id': item.id,
-                'phone_number': item.phone_number,
-                'gender': item.gender,
-                'serve':item.serve,
-                'register_date':item.register_date,
-                'expire_date':item.expire_date
-            })
+        data = {'Datasets': [member.to_dict() for member in self.list]}
+
         with open(filename, 'w', encoding='utf-8') as outfile:
             json.dump(data, outfile, ensure_ascii=False, indent=4)
 
     def import_json(self, filename):
         self.filename = filename
         self.list.clear()
-        with open(filename, encoding='utf-8') as json_file:
-            data = json.load(json_file)
-            for item in data['Datasets']:
-                username = item["username"]
-                id=item["id"]
-                phone_number=item["phone_number"]
-                gender=item["gender"]
-                serve=item["serve"]
-                register_date=item["register_date"]
-                expire_date=item["expire_date"]
-                item = Member(username,id,phone_number,gender,serve,register_date,expire_date)
-                self.add_item(item)
+        try:
+            with open(filename, encoding="utf-8") as json_file:
+                data = json.load(json_file)
 
+                for item in data.get("Datasets", []):
+                    member = Member.from_dict(item)
+                    self.add_item(member)
+        except FileNotFoundError:
+            print("File không tồn tại")
+        except Exception as e:
+            print("Lỗi đọc file:", e)
     def find_item(self, itemId):
         item = None
         for it in self.list:
@@ -51,10 +40,9 @@ class Members (MyCollections):
             self.add_item(item)
         else:
             exit_item.username = item.username
-            exit_item.id = item.id
             exit_item.phone_number = item.phone_number
             exit_item.gender = item.gender
-            exit_item.serve=item.serve
+            exit_item.package=item.package
             exit_item.register_date=item.register_date
             exit_item.expire_date=item.expire_date
         self.export_json(self.filename)
