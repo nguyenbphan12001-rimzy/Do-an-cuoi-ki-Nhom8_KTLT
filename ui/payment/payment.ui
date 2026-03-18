@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>798</width>
+    <height>540</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#centralwidget{
+border-image: url(:/pic/payments.png);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QGridLayout" name="gridLayout" rowstretch="2,3,4">
+      <property name="spacing">
+       <number>20</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QGroupBox" name="groupBox_1">
+        <property name="font">
+         <font>
+          <pointsize>22</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(251, 255, 213)
+</string>
+        </property>
+        <property name="title">
+         <string>1. Thông tin khách hàng:</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <property name="horizontalSpacing">
+            <number>10</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>15</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Tên:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>ID:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineEditName">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>18</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: 2px solid #143d3a; /* Màu xanh đậm của header */
+border-radius: 5px;
+padding: 5px;
+background-color: white;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineEditID">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>18</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: 2px solid #143d3a; /* Màu xanh đậm của header */
+border-radius: 5px;
+padding: 5px;
+background-color: white;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="font">
+         <font>
+          <pointsize>22</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(251, 255, 213)</string>
+        </property>
+        <property name="title">
+         <string>2. Dịch vụ đã chọn:</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <property name="horizontalSpacing">
+            <number>10</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>15</number>
+           </property>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Phòng:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineEditTime">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>18</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: 2px solid #143d3a; /* Màu xanh đậm của header */
+border-radius: 5px;
+padding: 5px;
+background-color: white;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="lineEditRoom">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>18</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: 2px solid #143d3a; /* Màu xanh đậm của header */
+border-radius: 5px;
+padding: 5px;
+background-color: white;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineEditPackage">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: 2px solid #143d3a; /* Màu xanh đậm của header */
+border-radius: 5px;
+padding: 5px;
+background-color: white;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Gói tập:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Thời gian:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="1" rowspan="2">
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>22</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(251, 255, 213)</string>
+        </property>
+        <property name="title">
+         <string>3. Thông tin đơn hàng:</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <property name="horizontalSpacing">
+            <number>10</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>20</number>
+           </property>
+           <item row="1" column="1" alignment="Qt::AlignHCenter">
+            <widget class="QRadioButton" name="radioButtonFull">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* 1. Trạng thái bình thường */
+QRadioButton {
+    padding: 10px 25px;
+    border-radius: 18px;
+    border: 2px solid #d1d1d1;
+    background-color: white;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 2. Khi rê chuột vào (Hover) */
+QRadioButton:hover {
+    background-color: #f0fdfa;
+    border-color: #143d3a;
+}
+
+/* 3. Khi được chọn (Checked) */
+QRadioButton:checked {
+    color: white;
+    background-color: #143d3a;
+    border-color: #143d3a;
+}
+
+/* 4. Ẩn cái chấm tròn mặc định */
+QRadioButton::indicator {
+    width: 0px;
+}</string>
+             </property>
+             <property name="text">
+              <string>Trả 100%</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" colspan="2">
+            <widget class="QLabel" name="label_7">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>17</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Phương thức thanh toán:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QCheckBox" name="checkBoxBak">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>18</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* Trạng thái bình thường */
+QCheckBox {
+    spacing: 15px;      /* Khoảng cách giữa ô check và chữ */
+    padding: 10px;      /* Tạo khoảng trống bên trong thẻ */
+    background-color: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+/* Khi di chuột qua (Hover) */
+QCheckBox:hover {
+    border-color: #143d3a;
+    background-color: #f0f7f6;
+}
+
+/* Khi được TÍCH CHỌN (Quan trọng nhất) */
+QCheckBox:checked {
+    border: 2px solid #143d3a;
+    background-color: #e8f2f1;
+}
+
+/* Ẩn cái ô vuông mặc định đi để nhìn cho sạch (Tùy chọn) */
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+}</string>
+             </property>
+             <property name="text">
+              <string>Ngân hàng</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../images/bank.jpg</normaloff>../../images/bank.jpg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>60</width>
+               <height>60</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" alignment="Qt::AlignHCenter">
+            <widget class="QRadioButton" name="radioButtonHalf">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* 1. Trạng thái bình thường */
+QRadioButton {
+    padding: 10px 25px;
+    border-radius: 18px;
+    border: 2px solid #d1d1d1;
+    background-color: white;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 2. Khi rê chuột vào (Hover) */
+QRadioButton:hover {
+    background-color: #f0fdfa;
+    border-color: #143d3a;
+}
+
+/* 3. Khi được chọn (Checked) */
+QRadioButton:checked {
+    color: white;
+    background-color: #143d3a;
+    border-color: #143d3a;
+}
+
+/* 4. Ẩn cái chấm tròn mặc định */
+QRadioButton::indicator {
+    width: 0px;
+}</string>
+             </property>
+             <property name="text">
+              <string> Cọc 50%</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="2">
+            <widget class="QCheckBox" name="checkBoxCard">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>18</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* Trạng thái bình thường */
+QCheckBox {
+    spacing: 15px;      /* Khoảng cách giữa ô check và chữ */
+    padding: 10px;      /* Tạo khoảng trống bên trong thẻ */
+    background-color: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+/* Khi di chuột qua (Hover) */
+QCheckBox:hover {
+    border-color: #143d3a;
+    background-color: #f0f7f6;
+}
+
+/* Khi được TÍCH CHỌN (Quan trọng nhất) */
+QCheckBox:checked {
+    border: 2px solid #143d3a;
+    background-color: #e8f2f1;
+}
+
+/* Ẩn cái ô vuông mặc định đi để nhìn cho sạch (Tùy chọn) */
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+}</string>
+             </property>
+             <property name="text">
+              <string>Thẻ tín dụng</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../images/visa.png</normaloff>../../images/visa.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>60</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="2">
+            <widget class="QLabel" name="label_8">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>22</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>4. Chi tiết thanh toán(VND):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0" colspan="2">
+            <widget class="QPushButton" name="pushButtonCofirm">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: #143d3a;    
+    color: white;                 
+    /* CÀI ĐẶT BO TRÒN Ở ĐÂY */
+    border-radius: 20px;          /* Số này càng lớn thì càng tròn */
+    border: 2px solid #143d3a;    /* Thêm viền để định hình rõ hơn */
+    
+    font-weight: bold;
+    font-size: 18px;              /* Chỉnh cho chữ to lên như bạn muốn */
+    padding: 10px;                /* Tạo khoảng trống cho chữ thở */
+}
+
+/* Hiệu ứng khi rê chuột */
+QPushButton:hover {
+    background-color: #1a524e;
+    border-color: #1a524e;
+}
+
+/* Hiệu ứng khi nhấn (lún xuống) */
+QPushButton:pressed {
+    background-color: #0d2927;
+    padding-top: 12px; 
+}</string>
+             </property>
+             <property name="text">
+              <string>Xác nhận</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0" colspan="2">
+            <widget class="QLineEdit" name="lineEditTotalMoney">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>17</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: 2px solid #143d3a; /* Màu xanh đậm của header */
+border-radius: 5px;
+padding: 5px;
+background-color: white;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>798</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="../../images/images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
