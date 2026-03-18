@@ -89,6 +89,15 @@
             "email": "ducanh@gmail.com",
             "gender": "M",
             "status": "Không"
+        },
+        {
+            "username": "Phan Trần Gia Nguyên",
+            "email": "nguyen@gmail.com",
+            "phone_number": "0909090909",
+            "password": "nguyen123",
+            "role": "user",
+            "gender": "M",
+            "status": "Không"
         }
     ]
 }
