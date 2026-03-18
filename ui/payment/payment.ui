@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>798</width>
-    <height>540</height>
+    <width>1467</width>
+    <height>649</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -77,7 +77,7 @@ border-image: url(:/pic/payments.png);
               </font>
              </property>
              <property name="text">
-              <string>ID:</string>
+              <string>SĐT:</string>
              </property>
             </widget>
            </item>
@@ -626,7 +626,7 @@ background-color: white;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>798</width>
+     <width>1467</width>
      <height>21</height>
     </rect>
    </property>
