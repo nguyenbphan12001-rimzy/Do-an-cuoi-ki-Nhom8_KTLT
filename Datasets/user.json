@@ -91,21 +91,12 @@
             "status": "Không"
         },
         {
-            "username": "hắc bang",
-            "email": "hb@gmail.com",
-            "phone_number": "1234568790",
-            "password": "hb123",
+            "username": "Phan Trần Gia Nguyên",
+            "email": "nguyen@gmail.com",
+            "phone_number": "0909090909",
+            "password": "nguyen123",
             "role": "user",
             "gender": "M",
-            "status": "Không"
-        },
-        {
-            "username": "hoàng mai",
-            "email": "hoangmai@gmail.com",
-            "phone_number": "2389403289",
-            "password": "hm123",
-            "role": "user",
-            "gender": "F",
             "status": "Không"
         }
     ]

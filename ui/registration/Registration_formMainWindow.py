@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Nam1\KTLT\DoAn\ui\registration\Registration_formMainWindow.ui'
+# Form implementation generated from reading ui file 'Registration_formMainWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
         self.label_2.setSizePolicy(sizePolicy)
         self.label_2.setMaximumSize(QtCore.QSize(300, 100))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("D:\\Nam1\\KTLT\\DoAn\\ui\\registration\\../../images/fit lifestyle.jpg"))
+        self.label_2.setPixmap(QtGui.QPixmap("../../images/fit lifestyle.jpg"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.horizontalLayout.addWidget(self.label_2)
@@ -43,7 +43,6 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setBold(True)
-        font.setWeight(75)
         self.label.setFont(font)
         self.label.setStyleSheet("background-color: #2d5a52;\n"
 "color: white;\n"
@@ -59,7 +58,7 @@ class Ui_MainWindow(object):
         self.label_3 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_3.setMaximumSize(QtCore.QSize(300, 100))
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("D:\\Nam1\\KTLT\\DoAn\\ui\\registration\\../../images/logofacebook.jpg"))
+        self.label_3.setPixmap(QtGui.QPixmap("../../images/logofacebook.jpg"))
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
         self.horizontalLayout.addWidget(self.label_3)
@@ -71,7 +70,7 @@ class Ui_MainWindow(object):
         self.label_4 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_4.setMaximumSize(QtCore.QSize(16777215, 150))
         self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("D:\\Nam1\\KTLT\\DoAn\\ui\\registration\\../../images/muitenlogo.jpg"))
+        self.label_4.setPixmap(QtGui.QPixmap("../../images/muitenlogo.jpg"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
         self.verticalLayout_3.addWidget(self.label_4)
@@ -139,7 +138,7 @@ class Ui_MainWindow(object):
         self.label_6 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_6.setMaximumSize(QtCore.QSize(16777215, 150))
         self.label_6.setText("")
-        self.label_6.setPixmap(QtGui.QPixmap("D:\\Nam1\\KTLT\\DoAn\\ui\\registration\\../../images/muitenlogo.jpg"))
+        self.label_6.setPixmap(QtGui.QPixmap("../../images/muitenlogo.jpg"))
         self.label_6.setScaledContents(True)
         self.label_6.setObjectName("label_6")
         self.verticalLayout.addWidget(self.label_6)
@@ -271,7 +270,7 @@ class Ui_MainWindow(object):
         self.label_8 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_8.setMaximumSize(QtCore.QSize(16777215, 150))
         self.label_8.setText("")
-        self.label_8.setPixmap(QtGui.QPixmap("D:\\Nam1\\KTLT\\DoAn\\ui\\registration\\../../images/muitenlogo.jpg"))
+        self.label_8.setPixmap(QtGui.QPixmap("../../images/muitenlogo.jpg"))
         self.label_8.setScaledContents(True)
         self.label_8.setObjectName("label_8")
         self.verticalLayout_2.addWidget(self.label_8)
