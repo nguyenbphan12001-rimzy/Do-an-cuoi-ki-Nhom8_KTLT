@@ -67,7 +67,6 @@ background-image:rgb(0,255,255);}</string>
              </size>
             </property>
             <property name="styleSheet">
-
              <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
 QPushButton {
     color: #0f433d;
@@ -90,13 +89,6 @@ QPushButton:pressed {
     border: 3px solid #0a2e2a; /* Viền cũng tối theo */
     color: #f6f6e9;
 }</string>
-=======
-             <string notr="true">color:#0f433d;
-background-color: #f6f6e9;
-font: 87 15pt &quot;Noto Sans HK Black&quot;;
-border-radius: 30px;
-border: 3px solid  #0f433d;</string>
-
             </property>
             <property name="text">
              <string>Admin</string>
@@ -124,11 +116,28 @@ border: 3px solid  #0f433d;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">color:#0f433d;
-background-color: rgb(165, 185, 172);
-font: 87 15pt &quot;Noto Sans HK Black&quot;;
-border-radius: 30px;
-border: 3px solid #f6f6e9;</string>
+             <string notr="true">
+QPushButton {
+    color: #0f433d;
+    background-color:  rgb(165, 185, 172);
+    font: 87 20pt &quot;Noto Sans HK Black&quot;;
+    border-radius: 30px;
+    border: 3px solid #f6f6e9
+}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
             </property>
             <property name="text">
              <string>Member</string>
@@ -156,7 +165,6 @@ border: 3px solid #f6f6e9;</string>
              </size>
             </property>
             <property name="styleSheet">
-
              <string notr="true">/* Trạng thái bình thường (Giữ nguyên 100% của mày) */
 QPushButton {
     color: #f6f6e9;
@@ -177,13 +185,6 @@ QPushButton:pressed {
     background-color: #0a2e2a; /* Nền tối đi khi bấm */
     border: 3px solid #3d5e5b; /* Viền tối đi */
 }</string>
-=======
-             <string notr="true">color:#f6f6e9;
-background-color: #0f433d;
-font: 87 15pt &quot;Noto Sans HK Black&quot;;
-border-radius: 30px;
-border: 3px solid  #58827d;</string>
->>>>>>> a87ed6cd01a5b589d8435638296e651dc3eee6fa
             </property>
             <property name="text">
              <string>Exit</string>
