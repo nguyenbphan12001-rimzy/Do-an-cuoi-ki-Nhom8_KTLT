@@ -89,6 +89,15 @@
             "email": "ducanh@gmail.com",
             "gender": "M",
             "status": "Không"
+        },
+        {
+            "username": "hắc bang",
+            "email": "hb@gmail.com",
+            "phone_number": "1234568790",
+            "password": "hb123",
+            "role": "user",
+            "gender": "M",
+            "status": "Không"
         }
     ]
 }
