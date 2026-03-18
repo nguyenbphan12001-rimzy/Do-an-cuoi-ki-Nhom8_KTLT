@@ -16,3 +16,4 @@ class PaymentEx(Ui_MainWindow):
         self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
     def showWindow(self):
         self.MainWindow.show()
+
