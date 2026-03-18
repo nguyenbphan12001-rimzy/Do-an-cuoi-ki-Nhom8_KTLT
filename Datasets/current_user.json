@@ -1,9 +1,9 @@
 {
-    "username": "kngan",
-    "email": "kngan@gmail.com",
-    "phone_number": "0124689999",
-    "password": "123",
+    "username": "Phan Trần Gia Nguyên",
+    "email": "nguyen@gmail.com",
+    "phone_number": "0909090909",
+    "password": "nguyen123",
     "role": "user",
-    "gender": "F",
+    "gender": "M",
     "status": "Không"
 }

@@ -25,5 +25,14 @@
         "total_paid": "350,000 VNĐ",
         "payment_method": "Ngân hàng",
         "booking_time": "18/03/2026 18:49:12"
+    },
+    {
+        "customer_name": "Phan Trần Gia Nguyên",
+        "phone": "0909090909",
+        "package_details": "Gói: Tự do (HLV: Lý Trọng Bằng (Tự do)) - Không gian chung",
+        "time": "7h - 9h ngày 18/03/2026",
+        "total_paid": "700,000 VNĐ",
+        "payment_method": "Ngân hàng",
+        "payment_time": "18/03/2026 19:56:07"
     }
 ]

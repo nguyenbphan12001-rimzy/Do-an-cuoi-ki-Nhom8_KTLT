@@ -4,7 +4,6 @@ from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from ui.payment.payment import Ui_MainWindow
 
 
-
 class PaymentEx(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
@@ -34,14 +33,8 @@ class PaymentEx(Ui_MainWindow):
     def load_user_data(self):
         """Đọc file session bằng cách tìm thư mục gốc của Project"""
         try:
-            # 1. Lấy đường dẫn của file paymentEx.py đang chạy
             current_file_path = os.path.abspath(__file__)
-
-            # 2. Tìm thư mục "DO AN KTLT" trong đường dẫn đó
-            # Code này sẽ cắt chuỗi để lấy phần đường dẫn đến hết "DO AN KTLT"
             project_root = current_file_path.split("ui")[0]
-
-            # 3. Kết hợp với thư mục datasets
             file_path = os.path.join(project_root, "datasets", "current_user.json")
 
             print(f"--- Payment đang đọc session tại: {file_path}")
@@ -65,35 +58,26 @@ class PaymentEx(Ui_MainWindow):
             print(f"❌ Lỗi: {e}")
 
     def set_payment_info(self, ten_goi, gia):
-        self.loai_thanh_toan = "membership"
         """Nhận dữ liệu từ màn hình Đăng ký truyền sang"""
+        self.loai_thanh_toan = "membership"
         self.original_price = gia
         self.lineEditPackage.setText(ten_goi)
         self.lineEditTime.setText("Theo gói đã chọn")
-
-        # Mặc định ban đầu
         self.radioButtonFull.setChecked(True)
         self.update_price_display()
-
-        # GỌI HÀM NẠP DỮ LIỆU TỪ SESSION
         self.load_user_data()
+
     def set_booking_info(self, goi_tap, thoi_gian, phong, gia):
-        self.loai_thanh_toan = "booking"
         """Nhận dữ liệu chi tiết từ màn hình Đặt lịch truyền sang"""
+        self.loai_thanh_toan = "booking"
         self.original_price = gia
         self.room_name = phong
 
-        # Vì form Payment không có ô chứa Phòng riêng, ta gộp nó vào tên Gói tập hiển thị cho đẹp
         goi_tap_kem_phong = f"{goi_tap} - {phong}"
-
         self.lineEditPackage.setText(goi_tap_kem_phong)
         self.lineEditTime.setText(thoi_gian)
-
-        # Mặc định ban đầu chọn Trả 100%
         self.radioButtonFull.setChecked(True)
         self.update_price_display()
-
-        # Tự động nạp dữ liệu user
         self.load_user_data()
 
     def update_price_display(self):
@@ -102,7 +86,6 @@ class PaymentEx(Ui_MainWindow):
             current_price = self.original_price / 2
         else:
             current_price = self.original_price
-
         self.lineEditTotalMoney.setText(f"{int(current_price):,} VNĐ")
 
     def handle_payment_selection(self, selected_type):
@@ -116,14 +99,13 @@ class PaymentEx(Ui_MainWindow):
 
     def process_confirm(self):
         """Xử lý khi nhấn nút Xác nhận thanh toán và Lưu JSON"""
-        from datetime import datetime
+        from datetime import datetime, timedelta
 
         ten = self.lineEditName.text().strip()
         sdt = ""
         if hasattr(self, 'lineEditID'):
             sdt = self.lineEditID.text().strip()
 
-        # Kiểm tra xem đã chọn phương thức thanh toán chưa
         if not self.checkBoxBak.isChecked() and not self.checkBoxCard.isChecked():
             QMessageBox.warning(self.MainWindow, "Thông báo", "Vui lòng chọn phương thức thanh toán!")
             return
@@ -132,10 +114,9 @@ class PaymentEx(Ui_MainWindow):
             QMessageBox.warning(self.MainWindow, "Thông báo", "Thiếu thông tin khách hàng!")
             return
 
-        # Thông báo thành công chi tiết
         phuong_thuc = "Ngân hàng" if self.checkBoxBak.isChecked() else "Thẻ tín dụng"
 
-        # Dữ liệu chung cho cả 2 hóa đơn
+        # Dữ liệu chung dùng cho Booking
         bill_data = {
             "customer_name": ten,
             "phone": sdt,
@@ -146,14 +127,13 @@ class PaymentEx(Ui_MainWindow):
             "payment_time": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         }
 
-        # Đường dẫn thư mục
         current_file_path = os.path.abspath(__file__)
         project_root = current_file_path.split("ui")[0]
         datasets_dir = os.path.join(project_root, "datasets")
 
-        # 👉 XỬ LÝ RẼ NHÁNH TẠI ĐÂY
+        # 👉 XỬ LÝ THEO CỜ ĐÁNH DẤU
         if getattr(self, 'loai_thanh_toan', 'booking') == "booking":
-            # 1. LƯU VÀO BOOKING_HISTORY
+            # 1. LƯU VÀO BOOKING_HISTORY.JSON
             history_file = os.path.join(datasets_dir, "booking_history.json")
             history_list = []
             if os.path.exists(history_file):
@@ -167,7 +147,7 @@ class PaymentEx(Ui_MainWindow):
             with open(history_file, 'w', encoding='utf-8') as f:
                 json.dump(history_list, f, indent=4, ensure_ascii=False)
 
-            # 2. CẬP NHẬT PHÒNG
+            # 2. CẬP NHẬT ROOM.JSON
             if hasattr(self, 'room_name') and self.room_name:
                 room_file = os.path.join(datasets_dir, "room.json")
                 if os.path.exists(room_file):
@@ -184,24 +164,65 @@ class PaymentEx(Ui_MainWindow):
                         pass
 
         elif self.loai_thanh_toan == "membership":
-            # 👉 NẾU LÀ MUA GÓI HỘI VIÊN THÌ LƯU VÀO FILE KHÁC (VD: membership_history.json)
-            member_file = os.path.join(datasets_dir, "membership_history.json")
-            member_list = []
+            # 👉 TẠO VÀ LƯU HỘI VIÊN MỚI VÀO MEMBER.JSON
+            member_file = os.path.join(datasets_dir, "member.json")
+            member_data = {"Datasets": []}
+
             if os.path.exists(member_file):
                 try:
                     with open(member_file, 'r', encoding='utf-8') as f:
-                        member_list = json.load(f)
-                except Exception:
+                        member_data = json.load(f)
+                except Exception as e:
+                    print("Lỗi đọc file member.json:", e)
+
+            ds_hoi_vien = member_data.get("Datasets", [])
+
+            # Tự động tăng ID
+            new_id_num = 1
+            if len(ds_hoi_vien) > 0:
+                last_id_str = ds_hoi_vien[-1].get("id", "000")
+                try:
+                    new_id_num = int(last_id_str) + 1
+                except ValueError:
                     pass
+            new_id = f"{new_id_num:03d}"
 
-            member_list.append(bill_data)
+            # Tính ngày
+            ngay_dang_ky = datetime.now()
+            ten_goi_tap = self.lineEditPackage.text()
+
+            if "2 tuần" in ten_goi_tap:
+                ngay_het_han = ngay_dang_ky + timedelta(days=14)
+            elif "1 tháng" in ten_goi_tap:
+                ngay_het_han = ngay_dang_ky + timedelta(days=30)
+            elif "3 tháng" in ten_goi_tap:
+                ngay_het_han = ngay_dang_ky + timedelta(days=90)
+            elif "6 tháng" in ten_goi_tap:
+                ngay_het_han = ngay_dang_ky + timedelta(days=180)
+            elif "1 năm" in ten_goi_tap:
+                ngay_het_han = ngay_dang_ky + timedelta(days=365)
+            else:
+                ngay_het_han = ngay_dang_ky
+
+            # Tạo dữ liệu chuẩn
+            new_member = {
+                "username": ten,
+                "id": new_id,
+                "phone_number": sdt,
+                "gender": "Unknown",  # Hoặc lấy giới tính thực nếu user.json có lưu
+                "serve": ten_goi_tap,
+                "register_date": ngay_dang_ky.strftime("%d/%m/%Y"),
+                "expire_date": ngay_het_han.strftime("%d/%m/%Y")
+            }
+
+            # Lưu file
+            ds_hoi_vien.append(new_member)
+            member_data["Datasets"] = ds_hoi_vien
             with open(member_file, 'w', encoding='utf-8') as f:
-                json.dump(member_list, f, indent=4, ensure_ascii=False)
+                json.dump(member_data, f, indent=4, ensure_ascii=False)
 
-            # (Tùy chọn: Sau này mày có thể viết thêm code update cột 'status' của user trong users.json ở đây)
-
-        # Chuyển trang
-        QMessageBox.information(self.MainWindow, "Thành công", "Thanh toán thành công!")
+        # Thông báo và chuyển trang
+        QMessageBox.information(self.MainWindow, "Thành công", "Thanh toán và lưu hệ thống thành công!")
         self.mo_man_hinh_confirm()
 
     def mo_man_hinh_confirm(self):
@@ -211,8 +232,6 @@ class PaymentEx(Ui_MainWindow):
         self.confirm_ui.setupUi(self.confirm_window)
         self.confirm_ui.showWindow()
         self.MainWindow.hide()
-
-
 
     def showWindow(self):
         """Hiển thị full màn hình"""
