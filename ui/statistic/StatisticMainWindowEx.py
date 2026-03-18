@@ -15,7 +15,6 @@ class StatisticMainWindowEx(Ui_MainWindow):
     def __init__(self):
         pass
 
-    print("SETUP UI CALLED")
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
@@ -24,11 +23,29 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.pushButtonTKdoanhthu.clicked.connect(self.show_doanhthu)
         self.pushButtonTKluongkhach.clicked.connect(self.show_luongkhach)
         self.pushButtonBack.clicked.connect(self.process_back)
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "Thongke.png")).replace(
-            "\\", "/")
 
-        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        img_path = os.path.abspath(os.path.join(current_dir, "../../images/Thongke.png")).replace("\\", "/")
+
+        self.MainWindow.setStyleSheet(f"""
+            QMainWindow {{
+                border-image: url({img_path}) 0 0 0 0 stretch stretch;
+            }}
+            #centralwidget, #widget, #widget_2, #widget_3, #groupBox, #verticalLayoutChart {{
+                background-color: transparent !important;
+                border: none;
+            }}
+            /* Giữ màu cho các nút bấm */
+            QPushButton {{
+                background-color: rgb(203, 221, 209);
+                border-radius: 15px;
+                border: 3px solid #58827d;
+            }}
+            QPushButton#pushButtonBack {{
+                background-color: rgb(24, 78, 73);
+                color: white;
+            }}
+        """)
 
     def show(self):
         self.MainWindow.show()
@@ -41,12 +58,8 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.verticalLayoutChart.addWidget(self.canvas)
 
     def show_goitap(self):
-
         base_dir = os.path.dirname(__file__)
         file_path = os.path.join(base_dir, '../../Datasets/pie_data.csv')
-        print("PATH:", file_path)
-        print("EXIST:", os.path.exists(file_path))
-
         df = pd.read_csv(file_path)
         self.figure.clear()
         ax = self.figure.add_subplot(111)
@@ -60,18 +73,13 @@ class StatisticMainWindowEx(Ui_MainWindow):
     def show_luongkhach(self):
         base_dir = os.path.dirname(__file__)
         file_path = os.path.join(base_dir, '../../Datasets/line_data.csv')
-
         df = pd.read_csv(file_path)
-
         self.figure.clear()
         self.figure.set_facecolor('#cbddd1')
-
         ax = self.figure.add_subplot(111)
         ax.set_facecolor('#eaf4ef')
-
         ax.ticklabel_format(useOffset=False, style="plain")
         ax.grid()
-
         sns.lineplot(
             ax=ax,
             data=df,
@@ -92,26 +100,18 @@ class StatisticMainWindowEx(Ui_MainWindow):
         base_dir = os.path.dirname(__file__)
         file_path = os.path.join(base_dir, '../../Datasets/bar_data.csv')
         df = pd.read_csv(file_path)
-
         self.figure.clear()
         self.figure.set_facecolor('#cbddd1')
-
         ax = self.figure.add_subplot(111)
         ax.set_facecolor('#eaf4ef')
-
         ax.bar(df["Tháng"], df["triệu đồng"], color='tab:blue')
-
         ax.set_xticks(range(1, 13))
-
         ax.set_title("Doanh thu năm 2025", fontsize=12, fontweight='bold')
         ax.set_xlabel("Tháng", fontsize=10)
         ax.set_ylabel("Triệu đồng", fontsize=10)
-
         ax.ticklabel_format(useOffset=False, style="plain", axis='y')
         ax.grid(axis='y', linestyle='--', alpha=0.7)
-
         self.figure.tight_layout()
-
         self.canvas.draw()
 
     def process_back(self):

@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from ui.payment.payment import Ui_MainWindow
 
 
+
 class PaymentEx(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
@@ -64,6 +65,7 @@ class PaymentEx(Ui_MainWindow):
             print(f"❌ Lỗi: {e}")
 
     def set_payment_info(self, ten_goi, gia):
+        self.loai_thanh_toan = "membership"
         """Nhận dữ liệu từ màn hình Đăng ký truyền sang"""
         self.original_price = gia
         self.lineEditPackage.setText(ten_goi)
@@ -74,6 +76,24 @@ class PaymentEx(Ui_MainWindow):
         self.update_price_display()
 
         # GỌI HÀM NẠP DỮ LIỆU TỪ SESSION
+        self.load_user_data()
+    def set_booking_info(self, goi_tap, thoi_gian, phong, gia):
+        self.loai_thanh_toan = "booking"
+        """Nhận dữ liệu chi tiết từ màn hình Đặt lịch truyền sang"""
+        self.original_price = gia
+        self.room_name = phong
+
+        # Vì form Payment không có ô chứa Phòng riêng, ta gộp nó vào tên Gói tập hiển thị cho đẹp
+        goi_tap_kem_phong = f"{goi_tap} - {phong}"
+
+        self.lineEditPackage.setText(goi_tap_kem_phong)
+        self.lineEditTime.setText(thoi_gian)
+
+        # Mặc định ban đầu chọn Trả 100%
+        self.radioButtonFull.setChecked(True)
+        self.update_price_display()
+
+        # Tự động nạp dữ liệu user
         self.load_user_data()
 
     def update_price_display(self):
@@ -95,13 +115,15 @@ class PaymentEx(Ui_MainWindow):
                 self.checkBoxBak.setChecked(False)
 
     def process_confirm(self):
-        """Xử lý: Hiện thông báo nhỏ trước -> Nhấn OK -> Hiện màn hình Confirm bự"""
+        """Xử lý khi nhấn nút Xác nhận thanh toán và Lưu JSON"""
+        from datetime import datetime
+
         ten = self.lineEditName.text().strip()
         sdt = ""
         if hasattr(self, 'lineEditID'):
             sdt = self.lineEditID.text().strip()
 
-        # 1. Kiểm tra điều kiện (Validate)
+        # Kiểm tra xem đã chọn phương thức thanh toán chưa
         if not self.checkBoxBak.isChecked() and not self.checkBoxCard.isChecked():
             QMessageBox.warning(self.MainWindow, "Thông báo", "Vui lòng chọn phương thức thanh toán!")
             return
@@ -110,30 +132,87 @@ class PaymentEx(Ui_MainWindow):
             QMessageBox.warning(self.MainWindow, "Thông báo", "Thiếu thông tin khách hàng!")
             return
 
-        # 2. Hiển thị thông báo nhỏ (Hộp thoại xác nhận)
+        # Thông báo thành công chi tiết
         phuong_thuc = "Ngân hàng" if self.checkBoxBak.isChecked() else "Thẻ tín dụng"
-        msg = f"Khách hàng: {ten}\nSĐT: {sdt}\nGói: {self.lineEditPackage.text()}\nThanh toán thành công qua {phuong_thuc}!"
 
-        # Dòng này sẽ làm app dừng lại đợi bạn nhấn OK
-        QMessageBox.information(self.MainWindow, "Thành công", msg)
+        # Dữ liệu chung cho cả 2 hóa đơn
+        bill_data = {
+            "customer_name": ten,
+            "phone": sdt,
+            "package_details": self.lineEditPackage.text(),
+            "time": self.lineEditTime.text(),
+            "total_paid": self.lineEditTotalMoney.text(),
+            "payment_method": phuong_thuc,
+            "payment_time": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        }
 
-        # 3. Sau khi nhấn OK, đoạn code dưới đây mới chạy để mở màn hình Confirm bự
-        try:
-            from ui.confirm.ConfirmEx import ConfirmEx  # Import tại đây để tránh vòng lặp import
+        # Đường dẫn thư mục
+        current_file_path = os.path.abspath(__file__)
+        project_root = current_file_path.split("ui")[0]
+        datasets_dir = os.path.join(project_root, "datasets")
 
-            self.confirm_window = QMainWindow()
-            self.confirm_ui = ConfirmEx()
-            self.confirm_ui.setupUi(self.confirm_window)
+        # 👉 XỬ LÝ RẼ NHÁNH TẠI ĐÂY
+        if getattr(self, 'loai_thanh_toan', 'booking') == "booking":
+            # 1. LƯU VÀO BOOKING_HISTORY
+            history_file = os.path.join(datasets_dir, "booking_history.json")
+            history_list = []
+            if os.path.exists(history_file):
+                try:
+                    with open(history_file, 'r', encoding='utf-8') as f:
+                        history_list = json.load(f)
+                except Exception:
+                    pass
 
-            # Hiển thị màn hình confirm bự
-            self.confirm_ui.showWindow()
+            history_list.append(bill_data)
+            with open(history_file, 'w', encoding='utf-8') as f:
+                json.dump(history_list, f, indent=4, ensure_ascii=False)
 
-            # Xóa màn hình thanh toán
-            self.MainWindow.close()
+            # 2. CẬP NHẬT PHÒNG
+            if hasattr(self, 'room_name') and self.room_name:
+                room_file = os.path.join(datasets_dir, "room.json")
+                if os.path.exists(room_file):
+                    try:
+                        with open(room_file, 'r', encoding='utf-8') as f:
+                            rooms = json.load(f)
+                        for r in rooms:
+                            if r.get("name") == self.room_name:
+                                r["current_user"] = r.get("current_user", 0) + 1
+                                break
+                        with open(room_file, 'w', encoding='utf-8') as f:
+                            json.dump(rooms, f, indent=4, ensure_ascii=False)
+                    except Exception:
+                        pass
 
-            print("--- Đã chuyển sang màn hình Confirm sau khi nhấn OK")
-        except Exception as e:
-            print(f"Lỗi chuyển màn hình: {e}")
+        elif self.loai_thanh_toan == "membership":
+            # 👉 NẾU LÀ MUA GÓI HỘI VIÊN THÌ LƯU VÀO FILE KHÁC (VD: membership_history.json)
+            member_file = os.path.join(datasets_dir, "membership_history.json")
+            member_list = []
+            if os.path.exists(member_file):
+                try:
+                    with open(member_file, 'r', encoding='utf-8') as f:
+                        member_list = json.load(f)
+                except Exception:
+                    pass
+
+            member_list.append(bill_data)
+            with open(member_file, 'w', encoding='utf-8') as f:
+                json.dump(member_list, f, indent=4, ensure_ascii=False)
+
+            # (Tùy chọn: Sau này mày có thể viết thêm code update cột 'status' của user trong users.json ở đây)
+
+        # Chuyển trang
+        QMessageBox.information(self.MainWindow, "Thành công", "Thanh toán thành công!")
+        self.mo_man_hinh_confirm()
+
+    def mo_man_hinh_confirm(self):
+        from ui.confirm.ConfirmEx import ConfirmEx
+        self.confirm_window = QMainWindow()
+        self.confirm_ui = ConfirmEx()
+        self.confirm_ui.setupUi(self.confirm_window)
+        self.confirm_ui.showWindow()
+        self.MainWindow.hide()
+
+
 
     def showWindow(self):
         """Hiển thị full màn hình"""
