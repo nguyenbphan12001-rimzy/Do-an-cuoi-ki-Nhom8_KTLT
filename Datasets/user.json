@@ -98,6 +98,15 @@
             "role": "user",
             "gender": "M",
             "status": "Không"
+        },
+        {
+            "username": "hoàng mai",
+            "email": "hoangmai@gmail.com",
+            "phone_number": "2389403289",
+            "password": "hm123",
+            "role": "user",
+            "gender": "F",
+            "status": "Không"
         }
     ]
 }

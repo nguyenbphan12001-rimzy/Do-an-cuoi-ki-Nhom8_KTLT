@@ -54,11 +54,11 @@ class SignUpEx(Ui_MainWindow):
 
         # kiểm tra số điện thoại
         if not phone.isdigit():
-            QMessageBox.warning(self.MainWindow, "Error", "Phone number must contain only digits")
+            QMessageBox.warning(self.MainWindow, "Error", "SDT phải bao gồm 10 số")
             return
 
         if len(phone) != 10:
-            QMessageBox.warning(self.MainWindow, "Error", "Phone number must be exactly 10 digits")
+            QMessageBox.warning(self.MainWindow, "Error", "SDT phải bao gồm 10 số")
             return
 
         if self.radioButtonMale.isChecked():
