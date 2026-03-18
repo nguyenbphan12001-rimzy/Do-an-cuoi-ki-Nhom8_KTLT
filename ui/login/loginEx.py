@@ -13,6 +13,12 @@ class LoginEx(Ui_MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
 
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+
+        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "login.png")).replace("\\", "/")
+
+        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
+
         self.pushButtonSignUp.clicked.connect(self.open_signup)
         self.pushButtonLogin.clicked.connect(self.handle_login)
         self.pushButtonForgetPassword.clicked.connect(self.forget_password)
