@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="pic">
+    <file>payments.png</file>
     <file>signup.png</file>
     <file>hoivien_anh(update).jpg</file>
     <file>login.png</file>
@@ -8,5 +9,6 @@
     <file>Home.png</file>
     <file>Dashboard.png</file>
     <file>Payment.png</file>
+    <file>payments.png</file>
   </qresource>
 </RCC>

@@ -12,6 +12,8 @@ class LoginEx(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
+        self.SetupSignalAndSlot()
+
 
         current_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -26,6 +28,15 @@ class LoginEx(Ui_MainWindow):
         # 📂 PATH JSON
         BASE_DIR = os.path.dirname(os.path.abspath(__file__))
         self.file_path = os.path.join(BASE_DIR, "../../datasets/user.json")
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+
+        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "login.png")).replace("\\", "/")
+
+        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
+    def SetupSignalAndSlot(self):
+        self.pushButtonSignUp.clicked.connect(self.open_signup)
+        self.pushButtonLogin.clicked.connect(self.handle_login)
+        self.pushButtonForgetPassword.clicked.connect(self.forget_password)
     def showWindow(self):
         self.MainWindow.show()
 
@@ -52,7 +63,7 @@ class LoginEx(Ui_MainWindow):
         # 👉 truyền dữ liệu nếu muốn
         self.dashboard_window.setWindowTitle(f"Dashboard - {username} ({role})")
 
-        self.dashboard_window.show()
+        self.dashboard_window.showMaximized()
         self.MainWindow.hide()
     def handle_login(self):
         username = self.lineEditUsername.text().strip()

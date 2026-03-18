@@ -39,9 +39,6 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/admin.png);
       </property>
       <item row="2" column="1">
        <spacer name="verticalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
@@ -59,11 +56,8 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/admin.png);
       </item>
       <item row="1" column="2">
        <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
         <property name="sizeType">
-         <enum>QSizePolicy::Expanding</enum>
+         <enum>QSizePolicy::Fixed</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -75,9 +69,6 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/admin.png);
       </item>
       <item row="1" column="0">
        <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
@@ -88,9 +79,6 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/admin.png);
       </item>
       <item row="0" column="1">
        <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
         <property name="sizeHint" stdset="0">
          <size>
           <width>10</width>
@@ -126,7 +114,7 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/admin.png);
             </property>
             <property name="font">
              <font>
-              <pointsize>10</pointsize>
+              <pointsize>15</pointsize>
              </font>
             </property>
             <property name="text">
@@ -144,7 +132,7 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/admin.png);
             </property>
             <property name="font">
              <font>
-              <pointsize>10</pointsize>
+              <pointsize>15</pointsize>
              </font>
             </property>
             <property name="text">
@@ -162,13 +150,18 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/admin.png);
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
          </widget>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label_10">
           <property name="font">
            <font>
-            <pointsize>10</pointsize>
+            <pointsize>14</pointsize>
            </font>
           </property>
           <property name="text">
@@ -184,13 +177,18 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/admin.png);
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
          </widget>
         </item>
         <item row="3" column="0">
          <widget class="QLabel" name="label_11">
           <property name="font">
            <font>
-            <pointsize>10</pointsize>
+            <pointsize>14</pointsize>
            </font>
           </property>
           <property name="text">
@@ -202,7 +200,7 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/admin.png);
          <widget class="QLabel" name="label_12">
           <property name="font">
            <font>
-            <pointsize>10</pointsize>
+            <pointsize>14</pointsize>
            </font>
           </property>
           <property name="text">
@@ -218,6 +216,11 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/admin.png);
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
           <property name="styleSheet">
            <string notr="true"/>
           </property>
@@ -227,7 +230,7 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/admin.png);
          <widget class="QLabel" name="label_9">
           <property name="font">
            <font>
-            <pointsize>10</pointsize>
+            <pointsize>14</pointsize>
            </font>
           </property>
           <property name="text">
@@ -239,7 +242,7 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/admin.png);
          <widget class="QLabel" name="label_8">
           <property name="font">
            <font>
-            <pointsize>10</pointsize>
+            <pointsize>14</pointsize>
            </font>
           </property>
           <property name="text">
@@ -254,6 +257,11 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/admin.png);
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
           </property>
          </widget>
         </item>

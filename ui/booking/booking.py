@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1371, 871)
+        MainWindow.resize(1466, 871)
         MainWindow.setStyleSheet("QMainWindow{border-image:url(:/images/Booking.png);background-image:rbg(0,255,255)}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setStyleSheet("QWidget#centralwidget {\n"
@@ -37,9 +37,25 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.radioButtonTudo.setFont(font)
-        self.radioButtonTudo.setStyleSheet("background-color: rgb(203, 221, 209);\n"
-"border-radius: 15px;\n"
-"border: 3px solid  #58827d;")
+        self.radioButtonTudo.setStyleSheet("/* Trạng thái bình thường (Code gốc của mày) */\n"
+"QRadioButton {\n"
+"    background-color: rgb(203, 221, 209);\n"
+"    border-radius: 15px;\n"
+"    border: 3px solid #58827d;\n"
+"    padding: 5px; /* Tao thêm nhẹ 5px padding để chữ không bị dính sát vào cái viền bo góc */\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) */\n"
+"QRadioButton:hover {\n"
+"    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */\n"
+"    border: 3px solid #73a6a0;/* Viền sáng lên đồng bộ với nút kia */\n"
+"}\n"
+"\n"
+"/* Trạng thái khi click chuột bấm xuống (Pressed) */\n"
+"QRadioButton:pressed {\n"
+"    background-color: rgb(175, 198, 183); /* Nền chìm tối xuống khi bấm */\n"
+"    border: 3px solid #3d5e5b; /* Viền tối đi đồng bộ với nút kia */\n"
+"}")
         self.radioButtonTudo.setObjectName("radioButtonTudo")
         self.verticalLayout_13.addWidget(self.radioButtonTudo)
         self.radioButtonYoga = QtWidgets.QRadioButton(parent=self.groupBox)
@@ -48,10 +64,19 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.radioButtonYoga.setFont(font)
-        self.radioButtonYoga.setStyleSheet("background-color: rgb(165, 185, 172);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius: 15px;\n"
-"border: 3px solid  #58827d;\n"
+        self.radioButtonYoga.setStyleSheet("/* Trạng thái bình thường (Giữ nguyên 100% của mày) */\n"
+"QRadioButton {\n"
+"    background-color: rgb(165, 185, 172);\n"
+"    color: rgb(255, 255, 255);\n"
+"    border-radius: 15px;\n"
+"    border: 3px solid #58827d;\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) */\n"
+"QRadioButton:hover {\n"
+"    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */\n"
+"    border: 3px solid #73a6a0; /* Viền sáng lên đồng bộ với mấy nút kia */\n"
+"}\n"
 "")
         self.radioButtonYoga.setCheckable(True)
         self.radioButtonYoga.setAutoRepeatDelay(302)
@@ -63,9 +88,25 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.radioButtonPilates.setFont(font)
-        self.radioButtonPilates.setStyleSheet("background-color: rgb(203, 221, 209);\n"
-"border-radius: 15px;\n"
-"border: 3px solid  #58827d;")
+        self.radioButtonPilates.setStyleSheet("/* Trạng thái bình thường (Code gốc của mày) */\n"
+"QRadioButton {\n"
+"    background-color: rgb(203, 221, 209);\n"
+"    border-radius: 15px;\n"
+"    border: 3px solid #58827d;\n"
+"    padding: 5px; /* Tao thêm nhẹ 5px padding để chữ không bị dính sát vào cái viền bo góc */\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) */\n"
+"QRadioButton:hover {\n"
+"    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */\n"
+"    border: 3px solid #73a6a0;/* Viền sáng lên đồng bộ với nút kia */\n"
+"}\n"
+"\n"
+"/* Trạng thái khi click chuột bấm xuống (Pressed) */\n"
+"QRadioButton:pressed {\n"
+"    background-color: rgb(175, 198, 183); /* Nền chìm tối xuống khi bấm */\n"
+"    border: 3px solid #3d5e5b; /* Viền tối đi đồng bộ với nút kia */\n"
+"}")
         self.radioButtonPilates.setObjectName("radioButtonPilates")
         self.verticalLayout_13.addWidget(self.radioButtonPilates)
         self.radioButtonBoxing = QtWidgets.QRadioButton(parent=self.groupBox)
@@ -74,10 +115,20 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.radioButtonBoxing.setFont(font)
-        self.radioButtonBoxing.setStyleSheet("background-color: rgb(165, 185, 172);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius: 15px;\n"
-"border: 3px solid  #58827d;")
+        self.radioButtonBoxing.setStyleSheet("/* Trạng thái bình thường (Giữ nguyên 100% của mày) */\n"
+"QRadioButton {\n"
+"    background-color: rgb(165, 185, 172);\n"
+"    color: rgb(255, 255, 255);\n"
+"    border-radius: 15px;\n"
+"    border: 3px solid #58827d;\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) */\n"
+"QRadioButton:hover {\n"
+"    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */\n"
+"    border: 3px solid #73a6a0; /* Viền sáng lên đồng bộ với mấy nút kia */\n"
+"}\n"
+"")
         self.radioButtonBoxing.setObjectName("radioButtonBoxing")
         self.verticalLayout_13.addWidget(self.radioButtonBoxing)
         self.verticalLayout_14.addLayout(self.verticalLayout_13)
@@ -97,9 +148,25 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.radioButtonYes.setFont(font)
-        self.radioButtonYes.setStyleSheet("background-color: rgb(203, 221, 209);\n"
-"border-radius: 15px;\n"
-"border: 3px solid  #58827d;")
+        self.radioButtonYes.setStyleSheet("/* Trạng thái bình thường (Code gốc của mày) */\n"
+"QRadioButton {\n"
+"    background-color: rgb(203, 221, 209);\n"
+"    border-radius: 15px;\n"
+"    border: 3px solid #58827d;\n"
+"    padding: 5px; /* Tao thêm nhẹ 5px padding để chữ không bị dính sát vào cái viền bo góc */\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) */\n"
+"QRadioButton:hover {\n"
+"    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */\n"
+"    border: 3px solid #73a6a0;/* Viền sáng lên đồng bộ với nút kia */\n"
+"}\n"
+"\n"
+"/* Trạng thái khi click chuột bấm xuống (Pressed) */\n"
+"QRadioButton:pressed {\n"
+"    background-color: rgb(175, 198, 183); /* Nền chìm tối xuống khi bấm */\n"
+"    border: 3px solid #3d5e5b; /* Viền tối đi đồng bộ với nút kia */\n"
+"}")
         self.radioButtonYes.setObjectName("radioButtonYes")
         self.verticalLayout_12.addWidget(self.radioButtonYes)
         self.radioButtonNo = QtWidgets.QRadioButton(parent=self.groupBox_4)
@@ -108,10 +175,20 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.radioButtonNo.setFont(font)
-        self.radioButtonNo.setStyleSheet("background-color: rgb(165, 185, 172);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius: 15px;\n"
-"border: 3px solid  #58827d;")
+        self.radioButtonNo.setStyleSheet("/* Trạng thái bình thường (Giữ nguyên 100% của mày) */\n"
+"QRadioButton {\n"
+"    background-color: rgb(165, 185, 172);\n"
+"    color: rgb(255, 255, 255);\n"
+"    border-radius: 15px;\n"
+"    border: 3px solid #58827d;\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) */\n"
+"QRadioButton:hover {\n"
+"    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */\n"
+"    border: 3px solid #73a6a0; /* Viền sáng lên đồng bộ với mấy nút kia */\n"
+"}\n"
+"")
         self.radioButtonNo.setObjectName("radioButtonNo")
         self.verticalLayout_12.addWidget(self.radioButtonNo)
         self.verticalLayout_15.addLayout(self.verticalLayout_12)
@@ -120,16 +197,31 @@ class Ui_MainWindow(object):
         self.pushButtonDoneBooking.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Noto Sans HK Black")
-        font.setPointSize(18)
+        font.setPointSize(20)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(10)
         self.pushButtonDoneBooking.setFont(font)
-        self.pushButtonDoneBooking.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 87 18pt \"Noto Sans HK Black\";\n"
-"background-color: rgb(24, 78, 73);\n"
-"border-radius: 30px;\n"
-"border: 3px solid  #58827d;")
+        self.pushButtonDoneBooking.setStyleSheet("/* Trạng thái bình thường (Giữ nguyên 100% của mày) */\n"
+"QPushButton {\n"
+"    color: #f6f6e9;\n"
+"    background-color: #0f433d;\n"
+"    font: 87 20pt \"Noto Sans HK Black\";\n"
+"    border-radius: 30px;\n"
+"    border: 3px solid #58827d;\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) */\n"
+"QPushButton:hover {\n"
+"    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */\n"
+"    border: 3px solid #73a6a0; /* Viền cũng sáng lên một chút cho đồng bộ */\n"
+"}\n"
+"\n"
+"/* Thêm luôn trạng thái khi click (bấm xuống) cho nó xịn */\n"
+"QPushButton:pressed {\n"
+"    background-color: #0a2e2a; /* Nền tối đi khi bấm */\n"
+"    border: 3px solid #3d5e5b; /* Viền tối đi */\n"
+"}")
         self.pushButtonDoneBooking.setObjectName("pushButtonDoneBooking")
         self.groupBox_5 = QtWidgets.QGroupBox(parent=self.centralwidget)
         self.groupBox_5.setGeometry(QtCore.QRect(1200, 530, 241, 91))
@@ -148,11 +240,26 @@ class Ui_MainWindow(object):
         self.comboBoxRoom.setFont(font)
         self.comboBoxRoom.setMouseTracking(False)
         self.comboBoxRoom.setAutoFillBackground(False)
-        self.comboBoxRoom.setStyleSheet("background-color: rgb(203, 221, 209);\n"
-"border-radius: 15px;\n"
-"border: 3px solid  #58827d;\n"
-"padding-left: 10px;\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.comboBoxRoom.setStyleSheet("/* Trạng thái bình thường (Base gốc của mày) */\n"
+"QComboBox {\n"
+"    background-color: rgb(203, 221, 209);\n"
+"    border-radius: 15px;\n"
+"    border: 3px solid #58827d;\n"
+"    padding-left: 10px;\n"
+"    font: 12pt \"MS Shell Dlg 2\";\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) y chang RadioButton */\n"
+"QComboBox:hover {\n"
+"    background-color: #1a6b61; \n"
+"    border: 3px solid #73a6a0; \n"
+"}\n"
+"\n"
+"/* Trạng thái khi click vào và lúc danh sách đang xổ xuống (Pressed / On) */\n"
+"QComboBox:pressed, QComboBox:on {\n"
+"    background-color: rgb(175, 198, 183); \n"
+"    border: 3px solid #3d5e5b; \n"
+"}")
         self.comboBoxRoom.setMaxCount(2147483645)
         self.comboBoxRoom.setDuplicatesEnabled(False)
         self.comboBoxRoom.setObjectName("comboBoxRoom")
@@ -195,11 +302,26 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.comboBoxTime.setFont(font)
-        self.comboBoxTime.setStyleSheet("background-color: rgb(203, 221, 209);\n"
-"border-radius: 15px;\n"
-"border: 3px solid  #58827d;\n"
-"padding-left: 10px;\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.comboBoxTime.setStyleSheet("/* Trạng thái bình thường (Base gốc của mày) */\n"
+"QComboBox {\n"
+"    background-color: rgb(203, 221, 209);\n"
+"    border-radius: 15px;\n"
+"    border: 3px solid #58827d;\n"
+"    padding-left: 10px;\n"
+"    font: 12pt \"MS Shell Dlg 2\";\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) y chang RadioButton */\n"
+"QComboBox:hover {\n"
+"    background-color: #1a6b61; \n"
+"    border: 3px solid #73a6a0; \n"
+"}\n"
+"\n"
+"/* Trạng thái khi click vào và lúc danh sách đang xổ xuống (Pressed / On) */\n"
+"QComboBox:pressed, QComboBox:on {\n"
+"    background-color: rgb(175, 198, 183); \n"
+"    border: 3px solid #3d5e5b; \n"
+"}")
         self.comboBoxTime.setObjectName("comboBoxTime")
         self.comboBoxTime.addItem("")
         self.comboBoxTime.addItem("")
@@ -234,15 +356,31 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.comboBoxHuanLuyenVien.setFont(font)
-        self.comboBoxHuanLuyenVien.setStyleSheet("background-color: rgb(165, 185, 172);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius: 15px;\n"
-"border: 3px solid  #58827d;")
+        self.comboBoxHuanLuyenVien.setStyleSheet("/* Trạng thái bình thường (Base gốc của mày) */\n"
+"QComboBox {\n"
+"    background-color: rgb(165, 185, 172);\n"
+"    color: rgb(255, 255, 255);\n"
+"    border-radius: 15px; /* Đã sửa 15p thành 15px nhé */\n"
+"    border: 3px solid #58827d;\n"
+"    padding-left: 10px; /* Thêm nhẹ cái này cho chữ nó không bị dính vào viền trái */\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) y chang mày yêu cầu */\n"
+"QComboBox:hover {\n"
+"    background-color: #1a6b61; /* Màu xanh sáng hơn */\n"
+"    border: 3px solid #73a6a0; /* Viền sáng lên */\n"
+"}\n"
+"\n"
+"/* Trạng thái khi click vào và lúc danh sách đang xổ xuống (Pressed / On) */\n"
+"QComboBox:pressed, QComboBox:on {\n"
+"    background-color: #124d45; /* Nền tối đi một tông so với hover khi mày bấm xổ xuống */\n"
+"    border: 3px solid #3d5e5b; /* Viền cũng chìm màu xuống */\n"
+"}")
         self.comboBoxHuanLuyenVien.setObjectName("comboBoxHuanLuyenVien")
         self.verticalLayout_19.addWidget(self.comboBoxHuanLuyenVien)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1371, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1466, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
 

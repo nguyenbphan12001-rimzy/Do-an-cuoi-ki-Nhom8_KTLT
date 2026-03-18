@@ -199,8 +199,24 @@ text-decoration: underline;
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(11, 143, 119);
-color: rgb(236, 255, 104)</string>
+              <string notr="true">/* Trạng thái mặc định (CÓ VIỀN MẢNH) */
+QPushButton#pushButtonLogin {
+    background-color: rgb(11, 143, 119); /* Giữ màu xanh chuẩn của mày */
+    color: white;
+    border-radius: 15px; /* Bo góc viên thuốc */
+    padding: 5px;
+    
+    /* 👇 PHẦN THÊM VIỀN NẰM Ở ĐÂY 👇 */
+    border: 2px solid rgba(255, 255, 255, 100); /* Viền trắng mảnh, độ mờ 100 */
+}
+
+/* Trạng thái khi rê chuột vào (Hover) */
+QPushButton#pushButtonLogin:hover {
+    background-color: rgb(8, 115, 95); /* Màu đậm hơn khi hover */
+    
+    /* Thay đổi viền khi hover để nút nổi bật hơn */
+    border: 2px solid rgba(255, 255, 255, 180); /* Viền trắng sáng hơn */
+}</string>
              </property>
              <property name="text">
               <string>Login</string>
@@ -306,7 +322,7 @@ text-decoration: underline;
      <x>0</x>
      <y>0</y>
      <width>582</width>
-     <height>18</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
