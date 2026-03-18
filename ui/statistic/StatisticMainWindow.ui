@@ -46,18 +46,19 @@ background-iamge:rgb(0,255,255);}</string>
          <property name="font">
           <font>
            <family>Noto Sans HK Black</family>
-           <pointsize>12</pointsize>
-           <weight>10</weight>
+           <pointsize>15</pointsize>
+           <weight>75</weight>
            <italic>false</italic>
-           <bold>false</bold>
+           <bold>true</bold>
           </font>
          </property>
          <property name="styleSheet">
           <string notr="true">color: rgb(255, 255, 255);
-font: 87 12pt &quot;Noto Sans HK Black&quot;;
+font: 87 15pt &quot;Noto Sans HK Black&quot;;
 background-color: rgb(24, 78, 73);
 border-radius: 15px;
-border: 3px solid  #58827d;</string>
+border: 3px solid  #58827d;
+font-weight: Bold</string>
          </property>
          <property name="text">
           <string>Back</string>
@@ -99,7 +100,7 @@ border: 3px solid  #58827d;</string>
               </font>
              </property>
              <property name="title">
-              <string>Chart Visualize:</string>
+              <string/>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_8">
               <item>
@@ -159,7 +160,9 @@ border: 3px solid  #58827d;</string>
                   </property>
                   <property name="font">
                    <font>
-                    <pointsize>12</pointsize>
+                    <pointsize>15</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
                    </font>
                   </property>
                   <property name="layoutDirection">
@@ -168,7 +171,8 @@ border: 3px solid  #58827d;</string>
                   <property name="styleSheet">
                    <string notr="true">background-color: rgb(203, 221, 209);
 border-radius: 15px;
-border: 3px solid  #58827d;</string>
+border: 3px solid  #58827d;
+font-weight: Bold</string>
                   </property>
                   <property name="text">
                    <string>Thống kê gói tập</string>
@@ -204,7 +208,9 @@ border: 3px solid  #58827d;</string>
                   </property>
                   <property name="font">
                    <font>
-                    <pointsize>12</pointsize>
+                    <pointsize>15</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
                    </font>
                   </property>
                   <property name="styleSheet">
@@ -212,6 +218,7 @@ border: 3px solid  #58827d;</string>
 color: rgb(255, 255, 255);
 border-radius: 15px;
 border: 3px solid  #58827d;
+font-weight: Bold
 </string>
                   </property>
                   <property name="text">
@@ -248,13 +255,16 @@ border: 3px solid  #58827d;
                   </property>
                   <property name="font">
                    <font>
-                    <pointsize>12</pointsize>
+                    <pointsize>15</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
                    </font>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">background-color: rgb(203, 221, 209);
 border-radius: 15px;
-border: 3px solid  #58827d;</string>
+border: 3px solid  #58827d;
+font-weight: Bold</string>
                   </property>
                   <property name="text">
                    <string>Thống kê lượng khách</string>
