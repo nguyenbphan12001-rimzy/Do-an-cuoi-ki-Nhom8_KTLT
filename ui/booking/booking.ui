@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1371</width>
+    <width>1466</width>
     <height>871</height>
    </rect>
   </property>
@@ -71,9 +71,25 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(203, 221, 209);
-border-radius: 15px;
-border: 3px solid  #58827d;</string>
+          <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
+QRadioButton {
+    background-color: rgb(203, 221, 209);
+    border-radius: 15px;
+    border: 3px solid #58827d;
+    padding: 5px; /* Tao thêm nhẹ 5px padding để chữ không bị dính sát vào cái viền bo góc */
+}
+
+/* Trạng thái khi rê chuột vào (Hover) */
+QRadioButton:hover {
+    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */
+    border: 3px solid #73a6a0;/* Viền sáng lên đồng bộ với nút kia */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QRadioButton:pressed {
+    background-color: rgb(175, 198, 183); /* Nền chìm tối xuống khi bấm */
+    border: 3px solid #3d5e5b; /* Viền tối đi đồng bộ với nút kia */
+}</string>
          </property>
          <property name="text">
           <string>Tự do</string>
@@ -100,10 +116,19 @@ border: 3px solid  #58827d;</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(165, 185, 172);
-color: rgb(255, 255, 255);
-border-radius: 15px;
-border: 3px solid  #58827d;
+          <string notr="true">/* Trạng thái bình thường (Giữ nguyên 100% của mày) */
+QRadioButton {
+    background-color: rgb(165, 185, 172);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border: 3px solid #58827d;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) */
+QRadioButton:hover {
+    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */
+    border: 3px solid #73a6a0; /* Viền sáng lên đồng bộ với mấy nút kia */
+}
 </string>
          </property>
          <property name="text">
@@ -137,9 +162,25 @@ border: 3px solid  #58827d;
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(203, 221, 209);
-border-radius: 15px;
-border: 3px solid  #58827d;</string>
+          <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
+QRadioButton {
+    background-color: rgb(203, 221, 209);
+    border-radius: 15px;
+    border: 3px solid #58827d;
+    padding: 5px; /* Tao thêm nhẹ 5px padding để chữ không bị dính sát vào cái viền bo góc */
+}
+
+/* Trạng thái khi rê chuột vào (Hover) */
+QRadioButton:hover {
+    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */
+    border: 3px solid #73a6a0;/* Viền sáng lên đồng bộ với nút kia */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QRadioButton:pressed {
+    background-color: rgb(175, 198, 183); /* Nền chìm tối xuống khi bấm */
+    border: 3px solid #3d5e5b; /* Viền tối đi đồng bộ với nút kia */
+}</string>
          </property>
          <property name="text">
           <string>Pilates</string>
@@ -166,10 +207,20 @@ border: 3px solid  #58827d;</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(165, 185, 172);
-color: rgb(255, 255, 255);
-border-radius: 15px;
-border: 3px solid  #58827d;</string>
+          <string notr="true">/* Trạng thái bình thường (Giữ nguyên 100% của mày) */
+QRadioButton {
+    background-color: rgb(165, 185, 172);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border: 3px solid #58827d;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) */
+QRadioButton:hover {
+    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */
+    border: 3px solid #73a6a0; /* Viền sáng lên đồng bộ với mấy nút kia */
+}
+</string>
          </property>
          <property name="text">
           <string>Boxing</string>
@@ -220,9 +271,25 @@ border: 3px solid  #58827d;</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(203, 221, 209);
-border-radius: 15px;
-border: 3px solid  #58827d;</string>
+          <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
+QRadioButton {
+    background-color: rgb(203, 221, 209);
+    border-radius: 15px;
+    border: 3px solid #58827d;
+    padding: 5px; /* Tao thêm nhẹ 5px padding để chữ không bị dính sát vào cái viền bo góc */
+}
+
+/* Trạng thái khi rê chuột vào (Hover) */
+QRadioButton:hover {
+    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */
+    border: 3px solid #73a6a0;/* Viền sáng lên đồng bộ với nút kia */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QRadioButton:pressed {
+    background-color: rgb(175, 198, 183); /* Nền chìm tối xuống khi bấm */
+    border: 3px solid #3d5e5b; /* Viền tối đi đồng bộ với nút kia */
+}</string>
          </property>
          <property name="text">
           <string>Có</string>
@@ -249,10 +316,20 @@ border: 3px solid  #58827d;</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(165, 185, 172);
-color: rgb(255, 255, 255);
-border-radius: 15px;
-border: 3px solid  #58827d;</string>
+          <string notr="true">/* Trạng thái bình thường (Giữ nguyên 100% của mày) */
+QRadioButton {
+    background-color: rgb(165, 185, 172);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border: 3px solid #58827d;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) */
+QRadioButton:hover {
+    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */
+    border: 3px solid #73a6a0; /* Viền sáng lên đồng bộ với mấy nút kia */
+}
+</string>
          </property>
          <property name="text">
           <string>Không</string>
@@ -281,18 +358,33 @@ border: 3px solid  #58827d;</string>
     <property name="font">
      <font>
       <family>Noto Sans HK Black</family>
-      <pointsize>18</pointsize>
+      <pointsize>20</pointsize>
       <weight>10</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-font: 87 18pt &quot;Noto Sans HK Black&quot;;
-background-color: rgb(24, 78, 73);
-border-radius: 30px;
-border: 3px solid  #58827d;</string>
+     <string notr="true">/* Trạng thái bình thường (Giữ nguyên 100% của mày) */
+QPushButton {
+    color: #f6f6e9;
+    background-color: #0f433d;
+    font: 87 20pt &quot;Noto Sans HK Black&quot;;
+    border-radius: 30px;
+    border: 3px solid #58827d;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) */
+QPushButton:hover {
+    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */
+    border: 3px solid #73a6a0; /* Viền cũng sáng lên một chút cho đồng bộ */
+}
+
+/* Thêm luôn trạng thái khi click (bấm xuống) cho nó xịn */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối đi khi bấm */
+    border: 3px solid #3d5e5b; /* Viền tối đi */
+}</string>
     </property>
     <property name="text">
      <string>Hoàn tất đặt lịch</string>
@@ -338,11 +430,26 @@ border: 3px solid  #58827d;</string>
         <bool>false</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(203, 221, 209);
-border-radius: 15px;
-border: 3px solid  #58827d;
-padding-left: 10px;
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">/* Trạng thái bình thường (Base gốc của mày) */
+QComboBox {
+    background-color: rgb(203, 221, 209);
+    border-radius: 15px;
+    border: 3px solid #58827d;
+    padding-left: 10px;
+    font: 12pt &quot;MS Shell Dlg 2&quot;;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) y chang RadioButton */
+QComboBox:hover {
+    background-color: #1a6b61; 
+    border: 3px solid #73a6a0; 
+}
+
+/* Trạng thái khi click vào và lúc danh sách đang xổ xuống (Pressed / On) */
+QComboBox:pressed, QComboBox:on {
+    background-color: rgb(175, 198, 183); 
+    border: 3px solid #3d5e5b; 
+}</string>
        </property>
        <property name="currentText">
         <string>Phòng Boxing B1</string>
@@ -466,11 +573,26 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(203, 221, 209);
-border-radius: 15px;
-border: 3px solid  #58827d;
-padding-left: 10px;
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">/* Trạng thái bình thường (Base gốc của mày) */
+QComboBox {
+    background-color: rgb(203, 221, 209);
+    border-radius: 15px;
+    border: 3px solid #58827d;
+    padding-left: 10px;
+    font: 12pt &quot;MS Shell Dlg 2&quot;;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) y chang RadioButton */
+QComboBox:hover {
+    background-color: #1a6b61; 
+    border: 3px solid #73a6a0; 
+}
+
+/* Trạng thái khi click vào và lúc danh sách đang xổ xuống (Pressed / On) */
+QComboBox:pressed, QComboBox:on {
+    background-color: rgb(175, 198, 183); 
+    border: 3px solid #3d5e5b; 
+}</string>
        </property>
        <item>
         <property name="text">
@@ -576,10 +698,26 @@ border: 3px solid  #58827d;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(165, 185, 172);
-color: rgb(255, 255, 255);
-border-radius: 15px;
-border: 3px solid  #58827d;</string>
+        <string notr="true">/* Trạng thái bình thường (Base gốc của mày) */
+QComboBox {
+    background-color: rgb(165, 185, 172);
+    color: rgb(255, 255, 255);
+    border-radius: 15px; /* Đã sửa 15p thành 15px nhé */
+    border: 3px solid #58827d;
+    padding-left: 10px; /* Thêm nhẹ cái này cho chữ nó không bị dính vào viền trái */
+}
+
+/* Trạng thái khi rê chuột vào (Hover) y chang mày yêu cầu */
+QComboBox:hover {
+    background-color: #1a6b61; /* Màu xanh sáng hơn */
+    border: 3px solid #73a6a0; /* Viền sáng lên */
+}
+
+/* Trạng thái khi click vào và lúc danh sách đang xổ xuống (Pressed / On) */
+QComboBox:pressed, QComboBox:on {
+    background-color: #124d45; /* Nền tối đi một tông so với hover khi mày bấm xổ xuống */
+    border: 3px solid #3d5e5b; /* Viền cũng chìm màu xuống */
+}</string>
        </property>
       </widget>
      </item>
@@ -591,7 +729,7 @@ border: 3px solid  #58827d;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1371</width>
+     <width>1466</width>
      <height>26</height>
     </rect>
    </property>

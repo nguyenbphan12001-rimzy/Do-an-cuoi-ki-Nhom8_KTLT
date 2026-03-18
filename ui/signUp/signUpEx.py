@@ -15,7 +15,10 @@ class SignUpEx(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
+        self.SetupSignalAndSlot()
 
+
+    def SetupSignalAndSlot(self):
         # connect nút
         self.pushButtonCreate.clicked.connect(self.create_account)
         self.lineEditContactNo.setValidator(QIntValidator())

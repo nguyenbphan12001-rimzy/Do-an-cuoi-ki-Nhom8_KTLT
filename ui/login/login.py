@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Nam_1\K25411_KTLT\project\ui\login\login.ui'
+# Form implementation generated from reading ui file 'login.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -113,8 +113,24 @@ class Ui_MainWindow(object):
         font.setFamily("Rockwell")
         font.setPointSize(12)
         self.pushButtonLogin.setFont(font)
-        self.pushButtonLogin.setStyleSheet("background-color: rgb(11, 143, 119);\n"
-"color: rgb(236, 255, 104)")
+        self.pushButtonLogin.setStyleSheet("/* Trạng thái mặc định (CÓ VIỀN MẢNH) */\n"
+"QPushButton#pushButtonLogin {\n"
+"    background-color: rgb(11, 143, 119); /* Giữ màu xanh chuẩn của mày */\n"
+"    color: white;\n"
+"    border-radius: 15px; /* Bo góc viên thuốc */\n"
+"    padding: 5px;\n"
+"    \n"
+"    /* 👇 PHẦN THÊM VIỀN NẰM Ở ĐÂY 👇 */\n"
+"    border: 2px solid rgba(255, 255, 255, 100); /* Viền trắng mảnh, độ mờ 100 */\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) */\n"
+"QPushButton#pushButtonLogin:hover {\n"
+"    background-color: rgb(8, 115, 95); /* Màu đậm hơn khi hover */\n"
+"    \n"
+"    /* Thay đổi viền khi hover để nút nổi bật hơn */\n"
+"    border: 2px solid rgba(255, 255, 255, 180); /* Viền trắng sáng hơn */\n"
+"}")
         self.pushButtonLogin.setObjectName("pushButtonLogin")
         self.gridLayout_17.addWidget(self.pushButtonLogin, 3, 0, 1, 4)
         self.pushButtonForgetPassword = QtWidgets.QPushButton(parent=self.frame_4)
@@ -162,7 +178,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.gridLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 582, 18))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 582, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
