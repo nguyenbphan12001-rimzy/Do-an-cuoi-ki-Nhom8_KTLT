@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(798, 540)
+        MainWindow.resize(1467, 649)
         MainWindow.setStyleSheet("#centralwidget{\n"
 "border-image: url(:/pic/payments.png);\n"
 "}")
@@ -432,7 +432,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.gridLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 798, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1467, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
@@ -447,7 +447,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.groupBox_1.setTitle(_translate("MainWindow", "1. Thông tin khách hàng:"))
         self.label_2.setText(_translate("MainWindow", "Tên:"))
-        self.label_3.setText(_translate("MainWindow", "ID:"))
+        self.label_3.setText(_translate("MainWindow", "SĐT:"))
         self.groupBox_2.setTitle(_translate("MainWindow", "2. Dịch vụ đã chọn:"))
         self.label_6.setText(_translate("MainWindow", "Phòng:"))
         self.label_4.setText(_translate("MainWindow", "Gói tập:"))
