@@ -1,10 +1,11 @@
 import os
-from PyQt6.QtWidgets import QMainWindow
+from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from PyQt6.QtCore import Qt
 from models.trainers import Trainers
 from ui.booking.booking import Ui_MainWindow
 from models.rooms import Rooms
 from PyQt6.QtCore import QDate  # Đảm bảo có QDate ở đây
+from ui.payment.paymentEx import PaymentEx
 
 class BookingMainWindowEx(Ui_MainWindow):
     def setupUi(self, MainWindow):
@@ -32,11 +33,25 @@ class BookingMainWindowEx(Ui_MainWindow):
                                                                                                                "/")
         self.danh_sach_hlv.import_json(json_path)
 
-        # ==============================================================
-        # 🔥 PHẦN 1: BẮT SỰ KIỆN CLICK & THAY ĐỔI
-        # ==============================================================
 
-        # Bắt sự kiện click nút Có / Không HLV
+        self.comboBoxHuanLuyenVien.currentTextChanged.connect(self.dong_bo_combobox_va_list)
+
+        # Trạng thái mặc định
+        self.xuly_an_hien_pt()
+        # 2. Đọc file JSON Phòng (MỚI THÊM)
+        self.danh_sach_phong = Rooms()
+        json_phong_path = os.path.abspath(os.path.join(current_dir, "..", "..", "Datasets", "room.json")).replace("\\",
+                                                                                                                  "/")
+        self.danh_sach_phong.import_json(json_phong_path)
+        self.SetupSignalAndSlots()
+
+
+        # ... (các dòng kết nối nút Lĩnh vực) ...
+        # Thiết lập ngày mặc định là 18/03/2026
+        default_date = QDate(2026, 3, 18)
+        self.dateEdit.setDate(default_date)
+    def SetupSignalAndSlots(self):
+
         self.radioButtonYes.toggled.connect(self.xuly_an_hien_pt)
         self.radioButtonNo.toggled.connect(self.xuly_an_hien_pt)
 
@@ -53,26 +68,12 @@ class BookingMainWindowEx(Ui_MainWindow):
 
         # Bắt sự kiện khi thay đổi lựa chọn trong ComboBox HLV
         self.comboBoxHuanLuyenVien.currentTextChanged.connect(self.dong_bo_combobox_va_list)
-
-        # Trạng thái mặc định
-        self.xuly_an_hien_pt()
-        # 2. Đọc file JSON Phòng (MỚI THÊM)
-        self.danh_sach_phong = Rooms()
-        json_phong_path = os.path.abspath(os.path.join(current_dir, "..", "..", "Datasets", "room.json")).replace("\\",
-                                                                                                                  "/")
-        self.danh_sach_phong.import_json(json_phong_path)
-
-        # 👉 BẮT SỰ KIỆN LỌC PHÒNG KHI BẤM CHỌN MÔN (MỚI THÊM)
         if hasattr(self, 'radioButtonTudo'):
             self.radioButtonTudo.toggled.connect(self.cap_nhat_danh_sach_phong)
         self.radioButtonYoga.toggled.connect(self.cap_nhat_danh_sach_phong)
         self.radioButtonPilates.toggled.connect(self.cap_nhat_danh_sach_phong)
         self.radioButtonBoxing.toggled.connect(self.cap_nhat_danh_sach_phong)
-        # ... (các dòng kết nối nút Lĩnh vực) ...
-        # Thiết lập ngày mặc định là 18/03/2026
-        default_date = QDate(2026, 3, 18)
-        self.dateEdit.setDate(default_date)
-
+        self.pushButtonDoneBooking.clicked.connect(self.mo_man_hinh_thanh_toan)
 
     def showWindow(self):
         self.MainWindow.show()
@@ -164,5 +165,48 @@ class BookingMainWindowEx(Ui_MainWindow):
         for phong in self.danh_sach_phong.list:
             if phong.category == mon_tap:
                 self.comboBoxRoom.addItem(phong.name)
+
+    def mo_man_hinh_thanh_toan(self):
+        # 1. Lấy thông tin từ giao diện Đặt lịch
+        mon_tap = self.get_mon_tap_dang_chon()
+        ngay_tap = self.dateEdit.date().toString("dd/MM/yyyy")
+        gio_tap = self.comboBoxTime.currentText()
+        phong = self.comboBoxRoom.currentText()
+
+        # Validate xem người dùng đã chọn đủ chưa
+        if mon_tap == "" or phong == "":
+            QMessageBox.warning(self.MainWindow, "Thiếu thông tin", "Vui lòng chọn lĩnh vực và phòng tập!")
+            return
+
+        # 2. Xử lý chuỗi thông tin để hiển thị đẹp bên Payment
+        thoi_gian_day_du = f"{gio_tap} ngày {ngay_tap}"
+        goi_tap_hien_thi = f"Gói: {mon_tap}"
+
+        # Nếu có thuê PT, nối thêm tên PT vào Gói tập
+        if self.radioButtonYes.isChecked():
+            ten_pt = self.comboBoxHuanLuyenVien.currentText()
+            if ten_pt and "-- Chọn PT" not in ten_pt:
+                goi_tap_hien_thi += f" (HLV: {ten_pt})"
+            else:
+                QMessageBox.warning(self.MainWindow, "Thiếu thông tin", "Vui lòng chọn Huấn luyện viên!")
+                return
+
+        # 3. Tính giá tiền (Bạn có thể custom lại logic giá ở đây)
+        # Giả sử mặc định là 500k, thuê PT thì cộng thêm 200k
+        gia_tien_tong = 500000
+        if self.radioButtonYes.isChecked():
+            gia_tien_tong += 200000
+
+        # 4. Khởi tạo và nạp dữ liệu sang màn hình PaymentEx
+        self.payment_window = QMainWindow()
+        self.payment_ui = PaymentEx()
+        self.payment_ui.setupUi(self.payment_window)
+
+        # Gọi hàm set_booking_info (đã hướng dẫn bạn tạo ở tin nhắn trước bên file PaymentEx)
+        self.payment_ui.set_booking_info(goi_tap_hien_thi, thoi_gian_day_du, phong, gia_tien_tong)
+
+        # 5. Hiển thị màn hình Payment và ẩn/đóng màn hình Đặt lịch
+        self.payment_ui.showWindow()
+        self.MainWindow.hide()  # Dùng close() nếu không muốn quay lại màn này nữa
 
 
