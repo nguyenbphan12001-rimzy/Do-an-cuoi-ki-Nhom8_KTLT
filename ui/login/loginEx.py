@@ -4,110 +4,97 @@ from PyQt6.QtWidgets import QMainWindow, QMessageBox
 
 from ui.login.login import Ui_MainWindow
 from ui.signUp.signUpEx import SignUpEx
-# from ui.dashboard.DashboardEx import DashboardEx
-
 
 class LoginEx(Ui_MainWindow):
-
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.SetupSignalAndSlot()
 
+        # Thiết lập đường dẫn thư mục gốc (DO AN KTLT)
+        self.BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        # Trỏ thẳng vào thư mục datasets ở gốc project
+        self.DATASETS_DIR = os.path.abspath(os.path.join(self.BASE_DIR, "../../datasets"))
+        self.file_path = os.path.join(self.DATASETS_DIR, "user.json")
 
-        current_dir = os.path.dirname(os.path.abspath(__file__))
+        # Đảm bảo thư mục datasets tồn tại để không bị lỗi ghi file
+        if not os.path.exists(self.DATASETS_DIR):
+            os.makedirs(self.DATASETS_DIR)
 
-        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "login.png")).replace("\\", "/")
-
+        # Thiết lập background
+        img_path = os.path.abspath(os.path.join(self.BASE_DIR, "..", "..", "images", "login.png")).replace("\\", "/")
         self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
 
-        self.pushButtonSignUp.clicked.connect(self.open_signup)
-        self.pushButtonLogin.clicked.connect(self.handle_login)
-        self.pushButtonForgetPassword.clicked.connect(self.forget_password)
-
-        # 📂 PATH JSON
-        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-        self.file_path = os.path.join(BASE_DIR, "../../datasets/user.json")
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-
-        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "login.png")).replace("\\", "/")
-
-        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
     def SetupSignalAndSlot(self):
         self.pushButtonSignUp.clicked.connect(self.open_signup)
         self.pushButtonLogin.clicked.connect(self.handle_login)
         self.pushButtonForgetPassword.clicked.connect(self.forget_password)
-    def showWindow(self):
-        self.MainWindow.show()
 
-    # 🔹 SIGNUP
-    def open_signup(self):
-        print("CLICK SIGNUP")  # 👈 xem có chạy không
-        from PyQt6.QtWidgets import QMainWindow
+    def save_current_session(self, user_data):
+        """Lưu thông tin người dùng đang đăng nhập vào file session"""
+        try:
+            session_path = os.path.join(self.DATASETS_DIR, "current_user.json")
+            with open(session_path, 'w', encoding='utf-8') as f:
+                json.dump(user_data, f, indent=4, ensure_ascii=False)
+            print(f"✅ Đã tạo session tại: {session_path}")
+        except Exception as e:
+            print(f"❌ Lỗi lưu session: {e}")
 
-        self.signup_window = QMainWindow()
-        self.signup = SignUpEx(self.MainWindow)
-
-        self.signup.setupUi(self.signup_window)
-
-        self.signup_window.show()  # 👈 DÙNG CÁI NÀY (QUAN TRỌNG)
-
-        self.MainWindow.hide()
-
-    def open_dashboard(self, role, username):
-        from ui.dashboard.DashboardEx import DashboardEx  # 👈 chuyển vào đây
-        self.dashboard_window = QMainWindow()
-        self.dashboard = DashboardEx()
-        self.dashboard.setupUi(self.dashboard_window)
-
-        # 👉 truyền dữ liệu nếu muốn
-        self.dashboard_window.setWindowTitle(f"Dashboard - {username} ({role})")
-
-        self.dashboard_window.showMaximized()
-        self.MainWindow.hide()
     def handle_login(self):
         username = self.lineEditUsername.text().strip()
         password = self.lineEditPassword.text().strip()
 
-        if username == "" or password == "":
+        if not username or not password:
             QMessageBox.warning(self.MainWindow, "Lỗi", "Nhập username và password!")
             return
 
-        # 👉 ROLE
         if self.radioButtonAdmin.isChecked():
             role = "admin"
         elif self.radioButtonUser.isChecked():
             role = "user"
         else:
-            QMessageBox.warning(self.MainWindow, "Lỗi", "Chọn role!")
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng chọn Role!")
             return
 
-        # 👉 ĐỌC FILE
         try:
-            with open(self.file_path, encoding="utf-8") as f:
+            with open(self.file_path, 'r', encoding="utf-8") as f:
                 data = json.load(f)
         except Exception as e:
-            QMessageBox.critical(self.MainWindow, "Lỗi", f"Không đọc được file!\n{e}")
+            QMessageBox.critical(self.MainWindow, "Lỗi", f"Không tìm thấy file dữ liệu tại {self.file_path}")
             return
 
-        # 👉 FLAG kiểm tra
-        found = False
-
+        user_found = None
         for user in data.get("Datasets", []):
-            if (
-                    user.get("username") == username and
-                    user.get("password") == password and
-                    user.get("role") == role
-            ):
-                found = True
+            if (user.get("username") == username and
+                user.get("password") == password and
+                user.get("role") == role):
+                user_found = user
                 break
 
-        if found:
+        if user_found:
+            # Lưu session trước khi chuyển màn hình
+            self.save_current_session(user_found)
             QMessageBox.information(self.MainWindow, "Thành công", f"Xin chào {username}!")
             self.open_dashboard(role, username)
         else:
-            QMessageBox.warning(self.MainWindow, "Sai", "Sai tài khoản / mật khẩu / role!")
-    # 🔑 FORGET PASSWORD
+            QMessageBox.warning(self.MainWindow, "Thất bại", "Sai tài khoản, mật khẩu hoặc role!")
+
+    # --- Các hàm chuyển màn hình giữ nguyên ---
+    def open_signup(self):
+        self.signup_window = QMainWindow()
+        self.signup = SignUpEx(self.MainWindow)
+        self.signup.setupUi(self.signup_window)
+        self.signup_window.show()
+        self.MainWindow.hide()
+
+    def open_dashboard(self, role, username):
+        from ui.dashboard.DashboardEx import DashboardEx
+        self.dashboard_window = QMainWindow()
+        self.dashboard = DashboardEx()
+        self.dashboard.setupUi(self.dashboard_window)
+        self.dashboard_window.showMaximized()
+        self.MainWindow.hide()
+
     def forget_password(self):
         username = self.lineEditUsername.text().strip()
 

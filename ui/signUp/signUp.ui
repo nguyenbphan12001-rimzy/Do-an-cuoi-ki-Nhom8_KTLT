@@ -341,34 +341,71 @@ border-image: url(D:/Nam_1/K25411_KTLT/project/images/signup.png);
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButtonCreate">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
+            <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0">
+             <property name="topMargin">
+              <number>0</number>
              </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Rockwell</family>
-               <pointsize>13</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(11, 143, 119);
+             <item>
+              <widget class="QPushButton" name="pushButtonCreate">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Rockwell</family>
+                 <pointsize>13</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(11, 143, 119);
 color: rgb(236, 255, 104)
 </string>
-             </property>
-             <property name="text">
-              <string>Create account</string>
-             </property>
-            </widget>
+               </property>
+               <property name="text">
+                <string>Create account</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButtonBack">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Rockwell</family>
+                 <pointsize>13</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(11, 143, 119);
+color: rgb(236, 255, 104)
+</string>
+               </property>
+               <property name="text">
+                <string>Back</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
          </item>

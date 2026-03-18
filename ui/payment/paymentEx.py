@@ -32,48 +32,37 @@ class PaymentEx(Ui_MainWindow):
         self.pushButtonCofirm.clicked.connect(self.process_confirm)
 
     def load_user_data(self):
-        """Đọc file user.json từ thư mục Datasets bằng đường dẫn tuyệt đối"""
+        """Đọc file session bằng cách tìm thư mục gốc của Project"""
         try:
-            # Lấy đường dẫn đến thư mục chứa file paymentEx.py hiện tại
-            # D:\DO AN KTLT\ui\payment
-            current_dir = os.path.dirname(os.path.abspath(__file__))
+            # 1. Lấy đường dẫn của file paymentEx.py đang chạy
+            current_file_path = os.path.abspath(__file__)
 
-            # Đi ngược lên 2 cấp để vào thư mục gốc DO AN KTLT
-            root_dir = os.path.dirname(os.path.dirname(current_dir))
+            # 2. Tìm thư mục "DO AN KTLT" trong đường dẫn đó
+            # Code này sẽ cắt chuỗi để lấy phần đường dẫn đến hết "DO AN KTLT"
+            project_root = current_file_path.split("ui")[0]
 
-            # Kết hợp với thư mục Datasets và file user.json
-            file_path = os.path.join(root_dir, "Datasets", "user.json")
+            # 3. Kết hợp với thư mục datasets
+            file_path = os.path.join(project_root, "datasets", "current_user.json")
 
-            print(f"--- Đang tìm file tại: {file_path}")  # Kiểm tra trong Terminal
+            print(f"--- Payment đang đọc session tại: {file_path}")
 
             if os.path.exists(file_path):
                 with open(file_path, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    users = data.get("Datasets", [])
+                    user = json.load(f)
 
-                    if users:
-                        user = users[-1]  # Lấy user cuối cùng
+                    # Điền Tên và SĐT
+                    self.lineEditName.setText(str(user.get("username", "")))
 
-                        # Đổ dữ liệu
-                        self.lineEditName.setText(str(user.get("username", "")))
+                    if hasattr(self, 'lineEditID'):
+                        self.lineEditID.setText(str(user.get("phone_number", "")))
+                    elif hasattr(self, 'lineEditSDT'):
+                        self.lineEditSDT.setText(str(user.get("phone_number", "")))
 
-                        # Thử cả 2 tên object phổ biến cho SĐT
-                        if hasattr(self, 'lineEditID'):
-                            self.lineEditID.setText(str(user.get("phone_number", "")))
-                        if hasattr(self, 'lineEditSDT'):
-                            self.lineEditSDT.setText(str(user.get("phone_number", "")))
-
-                        print("--- Nạp dữ liệu thành công!")
-                    else:
-                        print("--- File JSON trống (không có Datasets)")
+                    print(f"✅ Nạp thành công User: {user.get('username')}")
             else:
-                print(f"--- KHÔNG tìm thấy file tại: {file_path}")
-
+                print(f"⚠️ KHÔNG tìm thấy file tại: {file_path}")
         except Exception as e:
-            print(f"--- Lỗi nạp dữ liệu user: {e}")
-
-        except Exception as e:
-            print(f"Lỗi nạp dữ liệu user: {e}")
+            print(f"❌ Lỗi: {e}")
 
     def set_payment_info(self, ten_goi, gia):
         """Nhận dữ liệu từ màn hình Đăng ký truyền sang"""
@@ -85,7 +74,7 @@ class PaymentEx(Ui_MainWindow):
         self.radioButtonFull.setChecked(True)
         self.update_price_display()
 
-        # Tự động điền tên và SĐT từ file JSON
+        # GỌI HÀM NẠP DỮ LIỆU TỪ SESSION
         self.load_user_data()
 
     def update_price_display(self):
@@ -109,6 +98,9 @@ class PaymentEx(Ui_MainWindow):
     def process_confirm(self):
         """Xử lý khi nhấn nút Xác nhận thanh toán"""
         ten = self.lineEditName.text().strip()
+        sdt = ""
+        if hasattr(self, 'lineEditID'):
+            sdt = self.lineEditID.text().strip()
 
         # Kiểm tra xem đã chọn phương thức thanh toán chưa
         if not self.checkBoxBak.isChecked() and not self.checkBoxCard.isChecked():
@@ -116,12 +108,14 @@ class PaymentEx(Ui_MainWindow):
             return
 
         if not ten:
-            QMessageBox.warning(self.MainWindow, "Thông báo", "Vui lòng kiểm tra lại thông tin khách hàng!")
+            QMessageBox.warning(self.MainWindow, "Thông báo", "Thiếu thông tin khách hàng!")
             return
 
-        # Thông báo thành công
-        QMessageBox.information(self.MainWindow, "Thành công", f"Giao dịch của khách hàng {ten} đã được ghi nhận!")
-        # self.MainWindow.close() # Mở dòng này nếu muốn đóng cửa sổ sau khi xong
+        # Thông báo thành công chi tiết
+        phuong_thuc = "Ngân hàng" if self.checkBoxBak.isChecked() else "Thẻ tín dụng"
+        msg = f"Khách hàng: {ten}\nSĐT: {sdt}\nGói: {self.lineEditPackage.text()}\nThanh toán thành công qua {phuong_thuc}!"
+
+        QMessageBox.information(self.MainWindow, "Thành công", msg)
 
     def set_booking_info(self, goi_tap, thoi_gian, phong, gia):
         """Nhận dữ liệu chi tiết từ màn hình Đặt lịch truyền sang"""
