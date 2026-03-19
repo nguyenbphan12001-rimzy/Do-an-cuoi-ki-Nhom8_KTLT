@@ -152,6 +152,15 @@
             "role": "user",
             "gender": "M",
             "status": "Không"
+        },
+        {
+            "username": "kng",
+            "email": "kng@gmail.com",
+            "phone_number": "0987654321",
+            "password": "111",
+            "role": "user",
+            "gender": "F",
+            "status": "Không"
         }
     ]
 }

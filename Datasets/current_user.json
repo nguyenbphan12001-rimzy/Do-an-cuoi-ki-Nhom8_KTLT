@@ -1,16 +1,9 @@
 {
-
-    "username": "Nguyên",
-    "email": "nguyen123@gmail.com",
-    "phone_number": "0826471772",
-    "password": "nguyen123",
-
-    "username": "Nguyễn Minh Anh",
-    "password": "minhanh456",
-
+    "username": "kng",
+    "email": "kng@gmail.com",
+    "phone_number": "0987654321",
+    "password": "111",
     "role": "user",
-    "phone_number": "0912345678",
-    "email": "minhanh@gmail.com",
     "gender": "F",
-    "status": "Yoga 1"
+    "status": "Không"
 }
