@@ -47,11 +47,27 @@ background-iamge:rgb(0,255,255);}</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color:#0f433d;
-background-color: #f6f6e9;
-font: 22pt &quot;MS Shell Dlg 2&quot;;
-border-radius: 20px;
-border: 3px solid  #0f433d;</string>
+     <string notr="true">/* Trạng thái bình thường */
+QPushButton {
+    color: #0f433d;
+    background-color: #f6f6e9;
+    font: 22pt &quot;MS Shell Dlg 2&quot;;
+    border-radius: 20px;
+    border: 3px solid #0f433d;
+}
+
+/* Khi rê chuột vào (Hover) - Vàng trầm nhưng nhạt và dịu hơn */
+QPushButton:hover {
+    background-color: #e0c975; 
+    color: #0f433d;
+}
+
+/* Khi click chuột (Pressed) - Đậm hơn lúc hover một xíu + lún nút */
+QPushButton:pressed {
+    background-color: #ccb258; 
+    padding-top: 4px;
+    padding-left: 4px;
+}</string>
     </property>
     <property name="text">
      <string>3 tháng: 1.399K</string>
@@ -82,11 +98,27 @@ border: 3px solid  #0f433d;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color:#0f433d;
-background-color: #f6f6e9;
-font: 22pt &quot;MS Shell Dlg 2&quot;;
-border-radius: 20px;
-border: 3px solid  #0f433d;</string>
+     <string notr="true">/* Trạng thái bình thường */
+QPushButton {
+    color: #0f433d;
+    background-color: #f6f6e9;
+    font: 22pt &quot;MS Shell Dlg 2&quot;;
+    border-radius: 20px;
+    border: 3px solid #0f433d;
+}
+
+/* Khi rê chuột vào (Hover) - Vàng trầm nhưng nhạt và dịu hơn */
+QPushButton:hover {
+    background-color: #e0c975; 
+    color: #0f433d;
+}
+
+/* Khi click chuột (Pressed) - Đậm hơn lúc hover một xíu + lún nút */
+QPushButton:pressed {
+    background-color: #ccb258; 
+    padding-top: 4px;
+    padding-left: 4px;
+}</string>
     </property>
     <property name="text">
      <string>6 tháng: 2.499K</string>
@@ -117,11 +149,27 @@ border: 3px solid  #0f433d;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color:#0f433d;
-background-color: #f6f6e9;
-font: 22pt &quot;MS Shell Dlg 2&quot;;
-border-radius: 20px;
-border: 3px solid  #0f433d;</string>
+     <string notr="true">/* Trạng thái bình thường */
+QPushButton {
+    color: #0f433d;
+    background-color: #f6f6e9;
+    font: 22pt &quot;MS Shell Dlg 2&quot;;
+    border-radius: 20px;
+    border: 3px solid #0f433d;
+}
+
+/* Khi rê chuột vào (Hover) - Vàng trầm nhưng nhạt và dịu hơn */
+QPushButton:hover {
+    background-color: #e0c975; 
+    color: #0f433d;
+}
+
+/* Khi click chuột (Pressed) - Đậm hơn lúc hover một xíu + lún nút */
+QPushButton:pressed {
+    background-color: #ccb258; 
+    padding-top: 4px;
+    padding-left: 4px;
+}</string>
     </property>
     <property name="text">
      <string>1 năm: 4.799K</string>
@@ -152,11 +200,27 @@ border: 3px solid  #0f433d;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color:#0f433d;
-background-color: #f6f6e9;
-font: 22pt &quot;MS Shell Dlg 2&quot;;
-border-radius: 20px;
-border: 3px solid  #0f433d;</string>
+     <string notr="true">/* Trạng thái bình thường */
+QPushButton {
+    color: #0f433d;
+    background-color: #f6f6e9;
+    font: 22pt &quot;MS Shell Dlg 2&quot;;
+    border-radius: 20px;
+    border: 3px solid #0f433d;
+}
+
+/* Khi rê chuột vào (Hover) - Vàng trầm nhưng nhạt và dịu hơn */
+QPushButton:hover {
+    background-color: #e0c975; 
+    color: #0f433d;
+}
+
+/* Khi click chuột (Pressed) - Đậm hơn lúc hover một xíu + lún nút */
+QPushButton:pressed {
+    background-color: #ccb258; 
+    padding-top: 4px;
+    padding-left: 4px;
+}</string>
     </property>
     <property name="text">
      <string>1 tháng: 499K</string>
@@ -187,11 +251,27 @@ border: 3px solid  #0f433d;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color:#0f433d;
-background-color: #f6f6e9;
-font: 22pt &quot;MS Shell Dlg 2&quot;;
-border-radius: 20px;
-border: 3px solid  #0f433d;</string>
+     <string notr="true">/* Trạng thái bình thường */
+QPushButton {
+    color: #0f433d;
+    background-color: #f6f6e9;
+    font: 22pt &quot;MS Shell Dlg 2&quot;;
+    border-radius: 20px;
+    border: 3px solid #0f433d;
+}
+
+/* Khi rê chuột vào (Hover) - Vàng trầm nhưng nhạt và dịu hơn */
+QPushButton:hover {
+    background-color: #e0c975; 
+    color: #0f433d;
+}
+
+/* Khi click chuột (Pressed) - Đậm hơn lúc hover một xíu + lún nút */
+QPushButton:pressed {
+    background-color: #ccb258; 
+    padding-top: 4px;
+    padding-left: 4px;
+}</string>
     </property>
     <property name="text">
      <string>2 tuần: 299K</string>

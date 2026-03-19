@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Nam1\KTLT\DoAn\ui\registration\Registration_formMainWindow.ui'
+# Form implementation generated from reading ui file 'Registration_formMainWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -29,11 +29,27 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.pushButtonBathang.setFont(font)
-        self.pushButtonBathang.setStyleSheet("color:#0f433d;\n"
-"background-color: #f6f6e9;\n"
-"font: 22pt \"MS Shell Dlg 2\";\n"
-"border-radius: 20px;\n"
-"border: 3px solid  #0f433d;")
+        self.pushButtonBathang.setStyleSheet("/* Trạng thái bình thường */\n"
+"QPushButton {\n"
+"    color: #0f433d;\n"
+"    background-color: #f6f6e9;\n"
+"    font: 22pt \"MS Shell Dlg 2\";\n"
+"    border-radius: 20px;\n"
+"    border: 3px solid #0f433d;\n"
+"}\n"
+"\n"
+"/* Khi rê chuột vào (Hover) - Vàng trầm nhưng nhạt và dịu hơn */\n"
+"QPushButton:hover {\n"
+"    background-color: #e0c975; \n"
+"    color: #0f433d;\n"
+"}\n"
+"\n"
+"/* Khi click chuột (Pressed) - Đậm hơn lúc hover một xíu + lún nút */\n"
+"QPushButton:pressed {\n"
+"    background-color: #ccb258; \n"
+"    padding-top: 4px;\n"
+"    padding-left: 4px;\n"
+"}")
         self.pushButtonBathang.setObjectName("pushButtonBathang")
         self.pushButtonSauthang = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButtonSauthang.setGeometry(QtCore.QRect(640, 640, 321, 79))
@@ -45,11 +61,27 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.pushButtonSauthang.setFont(font)
-        self.pushButtonSauthang.setStyleSheet("color:#0f433d;\n"
-"background-color: #f6f6e9;\n"
-"font: 22pt \"MS Shell Dlg 2\";\n"
-"border-radius: 20px;\n"
-"border: 3px solid  #0f433d;")
+        self.pushButtonSauthang.setStyleSheet("/* Trạng thái bình thường */\n"
+"QPushButton {\n"
+"    color: #0f433d;\n"
+"    background-color: #f6f6e9;\n"
+"    font: 22pt \"MS Shell Dlg 2\";\n"
+"    border-radius: 20px;\n"
+"    border: 3px solid #0f433d;\n"
+"}\n"
+"\n"
+"/* Khi rê chuột vào (Hover) - Vàng trầm nhưng nhạt và dịu hơn */\n"
+"QPushButton:hover {\n"
+"    background-color: #e0c975; \n"
+"    color: #0f433d;\n"
+"}\n"
+"\n"
+"/* Khi click chuột (Pressed) - Đậm hơn lúc hover một xíu + lún nút */\n"
+"QPushButton:pressed {\n"
+"    background-color: #ccb258; \n"
+"    padding-top: 4px;\n"
+"    padding-left: 4px;\n"
+"}")
         self.pushButtonSauthang.setObjectName("pushButtonSauthang")
         self.pushButtonMotnam = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButtonMotnam.setGeometry(QtCore.QRect(1150, 420, 311, 79))
@@ -61,11 +93,27 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.pushButtonMotnam.setFont(font)
-        self.pushButtonMotnam.setStyleSheet("color:#0f433d;\n"
-"background-color: #f6f6e9;\n"
-"font: 22pt \"MS Shell Dlg 2\";\n"
-"border-radius: 20px;\n"
-"border: 3px solid  #0f433d;")
+        self.pushButtonMotnam.setStyleSheet("/* Trạng thái bình thường */\n"
+"QPushButton {\n"
+"    color: #0f433d;\n"
+"    background-color: #f6f6e9;\n"
+"    font: 22pt \"MS Shell Dlg 2\";\n"
+"    border-radius: 20px;\n"
+"    border: 3px solid #0f433d;\n"
+"}\n"
+"\n"
+"/* Khi rê chuột vào (Hover) - Vàng trầm nhưng nhạt và dịu hơn */\n"
+"QPushButton:hover {\n"
+"    background-color: #e0c975; \n"
+"    color: #0f433d;\n"
+"}\n"
+"\n"
+"/* Khi click chuột (Pressed) - Đậm hơn lúc hover một xíu + lún nút */\n"
+"QPushButton:pressed {\n"
+"    background-color: #ccb258; \n"
+"    padding-top: 4px;\n"
+"    padding-left: 4px;\n"
+"}")
         self.pushButtonMotnam.setObjectName("pushButtonMotnam")
         self.pushButtonMotthang = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButtonMotthang.setGeometry(QtCore.QRect(640, 420, 321, 80))
@@ -77,11 +125,27 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.pushButtonMotthang.setFont(font)
-        self.pushButtonMotthang.setStyleSheet("color:#0f433d;\n"
-"background-color: #f6f6e9;\n"
-"font: 22pt \"MS Shell Dlg 2\";\n"
-"border-radius: 20px;\n"
-"border: 3px solid  #0f433d;")
+        self.pushButtonMotthang.setStyleSheet("/* Trạng thái bình thường */\n"
+"QPushButton {\n"
+"    color: #0f433d;\n"
+"    background-color: #f6f6e9;\n"
+"    font: 22pt \"MS Shell Dlg 2\";\n"
+"    border-radius: 20px;\n"
+"    border: 3px solid #0f433d;\n"
+"}\n"
+"\n"
+"/* Khi rê chuột vào (Hover) - Vàng trầm nhưng nhạt và dịu hơn */\n"
+"QPushButton:hover {\n"
+"    background-color: #e0c975; \n"
+"    color: #0f433d;\n"
+"}\n"
+"\n"
+"/* Khi click chuột (Pressed) - Đậm hơn lúc hover một xíu + lún nút */\n"
+"QPushButton:pressed {\n"
+"    background-color: #ccb258; \n"
+"    padding-top: 4px;\n"
+"    padding-left: 4px;\n"
+"}")
         self.pushButtonMotthang.setObjectName("pushButtonMotthang")
         self.pushButtonHaituan = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButtonHaituan.setGeometry(QtCore.QRect(130, 410, 321, 80))
@@ -93,11 +157,27 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.pushButtonHaituan.setFont(font)
-        self.pushButtonHaituan.setStyleSheet("color:#0f433d;\n"
-"background-color: #f6f6e9;\n"
-"font: 22pt \"MS Shell Dlg 2\";\n"
-"border-radius: 20px;\n"
-"border: 3px solid  #0f433d;")
+        self.pushButtonHaituan.setStyleSheet("/* Trạng thái bình thường */\n"
+"QPushButton {\n"
+"    color: #0f433d;\n"
+"    background-color: #f6f6e9;\n"
+"    font: 22pt \"MS Shell Dlg 2\";\n"
+"    border-radius: 20px;\n"
+"    border: 3px solid #0f433d;\n"
+"}\n"
+"\n"
+"/* Khi rê chuột vào (Hover) - Vàng trầm nhưng nhạt và dịu hơn */\n"
+"QPushButton:hover {\n"
+"    background-color: #e0c975; \n"
+"    color: #0f433d;\n"
+"}\n"
+"\n"
+"/* Khi click chuột (Pressed) - Đậm hơn lúc hover một xíu + lún nút */\n"
+"QPushButton:pressed {\n"
+"    background-color: #ccb258; \n"
+"    padding-top: 4px;\n"
+"    padding-left: 4px;\n"
+"}")
         self.pushButtonHaituan.setObjectName("pushButtonHaituan")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
