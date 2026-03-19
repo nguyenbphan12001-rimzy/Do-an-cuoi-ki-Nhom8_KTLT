@@ -116,6 +116,42 @@
             "role": "user",
             "gender": "F",
             "status": "Không"
+        },
+        {
+            "username": "Nguyên",
+            "email": "nguyen12@gmail.com",
+            "phone_number": "1234567890",
+            "password": "1212",
+            "role": "user",
+            "gender": "M",
+            "status": "Không"
+        },
+        {
+            "username": "Hà",
+            "email": "ha1213@gmail.com",
+            "phone_number": "0987654321",
+            "password": "ha123",
+            "role": "user",
+            "gender": "F",
+            "status": "Không"
+        },
+        {
+            "username": "Nghĩa",
+            "email": "nghia78@gmail.com",
+            "phone_number": "6573481948",
+            "password": "nghia123",
+            "role": "user",
+            "gender": "M",
+            "status": "Không"
+        },
+        {
+            "username": "Nguyên",
+            "email": "nguyen123@gmail.com",
+            "phone_number": "0826471772",
+            "password": "nguyen123",
+            "role": "user",
+            "gender": "M",
+            "status": "Không"
         }
     ]
 }

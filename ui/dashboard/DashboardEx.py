@@ -1,9 +1,15 @@
 from PyQt6.QtWidgets import QMainWindow
-import os
+
 import json
 
 from ui.admin.adminEx import AdminEx
 from ui.booking.BookingMainWindowEx import BookingMainWindowEx
+
+
+from ui.admin.AdminHistoryEx import AdminHistoryEx
+
+import os
+
 from ui.dashboard.Dashboard import Ui_MainWindow
 from ui.member.MemberMainWindowEx import MemberMainWindowEx
 from ui.registration.Registration_formMainWindowEx import Registration_formMainWindowEx
@@ -83,7 +89,7 @@ class DashboardEx(Ui_MainWindow):
         # Gọi nạp dữ liệu lên giao diện Member
         self.member_ui.load_member()
         self.member_window.showMaximized()
-        self.MainWindow.close()
+
 
     def process_profile(self):
         # Kiểm tra quyền Admin nếu cần thiết ở đây
@@ -93,6 +99,7 @@ class DashboardEx(Ui_MainWindow):
         self.admin_window.showMaximized()
         self.MainWindow.close()
 
+
     def process_logout(self):
         from ui.home.HomeEx import HomeEx
         self.MainWindow.close()
@@ -100,4 +107,14 @@ class DashboardEx(Ui_MainWindow):
         self.logout_ui = HomeEx()
         self.logout_ui.setupUi(self.logout_window)
         self.logout_window.showMaximized()
+
         self.logout_ui.showWindow()
+
+    def mo_man_hinh_lich_su(self):
+        # Tạo màn hình lịch sử, truyền self.MainWindow để khi đóng nó hiện lại Dashboard
+        self.history_win = AdminHistoryEx(self.MainWindow)
+        self.history_win.show()
+        self.MainWindow.hide()
+
+        self.logout_ui.showWindow()
+

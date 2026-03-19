@@ -112,7 +112,5 @@ class SignUpEx(Ui_MainWindow):
         with open(FILE, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
         QMessageBox.information(self.MainWindow, "Success", "Account created successfully")
+        self.go_back()
 
-        # đóng signup quay về login
-        self.MainWindow.hide()
-        self.login_window.show()
