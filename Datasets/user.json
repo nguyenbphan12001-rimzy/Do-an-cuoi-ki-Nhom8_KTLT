@@ -152,15 +152,4 @@
             "role": "user",
             "gender": "M",
             "status": "Không"
-        },
-        {
-            "username": "Nguyễn Mai Quỳnh",
-            "email": "maiquynh@gmail.com",
-            "phone_number": "0123456789",
-            "password": "Quynh123",
-            "role": "user",
-            "gender": "F",
-            "status": "Không"
         }
-    ]
-}
