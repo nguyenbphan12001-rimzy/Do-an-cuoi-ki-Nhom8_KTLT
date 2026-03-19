@@ -1,9 +1,9 @@
 {
-    "username": "Phan Trần Gia Nguyên",
-    "email": "nguyen@gmail.com",
-    "phone_number": "0909090909",
-    "password": "nguyen123",
+    "username": "Nguyễn Minh Anh",
+    "password": "minhanh456",
     "role": "user",
-    "gender": "M",
-    "status": "Không"
+    "phone_number": "0912345678",
+    "email": "minhanh@gmail.com",
+    "gender": "F",
+    "status": "Yoga 1"
 }

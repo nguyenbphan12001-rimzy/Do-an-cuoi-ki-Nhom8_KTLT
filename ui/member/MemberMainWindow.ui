@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1253</width>
-    <height>650</height>
+    <height>693</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -81,8 +81,7 @@ border: 3px solid  #58827d;</string>
            <string notr="true">background-color:#cbddd1;
 font: 87 18pt &quot;Noto Sans TC Black&quot;;
 border-radius: 20px;
-border: 3px ;
-font-weight:bold;</string>
+border: 3px ;</string>
           </property>
           <property name="text">
            <string>THÔNG TIN HỘI VIÊN</string>
@@ -293,8 +292,7 @@ background-color: #cbddd1;</string>
                 <string notr="true">font: 87 18pt &quot;Noto Sans HK Black&quot;;
 background-color:#f6f6e9;
 border-radius: 20px;
-border: 3px ;
-font-weight:bold;</string>
+border: 3px ;</string>
                </property>
                <property name="text">
                 <string>Thông tin gói tập</string>
@@ -343,8 +341,7 @@ border: 3px ;</string>
                   <item row="1" column="0">
                    <widget class="QLabel" name="labelNgayDKy">
                     <property name="styleSheet">
-                     <string notr="true">font: 87 14pt &quot;Noto Sans HK Black&quot;;
-font-weight:bold;</string>
+                     <string notr="true">font: 87 14pt &quot;Noto Sans HK Black&quot;;</string>
                     </property>
                     <property name="text">
                      <string>8/3/2026</string>
@@ -357,8 +354,7 @@ font-weight:bold;</string>
                   <item row="1" column="1">
                    <widget class="QLabel" name="labelNgayGiahan">
                     <property name="styleSheet">
-                     <string notr="true">font: 87 14pt &quot;Noto Sans HK Black&quot;;
-font-weight:bold;</string>
+                     <string notr="true">font: 87 14pt &quot;Noto Sans HK Black&quot;;</string>
                     </property>
                     <property name="text">
                      <string>1/4/2026</string>
@@ -465,7 +461,7 @@ border: 3px solid  #0f433d;</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/ADMIN/.designer/images/manager.png</normaloff>C:/Users/ADMIN/.designer/images/manager.png</iconset>
+                 <normaloff>../images/manager.png</normaloff>../images/manager.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
