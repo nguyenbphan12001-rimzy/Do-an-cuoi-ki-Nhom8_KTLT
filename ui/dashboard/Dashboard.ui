@@ -56,7 +56,7 @@ background-image:rgb(0,255,255);}</string>
            <widget class="QPushButton" name="pushButtonAdmin">
             <property name="minimumSize">
              <size>
-              <width>100</width>
+              <width>300</width>
               <height>70</height>
              </size>
             </property>
@@ -91,56 +91,7 @@ QPushButton:pressed {
 }</string>
             </property>
             <property name="text">
-             <string>Admin</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>30</width>
-              <height>50</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButtonMember">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>70</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">
-QPushButton {
-    color: #0f433d;
-    background-color:  rgb(165, 185, 172);
-    font: 87 20pt &quot;Noto Sans HK Black&quot;;
-    border-radius: 30px;
-    border: 3px solid #f6f6e9
-}
-
-/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
-QPushButton:hover {
-    background-color: #1a6b61; /* Nền biến thành xanh đậm */
-    color: #f6f6e9; /* Chữ sáng lên */
-    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
-}
-
-/* Trạng thái khi click chuột bấm xuống (Pressed) */
-QPushButton:pressed {
-    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
-    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
-    color: #f6f6e9;
-}</string>
-            </property>
-            <property name="text">
-             <string>Member</string>
+             <string>Hồ sơ của tôi</string>
             </property>
             <property name="iconSize">
              <size>
@@ -154,7 +105,7 @@ QPushButton:pressed {
            <widget class="QPushButton" name="pushButtonLogOut">
             <property name="minimumSize">
              <size>
-              <width>100</width>
+              <width>200</width>
               <height>70</height>
              </size>
             </property>

@@ -39,6 +39,7 @@ class MemberMainWindowEx(Ui_MainWindow):
         self.pushButtonKhonggiahan.clicked.connect(self.process_khonggiahan)
         self.pushButtonGiahan.clicked.connect(self.process_giahan)
         self.pushButtonChinh.clicked.connect(self.process_chinhsua)
+        self.pushButtonBack.clicked.connect(self.showDashboard)
 
     def process_khonggiahan(self):
         reply=QMessageBox.information(self.MainWindow,"Thông báo","Bạn đã chọn không gia hạn",QMessageBox.StandardButton.Ok)

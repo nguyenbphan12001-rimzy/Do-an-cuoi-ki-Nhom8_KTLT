@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1200, 650)
+        MainWindow.resize(1253, 650)
         MainWindow.setStyleSheet("QMainWindow{\n"
 "border-image:url(:/pic/hoivien_anh(update).jpg);\n"
 "background-iamge:rgb(0,255,255);}")
@@ -24,6 +24,17 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.verticalLayout_7 = QtWidgets.QVBoxLayout()
         self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.pushButtonBack = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonBack.setMinimumSize(QtCore.QSize(170, 50))
+        self.pushButtonBack.setMaximumSize(QtCore.QSize(100, 100))
+        self.pushButtonBack.setStyleSheet("color:#0f433d;\n"
+"background-color: #cbddd1;\n"
+"font: 18pt \"MS Shell Dlg 2\";\n"
+"border-radius: 20px;\n"
+"border: 3px solid  #58827d;")
+        self.pushButtonBack.setIconSize(QtCore.QSize(30, 50))
+        self.pushButtonBack.setObjectName("pushButtonBack")
+        self.verticalLayout_7.addWidget(self.pushButtonBack)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_7.addItem(spacerItem)
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
@@ -31,7 +42,8 @@ class Ui_MainWindow(object):
         self.label.setStyleSheet("background-color:#cbddd1;\n"
 "font: 87 18pt \"Noto Sans TC Black\";\n"
 "border-radius: 20px;\n"
-"border: 3px ;")
+"border: 3px ;\n"
+"font-weight:bold;")
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
         self.verticalLayout_7.addWidget(self.label)
@@ -141,7 +153,8 @@ class Ui_MainWindow(object):
         self.label_9.setStyleSheet("font: 87 18pt \"Noto Sans HK Black\";\n"
 "background-color:#f6f6e9;\n"
 "border-radius: 20px;\n"
-"border: 3px ;")
+"border: 3px ;\n"
+"font-weight:bold;")
         self.label_9.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_9.setObjectName("label_9")
         self.verticalLayout_11.addWidget(self.label_9)
@@ -165,12 +178,14 @@ class Ui_MainWindow(object):
         self.label_11.setObjectName("label_11")
         self.gridLayout.addWidget(self.label_11, 0, 1, 1, 1)
         self.labelNgayDKy = QtWidgets.QLabel(parent=self.widget_3)
-        self.labelNgayDKy.setStyleSheet("font: 87 14pt \"Noto Sans HK Black\";")
+        self.labelNgayDKy.setStyleSheet("font: 87 14pt \"Noto Sans HK Black\";\n"
+"font-weight:bold;")
         self.labelNgayDKy.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.labelNgayDKy.setObjectName("labelNgayDKy")
         self.gridLayout.addWidget(self.labelNgayDKy, 1, 0, 1, 1)
         self.labelNgayGiahan = QtWidgets.QLabel(parent=self.widget_3)
-        self.labelNgayGiahan.setStyleSheet("font: 87 14pt \"Noto Sans HK Black\";")
+        self.labelNgayGiahan.setStyleSheet("font: 87 14pt \"Noto Sans HK Black\";\n"
+"font-weight:bold;")
         self.labelNgayGiahan.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.labelNgayGiahan.setObjectName("labelNgayGiahan")
         self.gridLayout.addWidget(self.labelNgayGiahan, 1, 1, 1, 1)
@@ -212,7 +227,7 @@ class Ui_MainWindow(object):
 "border-radius: 20px;\n"
 "border: 3px solid  #0f433d;")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("D:\\Nam1\\KTLT\\DoAn\\ui\\member\\../images/manager.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("C:/Users/ADMIN/.designer/images/manager.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonChinh.setIcon(icon)
         self.pushButtonChinh.setIconSize(QtCore.QSize(50, 50))
         self.pushButtonChinh.setObjectName("pushButtonChinh")
@@ -228,7 +243,7 @@ class Ui_MainWindow(object):
 "border: 3px ;\n"
 "")
         self.label_8.setText("")
-        self.label_8.setPixmap(QtGui.QPixmap("D:\\Nam1\\KTLT\\DoAn\\ui\\member\\../../images/Screenshot 2026-03-17 143620.png"))
+        self.label_8.setPixmap(QtGui.QPixmap("D:\\Nam1\\KTLT\\DoAn\\ui\\member\\../../images/dongluc.png"))
         self.label_8.setObjectName("label_8")
         self.horizontalLayout_4.addWidget(self.label_8)
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
@@ -237,7 +252,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addLayout(self.horizontalLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1200, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1253, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
 
@@ -247,6 +262,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.pushButtonBack.setText(_translate("MainWindow", "Back"))
         self.label.setText(_translate("MainWindow", "THÔNG TIN HỘI VIÊN"))
         self.label_2.setText(_translate("MainWindow", "Name:"))
         self.label_4.setText(_translate("MainWindow", "SĐT:"))

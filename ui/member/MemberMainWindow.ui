@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
+    <width>1253</width>
     <height>650</height>
    </rect>
   </property>
@@ -24,6 +24,38 @@ background-iamge:rgb(0,255,255);}</string>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QPushButton" name="pushButtonBack">
+          <property name="minimumSize">
+           <size>
+            <width>170</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:#0f433d;
+background-color: #cbddd1;
+font: 18pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 20px;
+border: 3px solid  #58827d;</string>
+          </property>
+          <property name="text">
+           <string>Back</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
         <item>
          <spacer name="verticalSpacer_2">
           <property name="orientation">
@@ -49,7 +81,8 @@ background-iamge:rgb(0,255,255);}</string>
            <string notr="true">background-color:#cbddd1;
 font: 87 18pt &quot;Noto Sans TC Black&quot;;
 border-radius: 20px;
-border: 3px ;</string>
+border: 3px ;
+font-weight:bold;</string>
           </property>
           <property name="text">
            <string>THÔNG TIN HỘI VIÊN</string>
@@ -260,7 +293,8 @@ background-color: #cbddd1;</string>
                 <string notr="true">font: 87 18pt &quot;Noto Sans HK Black&quot;;
 background-color:#f6f6e9;
 border-radius: 20px;
-border: 3px ;</string>
+border: 3px ;
+font-weight:bold;</string>
                </property>
                <property name="text">
                 <string>Thông tin gói tập</string>
@@ -309,7 +343,8 @@ border: 3px ;</string>
                   <item row="1" column="0">
                    <widget class="QLabel" name="labelNgayDKy">
                     <property name="styleSheet">
-                     <string notr="true">font: 87 14pt &quot;Noto Sans HK Black&quot;;</string>
+                     <string notr="true">font: 87 14pt &quot;Noto Sans HK Black&quot;;
+font-weight:bold;</string>
                     </property>
                     <property name="text">
                      <string>8/3/2026</string>
@@ -322,7 +357,8 @@ border: 3px ;</string>
                   <item row="1" column="1">
                    <widget class="QLabel" name="labelNgayGiahan">
                     <property name="styleSheet">
-                     <string notr="true">font: 87 14pt &quot;Noto Sans HK Black&quot;;</string>
+                     <string notr="true">font: 87 14pt &quot;Noto Sans HK Black&quot;;
+font-weight:bold;</string>
                     </property>
                     <property name="text">
                      <string>1/4/2026</string>
@@ -429,7 +465,7 @@ border: 3px solid  #0f433d;</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>../images/manager.png</normaloff>../images/manager.png</iconset>
+                 <normaloff>C:/Users/ADMIN/.designer/images/manager.png</normaloff>C:/Users/ADMIN/.designer/images/manager.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -458,7 +494,7 @@ border: 3px ;
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>../../images/Screenshot 2026-03-17 143620.png</pixmap>
+                <pixmap>../../images/dongluc.png</pixmap>
                </property>
               </widget>
              </item>
@@ -478,7 +514,7 @@ border: 3px ;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1200</width>
+     <width>1253</width>
      <height>26</height>
     </rect>
    </property>

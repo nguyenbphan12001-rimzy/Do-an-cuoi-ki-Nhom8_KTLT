@@ -26,7 +26,7 @@ background-iamge:rgb(0,255,255);}</string>
     <property name="geometry">
      <rect>
       <x>630</x>
-      <y>520</y>
+      <y>560</y>
       <width>331</width>
       <height>79</height>
      </rect>
@@ -61,7 +61,7 @@ border: 3px solid  #0f433d;</string>
     <property name="geometry">
      <rect>
       <x>630</x>
-      <y>630</y>
+      <y>670</y>
       <width>331</width>
       <height>79</height>
      </rect>
@@ -95,8 +95,8 @@ border: 3px solid  #0f433d;</string>
    <widget class="QPushButton" name="pushButtonMotnam">
     <property name="geometry">
      <rect>
-      <x>1140</x>
-      <y>410</y>
+      <x>1150</x>
+      <y>450</y>
       <width>321</width>
       <height>79</height>
      </rect>
@@ -131,7 +131,7 @@ border: 3px solid  #0f433d;</string>
     <property name="geometry">
      <rect>
       <x>630</x>
-      <y>410</y>
+      <y>450</y>
       <width>331</width>
       <height>80</height>
      </rect>
@@ -166,7 +166,7 @@ border: 3px solid  #0f433d;</string>
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>410</y>
+      <y>450</y>
       <width>331</width>
       <height>80</height>
      </rect>
