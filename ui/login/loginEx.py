@@ -76,6 +76,7 @@ class LoginEx(Ui_MainWindow):
             self.save_current_session(user_found)
             QMessageBox.information(self.MainWindow, "Thành công", f"Xin chào {username}!")
             self.open_dashboard(role, username)
+            self.dashboard.current_user = user_found
         else:
             QMessageBox.warning(self.MainWindow, "Thất bại", "Sai tài khoản, mật khẩu hoặc role!")
 

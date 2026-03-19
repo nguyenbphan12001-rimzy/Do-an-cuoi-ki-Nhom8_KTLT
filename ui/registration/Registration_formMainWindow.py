@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1607, 837)
+        MainWindow.resize(1884, 908)
         MainWindow.setStyleSheet("QMainWindow{\n"
 "border-image:url(:/pic/Registration.png);\n"
 "background-iamge:rgb(0,255,255);}")
@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
         self.pushButtonBathang = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonBathang.setGeometry(QtCore.QRect(630, 560, 331, 79))
+        self.pushButtonBathang.setGeometry(QtCore.QRect(840, 660, 321, 79))
         self.pushButtonBathang.setMaximumSize(QtCore.QSize(900, 80))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
@@ -36,7 +36,7 @@ class Ui_MainWindow(object):
 "border: 3px solid  #0f433d;")
         self.pushButtonBathang.setObjectName("pushButtonBathang")
         self.pushButtonSauthang = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonSauthang.setGeometry(QtCore.QRect(630, 670, 331, 79))
+        self.pushButtonSauthang.setGeometry(QtCore.QRect(840, 780, 321, 79))
         self.pushButtonSauthang.setMaximumSize(QtCore.QSize(900, 80))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
@@ -52,7 +52,7 @@ class Ui_MainWindow(object):
 "border: 3px solid  #0f433d;")
         self.pushButtonSauthang.setObjectName("pushButtonSauthang")
         self.pushButtonMotnam = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonMotnam.setGeometry(QtCore.QRect(1150, 450, 321, 79))
+        self.pushButtonMotnam.setGeometry(QtCore.QRect(1460, 530, 311, 79))
         self.pushButtonMotnam.setMaximumSize(QtCore.QSize(900, 80))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
@@ -68,7 +68,7 @@ class Ui_MainWindow(object):
 "border: 3px solid  #0f433d;")
         self.pushButtonMotnam.setObjectName("pushButtonMotnam")
         self.pushButtonMotthang = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonMotthang.setGeometry(QtCore.QRect(630, 450, 331, 80))
+        self.pushButtonMotthang.setGeometry(QtCore.QRect(840, 530, 321, 80))
         self.pushButtonMotthang.setMaximumSize(QtCore.QSize(900, 80))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
@@ -84,7 +84,7 @@ class Ui_MainWindow(object):
 "border: 3px solid  #0f433d;")
         self.pushButtonMotthang.setObjectName("pushButtonMotthang")
         self.pushButtonHaituan = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonHaituan.setGeometry(QtCore.QRect(120, 450, 331, 80))
+        self.pushButtonHaituan.setGeometry(QtCore.QRect(200, 530, 321, 80))
         self.pushButtonHaituan.setMaximumSize(QtCore.QSize(900, 80))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
@@ -101,7 +101,7 @@ class Ui_MainWindow(object):
         self.pushButtonHaituan.setObjectName("pushButtonHaituan")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1607, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1884, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
 

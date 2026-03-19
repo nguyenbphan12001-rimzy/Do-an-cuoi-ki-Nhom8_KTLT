@@ -58,7 +58,7 @@ class PaymentEx(Ui_MainWindow):
             print(f"❌ Lỗi: {e}")
 
     def set_payment_info(self, ten_goi, gia):
-        """Nhận dữ liệu từ màn hình Membership truyền sang"""
+        """Nhận dữ liệu từ màn hình Đăng ký truyền sang"""
         self.loai_thanh_toan = "membership"
         self.original_price = gia
 
