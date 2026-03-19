@@ -19,6 +19,7 @@ class DashboardEx(Ui_MainWindow):
 
         # 2. Thiết lập giao diện
         self.setupSignalAndSlot()
+
         current_dir = os.path.dirname(os.path.abspath(__file__))
         project_root = current_dir.split("ui")[0]
         img_path = os.path.join(project_root, "images", "Dashboard.png").replace("\\", "/")
@@ -46,9 +47,9 @@ class DashboardEx(Ui_MainWindow):
     def setupSignalAndSlot(self):
         self.pushButtonDatlich.clicked.connect(self.process_booking)
         self.pushButtonDkyHoivien.clicked.connect(self.process_dkyhoivien)
-        self.pushButtonAdmin.clicked.connect(self.process_admin)
+        self.pushButtonProfile.clicked.connect(self.process_profile)
         self.pushButtonLogOut.clicked.connect(self.process_logout)
-        # self.pushButtonMember.clicked.connect(self.process_member)
+        self.pushButtonMember.clicked.connect(self.process_member)
 
     def process_booking(self):
         self.booking_window = QMainWindow()
@@ -81,18 +82,15 @@ class DashboardEx(Ui_MainWindow):
 
         # Gọi nạp dữ liệu lên giao diện Member
         self.member_ui.load_member()
-
         self.member_window.showMaximized()
-        self.member_ui.showWindow()
         self.MainWindow.close()
 
-    def process_admin(self):
+    def process_profile(self):
         # Kiểm tra quyền Admin nếu cần thiết ở đây
         self.admin_window = QMainWindow()
         self.admin_ui = AdminEx()
         self.admin_ui.setupUi(self.admin_window)
         self.admin_window.showMaximized()
-        self.admin_ui.showWindow()
         self.MainWindow.close()
 
     def process_logout(self):
