@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1253, 700)
+        MainWindow.resize(1253, 712)
         MainWindow.setStyleSheet("QMainWindow{\n"
 "border-image:url(:/pic/hoivien_anh(update).jpg);\n"
 "background-iamge:rgb(0,255,255);}")
@@ -107,9 +107,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_11.setObjectName("horizontalLayout_11")
         self.radioButtonMale = QtWidgets.QRadioButton(parent=self.widget_2)
+        self.radioButtonMale.setStyleSheet("")
         self.radioButtonMale.setObjectName("radioButtonMale")
         self.horizontalLayout_11.addWidget(self.radioButtonMale)
         self.radioButtonFemale = QtWidgets.QRadioButton(parent=self.widget_2)
+        self.radioButtonFemale.setStyleSheet("")
         self.radioButtonFemale.setObjectName("radioButtonFemale")
         self.horizontalLayout_11.addWidget(self.radioButtonFemale)
         self.verticalLayout_10.addLayout(self.horizontalLayout_11)
