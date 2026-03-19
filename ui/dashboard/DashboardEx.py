@@ -5,13 +5,12 @@ import json
 from ui.admin.adminEx import AdminEx
 from ui.booking.BookingMainWindowEx import BookingMainWindowEx
 from ui.dashboard.Dashboard import Ui_MainWindow
-<<<<<<< HEAD
+
 from ui.admin.AdminHistoryEx import AdminHistoryEx
 
 import os
 
-=======
->>>>>>> ccd973793c2a677a795cb592003ab4480b2a69dc
+
 from ui.member.MemberMainWindowEx import MemberMainWindowEx
 from ui.registration.Registration_formMainWindowEx import Registration_formMainWindowEx
 
@@ -55,15 +54,15 @@ class DashboardEx(Ui_MainWindow):
         self.pushButtonDkyHoivien.clicked.connect(self.process_dkyhoivien)
 
         self.pushButtonLogOut.clicked.connect(self.process_logout)
-<<<<<<< HEAD
+
         self.pushButtonAdmin.clicked.connect(self.process_member)
 
 
         self.pushButtonBookingHistory.clicked.connect(self.mo_man_hinh_lich_su)
-=======
+
         # self.pushButtonMember.clicked.connect(self.process_member)
 
->>>>>>> ccd973793c2a677a795cb592003ab4480b2a69dc
+
     def process_booking(self):
         self.booking_window = QMainWindow()
         self.booking_ui = BookingMainWindowEx()
@@ -98,16 +97,14 @@ class DashboardEx(Ui_MainWindow):
 
         self.member_window.showMaximized()
         self.member_ui.showWindow()
-        self.MainWindow.close()
-<<<<<<< HEAD
+
     # def process_admin(self):
     #     self.admin_window=QMainWindow()
     #     self.admin_ui=AdminEx()
     #     self.admin_ui.setupUi(self.admin_window)
     #     self.admin_window.showMaximized()
     #     self.admin_ui.showWindow()
-    #     self.MainWindow.close()
-=======
+
 
     def process_admin(self):
         # Kiểm tra quyền Admin nếu cần thiết ở đây
@@ -118,7 +115,7 @@ class DashboardEx(Ui_MainWindow):
         self.admin_ui.showWindow()
         self.MainWindow.close()
 
->>>>>>> ccd973793c2a677a795cb592003ab4480b2a69dc
+
     def process_logout(self):
         from ui.home.HomeEx import HomeEx
         self.MainWindow.close()
@@ -126,7 +123,7 @@ class DashboardEx(Ui_MainWindow):
         self.logout_ui = HomeEx()
         self.logout_ui.setupUi(self.logout_window)
         self.logout_window.showMaximized()
-<<<<<<< HEAD
+
         self.logout_ui.showWindow()
 
     def mo_man_hinh_lich_su(self):
@@ -134,6 +131,6 @@ class DashboardEx(Ui_MainWindow):
         self.history_win = AdminHistoryEx(self.MainWindow)
         self.history_win.show()
         self.MainWindow.hide()
-=======
+
         self.logout_ui.showWindow()
->>>>>>> ccd973793c2a677a795cb592003ab4480b2a69dc
+

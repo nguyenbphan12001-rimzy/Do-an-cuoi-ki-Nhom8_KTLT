@@ -1,13 +1,13 @@
 {
-<<<<<<< HEAD
+
     "username": "Nguyên",
     "email": "nguyen123@gmail.com",
     "phone_number": "0826471772",
     "password": "nguyen123",
-=======
+
     "username": "Nguyễn Minh Anh",
     "password": "minhanh456",
->>>>>>> ccd973793c2a677a795cb592003ab4480b2a69dc
+
     "role": "user",
     "phone_number": "0912345678",
     "email": "minhanh@gmail.com",
