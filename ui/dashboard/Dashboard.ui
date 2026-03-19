@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1363</width>
+    <width>1030</width>
     <height>664</height>
    </rect>
   </property>
@@ -42,7 +42,7 @@ background-image:rgb(0,255,255);}</string>
           <item>
            <spacer name="horizontalSpacer">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -51,6 +51,55 @@ background-image:rgb(0,255,255);}</string>
              </size>
             </property>
            </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonBookingHistory">
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>70</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
+QPushButton {
+    color: #0f433d;
+    background-color: #f6f6e9;
+    font: 87 20pt &quot;Noto Sans HK Black&quot;;
+    border-radius: 30px;
+    border: 3px solid #0f433d;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
+            </property>
+            <property name="text">
+             <string>Lịch sử đăng ký</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>50</height>
+             </size>
+            </property>
+           </widget>
           </item>
           <item>
            <widget class="QPushButton" name="pushButtonAdmin">
@@ -155,7 +204,7 @@ QPushButton:pressed {
       <item>
        <spacer name="verticalSpacer_2">
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -211,7 +260,7 @@ QPushButton:pressed {
             <item row="3" column="1">
              <spacer name="verticalSpacer_3">
               <property name="orientation">
-               <enum>Qt::Vertical</enum>
+               <enum>Qt::Orientation::Vertical</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -224,7 +273,7 @@ QPushButton:pressed {
             <item row="0" column="1">
              <spacer name="verticalSpacer_4">
               <property name="orientation">
-               <enum>Qt::Vertical</enum>
+               <enum>Qt::Orientation::Vertical</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -237,7 +286,7 @@ QPushButton:pressed {
             <item row="1" column="4">
              <spacer name="horizontalSpacer_6">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Orientation::Horizontal</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -250,7 +299,7 @@ QPushButton:pressed {
             <item row="1" column="5">
              <spacer name="horizontalSpacer_5">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Orientation::Horizontal</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -263,7 +312,7 @@ QPushButton:pressed {
             <item row="1" column="2">
              <spacer name="horizontalSpacer_3">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Orientation::Horizontal</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -276,7 +325,7 @@ QPushButton:pressed {
             <item row="1" column="6">
              <spacer name="horizontalSpacer_4">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Orientation::Horizontal</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -289,7 +338,7 @@ QPushButton:pressed {
             <item row="1" column="0">
              <spacer name="horizontalSpacer_2">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Orientation::Horizontal</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -302,7 +351,7 @@ QPushButton:pressed {
             <item row="2" column="1">
              <spacer name="verticalSpacer_5">
               <property name="orientation">
-               <enum>Qt::Vertical</enum>
+               <enum>Qt::Orientation::Vertical</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -370,7 +419,7 @@ QPushButton:pressed {
     <item>
      <spacer name="verticalSpacer">
       <property name="orientation">
-       <enum>Qt::Vertical</enum>
+       <enum>Qt::Orientation::Vertical</enum>
       </property>
       <property name="sizeHint" stdset="0">
        <size>
@@ -387,8 +436,8 @@ QPushButton:pressed {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1363</width>
-     <height>26</height>
+     <width>1030</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>

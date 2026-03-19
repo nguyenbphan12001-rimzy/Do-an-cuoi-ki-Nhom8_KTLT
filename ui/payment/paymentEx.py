@@ -58,23 +58,41 @@ class PaymentEx(Ui_MainWindow):
             print(f"❌ Lỗi: {e}")
 
     def set_payment_info(self, ten_goi, gia):
-        """Nhận dữ liệu từ màn hình Đăng ký truyền sang"""
+        """Nhận dữ liệu từ màn hình Membership truyền sang"""
         self.loai_thanh_toan = "membership"
         self.original_price = gia
-        self.lineEditPackage.setText(ten_goi)
+
+        # Gọt bỏ chữ "Gói " dư thừa
+        clean_ten_goi = ten_goi.replace("Gói ", "").strip()
+        self.lineEditPackage.setText(clean_ten_goi)
+
+        # Thanh toán hội viên thì không có phòng
+        if hasattr(self, 'lineEditRoom'):
+            self.lineEditRoom.setText("N/A")
+        elif hasattr(self, 'lineEditPhong'):
+            self.lineEditPhong.setText("N/A")
+
         self.lineEditTime.setText("Theo gói đã chọn")
         self.radioButtonFull.setChecked(True)
         self.update_price_display()
         self.load_user_data()
 
     def set_booking_info(self, goi_tap, thoi_gian, phong, gia):
-        """Nhận dữ liệu chi tiết từ màn hình Đặt lịch truyền sang"""
+        """Nhận dữ liệu chi tiết từ màn hình Đặt lịch (Booking) truyền sang"""
         self.loai_thanh_toan = "booking"
         self.original_price = gia
         self.room_name = phong
 
-        goi_tap_kem_phong = f"{goi_tap} - {phong}"
-        self.lineEditPackage.setText(goi_tap_kem_phong)
+        # Gọt bỏ chữ "Gói " dư thừa
+        clean_goi_tap = goi_tap.replace("Gói ", "").strip()
+        self.lineEditPackage.setText(clean_goi_tap)
+
+        # Đẩy phòng xuống LineEdit bên dưới
+        if hasattr(self, 'lineEditRoom'):
+            self.lineEditRoom.setText(phong)
+        elif hasattr(self, 'lineEditPhong'):
+            self.lineEditPhong.setText(phong)
+
         self.lineEditTime.setText(thoi_gian)
         self.radioButtonFull.setChecked(True)
         self.update_price_display()
@@ -98,132 +116,141 @@ class PaymentEx(Ui_MainWindow):
                 self.checkBoxBak.setChecked(False)
 
     def process_confirm(self):
-        """Xử lý khi nhấn nút Xác nhận thanh toán và Lưu JSON"""
-        from datetime import datetime, timedelta
+        """Xử lý khi nhấn nút Xác nhận thanh toán (Đã tách rạch ròi 2 bên)"""
+        try:
+            from datetime import datetime, timedelta
 
-        ten = self.lineEditName.text().strip()
-        sdt = ""
-        if hasattr(self, 'lineEditID'):
-            sdt = self.lineEditID.text().strip()
+            ten = self.lineEditName.text().strip()
+            sdt = ""
+            if hasattr(self, 'lineEditID'):
+                sdt = self.lineEditID.text().strip()
+            elif hasattr(self, 'lineEditSDT'):
+                sdt = self.lineEditSDT.text().strip()
 
-        if not self.checkBoxBak.isChecked() and not self.checkBoxCard.isChecked():
-            QMessageBox.warning(self.MainWindow, "Thông báo", "Vui lòng chọn phương thức thanh toán!")
-            return
+            if not self.checkBoxBak.isChecked() and not self.checkBoxCard.isChecked():
+                QMessageBox.warning(self.MainWindow, "Thông báo", "Vui lòng chọn phương thức thanh toán!")
+                return
 
-        if not ten:
-            QMessageBox.warning(self.MainWindow, "Thông báo", "Thiếu thông tin khách hàng!")
-            return
+            if not ten:
+                QMessageBox.warning(self.MainWindow, "Thông báo", "Thiếu thông tin khách hàng!")
+                return
 
-        phuong_thuc = "Ngân hàng" if self.checkBoxBak.isChecked() else "Thẻ tín dụng"
+            phuong_thuc = "Ngân hàng" if self.checkBoxBak.isChecked() else "Thẻ tín dụng"
+            loai = getattr(self, 'loai_thanh_toan', 'booking')
 
-        # Dữ liệu chung dùng cho Booking
-        bill_data = {
-            "customer_name": ten,
-            "phone": sdt,
-            "package_details": self.lineEditPackage.text(),
-            "time": self.lineEditTime.text(),
-            "total_paid": self.lineEditTotalMoney.text(),
-            "payment_method": phuong_thuc,
-            "payment_time": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-        }
+            current_file_path = os.path.abspath(__file__)
+            datasets_dir = os.path.join(current_file_path.split("ui")[0], "datasets")
 
-        current_file_path = os.path.abspath(__file__)
-        project_root = current_file_path.split("ui")[0]
-        datasets_dir = os.path.join(project_root, "datasets")
+            # 👉 CHIA LÀM 2 NGÃ RẼ RÕ RÀNG:
 
-        # 👉 XỬ LÝ THEO CỜ ĐÁNH DẤU
-        if getattr(self, 'loai_thanh_toan', 'booking') == "booking":
-            # 1. LƯU VÀO BOOKING_HISTORY.JSON
-            history_file = os.path.join(datasets_dir, "booking_history.json")
-            history_list = []
-            if os.path.exists(history_file):
-                try:
-                    with open(history_file, 'r', encoding='utf-8') as f:
-                        history_list = json.load(f)
-                except Exception:
-                    pass
+            if loai == "booking":
+                # ---------------------------------------------------------
+                # HƯỚNG 1: ĐẶT LỊCH TẬP (Chỉ lưu vào booking_history.json và cập nhật room)
+                # ---------------------------------------------------------
+                chi_tiet_goi = self.lineEditPackage.text()
+                if getattr(self, 'room_name', ''):
+                    chi_tiet_goi = f"{chi_tiet_goi} - {self.room_name}"
 
-            history_list.append(bill_data)
-            with open(history_file, 'w', encoding='utf-8') as f:
-                json.dump(history_list, f, indent=4, ensure_ascii=False)
+                bill_data = {
+                    "customer_name": ten,
+                    "phone": sdt,
+                    "package_details": chi_tiet_goi,
+                    "time": self.lineEditTime.text(),
+                    "total_paid": self.lineEditTotalMoney.text(),
+                    "payment_method": phuong_thuc,
+                    "payment_time": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+                }
 
-            # 2. CẬP NHẬT ROOM.JSON
-            if hasattr(self, 'room_name') and self.room_name:
-                room_file = os.path.join(datasets_dir, "room.json")
-                if os.path.exists(room_file):
+                # Lưu vào booking_history
+                history_file = os.path.join(datasets_dir, "booking_history.json")
+                history_list = []
+                if os.path.exists(history_file):
                     try:
-                        with open(room_file, 'r', encoding='utf-8') as f:
-                            rooms = json.load(f)
-                        for r in rooms:
-                            if r.get("name") == self.room_name:
-                                r["current_user"] = r.get("current_user", 0) + 1
-                                break
-                        with open(room_file, 'w', encoding='utf-8') as f:
-                            json.dump(rooms, f, indent=4, ensure_ascii=False)
+                        with open(history_file, 'r', encoding='utf-8') as f:
+                            history_list = json.load(f)
                     except Exception:
                         pass
 
-        elif self.loai_thanh_toan == "membership":
-            # 👉 TẠO VÀ LƯU HỘI VIÊN MỚI VÀO MEMBER.JSON
-            member_file = os.path.join(datasets_dir, "member.json")
-            member_data = {"Datasets": []}
+                history_list.append(bill_data)
+                with open(history_file, 'w', encoding='utf-8') as f:
+                    json.dump(history_list, f, indent=4, ensure_ascii=False)
 
-            if os.path.exists(member_file):
-                try:
-                    with open(member_file, 'r', encoding='utf-8') as f:
-                        member_data = json.load(f)
-                except Exception as e:
-                    print("Lỗi đọc file member.json:", e)
+                # Cập nhật số người trong phòng
+                if hasattr(self, 'room_name') and self.room_name:
+                    room_file = os.path.join(datasets_dir, "room.json")
+                    if os.path.exists(room_file):
+                        try:
+                            with open(room_file, 'r', encoding='utf-8') as f:
+                                rooms = json.load(f)
+                            for r in rooms:
+                                if r.get("name") == self.room_name:
+                                    r["current_user"] = r.get("current_user", 0) + 1
+                                    break
+                            with open(room_file, 'w', encoding='utf-8') as f:
+                                json.dump(rooms, f, indent=4, ensure_ascii=False)
+                        except Exception:
+                            pass
 
-            ds_hoi_vien = member_data.get("Datasets", [])
+            elif loai == "membership":
+                # ---------------------------------------------------------
+                # HƯỚNG 2: ĐĂNG KÝ HỘI VIÊN (Chỉ lưu vào member.json)
+                # ---------------------------------------------------------
+                member_file = os.path.join(datasets_dir, "member.json")
+                member_data = {"Datasets": []}
+                if os.path.exists(member_file):
+                    try:
+                        with open(member_file, 'r', encoding='utf-8') as f:
+                            member_data = json.load(f)
+                    except Exception:
+                        pass
 
-            # Tự động tăng ID
-            new_id_num = 1
-            if len(ds_hoi_vien) > 0:
-                last_id_str = ds_hoi_vien[-1].get("id", "000")
-                try:
-                    new_id_num = int(last_id_str) + 1
-                except ValueError:
-                    pass
-            new_id = f"{new_id_num:03d}"
+                ds_hoi_vien = member_data.get("Datasets", [])
+                new_id_num = 1
+                if len(ds_hoi_vien) > 0:
+                    try:
+                        new_id_num = int(ds_hoi_vien[-1].get("id", "000")) + 1
+                    except ValueError:
+                        pass
 
-            # Tính ngày
-            ngay_dang_ky = datetime.now()
-            ten_goi_tap = self.lineEditPackage.text()
+                ngay_dang_ky = datetime.now()
+                ten_goi_tap = self.lineEditPackage.text()
 
-            if "2 tuần" in ten_goi_tap:
-                ngay_het_han = ngay_dang_ky + timedelta(days=14)
-            elif "1 tháng" in ten_goi_tap:
-                ngay_het_han = ngay_dang_ky + timedelta(days=30)
-            elif "3 tháng" in ten_goi_tap:
-                ngay_het_han = ngay_dang_ky + timedelta(days=90)
-            elif "6 tháng" in ten_goi_tap:
-                ngay_het_han = ngay_dang_ky + timedelta(days=180)
-            elif "1 năm" in ten_goi_tap:
-                ngay_het_han = ngay_dang_ky + timedelta(days=365)
-            else:
-                ngay_het_han = ngay_dang_ky
+                if "2 tuần" in ten_goi_tap:
+                    ngay_het_han = ngay_dang_ky + timedelta(days=14)
+                elif "1 tháng" in ten_goi_tap:
+                    ngay_het_han = ngay_dang_ky + timedelta(days=30)
+                elif "3 tháng" in ten_goi_tap:
+                    ngay_het_han = ngay_dang_ky + timedelta(days=90)
+                elif "6 tháng" in ten_goi_tap:
+                    ngay_het_han = ngay_dang_ky + timedelta(days=180)
+                elif "1 năm" in ten_goi_tap:
+                    ngay_het_han = ngay_dang_ky + timedelta(days=365)
+                else:
+                    ngay_het_han = ngay_dang_ky
 
-            # Tạo dữ liệu chuẩn
-            new_member = {
-                "username": ten,
-                "id": new_id,
-                "phone_number": sdt,
-                "gender": "Unknown",  # Hoặc lấy giới tính thực nếu user.json có lưu
-                "serve": ten_goi_tap,
-                "register_date": ngay_dang_ky.strftime("%d/%m/%Y"),
-                "expire_date": ngay_het_han.strftime("%d/%m/%Y")
-            }
+                new_member = {
+                    "username": ten,
+                    "id": f"{new_id_num:03d}",
+                    "phone_number": sdt,
+                    "gender": "Unknown",
+                    "serve": ten_goi_tap,
+                    "register_date": ngay_dang_ky.strftime("%d/%m/%Y"),
+                    "expire_date": ngay_het_han.strftime("%d/%m/%Y")
+                }
 
-            # Lưu file
-            ds_hoi_vien.append(new_member)
-            member_data["Datasets"] = ds_hoi_vien
-            with open(member_file, 'w', encoding='utf-8') as f:
-                json.dump(member_data, f, indent=4, ensure_ascii=False)
+                ds_hoi_vien.append(new_member)
+                member_data["Datasets"] = ds_hoi_vien
+                with open(member_file, 'w', encoding='utf-8') as f:
+                    json.dump(member_data, f, indent=4, ensure_ascii=False)
 
-        # Thông báo và chuyển trang
-        QMessageBox.information(self.MainWindow, "Thành công", "Thanh toán và lưu hệ thống thành công!")
-        self.mo_man_hinh_confirm()
+            # 3. KẾT THÚC THÀNH CÔNG VÀ CHUYỂN MÀN HÌNH
+            QMessageBox.information(self.MainWindow, "Thành công", "Thanh toán thành công!")
+            self.mo_man_hinh_confirm()
+
+        except Exception as e:
+            import traceback
+            QMessageBox.critical(self.MainWindow, "Lỗi Hệ Thống", f"Bị lỗi rồi bro ơi:\n{e}")
+            print(traceback.format_exc())
 
     def mo_man_hinh_confirm(self):
         from ui.confirm.ConfirmEx import ConfirmEx

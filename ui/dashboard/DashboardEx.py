@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import QMainWindow
 from ui.admin.adminEx import AdminEx
 from ui.booking.BookingMainWindowEx import BookingMainWindowEx
 from ui.dashboard.Dashboard import Ui_MainWindow
+from ui.admin.AdminHistoryEx import AdminHistoryEx
 
 import os
 
@@ -27,9 +28,12 @@ class DashboardEx(Ui_MainWindow):
     def setupSignalAndSlot(self):
         self.pushButtonDatlich.clicked.connect(self.process_booking)
         self.pushButtonDkyHoivien.clicked.connect(self.process_dkyhoivien)
-        self.pushButtonAdmin.clicked.connect(self.process_admin)
+
         self.pushButtonLogOut.clicked.connect(self.process_logout)
-        self.pushButtonMember.clicked.connect(self.process_member)
+        self.pushButtonAdmin.clicked.connect(self.process_member)
+
+
+        self.pushButtonBookingHistory.clicked.connect(self.mo_man_hinh_lich_su)
     def process_booking(self):
         self.booking_window=QMainWindow()
         self.booking_ui=BookingMainWindowEx()
@@ -56,13 +60,13 @@ class DashboardEx(Ui_MainWindow):
         self.member_window.showMaximized()
         self.member_ui.showWindow()
         self.MainWindow.close()
-    def process_admin(self):
-        self.admin_window=QMainWindow()
-        self.admin_ui=AdminEx()
-        self.admin_ui.setupUi(self.admin_window)
-        self.admin_window.showMaximized()
-        self.admin_ui.showWindow()
-        self.MainWindow.close()
+    # def process_admin(self):
+    #     self.admin_window=QMainWindow()
+    #     self.admin_ui=AdminEx()
+    #     self.admin_ui.setupUi(self.admin_window)
+    #     self.admin_window.showMaximized()
+    #     self.admin_ui.showWindow()
+    #     self.MainWindow.close()
     def process_logout(self):
         from ui.home.HomeEx import HomeEx  # import trong function
         self.MainWindow.close()
@@ -71,3 +75,9 @@ class DashboardEx(Ui_MainWindow):
         self.logout_ui.setupUi(self.logout_window)
         self.logout_window.showMaximized()
         self.logout_ui.showWindow()
+
+    def mo_man_hinh_lich_su(self):
+        # Tạo màn hình lịch sử, truyền self.MainWindow để khi đóng nó hiện lại Dashboard
+        self.history_win = AdminHistoryEx(self.MainWindow)
+        self.history_win.show()
+        self.MainWindow.hide()
