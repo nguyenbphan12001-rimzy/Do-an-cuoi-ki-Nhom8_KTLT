@@ -17,6 +17,7 @@ class PaymentEx(Ui_MainWindow):
 
         # 2. Kết nối các sự kiện (Signals & Slots)
         self.setup_signals()
+        self.lineEditTotalMoney.setReadOnly(True)
 
     def setup_signals(self):
         # Sự kiện chọn Cọc 50% hoặc Trả 100%
@@ -251,21 +252,21 @@ class PaymentEx(Ui_MainWindow):
 
             # 3. KẾT THÚC THÀNH CÔNG VÀ CHUYỂN MÀN HÌNH
                     # Gom tất cả thông tin đã lấy được ở trên vào một chuỗi
-                    thong_tin_chi_tiet = (
-                        f"✅ THANH TOÁN THÀNH CÔNG!\n\n"
-                        f"👤 Khách hàng: {ten}\n"
-                        f"📞 Số điện thoại: {sdt}\n"
-                        f"📦 Gói dịch vụ: {self.lineEditPackage.text()}\n"
-                        f"⏰ Thời gian: {self.lineEditTime.text()}\n"
-                        f"💰 Tổng tiền: {self.lineEditTotalMoney.text()}\n"
-                        f"💳 Hình thức: {phuong_thuc}\n\n"
-                        f"Hệ thống đã cập nhật dữ liệu thành công."
-                    )
+            thong_tin_chi_tiet = (
+                f"✅ THANH TOÁN THÀNH CÔNG!\n\n"
+                f"👤 Khách hàng: {ten}\n"
+                f"📞 Số điện thoại: {sdt}\n"
+                f"📦 Gói dịch vụ: {self.lineEditPackage.text()}\n"
+                f"⏰ Thời gian: {self.lineEditTime.text()}\n"
+                f"💰 Tổng tiền: {self.lineEditTotalMoney.text()}\n"
+                f"💳 Hình thức: {phuong_thuc}\n\n"
+                f"Hệ thống đã cập nhật dữ liệu thành công."
+            )
 
-                    # Hiển thị thông báo với đầy đủ chi tiết
-                    QMessageBox.information(self.MainWindow, "Xác nhận giao dịch", thong_tin_chi_tiet)
+            # Hiển thị thông báo với đầy đủ chi tiết
+            QMessageBox.information(self.MainWindow, "Xác nhận giao dịch", thong_tin_chi_tiet)
 
-                    self.mo_man_hinh_confirm()
+            self.mo_man_hinh_confirm()
         except Exception as e:
             import traceback
             QMessageBox.critical(self.MainWindow, "Lỗi Hệ Thống", f"Bị lỗi rồi bro ơi:\n{e}")
