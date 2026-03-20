@@ -206,7 +206,7 @@ class BookingMainWindowEx(Ui_MainWindow):
         self.payment_ui.set_booking_info(goi_tap_hien_thi, thoi_gian_day_du, phong, gia_tien_tong)
 
         # 5. Hiển thị màn hình Payment và ẩn/đóng màn hình Đặt lịch
-        self.payment_ui.showWindow()
+        self.payment_window.showMaximized()
         self.MainWindow.hide()  # Dùng close() nếu không muốn quay lại màn này nữa
 
 

@@ -25,3 +25,4 @@ class ConfirmEx(Ui_MainWindow):
         self.dashboard_ui.setupUi(self.dashboard_window)
         self.dashboard_window.showMaximized()
         self.dashboard_ui.showWindow()
+        self.MainWindow.close()

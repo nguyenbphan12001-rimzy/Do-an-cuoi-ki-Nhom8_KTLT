@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Nam1\KTLT\DoAn\ui\payment\payment.ui'
+# Form implementation generated from reading ui file 'D:\DO AN KTLT\ui\payment\payment.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -328,7 +328,7 @@ class Ui_MainWindow(object):
 "    height: 18px;\n"
 "}")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("D:\\Nam1\\KTLT\\DoAn\\ui\\payment\\../../images/bank.jpg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("D:\\DO AN KTLT\\ui\\payment\\../../images/bank.jpg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.checkBoxBak.setIcon(icon)
         self.checkBoxBak.setIconSize(QtCore.QSize(60, 60))
         self.checkBoxBak.setObjectName("checkBoxBak")
@@ -426,7 +426,7 @@ class Ui_MainWindow(object):
 "    height: 18px;\n"
 "}")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("D:\\Nam1\\KTLT\\DoAn\\ui\\payment\\../../images/visa.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap("D:\\DO AN KTLT\\ui\\payment\\../../images/visa.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.checkBoxCard.setIcon(icon1)
         self.checkBoxCard.setIconSize(QtCore.QSize(60, 60))
         self.checkBoxCard.setTristate(False)
@@ -479,7 +479,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.gridLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1292, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1292, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)

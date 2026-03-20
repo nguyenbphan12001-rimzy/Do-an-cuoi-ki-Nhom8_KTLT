@@ -3,42 +3,49 @@
         "room_id": "P01",
         "name": "Phòng Pilates P01",
         "category": "Pilates",
-        "current_user": 0
+        "current_user": 1,
+        "capacity": 20
     },
     {
         "room_id": "P02",
         "name": "Phòng Pilates P02",
         "category": "Pilates",
-        "current_user": 0
+        "current_user": 0,
+        "capacity": 20
     },
     {
         "room_id": "Y01",
         "name": "Phòng Yoga Master Y01",
         "category": "Yoga",
-        "current_user": 0
+        "current_user": 0,
+        "capacity": 20
     },
     {
         "room_id": "Y02",
         "name": "Phòng Yoga Master Y02",
         "category": "Yoga",
-        "current_user": 0
+        "current_user": 1,
+        "capacity": 15
     },
     {
         "room_id": "B1",
         "name": "Phòng Boxing B1",
         "category": "Boxing",
-        "current_user": 0
+        "current_user": 0,
+        "capacity": 20
     },
     {
         "room_id": "B2",
         "name": "Phòng Boxing B2",
         "category": "Boxing",
-        "current_user": 0
+        "current_user": 0,
+        "capacity": 20
     },
     {
         "room_id": "KG01",
         "name": "Không gian chung",
         "category": "Tự do",
-        "current_user": 3
+        "current_user": 3,
+        "capacity": 50
     }
 ]

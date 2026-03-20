@@ -53,10 +53,10 @@ background-image:rgb(0,255,255);}</string>
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButtonAdmin">
+           <widget class="QPushButton" name="pushButtonProfile">
             <property name="minimumSize">
              <size>
-              <width>300</width>
+              <width>170</width>
               <height>70</height>
              </size>
             </property>
@@ -74,6 +74,7 @@ QPushButton {
     font: 87 20pt &quot;Noto Sans HK Black&quot;;
     border-radius: 30px;
     border: 3px solid #0f433d;
+font-weight:bold;
 }
 
 /* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
@@ -91,7 +92,7 @@ QPushButton:pressed {
 }</string>
             </property>
             <property name="text">
-             <string>Hồ sơ của tôi</string>
+             <string>Profile</string>
             </property>
             <property name="iconSize">
              <size>
@@ -102,10 +103,45 @@ QPushButton:pressed {
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="pushButtonMember">
+            <property name="minimumSize">
+             <size>
+              <width>170</width>
+              <height>70</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{color:rgb(24, 85, 75);
+background-color:#cbddd1;
+font: 87 20pt &quot;Noto Sans HK Black&quot;;
+border-radius: 30px;
+border: 3px solid  #0f433d;
+font-weight:bold;}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
+            </property>
+            <property name="text">
+             <string>Member</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="pushButtonLogOut">
             <property name="minimumSize">
              <size>
-              <width>200</width>
+              <width>170</width>
               <height>70</height>
              </size>
             </property>
@@ -123,6 +159,7 @@ QPushButton {
     font: 87 20pt &quot;Noto Sans HK Black&quot;;
     border-radius: 30px;
     border: 3px solid #58827d;
+font-weight:bold;
 }
 
 /* Trạng thái khi rê chuột vào (Hover) */
@@ -176,7 +213,7 @@ QPushButton:pressed {
               <property name="minimumSize">
                <size>
                 <width>300</width>
-                <height>60</height>
+                <height>70</height>
                </size>
               </property>
               <property name="styleSheet">
@@ -187,6 +224,7 @@ QPushButton {
     font: 87 20pt &quot;Noto Sans HK Black&quot;;
     border-radius: 30px;
     border: 3px solid #0f433d;
+font-weight:bold;
 }
 
 /* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
@@ -317,7 +355,7 @@ QPushButton:pressed {
               <property name="minimumSize">
                <size>
                 <width>300</width>
-                <height>60</height>
+                <height>70</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -334,6 +372,7 @@ QPushButton {
     font: 87 20pt &quot;Noto Sans HK Black&quot;;
     border-radius: 30px;
     border: 3px solid #58827d;
+font-weight:bold;
 }
 
 /* Trạng thái khi rê chuột vào (Hover) */
