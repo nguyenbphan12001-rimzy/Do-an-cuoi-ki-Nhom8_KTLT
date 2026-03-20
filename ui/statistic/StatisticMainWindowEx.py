@@ -1,6 +1,8 @@
+import json
+
 import pandas as pd
 import seaborn as sns
-from PyQt6.QtWidgets import QMainWindow
+from PyQt6.QtWidgets import QMainWindow, QTableWidgetItem
 from matplotlib import pyplot as plt
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -23,6 +25,10 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.pushButtonTKdoanhthu.clicked.connect(self.show_doanhthu)
         self.pushButtonTKluongkhach.clicked.connect(self.show_luongkhach)
         self.pushButtonBack.clicked.connect(self.process_back)
+        self.pushButtonTudo.clicked.connect(lambda :self.filter_users("Tự do"))
+        self.pushButtonBoxing.clicked.connect(lambda :self.filter_users("Boxing"))
+        self.pushButtonPilates.clicked.connect(lambda : self.filter_users("Pilates"))
+        self.pushButtonYoga.clicked.connect(lambda :self.filter_users("Yoga"))
 
         current_dir = os.path.dirname(os.path.abspath(__file__))
         img_path = os.path.abspath(os.path.join(current_dir, "../../images/Thongke.png")).replace("\\", "/")
@@ -120,3 +126,40 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.dashboard_ui = DashboardEx()
         self.dashboard_ui.setupUi(self.dashboard_window)
         self.dashboard_ui.showWindow()
+
+
+    #Danh sách khách hàng
+    def filter_users(self, goitap):
+        base_dir = os.path.dirname(__file__)
+        file_path = os.path.join(base_dir, "../../Datasets/booking_history.json")
+
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)  # data là LIST
+
+        users = []
+
+        # Lọc theo gói tập trong chuỗi
+        for item in data:
+            package = item.get("package_details", "")
+
+            if f"Gói: {goitap}" in package:
+                users.append(item)
+
+        # Xóa trùng theo SĐT
+        unique_users = {}
+        for u in users:
+            unique_users[u["phone"]] = u
+
+        users = list(unique_users.values())
+
+        # Hiển thị lên bảng
+        self.tableWidget.setRowCount(len(users))
+        self.tableWidget.setColumnCount(3)
+        self.tableWidget.setHorizontalHeaderLabels(
+            ["Họ và tên", "SĐT", "Môn đăng ký"]
+        )
+
+        for row, user in enumerate(users):
+            self.tableWidget.setItem(row, 0, QTableWidgetItem(user.get("customer_name", "")))
+            self.tableWidget.setItem(row, 1, QTableWidgetItem(user.get("phone", "")))
+            self.tableWidget.setItem(row, 2, QTableWidgetItem(goitap))

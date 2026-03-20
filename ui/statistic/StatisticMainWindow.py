@@ -12,11 +12,11 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1021, 746)
+        MainWindow.resize(1037, 746)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.pushButtonBack = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonBack.setGeometry(QtCore.QRect(0, 60, 120, 50))
+        self.pushButtonBack.setGeometry(QtCore.QRect(10, 60, 120, 50))
         self.pushButtonBack.setMinimumSize(QtCore.QSize(120, 50))
         self.pushButtonBack.setMaximumSize(QtCore.QSize(120, 50))
         font = QtGui.QFont()
@@ -26,12 +26,27 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(75)
         self.pushButtonBack.setFont(font)
-        self.pushButtonBack.setStyleSheet("color: rgb(255, 255, 255);\n"
+        self.pushButtonBack.setStyleSheet("\n"
+"QPushButton{color: rgb(255, 255, 255);\n"
 "font: 87 15pt \"Noto Sans HK Black\";\n"
 "background-color: rgb(24, 78, 73);\n"
 "border-radius: 15px;\n"
 "border: 3px solid  #58827d;\n"
-"font-weight: Bold")
+"font-weight: Bold}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */\n"
+"QPushButton:hover {\n"
+"    background-color: #1a6b61; /* Nền biến thành xanh đậm */\n"
+"    color: #f6f6e9; /* Chữ sáng lên */\n"
+"    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */\n"
+"}\n"
+"\n"
+"/* Trạng thái khi click chuột bấm xuống (Pressed) */\n"
+"QPushButton:pressed {\n"
+"    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */\n"
+"    border: 3px solid #0a2e2a; /* Viền cũng tối theo */\n"
+"    color: #f6f6e9;\n"
+"}")
         self.pushButtonBack.setObjectName("pushButtonBack")
         self.tabWidgetKhachhang = QtWidgets.QTabWidget(parent=self.centralwidget)
         self.tabWidgetKhachhang.setGeometry(QtCore.QRect(0, 130, 1011, 561))
@@ -478,13 +493,16 @@ class Ui_MainWindow(object):
         self.widget1.setObjectName("widget1")
         self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.widget1)
         self.verticalLayout_12.setObjectName("verticalLayout_12")
-        self.verticalLayout_14 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_14.setObjectName("verticalLayout_14")
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
         self.tableWidget = QtWidgets.QTableWidget(parent=self.widget1)
+        self.tableWidget.setMaximumSize(QtCore.QSize(1500, 1500))
         self.tableWidget.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";\n"
 "")
         self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(4)
+        self.tableWidget.setColumnCount(3)
         self.tableWidget.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(0, item)
@@ -492,19 +510,15 @@ class Ui_MainWindow(object):
         self.tableWidget.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(2, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(3, item)
-        self.verticalLayout_14.addWidget(self.tableWidget)
-        self.verticalLayout_12.addLayout(self.verticalLayout_14)
-        self.verticalLayout_13 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_13.setObjectName("verticalLayout_13")
-        self.widget_6 = QtWidgets.QWidget(parent=self.widget1)
-        self.widget_6.setObjectName("widget_6")
-        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.widget_6)
+        self.horizontalLayout_9.addWidget(self.tableWidget)
+        self.horizontalLayout_6.addLayout(self.horizontalLayout_9)
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
-        self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
-        self.pushButtonTudo = QtWidgets.QPushButton(parent=self.widget_6)
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.pushButtonTudo = QtWidgets.QPushButton(parent=self.widget1)
+        self.pushButtonTudo.setMinimumSize(QtCore.QSize(400, 0))
+        self.pushButtonTudo.setMaximumSize(QtCore.QSize(500, 60))
         self.pushButtonTudo.setStyleSheet("QPushButton{color:rgb(255, 255, 255);\n"
 "background-color:#97b690;\n"
 "font: 87 20pt \"Noto Sans HK Black\";\n"
@@ -526,57 +540,9 @@ class Ui_MainWindow(object):
 "    color: #f6f6e9;\n"
 "}")
         self.pushButtonTudo.setObjectName("pushButtonTudo")
-        self.horizontalLayout_6.addWidget(self.pushButtonTudo)
-        self.pushButtonYoga = QtWidgets.QPushButton(parent=self.widget_6)
-        self.pushButtonYoga.setStyleSheet("/* Trạng thái bình thường (Code gốc của mày) */\n"
-"QPushButton {\n"
-"    color: #0f433d;\n"
-"    background-color: #f6f6e9;\n"
-"    font: 87 20pt \"Noto Sans HK Black\";\n"
-"    border-radius: 15px;\n"
-"    border: 3px solid #0f433d;\n"
-"font-weight:bold;\n"
-"}\n"
-"\n"
-"/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */\n"
-"QPushButton:hover {\n"
-"    background-color: #1a6b61; /* Nền biến thành xanh đậm */\n"
-"    color: #f6f6e9; /* Chữ sáng lên */\n"
-"    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */\n"
-"}\n"
-"\n"
-"/* Trạng thái khi click chuột bấm xuống (Pressed) */\n"
-"QPushButton:pressed {\n"
-"    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */\n"
-"    border: 3px solid #0a2e2a; /* Viền cũng tối theo */\n"
-"    color: #f6f6e9;\n"
-"}")
-        self.pushButtonYoga.setObjectName("pushButtonYoga")
-        self.horizontalLayout_6.addWidget(self.pushButtonYoga)
-        self.pushButtonPilates = QtWidgets.QPushButton(parent=self.widget_6)
-        self.pushButtonPilates.setStyleSheet("QPushButton{color:rgb(255, 255, 255);\n"
-"background-color:#97b690;\n"
-"font: 87 20pt \"Noto Sans HK Black\";\n"
-"border-radius: 15px;\n"
-"border: 3px solid  #0f433d;\n"
-"font-weight:bold;}\n"
-"\n"
-"/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */\n"
-"QPushButton:hover {\n"
-"    background-color: #1a6b61; /* Nền biến thành xanh đậm */\n"
-"    color: #f6f6e9; /* Chữ sáng lên */\n"
-"    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */\n"
-"}\n"
-"\n"
-"/* Trạng thái khi click chuột bấm xuống (Pressed) */\n"
-"QPushButton:pressed {\n"
-"    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */\n"
-"    border: 3px solid #0a2e2a; /* Viền cũng tối theo */\n"
-"    color: #f6f6e9;\n"
-"}")
-        self.pushButtonPilates.setObjectName("pushButtonPilates")
-        self.horizontalLayout_6.addWidget(self.pushButtonPilates)
-        self.pushButtonBoxing = QtWidgets.QPushButton(parent=self.widget_6)
+        self.verticalLayout_2.addWidget(self.pushButtonTudo)
+        self.pushButtonBoxing = QtWidgets.QPushButton(parent=self.widget1)
+        self.pushButtonBoxing.setMaximumSize(QtCore.QSize(500, 60))
         self.pushButtonBoxing.setStyleSheet("/* Trạng thái bình thường (Code gốc của mày) */\n"
 "QPushButton {\n"
 "    color: #0f433d;\n"
@@ -601,14 +567,65 @@ class Ui_MainWindow(object):
 "    color: #f6f6e9;\n"
 "}")
         self.pushButtonBoxing.setObjectName("pushButtonBoxing")
-        self.horizontalLayout_6.addWidget(self.pushButtonBoxing)
-        self.horizontalLayout_7.addLayout(self.horizontalLayout_6)
-        self.verticalLayout_13.addWidget(self.widget_6)
-        self.verticalLayout_12.addLayout(self.verticalLayout_13)
+        self.verticalLayout_2.addWidget(self.pushButtonBoxing)
+        self.pushButtonPilates = QtWidgets.QPushButton(parent=self.widget1)
+        self.pushButtonPilates.setMaximumSize(QtCore.QSize(500, 60))
+        self.pushButtonPilates.setStyleSheet("QPushButton{color:rgb(255, 255, 255);\n"
+"background-color:#97b690;\n"
+"font: 87 20pt \"Noto Sans HK Black\";\n"
+"border-radius: 15px;\n"
+"border: 3px solid  #0f433d;\n"
+"font-weight:bold;}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */\n"
+"QPushButton:hover {\n"
+"    background-color: #1a6b61; /* Nền biến thành xanh đậm */\n"
+"    color: #f6f6e9; /* Chữ sáng lên */\n"
+"    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */\n"
+"}\n"
+"\n"
+"/* Trạng thái khi click chuột bấm xuống (Pressed) */\n"
+"QPushButton:pressed {\n"
+"    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */\n"
+"    border: 3px solid #0a2e2a; /* Viền cũng tối theo */\n"
+"    color: #f6f6e9;\n"
+"}")
+        self.pushButtonPilates.setObjectName("pushButtonPilates")
+        self.verticalLayout_2.addWidget(self.pushButtonPilates)
+        self.pushButtonYoga = QtWidgets.QPushButton(parent=self.widget1)
+        self.pushButtonYoga.setMaximumSize(QtCore.QSize(500, 60))
+        self.pushButtonYoga.setStyleSheet("/* Trạng thái bình thường (Code gốc của mày) */\n"
+"QPushButton {\n"
+"    color: #0f433d;\n"
+"    background-color: #f6f6e9;\n"
+"    font: 87 20pt \"Noto Sans HK Black\";\n"
+"    border-radius: 15px;\n"
+"    border: 3px solid #0f433d;\n"
+"font-weight:bold;\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */\n"
+"QPushButton:hover {\n"
+"    background-color: #1a6b61; /* Nền biến thành xanh đậm */\n"
+"    color: #f6f6e9; /* Chữ sáng lên */\n"
+"    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */\n"
+"}\n"
+"\n"
+"/* Trạng thái khi click chuột bấm xuống (Pressed) */\n"
+"QPushButton:pressed {\n"
+"    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */\n"
+"    border: 3px solid #0a2e2a; /* Viền cũng tối theo */\n"
+"    color: #f6f6e9;\n"
+"}")
+        self.pushButtonYoga.setObjectName("pushButtonYoga")
+        self.verticalLayout_2.addWidget(self.pushButtonYoga)
+        self.horizontalLayout_7.addLayout(self.verticalLayout_2)
+        self.horizontalLayout_6.addLayout(self.horizontalLayout_7)
+        self.verticalLayout_12.addLayout(self.horizontalLayout_6)
         self.tabWidgetKhachhang.addTab(self.widget1, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1021, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1037, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
@@ -616,7 +633,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabWidgetKhachhang.setCurrentIndex(1)
+        self.tabWidgetKhachhang.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -661,11 +678,9 @@ class Ui_MainWindow(object):
         item = self.tableWidget.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "SĐT"))
         item = self.tableWidget.horizontalHeaderItem(2)
-        item.setText(_translate("MainWindow", "Giới tính"))
-        item = self.tableWidget.horizontalHeaderItem(3)
         item.setText(_translate("MainWindow", "Môn đăng ký"))
         self.pushButtonTudo.setText(_translate("MainWindow", "Tự do"))
-        self.pushButtonYoga.setText(_translate("MainWindow", "Yoga"))
-        self.pushButtonPilates.setText(_translate("MainWindow", "Pilates"))
         self.pushButtonBoxing.setText(_translate("MainWindow", "Boxing"))
+        self.pushButtonPilates.setText(_translate("MainWindow", "Pilates"))
+        self.pushButtonYoga.setText(_translate("MainWindow", "Yoga"))
         self.tabWidgetKhachhang.setTabText(self.tabWidgetKhachhang.indexOf(self.widget1), _translate("MainWindow", "DANH SÁCH KHÁCH HÀNG"))
