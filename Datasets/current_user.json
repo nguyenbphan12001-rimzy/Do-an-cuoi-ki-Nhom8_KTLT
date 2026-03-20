@@ -1,13 +1,9 @@
 {
-<<<<<<< HEAD
-    "username": "Bùi Thanh Tùng"
-=======
-    "username": "kngan",
-    "email": "kngan@gmail.com",
-    "phone_number": "0124689999",
-    "password": "123",
+    "username": "Bùi Thanh Tùng",
+    "password": "thanhtung147",
     "role": "user",
-    "gender": "F",
+    "phone_number": "0918901234",
+    "email": "thanhtung@gmail.com",
+    "gender": "M",
     "status": "Không"
->>>>>>> 3d311f7f74da109d4224b10c37c0763498814c52
 }

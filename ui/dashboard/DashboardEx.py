@@ -5,6 +5,7 @@ from ui.admin.adminEx import AdminEx
 from ui.admin.AdminHistoryEx import AdminHistoryEx
 import os
 
+# Import các màn hình con
 from ui.admin.adminEx import AdminEx
 from ui.admin.AdminHistoryEx import AdminHistoryEx
 from ui.booking.BookingMainWindowEx import BookingMainWindowEx
@@ -18,16 +19,17 @@ from ui.booking.BookingMainWindowEx import BookingMainWindowEx
 class DashboardEx(Ui_MainWindow):
     def __init__(self, username=None):
         super().__init__()
+        self.username = username
+
         # Nếu không truyền username, tự load từ session
         if username is None:
             current_user_file = os.path.join(os.path.dirname(__file__), "../../datasets/current_user.json")
             try:
                 with open(current_user_file, encoding="utf-8") as f:
                     data = json.load(f)
-                    username = data.get("username")
+                    self.username = data.get("username")
             except Exception:
-                username = None
-        self.username = username
+                self.username = None
 
         # Load session data
         self.load_session_data()
@@ -63,16 +65,18 @@ class DashboardEx(Ui_MainWindow):
             self.current_user = None
 
     def showWindow(self):
+        """Hiển thị Dashboard"""
         self.MainWindow.show()
 
     def setupSignalAndSlot(self):
         """Kết nối các button với function"""
         self.pushButtonDatlich.clicked.connect(self.process_booking)
         self.pushButtonDkyHoivien.clicked.connect(self.process_dkyhoivien)
-        # self.pushButtonProfile.clicked.connect(self.process_profile)
+        self.pushButtonProfile.clicked.connect(self.process_profile)
         self.pushButtonLogOut.clicked.connect(self.process_logout)
-        self.pushButtonMember.clicked.connect(self.process_member)
+        # self.pushButtonMember.clicked.connect(self.process_member)
         self.pushButtonMyBooking.clicked.connect(self.mo_man_hinh_lich_su)
+
     # ----------------- Xử lý button -----------------
     def process_booking(self):
         self.booking_window = QMainWindow()
@@ -81,7 +85,7 @@ class DashboardEx(Ui_MainWindow):
         self.booking_ui.current_user = getattr(self, "current_user", None)
         self.booking_window.showMaximized()
         self.booking_ui.showWindow()
-        self.MainWindow.hide()
+        # Dashboard vẫn là window gốc, không hide
 
     def process_dkyhoivien(self):
         self.hoivien_window = QMainWindow()
@@ -90,20 +94,20 @@ class DashboardEx(Ui_MainWindow):
         self.hoivien_ui.current_user = getattr(self, "current_user", None)
         self.hoivien_window.showMaximized()
         self.hoivien_ui.showWindow()
-        self.MainWindow.hide()
+        # Dashboard vẫn là window gốc
 
     def process_member(self):
         self.member_window = QMainWindow()
         self.member_ui = MemberMainWindowEx()
         self.member_ui.setupUi(self.member_window)
         self.member_ui.current_user = getattr(self, "current_user", None)
-        # Nạp dữ liệu lên giao diện Member
         self.member_ui.load_member()
         self.member_window.showMaximized()
         self.MainWindow.hide()
 
 
     def process_profile(self):
+        """Mở AdminEx (Profile)"""
         self.admin_window = QMainWindow()
         self.admin_ui = AdminEx(self.username)
         self.admin_ui.setupUi(self.admin_window)
@@ -111,11 +115,13 @@ class DashboardEx(Ui_MainWindow):
         self.MainWindow.hide()
 
     def process_logout(self):
+        """Đăng xuất về HomeEx"""
         self.logout_window = QMainWindow()
         self.logout_ui = HomeEx()
         self.logout_ui.setupUi(self.logout_window)
         self.logout_window.showMaximized()
         self.logout_ui.showWindow()
+        # Đóng Dashboard
         self.MainWindow.close()
 
     def mo_man_hinh_lich_su(self):

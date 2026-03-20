@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Nam1\KTLT\DoAn\ui\dashboard\Dashboard.ui'
+# Form implementation generated from reading ui file 'D:\Nam_1\K25411_KTLT\project\ui\dashboard\Dashboard.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -62,9 +62,9 @@ class Ui_MainWindow(object):
         self.pushButtonMyBooking.setIconSize(QtCore.QSize(30, 50))
         self.pushButtonMyBooking.setObjectName("pushButtonMyBooking")
         self.horizontalLayout.addWidget(self.pushButtonMyBooking)
-        self.pushButtonMember = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonMember.setMinimumSize(QtCore.QSize(170, 70))
-        self.pushButtonMember.setStyleSheet("QPushButton{color:rgb(255, 255, 255);\n"
+        self.pushButtonProfile = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonProfile.setMinimumSize(QtCore.QSize(170, 70))
+        self.pushButtonProfile.setStyleSheet("QPushButton{color:rgb(255, 255, 255);\n"
 "background-color:#97b690;\n"
 "font: 87 20pt \"Noto Sans HK Black\";\n"
 "border-radius: 30px;\n"
@@ -84,8 +84,8 @@ class Ui_MainWindow(object):
 "    border: 3px solid #0a2e2a; /* Viền cũng tối theo */\n"
 "    color: #f6f6e9;\n"
 "}")
-        self.pushButtonMember.setObjectName("pushButtonMember")
-        self.horizontalLayout.addWidget(self.pushButtonMember)
+        self.pushButtonProfile.setObjectName("pushButtonProfile")
+        self.horizontalLayout.addWidget(self.pushButtonProfile)
         self.pushButtonLogOut = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButtonLogOut.setMinimumSize(QtCore.QSize(170, 70))
         self.pushButtonLogOut.setMaximumSize(QtCore.QSize(16777215, 16777215))
@@ -201,7 +201,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addItem(spacerItem10)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1363, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1363, 18))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
 
@@ -212,7 +212,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButtonMyBooking.setText(_translate("MainWindow", "History"))
-        self.pushButtonMember.setText(_translate("MainWindow", "Profile"))
+        self.pushButtonProfile.setText(_translate("MainWindow", "Profile"))
         self.pushButtonLogOut.setText(_translate("MainWindow", "Exit"))
         self.pushButtonDkyHoivien.setText(_translate("MainWindow", " Đăng ký hội viên"))
         self.pushButtonDatlich.setText(_translate("MainWindow", "Đặt lịch ngay"))

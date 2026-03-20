@@ -103,7 +103,7 @@ QPushButton:pressed {
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButtonMember">
+           <widget class="QPushButton" name="pushButtonProfile">
             <property name="minimumSize">
              <size>
               <width>170</width>
@@ -427,7 +427,7 @@ QPushButton:pressed {
      <x>0</x>
      <y>0</y>
      <width>1363</width>
-     <height>26</height>
+     <height>18</height>
     </rect>
    </property>
   </widget>
