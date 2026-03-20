@@ -49,7 +49,7 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_13">
        <property name="sizeConstraint">
-        <enum>QLayout::SetMinAndMaxSize</enum>
+        <enum>QLayout::SizeConstraint::SetMinAndMaxSize</enum>
        </property>
        <item>
         <widget class="QRadioButton" name="radioButtonTudo">
@@ -359,9 +359,8 @@ QRadioButton:hover {
      <font>
       <family>Noto Sans HK Black</family>
       <pointsize>20</pointsize>
-      <weight>10</weight>
       <italic>false</italic>
-      <bold>false</bold>
+      <fontweight></fontweight>
      </font>
     </property>
     <property name="styleSheet">
@@ -418,13 +417,12 @@ QPushButton:pressed {
         <font>
          <family>MS Shell Dlg 2</family>
          <pointsize>12</pointsize>
-         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
        <property name="mouseTracking">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="autoFillBackground">
         <bool>false</bool>
@@ -530,7 +528,10 @@ QComboBox:pressed, QComboBox:on {
        </property>
        <property name="font">
         <font>
+         <family>MS Shell Dlg 2</family>
          <pointsize>12</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
@@ -542,12 +543,12 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="dateTime">
         <datetime>
-         <hour>0</hour>
+         <hour>17</hour>
          <minute>0</minute>
          <second>0</second>
-         <year>2026</year>
-         <month>1</month>
-         <day>1</day>
+         <year>2025</year>
+         <month>12</month>
+         <day>31</day>
         </datetime>
        </property>
        <property name="calendarPopup">
@@ -567,7 +568,6 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
         <font>
          <family>MS Shell Dlg 2</family>
          <pointsize>12</pointsize>
-         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -723,6 +723,55 @@ QComboBox:pressed, QComboBox:on {
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="pushButtonCancelBooking">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>710</y>
+      <width>241</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans HK Black</family>
+      <pointsize>20</pointsize>
+      <italic>false</italic>
+      <fontweight></fontweight>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Trạng thái bình thường (Giữ nguyên 100% của mày) */
+QPushButton {
+    color: #f6f6e9;
+    background-color: #0f433d;
+    font: 87 20pt &quot;Noto Sans HK Black&quot;;
+    border-radius: 30px;
+    border: 3px solid #58827d;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) */
+QPushButton:hover {
+    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */
+    border: 3px solid #73a6a0; /* Viền cũng sáng lên một chút cho đồng bộ */
+}
+
+/* Thêm luôn trạng thái khi click (bấm xuống) cho nó xịn */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối đi khi bấm */
+    border: 3px solid #3d5e5b; /* Viền tối đi */
+}</string>
+    </property>
+    <property name="text">
+     <string>Hủy đặt lịch</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -730,7 +779,7 @@ QComboBox:pressed, QComboBox:on {
      <x>0</x>
      <y>0</y>
      <width>1466</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
