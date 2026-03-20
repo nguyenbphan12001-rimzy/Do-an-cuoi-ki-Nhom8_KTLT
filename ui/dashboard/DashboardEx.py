@@ -1,6 +1,16 @@
 
 from PyQt6.QtWidgets import QMainWindow
 import json
+<<<<<<< HEAD
+=======
+
+from ui.admin.adminEx import AdminEx
+
+
+
+from ui.admin.AdminHistoryEx import AdminHistoryEx
+
+>>>>>>> 3d311f7f74da109d4224b10c37c0763498814c52
 import os
 
 from ui.admin.adminEx import AdminEx
@@ -9,7 +19,11 @@ from ui.booking.BookingMainWindowEx import BookingMainWindowEx
 from ui.dashboard.Dashboard import Ui_MainWindow
 from ui.member.MemberMainWindowEx import MemberMainWindowEx
 from ui.registration.Registration_formMainWindowEx import Registration_formMainWindowEx
+<<<<<<< HEAD
 from ui.home.HomeEx import HomeEx
+=======
+from ui.booking.BookingMainWindowEx import BookingMainWindowEx
+>>>>>>> 3d311f7f74da109d4224b10c37c0763498814c52
 
 
 class DashboardEx(Ui_MainWindow):
@@ -66,12 +80,16 @@ class DashboardEx(Ui_MainWindow):
         """Kết nối các button với function"""
         self.pushButtonDatlich.clicked.connect(self.process_booking)
         self.pushButtonDkyHoivien.clicked.connect(self.process_dkyhoivien)
-        self.pushButtonProfile.clicked.connect(self.process_profile)
+        # self.pushButtonProfile.clicked.connect(self.process_profile)
         self.pushButtonLogOut.clicked.connect(self.process_logout)
         self.pushButtonMember.clicked.connect(self.process_member)
         self.pushButtonMyBooking.clicked.connect(self.mo_man_hinh_lich_su)
 
+<<<<<<< HEAD
     # ----------------- Xử lý button -----------------
+=======
+
+>>>>>>> 3d311f7f74da109d4224b10c37c0763498814c52
     def process_booking(self):
         self.booking_window = QMainWindow()
         self.booking_ui = BookingMainWindowEx()
@@ -98,14 +116,34 @@ class DashboardEx(Ui_MainWindow):
         # Nạp dữ liệu lên giao diện Member
         self.member_ui.load_member()
         self.member_window.showMaximized()
+<<<<<<< HEAD
         self.MainWindow.hide()
+=======
+
+<<<<<<< HEAD
+    #
+    # def process_profile(self):
+    #     # Kiểm tra quyền Admin nếu cần thiết ở đây
+    #     self.admin_window = QMainWindow()
+    #     self.admin_ui = AdminEx()
+    #     self.admin_ui.setupUi(self.admin_window)
+    #     self.admin_window.showMaximized()
+    #     self.MainWindow.close()
+=======
+>>>>>>> 3d311f7f74da109d4224b10c37c0763498814c52
 
     def process_profile(self):
         self.admin_window = QMainWindow()
         self.admin_ui = AdminEx(self.username)
         self.admin_ui.setupUi(self.admin_window)
         self.admin_window.showMaximized()
+<<<<<<< HEAD
         self.MainWindow.hide()
+=======
+
+>>>>>>> b4640ddfb10a34da22c618a04a5c14a39e7ee7fb
+
+>>>>>>> 3d311f7f74da109d4224b10c37c0763498814c52
 
     def process_logout(self):
         self.logout_window = QMainWindow()
@@ -120,3 +158,11 @@ class DashboardEx(Ui_MainWindow):
         self.history_win = AdminHistoryEx(self.MainWindow)
         self.history_win.show()
         self.MainWindow.hide()
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 3d311f7f74da109d4224b10c37c0763498814c52

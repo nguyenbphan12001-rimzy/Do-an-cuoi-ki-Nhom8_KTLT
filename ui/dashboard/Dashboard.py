@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'Dashboard.ui'
+# Form implementation generated from reading ui file 'D:\Nam1\KTLT\DoAn\ui\dashboard\Dashboard.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -62,39 +62,10 @@ class Ui_MainWindow(object):
         self.pushButtonMyBooking.setIconSize(QtCore.QSize(30, 50))
         self.pushButtonMyBooking.setObjectName("pushButtonMyBooking")
         self.horizontalLayout.addWidget(self.pushButtonMyBooking)
-        self.pushButtonProfile = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonProfile.setMinimumSize(QtCore.QSize(170, 70))
-        self.pushButtonProfile.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.pushButtonProfile.setStyleSheet("/* Trạng thái bình thường (Code gốc của mày) */\n"
-"QPushButton {\n"
-"    color: #0f433d;\n"
-"    background-color: #f6f6e9;\n"
-"    font: 87 20pt \"Noto Sans HK Black\";\n"
-"    border-radius: 30px;\n"
-"    border: 3px solid #0f433d;\n"
-"font-weight:bold;\n"
-"}\n"
-"\n"
-"/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */\n"
-"QPushButton:hover {\n"
-"    background-color: #1a6b61; /* Nền biến thành xanh đậm */\n"
-"    color: #f6f6e9; /* Chữ sáng lên */\n"
-"    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */\n"
-"}\n"
-"\n"
-"/* Trạng thái khi click chuột bấm xuống (Pressed) */\n"
-"QPushButton:pressed {\n"
-"    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */\n"
-"    border: 3px solid #0a2e2a; /* Viền cũng tối theo */\n"
-"    color: #f6f6e9;\n"
-"}")
-        self.pushButtonProfile.setIconSize(QtCore.QSize(30, 50))
-        self.pushButtonProfile.setObjectName("pushButtonProfile")
-        self.horizontalLayout.addWidget(self.pushButtonProfile)
         self.pushButtonMember = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButtonMember.setMinimumSize(QtCore.QSize(170, 70))
-        self.pushButtonMember.setStyleSheet("QPushButton{color:rgb(24, 85, 75);\n"
-"background-color:#cbddd1;\n"
+        self.pushButtonMember.setStyleSheet("QPushButton{color:rgb(255, 255, 255);\n"
+"background-color:#97b690;\n"
 "font: 87 20pt \"Noto Sans HK Black\";\n"
 "border-radius: 30px;\n"
 "border: 3px solid  #0f433d;\n"
@@ -153,7 +124,7 @@ class Ui_MainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setObjectName("gridLayout")
         self.pushButtonDkyHoivien = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonDkyHoivien.setMinimumSize(QtCore.QSize(300, 70))
+        self.pushButtonDkyHoivien.setMinimumSize(QtCore.QSize(350, 80))
         self.pushButtonDkyHoivien.setStyleSheet("/* Trạng thái bình thường (Code gốc của mày) */\n"
 "QPushButton {\n"
 "    color: #0f433d;\n"
@@ -196,7 +167,7 @@ class Ui_MainWindow(object):
         spacerItem9 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.gridLayout.addItem(spacerItem9, 2, 1, 1, 1)
         self.pushButtonDatlich = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonDatlich.setMinimumSize(QtCore.QSize(300, 70))
+        self.pushButtonDatlich.setMinimumSize(QtCore.QSize(350, 80))
         self.pushButtonDatlich.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.pushButtonDatlich.setStyleSheet("/* Trạng thái bình thường (Giữ nguyên 100% của mày) */\n"
 "QPushButton {\n"
@@ -240,9 +211,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButtonMyBooking.setText(_translate("MainWindow", "My Booking"))
-        self.pushButtonProfile.setText(_translate("MainWindow", "Profile"))
-        self.pushButtonMember.setText(_translate("MainWindow", "Member"))
+        self.pushButtonMyBooking.setText(_translate("MainWindow", "History"))
+        self.pushButtonMember.setText(_translate("MainWindow", "Profile"))
         self.pushButtonLogOut.setText(_translate("MainWindow", "Exit"))
         self.pushButtonDkyHoivien.setText(_translate("MainWindow", " Đăng ký hội viên"))
         self.pushButtonDatlich.setText(_translate("MainWindow", "Đặt lịch ngay"))

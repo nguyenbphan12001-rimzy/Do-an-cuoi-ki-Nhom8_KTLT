@@ -74,6 +74,7 @@ class BookingMainWindowEx(Ui_MainWindow):
         self.radioButtonPilates.toggled.connect(self.cap_nhat_danh_sach_phong)
         self.radioButtonBoxing.toggled.connect(self.cap_nhat_danh_sach_phong)
         self.pushButtonDoneBooking.clicked.connect(self.mo_man_hinh_thanh_toan)
+        self.pushButtonCancelBooking.clicked.connect(self.tro_ve_dashboard)
 
     def showWindow(self):
         self.MainWindow.show()
@@ -208,5 +209,31 @@ class BookingMainWindowEx(Ui_MainWindow):
         # 5. Hiển thị màn hình Payment và ẩn/đóng màn hình Đặt lịch
         self.payment_window.showMaximized()
         self.MainWindow.hide()  # Dùng close() nếu không muốn quay lại màn này nữa
+
+    def tro_ve_dashboard(self):
+        # 1. Hiện hộp thoại hỏi xác nhận trước
+        reply = QMessageBox.question(
+            self.MainWindow,
+            "Xác nhận hủy",
+            "Bạn có chắc chắn muốn hủy thao tác đặt lịch và quay về trang chủ không?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No  # Mặc định trỏ chuột vào nút No cho an toàn
+        )
+
+
+        if reply == QMessageBox.StandardButton.Yes:
+            # Nếu chọn Yes, thực hiện code quay về Dashboard như cũ
+            from ui.dashboard.DashboardEx import DashboardEx
+
+            self.dashboard_window = QMainWindow()
+            self.dashboard_ui = DashboardEx()
+            self.dashboard_ui.setupUi(self.dashboard_window)
+
+            self.dashboard_window.showMaximized()
+            self.dashboard_ui.showWindow()
+
+            self.MainWindow.close()
+
+
 
 

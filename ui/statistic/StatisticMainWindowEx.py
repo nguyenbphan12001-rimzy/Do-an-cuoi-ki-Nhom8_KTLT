@@ -64,7 +64,7 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.figure.clear()
         ax = self.figure.add_subplot(111)
         ax.pie(df["Số người"], labels=df["Gói tập"], autopct='%1.2f%%')
-        ax.legend(df["Gói tập"], loc='center right', bbox_to_anchor=(-0.2, 0.5))
+        ax.legend(df["Gói tập"], loc='center right', bbox_to_anchor=(-0.1, 0.5))
         self.figure.subplots_adjust(left=0.3)
         self.figure.set_facecolor('#cbddd1')
         ax.set_title("Thống kê các gói tập", fontsize=12, fontweight='bold')
