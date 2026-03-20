@@ -127,6 +127,8 @@ class DashboardEx(Ui_MainWindow):
         self.admin_ui.load_member()
         self.admin_window.showMaximized()
 
+        self.MainWindow.hide()
+
         # self.MainWindow.hide()
 
 
