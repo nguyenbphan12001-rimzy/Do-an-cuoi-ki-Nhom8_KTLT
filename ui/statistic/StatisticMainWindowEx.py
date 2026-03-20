@@ -55,10 +55,9 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.pushButtonTKluongkhach.clicked.connect(self.show_luongkhach)
         self.pushButtonBack.clicked.connect(self.process_back)
         self.pushButtonAdd.clicked.connect(self.process_add)
-        self.pushButtonChange.clicked.connect(self.process_update)
         self.pushButtonDelete.clicked.connect(self.process_delete)
         self.pushButtonSave.clicked.connect(self.process_save)
-        self.tableWidgetPt.itemSelectionChanged.connect(self.process_selection)
+        self.tableWidgetPt.cellClicked.connect(self.process_selection)
 
     def show(self):
         self.MainWindow.show()
@@ -141,41 +140,52 @@ class StatisticMainWindowEx(Ui_MainWindow):
             row = self.tableWidgetPt.rowCount()
             self.tableWidgetPt.insertRow(row)
 
-            self.tableWidgetPt.setItem(row, 0, QTableWidgetItem(item.username))
-            self.tableWidgetPt.setItem(row, 1, QTableWidgetItem(""))  # không có tuổi
-            self.tableWidgetPt.setItem(row, 2, QTableWidgetItem(item.phone_number))
-            self.tableWidgetPt.setItem(row, 3, QTableWidgetItem(item.email))
-            self.tableWidgetPt.setItem(row, 4, QTableWidgetItem(item.gender))
-            self.tableWidgetPt.setItem(row, 5, QTableWidgetItem(item.status))
+            self.tableWidgetPt.setItem(row, 0, QTableWidgetItem(str(item.username)))
+            self.tableWidgetPt.setItem(row, 1, QTableWidgetItem(str(item.phone_number)))
+            self.tableWidgetPt.setItem(row, 2, QTableWidgetItem(str(item.email)))
 
-            dates = ", ".join(item.available_dates)
-            times = ", ".join(item.available_times)
+            gender_str = item.gender if isinstance(item.gender, str) else "".join(item.gender)
+            self.tableWidgetPt.setItem(row, 3, QTableWidgetItem(gender_str))
 
-            self.tableWidgetPt.setItem(row, 6, QTableWidgetItem(dates))
-            self.tableWidgetPt.setItem(row, 7, QTableWidgetItem(times))
+            self.tableWidgetPt.setItem(row, 4, QTableWidgetItem(str(item.status)))
 
-    def process_selection(self):
-        row = self.tableWidgetPt.currentRow()
-        if row < 0:
-            return
+            dates = ", ".join(item.available_dates) if isinstance(item.available_dates, list) else str(
+                item.available_dates)
+            times = ", ".join(item.available_times) if isinstance(item.available_times, list) else str(
+                item.available_times)
 
-        item = self.tr.list[row]
+            self.tableWidgetPt.setItem(row, 5, QTableWidgetItem(dates))
+            self.tableWidgetPt.setItem(row, 6, QTableWidgetItem(times))
 
-        self.lineEditNamePt.setText(item.username)
-        self.lineEditAgePt.setText("")
-        self.lineEditPhonePt.setText(item.phone_number)
-        self.lineEditEmailPt.setText(item.email)
-        self.lineEditGenderPt.setText(item.gender)
-        self.lineEditRolePt.setText(item.status)
-        self.lineEditDatePt.setText(", ".join(item.available_dates))
-        self.lineEditTimePt.setText(", ".join(item.available_times))
+    def process_selection(self, row, column):
+        try:
+            if row < 0 or row >= len(self.tr.list):
+                return
+
+            item = self.tr.list[row]
+
+            self.lineEditNamePt.setText(item.username)
+            self.lineEditPhonePt.setText(item.phone_number)
+            self.lineEditEmailPt.setText(item.email)
+
+            if item.gender == "M":
+                self.radioButtonMale.setChecked(True)
+            else:
+                self.radioButtonFemale.setChecked(True)
+
+            self.lineEditRolePt.setText(item.status)
+            self.lineEditDatePt.setText(", ".join(item.available_dates))
+            self.lineEditTimePt.setText(", ".join(item.available_times))
+
+        except Exception as e:
+            print("LỖI:", e)
 
     def process_add(self):
         self.lineEditNamePt.clear()
-        self.lineEditAgePt.clear()
         self.lineEditPhonePt.clear()
         self.lineEditEmailPt.clear()
-        self.lineEditGenderPt.clear()
+        self.radioButtonMale.setChecked(False)
+        self.radioButtonFemale.setChecked(False)
         self.lineEditRolePt.clear()
         self.lineEditDatePt.clear()
         self.lineEditTimePt.clear()
@@ -183,32 +193,36 @@ class StatisticMainWindowEx(Ui_MainWindow):
     def process_save(self):
         from models.trainer import Trainer
 
-        username = self.lineEditNamePt.text()
-        phone = self.lineEditPhonePt.text()
-        email = self.lineEditEmailPt.text()
-        gender = self.lineEditGenderPt.text()
-        status = self.lineEditRolePt.text()
+        name = self.lineEditNamePt.text().strip()
+        if not name:
+            from PyQt6.QtWidgets import QMessageBox
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập tên trước khi lưu mới!")
+            return
 
-        # tách chuỗi thành list
-        dates = self.lineEditDatePt.text().split(",")
-        times = self.lineEditTimePt.text().split(",")
-
-        # strip cho sạch
-        dates = [d.strip() for d in dates]
-        times = [t.strip() for t in times]
-
-        trainer = Trainer(
-            username,
-            phone,
-            email,
-            gender,
-            status,
-            dates,
-            times
+        # Tạo object mới hoàn toàn
+        new_trainer = Trainer(
+            username=name,
+            phone_number=self.lineEditPhonePt.text(),
+            email=self.lineEditEmailPt.text(),
+            gender="M" if self.radioButtonMale.isChecked() else "F",
+            status=self.lineEditRolePt.text(),
+            available_dates=[d.strip() for d in self.lineEditDatePt.text().split(",") if d.strip()],
+            available_times=[t.strip() for t in self.lineEditTimePt.text().split(",") if t.strip()],
+            password="123",
+            role="trainer"
         )
 
-        self.tr.save_item(trainer)
+        # Thêm vào cuối danh sách
+        self.tr.save_item(new_trainer)
+
+        # LƯU XUỐNG JSON
+        self.tr.export_json("../../Datasets/trainer.json")
+
         self.display_trainers()
+        self.process_add()  # Tự động xóa trắng các ô sau khi lưu xong
+
+        from PyQt6.QtWidgets import QMessageBox
+        QMessageBox.information(self.MainWindow, "Thông báo", "Đã lưu thông tin nhân viên thành công!")
 
     def process_delete(self):
         row = self.tableWidgetPt.currentRow()
@@ -217,35 +231,6 @@ class StatisticMainWindowEx(Ui_MainWindow):
 
         trainer = self.tr.list[row]
         self.tr.remove_item(trainer.username)
-        self.display_trainers()
-
-    def process_update(self):
-        row = self.tableWidgetPt.currentRow()
-        if row < 0:
-            return
-
-        from models.trainer import Trainer
-
-        username = self.lineEditNamePt.text()
-        phone = self.lineEditPhonePt.text()
-        email = self.lineEditEmailPt.text()
-        gender = self.lineEditGenderPt.text()
-        status = self.lineEditRolePt.text()
-
-        dates = [d.strip() for d in self.lineEditDatePt.text().split(",")]
-        times = [t.strip() for t in self.lineEditTimePt.text().split(",")]
-
-        trainer = Trainer(
-            username,
-            phone,
-            email,
-            gender,
-            status,
-            dates,
-            times
-        )
-
-        self.tr.update_item(row, trainer)
         self.display_trainers()
 
 

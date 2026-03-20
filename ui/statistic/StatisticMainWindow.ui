@@ -17,7 +17,7 @@
    <widget class="QPushButton" name="pushButtonBack">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>20</x>
       <y>60</y>
       <width>120</width>
       <height>50</height>
@@ -459,14 +459,14 @@ QPushButton:pressed {
                   <layout class="QGridLayout" name="gridLayout_5">
                    <item row="0" column="0">
                     <layout class="QGridLayout" name="gridLayout">
-                     <item row="4" column="1">
-                      <widget class="QLineEdit" name="lineEdit_2">
+                     <item row="3" column="1">
+                      <widget class="QLineEdit" name="lineEditEmailPt">
                        <property name="styleSheet">
                         <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="4" column="0">
+                     <item row="3" column="0">
                       <widget class="QLabel" name="label_4">
                        <property name="styleSheet">
                         <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
@@ -476,10 +476,10 @@ QPushButton:pressed {
                        </property>
                       </widget>
                      </item>
-                     <item row="2" column="1">
+                     <item row="1" column="1">
                       <layout class="QHBoxLayout" name="horizontalLayout_8">
                        <item>
-                        <widget class="QRadioButton" name="radioButton">
+                        <widget class="QRadioButton" name="radioButtonMale">
                          <property name="styleSheet">
                           <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                          </property>
@@ -489,7 +489,7 @@ QPushButton:pressed {
                         </widget>
                        </item>
                        <item>
-                        <widget class="QRadioButton" name="radioButton_2">
+                        <widget class="QRadioButton" name="radioButtonFemale">
                          <property name="styleSheet">
                           <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                          </property>
@@ -499,33 +499,6 @@ QPushButton:pressed {
                         </widget>
                        </item>
                       </layout>
-                     </item>
-                     <item row="3" column="0">
-                      <widget class="QLabel" name="label_3">
-                       <property name="styleSheet">
-                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
-                       </property>
-                       <property name="text">
-                        <string>SĐT:</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="3" column="1">
-                      <widget class="QLineEdit" name="lineEdit">
-                       <property name="styleSheet">
-                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="0">
-                      <widget class="QLabel" name="label_2">
-                       <property name="styleSheet">
-                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
-                       </property>
-                       <property name="text">
-                        <string>Tuổi:</string>
-                       </property>
-                      </widget>
                      </item>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label">
@@ -537,17 +510,25 @@ QPushButton:pressed {
                        </property>
                       </widget>
                      </item>
-                     <item row="1" column="1">
-                      <widget class="QLineEdit" name="lineEditNamePt_2">
-                       <property name="font">
-                        <font>
-                         <family>MS Shell Dlg 2</family>
-                         <pointsize>12</pointsize>
-                         <weight>50</weight>
-                         <italic>false</italic>
-                         <bold>false</bold>
-                        </font>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="label_3">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                        </property>
+                       <property name="text">
+                        <string>SĐT:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QLineEdit" name="lineEditPhonePt">
+                       <property name="styleSheet">
+                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="1">
+                      <widget class="QLineEdit" name="lineEditRolePt">
                        <property name="styleSheet">
                         <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                        </property>
@@ -569,7 +550,7 @@ QPushButton:pressed {
                        </property>
                       </widget>
                      </item>
-                     <item row="2" column="0">
+                     <item row="1" column="0">
                       <widget class="QLabel" name="label_5">
                        <property name="styleSheet">
                         <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
@@ -580,20 +561,13 @@ QPushButton:pressed {
                       </widget>
                      </item>
                      <item row="5" column="1">
-                      <widget class="QLineEdit" name="lineEdit_3">
+                      <widget class="QLineEdit" name="lineEditDatePt">
                        <property name="styleSheet">
                         <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="6" column="1">
-                      <widget class="QLineEdit" name="lineEdit_4">
-                       <property name="styleSheet">
-                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="5" column="0">
+                     <item row="4" column="0">
                       <widget class="QLabel" name="label_6">
                        <property name="styleSheet">
                         <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
@@ -603,7 +577,7 @@ QPushButton:pressed {
                        </property>
                       </widget>
                      </item>
-                     <item row="6" column="0">
+                     <item row="5" column="0">
                       <widget class="QLabel" name="label_7">
                        <property name="styleSheet">
                         <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
@@ -613,20 +587,20 @@ QPushButton:pressed {
                        </property>
                       </widget>
                      </item>
-                     <item row="7" column="0">
+                     <item row="6" column="1">
+                      <widget class="QLineEdit" name="lineEditTimePt">
+                       <property name="styleSheet">
+                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="0">
                       <widget class="QLabel" name="label_8">
                        <property name="styleSheet">
                         <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                        </property>
                        <property name="text">
                         <string>Giờ hoạt động:</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="7" column="1">
-                      <widget class="QLineEdit" name="lineEdit_5">
-                       <property name="styleSheet">
-                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                        </property>
                       </widget>
                      </item>
@@ -645,12 +619,16 @@ QPushButton:pressed {
              <item>
               <widget class="QWidget" name="widget_5" native="true">
                <layout class="QGridLayout" name="gridLayout_4">
-                <item row="0" column="0">
-                 <layout class="QGridLayout" name="gridLayout_3">
-                  <item row="0" column="0">
-                   <widget class="QPushButton" name="pushButtonAdd">
-                    <property name="styleSheet">
-                     <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
+                <item row="0" column="1">
+                 <widget class="QPushButton" name="pushButtonAdd">
+                  <property name="maximumSize">
+                   <size>
+                    <width>300</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
 QPushButton {
     color: #0f433d;
     background-color: #f6f6e9;
@@ -673,31 +651,36 @@ QPushButton:pressed {
     border: 3px solid #0a2e2a; /* Viền cũng tối theo */
     color: #f6f6e9;
 }</string>
-                    </property>
-                    <property name="text">
-                     <string>Add</string>
-                    </property>
-                    <property name="icon">
-                     <iconset>
-                      <normaloff>../../images/plus.png</normaloff>../../images/plus.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>30</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
+                  </property>
+                  <property name="text">
+                   <string>Add</string>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../../images/plus.png</normaloff>../../images/plus.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <layout class="QGridLayout" name="gridLayout_3">
                   <item row="1" column="0">
                    <widget class="QPushButton" name="pushButtonDelete">
                     <property name="styleSheet">
-                     <string notr="true">QPushButton{color:rgb(255, 255, 255);
-background-color:#97b690;
-font: 87 20pt &quot;Noto Sans HK Black&quot;;
-border-radius: 15px;
-border: 3px solid  #0f433d;
-font-weight:bold;}
+                     <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
+QPushButton {
+    color: #0f433d;
+    background-color: #f6f6e9;
+    font: 87 20pt &quot;Noto Sans HK Black&quot;;
+    border-radius: 15px;
+    border: 3px solid #0f433d;
+font-weight:bold;
+}
 
 /* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
 QPushButton:hover {
@@ -728,10 +711,12 @@ QPushButton:pressed {
                     </property>
                    </widget>
                   </item>
-                  <item row="0" column="1">
-                   <widget class="QPushButton" name="pushButtonChange">
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton{color:rgb(255, 255, 255);
+                 </layout>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QPushButton" name="pushButtonSave">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{color:rgb(255, 255, 255);
 background-color:#97b690;
 font: 87 20pt &quot;Noto Sans HK Black&quot;;
 border-radius: 15px;
@@ -751,65 +736,21 @@ QPushButton:pressed {
     border: 3px solid #0a2e2a; /* Viền cũng tối theo */
     color: #f6f6e9;
 }</string>
-                    </property>
-                    <property name="text">
-                     <string>Chỉnh sửa</string>
-                    </property>
-                    <property name="icon">
-                     <iconset>
-                      <normaloff>../../images/pencil.png</normaloff>../../images/pencil.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>30</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="1">
-                   <widget class="QPushButton" name="pushButtonSave">
-                    <property name="styleSheet">
-                     <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
-QPushButton {
-    color: #0f433d;
-    background-color: #f6f6e9;
-    font: 87 20pt &quot;Noto Sans HK Black&quot;;
-    border-radius: 15px;
-    border: 3px solid #0f433d;
-font-weight:bold;
-}
-
-/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
-QPushButton:hover {
-    background-color: #1a6b61; /* Nền biến thành xanh đậm */
-    color: #f6f6e9; /* Chữ sáng lên */
-    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
-}
-
-/* Trạng thái khi click chuột bấm xuống (Pressed) */
-QPushButton:pressed {
-    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
-    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
-    color: #f6f6e9;
-}</string>
-                    </property>
-                    <property name="text">
-                     <string>Save</string>
-                    </property>
-                    <property name="icon">
-                     <iconset>
-                      <normaloff>../../images/diskette.png</normaloff>../../images/diskette.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>30</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
+                  </property>
+                  <property name="text">
+                   <string>Save</string>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../../images/diskette.png</normaloff>../../images/diskette.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </widget>
