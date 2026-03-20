@@ -79,7 +79,7 @@ class DashboardEx(Ui_MainWindow):
         self.booking_ui.current_user = getattr(self, "current_user", None)
         self.booking_window.showMaximized()
         self.booking_ui.showWindow()
-        # Dashboard vẫn là window gốc, không hide
+        self.MainWindow.hide()
 
     def process_dkyhoivien(self):
         self.hoivien_window = QMainWindow()
@@ -88,7 +88,7 @@ class DashboardEx(Ui_MainWindow):
         self.hoivien_ui.current_user = getattr(self, "current_user", None)
         self.hoivien_window.showMaximized()
         self.hoivien_ui.showWindow()
-        # Dashboard vẫn là window gốc
+        self.MainWindow.hide()
 
     def process_member(self):
         self.member_window = QMainWindow()
@@ -97,7 +97,7 @@ class DashboardEx(Ui_MainWindow):
         self.member_ui.current_user = getattr(self, "current_user", None)
         self.member_ui.load_member()
         self.member_window.showMaximized()
-        # self.MainWindow.hide()
+        self.MainWindow.hide()
 
     def process_profile(self):
         # Kiểm tra quyền Admin nếu cần thiết ở đây

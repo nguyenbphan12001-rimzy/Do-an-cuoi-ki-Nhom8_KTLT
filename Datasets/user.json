@@ -161,6 +161,15 @@
             "role": "user",
             "gender": "F",
             "status": "Không"
+        },
+        {
+            "username": "Trần Phạm Kim Ngân",
+            "email": "ngantpk@gmail.com",
+            "phone_number": "0999888777",
+            "password": "11",
+            "role": "user",
+            "gender": "F",
+            "status": "Không"
         }
     ]
 }
