@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\DO AN KTLT\ui\payment\payment.ui'
+# Form implementation generated from reading ui file 'payment.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -328,7 +328,7 @@ class Ui_MainWindow(object):
 "    height: 18px;\n"
 "}")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("D:\\DO AN KTLT\\ui\\payment\\../../images/bank.jpg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("../../images/bank.jpg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.checkBoxBak.setIcon(icon)
         self.checkBoxBak.setIconSize(QtCore.QSize(60, 60))
         self.checkBoxBak.setObjectName("checkBoxBak")
@@ -426,7 +426,7 @@ class Ui_MainWindow(object):
 "    height: 18px;\n"
 "}")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("D:\\DO AN KTLT\\ui\\payment\\../../images/visa.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap("../../images/visa.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.checkBoxCard.setIcon(icon1)
         self.checkBoxCard.setIconSize(QtCore.QSize(60, 60))
         self.checkBoxCard.setTristate(False)
