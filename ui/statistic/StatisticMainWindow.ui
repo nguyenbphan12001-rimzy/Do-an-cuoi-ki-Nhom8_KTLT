@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>999</width>
-    <height>766</height>
+    <width>1021</width>
+    <height>746</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,22 +17,22 @@
    <widget class="QPushButton" name="pushButtonBack">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>80</y>
-      <width>81</width>
-      <height>41</height>
+      <x>0</x>
+      <y>60</y>
+      <width>120</width>
+      <height>50</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>0</width>
-      <height>40</height>
+      <width>120</width>
+      <height>50</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>100</width>
-      <height>16777215</height>
+      <width>120</width>
+      <height>50</height>
      </size>
     </property>
     <property name="font">
@@ -59,10 +59,10 @@ font-weight: Bold</string>
    <widget class="QTabWidget" name="tabWidgetKhachhang">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>150</y>
-      <width>960</width>
-      <height>549</height>
+      <x>0</x>
+      <y>130</y>
+      <width>1011</width>
+      <height>561</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -195,10 +195,28 @@ font-weight: Bold</string>
                     <enum>Qt::LeftToRight</enum>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(203, 221, 209);
+                    <string notr="true">
+/* Trạng thái bình thường (Code gốc của mày) */
+QPushButton {
+   background-color: rgb(203, 221, 209);
 border-radius: 15px;
 border: 3px solid  #58827d;
-font-weight: Bold</string>
+font-weight: Bold;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
                    </property>
                    <property name="text">
                     <string>Thống kê gói tập</string>
@@ -242,12 +260,31 @@ font-weight: Bold</string>
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(165, 185, 172);
+                    <string notr="true">
+/* Trạng thái bình thường (Code gốc của mày) */
+QPushButton {
+background-color: rgb(165, 185, 172);
 color: rgb(255, 255, 255);
 border-radius: 15px;
 border: 3px solid  #58827d;
-font-weight: Bold
-</string>
+font-weight: Bold;
+
+
+}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
                    </property>
                    <property name="text">
                     <string>Thống kê doanh thu</string>
@@ -291,10 +328,31 @@ font-weight: Bold
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(203, 221, 209);
+                    <string notr="true">
+
+/* Trạng thái bình thường (Code gốc của mày) */
+QPushButton {
+background-color: rgb(203, 221, 209);
 border-radius: 15px;
 border: 3px solid  #58827d;
-font-weight: Bold</string>
+font-weight: Bold
+
+
+}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
                    </property>
                    <property name="text">
                     <string>Thống kê lượng khách</string>
@@ -353,11 +411,6 @@ font-weight: Bold</string>
         </column>
         <column>
          <property name="text">
-          <string>Tuổi</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
           <string>SĐT</string>
          </property>
         </column>
@@ -398,154 +451,189 @@ font-weight: Bold</string>
              <item>
               <widget class="QWidget" name="widget_3" native="true">
                <layout class="QGridLayout" name="gridLayout_2">
-                <item row="0" column="0">
-                 <layout class="QGridLayout" name="gridLayout">
-                  <item row="0" column="0">
-                   <widget class="QLabel" name="label">
-                    <property name="styleSheet">
-                     <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>Họ và tên:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="1">
-                   <widget class="QLineEdit" name="lineEditNamePt">
-                    <property name="font">
-                     <font>
-                      <family>MS Shell Dlg 2</family>
-                      <pointsize>10</pointsize>
-                      <weight>50</weight>
-                      <italic>false</italic>
-                      <bold>false</bold>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="0">
-                   <widget class="QLabel" name="label_4">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>Email:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="1">
-                   <widget class="QLineEdit" name="lineEditAgePt">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="label_2">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>Tuổi:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="label_3">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>SĐT:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="1">
-                   <widget class="QLineEdit" name="lineEditPhonePt">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="0">
-                   <widget class="QLabel" name="label_5">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>Giới tính (F/M):</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="1">
-                   <widget class="QLineEdit" name="lineEditGenderPt">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="5" column="0">
-                   <widget class="QLabel" name="label_6">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>Lĩnh vực:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="1">
-                   <widget class="QLineEdit" name="lineEditEmailPt">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="7" column="1">
-                   <widget class="QLineEdit" name="lineEditTimePt">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="0">
-                   <widget class="QLabel" name="label_7">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>Ngày hoạt động:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="5" column="1">
-                   <widget class="QLineEdit" name="lineEditRolePt">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="7" column="0">
-                   <widget class="QLabel" name="label_8">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>Giờ hoạt động:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="1">
-                   <widget class="QLineEdit" name="lineEditDatePt">
-                    <property name="styleSheet">
-                     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
+                <item row="0" column="1">
+                 <widget class="QGroupBox" name="groupBox_2">
+                  <property name="title">
+                   <string/>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_5">
+                   <item row="0" column="0">
+                    <layout class="QGridLayout" name="gridLayout">
+                     <item row="4" column="1">
+                      <widget class="QLineEdit" name="lineEdit_2">
+                       <property name="styleSheet">
+                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="0">
+                      <widget class="QLabel" name="label_4">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Email:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <layout class="QHBoxLayout" name="horizontalLayout_8">
+                       <item>
+                        <widget class="QRadioButton" name="radioButton">
+                         <property name="styleSheet">
+                          <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                         </property>
+                         <property name="text">
+                          <string>Male</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QRadioButton" name="radioButton_2">
+                         <property name="styleSheet">
+                          <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                         </property>
+                         <property name="text">
+                          <string>Female</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QLabel" name="label_3">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>SĐT:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QLineEdit" name="lineEdit">
+                       <property name="styleSheet">
+                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="label_2">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Tuổi:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Họ và tên:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QLineEdit" name="lineEditNamePt_2">
+                       <property name="font">
+                        <font>
+                         <family>MS Shell Dlg 2</family>
+                         <pointsize>12</pointsize>
+                         <weight>50</weight>
+                         <italic>false</italic>
+                         <bold>false</bold>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QLineEdit" name="lineEditNamePt">
+                       <property name="font">
+                        <font>
+                         <family>MS Shell Dlg 2</family>
+                         <pointsize>12</pointsize>
+                         <weight>50</weight>
+                         <italic>false</italic>
+                         <bold>false</bold>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="label_5">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Giới tính:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="1">
+                      <widget class="QLineEdit" name="lineEdit_3">
+                       <property name="styleSheet">
+                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="1">
+                      <widget class="QLineEdit" name="lineEdit_4">
+                       <property name="styleSheet">
+                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="0">
+                      <widget class="QLabel" name="label_6">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Lĩnh vực:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="0">
+                      <widget class="QLabel" name="label_7">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Ngày hoạt động:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="7" column="0">
+                      <widget class="QLabel" name="label_8">
+                       <property name="styleSheet">
+                        <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>Giờ hoạt động:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="7" column="1">
+                      <widget class="QLineEdit" name="lineEdit_5">
+                       <property name="styleSheet">
+                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
                 </item>
                </layout>
               </widget>
@@ -561,29 +649,163 @@ font-weight: Bold</string>
                  <layout class="QGridLayout" name="gridLayout_3">
                   <item row="0" column="0">
                    <widget class="QPushButton" name="pushButtonAdd">
+                    <property name="styleSheet">
+                     <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
+QPushButton {
+    color: #0f433d;
+    background-color: #f6f6e9;
+    font: 87 20pt &quot;Noto Sans HK Black&quot;;
+    border-radius: 15px;
+    border: 3px solid #0f433d;
+font-weight:bold;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
+                    </property>
                     <property name="text">
-                     <string>THÊM</string>
+                     <string>Add</string>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>../../images/plus.png</normaloff>../../images/plus.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
                     </property>
                    </widget>
                   </item>
                   <item row="1" column="0">
                    <widget class="QPushButton" name="pushButtonDelete">
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{color:rgb(255, 255, 255);
+background-color:#97b690;
+font: 87 20pt &quot;Noto Sans HK Black&quot;;
+border-radius: 15px;
+border: 3px solid  #0f433d;
+font-weight:bold;}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
+                    </property>
                     <property name="text">
-                     <string>XÓA</string>
+                     <string>Remove</string>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>../../images/remove.png</normaloff>../../images/remove.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
                     </property>
                    </widget>
                   </item>
                   <item row="0" column="1">
                    <widget class="QPushButton" name="pushButtonChange">
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{color:rgb(255, 255, 255);
+background-color:#97b690;
+font: 87 20pt &quot;Noto Sans HK Black&quot;;
+border-radius: 15px;
+border: 3px solid  #0f433d;
+font-weight:bold;}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
+                    </property>
                     <property name="text">
-                     <string>SỬA</string>
+                     <string>Chỉnh sửa</string>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>../../images/pencil.png</normaloff>../../images/pencil.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
                     </property>
                    </widget>
                   </item>
                   <item row="1" column="1">
                    <widget class="QPushButton" name="pushButtonSave">
+                    <property name="styleSheet">
+                     <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
+QPushButton {
+    color: #0f433d;
+    background-color: #f6f6e9;
+    font: 87 20pt &quot;Noto Sans HK Black&quot;;
+    border-radius: 15px;
+    border: 3px solid #0f433d;
+font-weight:bold;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
+                    </property>
                     <property name="text">
-                     <string>LƯU</string>
+                     <string>Save</string>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>../../images/diskette.png</normaloff>../../images/diskette.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
                     </property>
                    </widget>
                   </item>
@@ -601,7 +823,7 @@ font-weight: Bold</string>
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="widget">
      <attribute name="title">
       <string>DANH SÁCH KHÁCH HÀNG</string>
      </attribute>
@@ -631,7 +853,7 @@ font-weight: Bold</string>
           </column>
           <column>
            <property name="text">
-            <string>Trạng thái</string>
+            <string>Môn đăng ký</string>
            </property>
           </column>
          </widget>
@@ -648,8 +870,26 @@ font-weight: Bold</string>
              <item>
               <widget class="QPushButton" name="pushButtonTudo">
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
-font-weight: Bold</string>
+                <string notr="true">QPushButton{color:rgb(255, 255, 255);
+background-color:#97b690;
+font: 87 20pt &quot;Noto Sans HK Black&quot;;
+border-radius: 15px;
+border: 3px solid  #0f433d;
+font-weight:bold;}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
                </property>
                <property name="text">
                 <string>Tự do</string>
@@ -659,8 +899,29 @@ font-weight: Bold</string>
              <item>
               <widget class="QPushButton" name="pushButtonYoga">
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
-font-weight: Bold</string>
+                <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
+QPushButton {
+    color: #0f433d;
+    background-color: #f6f6e9;
+    font: 87 20pt &quot;Noto Sans HK Black&quot;;
+    border-radius: 15px;
+    border: 3px solid #0f433d;
+font-weight:bold;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
                </property>
                <property name="text">
                 <string>Yoga</string>
@@ -670,8 +931,26 @@ font-weight: Bold</string>
              <item>
               <widget class="QPushButton" name="pushButtonPilates">
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
-font-weight: Bold</string>
+                <string notr="true">QPushButton{color:rgb(255, 255, 255);
+background-color:#97b690;
+font: 87 20pt &quot;Noto Sans HK Black&quot;;
+border-radius: 15px;
+border: 3px solid  #0f433d;
+font-weight:bold;}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
                </property>
                <property name="text">
                 <string>Pilates</string>
@@ -681,8 +960,29 @@ font-weight: Bold</string>
              <item>
               <widget class="QPushButton" name="pushButtonBoxing">
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
-font-weight: Bold</string>
+                <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
+QPushButton {
+    color: #0f433d;
+    background-color: #f6f6e9;
+    font: 87 20pt &quot;Noto Sans HK Black&quot;;
+    border-radius: 15px;
+    border: 3px solid #0f433d;
+font-weight:bold;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
                </property>
                <property name="text">
                 <string>Boxing</string>
@@ -705,7 +1005,7 @@ font-weight: Bold</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>999</width>
+     <width>1021</width>
      <height>26</height>
     </rect>
    </property>
