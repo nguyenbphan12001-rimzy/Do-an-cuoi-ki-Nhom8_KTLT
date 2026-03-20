@@ -103,7 +103,7 @@ class DashboardEx(Ui_MainWindow):
         self.member_ui.current_user = getattr(self, "current_user", None)
         self.member_ui.load_member()
         self.member_window.showMaximized()
-        self.MainWindow.hide()
+        # self.MainWindow.hide()
 
 
 
@@ -122,6 +122,9 @@ class DashboardEx(Ui_MainWindow):
         self.admin_window = QMainWindow()
         self.admin_ui = MemberMainWindowEx(self.username)
         self.admin_ui.setupUi(self.admin_window)
+        self.admin_ui.current_user = getattr(self, "current_user", None)
+        # 2. Gọi hàm load_member để nạp thông tin ra các ô nhập liệu
+        self.admin_ui.load_member()
         self.admin_window.showMaximized()
 
         # self.MainWindow.hide()
