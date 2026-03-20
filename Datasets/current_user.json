@@ -1,9 +1,9 @@
 {
-    "username": "Lâm Tâm Như",
-    "password": "lamtamnhu123",
-    "role": "admin",
-    "phone_number": "0911172457",
-    "email": "nhulam123@gmail.com",
+    "username": "Nguyễn Minh Anh",
+    "password": "minhanh456",
+    "role": "user",
+    "phone_number": "0912345678",
+    "email": "minhanh@gmail.com",
     "gender": "F",
-    "status": "Không"
+    "status": "Yoga 1"
 }
