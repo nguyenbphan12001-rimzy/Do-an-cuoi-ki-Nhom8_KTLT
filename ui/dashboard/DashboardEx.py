@@ -1,14 +1,8 @@
 
 from PyQt6.QtWidgets import QMainWindow
 import json
-from ui.admin.adminEx import AdminEx
-from ui.admin.AdminHistoryEx import AdminHistoryEx
 import os
-
-# Import các màn hình con
-from ui.admin.adminEx import AdminEx
 from ui.admin.AdminHistoryEx import AdminHistoryEx
-from ui.booking.BookingMainWindowEx import BookingMainWindowEx
 from ui.dashboard.Dashboard import Ui_MainWindow
 from ui.member.MemberMainWindowEx import MemberMainWindowEx
 from ui.registration.Registration_formMainWindowEx import Registration_formMainWindowEx
@@ -105,18 +99,6 @@ class DashboardEx(Ui_MainWindow):
         self.member_window.showMaximized()
         self.MainWindow.hide()
 
-
-
-    #
-    # def process_profile(self):
-    #     # Kiểm tra quyền Admin nếu cần thiết ở đây
-    #     self.admin_window = QMainWindow()
-    #     self.admin_ui = AdminEx()
-    #     self.admin_ui.setupUi(self.admin_window)
-    #     self.admin_window.showMaximized()
-    #     self.MainWindow.close()
-
-
     def process_profile(self):
         """Mở AdminEx (Profile)"""
         self.admin_window = QMainWindow()
@@ -125,10 +107,6 @@ class DashboardEx(Ui_MainWindow):
         self.admin_window.showMaximized()
 
         self.MainWindow.hide()
-
-        # self.MainWindow.hide()
-
-
 
     def process_logout(self):
         """Đăng xuất về HomeEx"""
