@@ -42,11 +42,7 @@ class LoginEx(Ui_MainWindow):
             QMessageBox.warning(self.MainWindow, "Lỗi", "Nhập username và password!")
             return
 
-        role = None
-        if self.radioButtonAdmin.isChecked():
-            role = "admin"
-        elif self.radioButtonUser.isChecked():
-            role = "user"
+        role = "admin" if self.radioButtonAdmin.isChecked() else "user" if self.radioButtonUser.isChecked() else None
         if role is None:
             QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng chọn Role!")
             return
@@ -58,25 +54,25 @@ class LoginEx(Ui_MainWindow):
             QMessageBox.critical(self.MainWindow, "Lỗi", "Không tìm thấy file dữ liệu user.json")
             return
 
-        user_found = None
-        for user in data.get("Datasets", []):
-            if user.get("username") == username and user.get("password") == password and user.get("role") == role:
-                user_found = user
-                break
-
+        user_found = next((u for u in data.get("Datasets", []) if
+                           u.get("username") == username and u.get("password") == password and u.get("role") == role),
+                          None)
         if user_found:
             self.save_current_session(user_found)
-            QMessageBox.information(self.MainWindow, "Thành công", f"Xin chào {username}!")
 
-            # Mở Dashboard
             from ui.dashboard.DashboardEx import DashboardEx
-            self.dashboard_window = QMainWindow()
-            self.dashboard = DashboardEx(username)
-            self.dashboard.setupUi(self.dashboard_window)
-            self.dashboard_window.showMaximized()
 
-            # Đóng Login sau khi Dashboard hiện
-            self.MainWindow.close()
+            # Tạo instance Dashboard trước
+            self.main_dashboard_window = QMainWindow()
+            self.dashboard_ui = DashboardEx(username)
+            self.dashboard_ui.setupUi(self.main_dashboard_window)
+
+            # Hiển thị Dashboard
+            self.main_dashboard_window.showMaximized()
+
+            # Ẩn Login thay vì Close ngay lập tức để tránh đứt luồng thread
+            self.MainWindow.hide()
+            print(f"✅ Đã chuyển sang Dashboard cho user: {username}")
         else:
             QMessageBox.warning(self.MainWindow, "Thất bại", "Sai tài khoản, mật khẩu hoặc role!")
 
