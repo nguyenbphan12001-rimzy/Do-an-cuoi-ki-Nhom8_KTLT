@@ -1,5 +1,8 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow
-from StatisticMainWindowEx import StatisticMainWindowEx
+
+from ui.statistic.StatisticMainWindowEx import StatisticMainWindowEx
+
+# from StatisticMainWindowEx import StatisticMainWindowEx
 
 qApp = QApplication([])
 qmainWindow = QMainWindow()

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1021</width>
+    <width>1037</width>
     <height>746</height>
    </rect>
   </property>
@@ -18,6 +18,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
+      <x>10</x>
       <y>60</y>
       <width>120</width>
       <height>50</height>
@@ -45,12 +46,27 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
+     <string notr="true">
+QPushButton{color: rgb(255, 255, 255);
 font: 87 15pt &quot;Noto Sans HK Black&quot;;
 background-color: rgb(24, 78, 73);
 border-radius: 15px;
 border: 3px solid  #58827d;
-font-weight: Bold</string>
+font-weight: Bold}
+
+/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */
+QPushButton:hover {
+    background-color: #1a6b61; /* Nền biến thành xanh đậm */
+    color: #f6f6e9; /* Chữ sáng lên */
+    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */
+}
+
+/* Trạng thái khi click chuột bấm xuống (Pressed) */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */
+    border: 3px solid #0a2e2a; /* Viền cũng tối theo */
+    color: #f6f6e9;
+}</string>
     </property>
     <property name="text">
      <string>Back</string>
@@ -70,7 +86,7 @@ font-weight: Bold</string>
 font-weight: Bold</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -770,48 +786,60 @@ QPushButton:pressed {
      </attribute>
      <layout class="QVBoxLayout" name="verticalLayout_12">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_14">
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
         <item>
-         <widget class="QTableWidget" name="tableWidget">
-          <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QTableWidget" name="tableWidget">
+            <property name="maximumSize">
+             <size>
+              <width>1500</width>
+              <height>1500</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
 </string>
-          </property>
-          <column>
-           <property name="text">
-            <string>Họ và tên</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>SĐT</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Giới tính</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Môn đăng ký</string>
-           </property>
-          </column>
-         </widget>
+            </property>
+            <column>
+             <property name="text">
+              <string>Họ và tên</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>SĐT</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Môn đăng ký</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
         </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_13">
         <item>
-         <widget class="QWidget" name="widget_6" native="true">
-          <layout class="QHBoxLayout" name="horizontalLayout_7">
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_6">
-             <item>
-              <widget class="QPushButton" name="pushButtonTudo">
-               <property name="styleSheet">
-                <string notr="true">QPushButton{color:rgb(255, 255, 255);
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QPushButton" name="pushButtonTudo">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>500</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{color:rgb(255, 255, 255);
 background-color:#97b690;
 font: 87 20pt &quot;Noto Sans HK Black&quot;;
 border-radius: 15px;
@@ -831,16 +859,22 @@ QPushButton:pressed {
     border: 3px solid #0a2e2a; /* Viền cũng tối theo */
     color: #f6f6e9;
 }</string>
-               </property>
-               <property name="text">
-                <string>Tự do</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButtonYoga">
-               <property name="styleSheet">
-                <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
+              </property>
+              <property name="text">
+               <string>Tự do</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButtonBoxing">
+              <property name="maximumSize">
+               <size>
+                <width>500</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
 QPushButton {
     color: #0f433d;
     background-color: #f6f6e9;
@@ -863,16 +897,22 @@ QPushButton:pressed {
     border: 3px solid #0a2e2a; /* Viền cũng tối theo */
     color: #f6f6e9;
 }</string>
-               </property>
-               <property name="text">
-                <string>Yoga</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButtonPilates">
-               <property name="styleSheet">
-                <string notr="true">QPushButton{color:rgb(255, 255, 255);
+              </property>
+              <property name="text">
+               <string>Boxing</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButtonPilates">
+              <property name="maximumSize">
+               <size>
+                <width>500</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{color:rgb(255, 255, 255);
 background-color:#97b690;
 font: 87 20pt &quot;Noto Sans HK Black&quot;;
 border-radius: 15px;
@@ -892,16 +932,22 @@ QPushButton:pressed {
     border: 3px solid #0a2e2a; /* Viền cũng tối theo */
     color: #f6f6e9;
 }</string>
-               </property>
-               <property name="text">
-                <string>Pilates</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButtonBoxing">
-               <property name="styleSheet">
-                <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
+              </property>
+              <property name="text">
+               <string>Pilates</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButtonYoga">
+              <property name="maximumSize">
+               <size>
+                <width>500</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">/* Trạng thái bình thường (Code gốc của mày) */
 QPushButton {
     color: #0f433d;
     background-color: #f6f6e9;
@@ -924,16 +970,15 @@ QPushButton:pressed {
     border: 3px solid #0a2e2a; /* Viền cũng tối theo */
     color: #f6f6e9;
 }</string>
-               </property>
-               <property name="text">
-                <string>Boxing</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
+              </property>
+              <property name="text">
+               <string>Yoga</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>
@@ -946,7 +991,7 @@ QPushButton:pressed {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1021</width>
+     <width>1037</width>
      <height>26</height>
     </rect>
    </property>
