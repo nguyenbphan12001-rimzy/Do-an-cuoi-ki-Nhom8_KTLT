@@ -69,7 +69,7 @@ class DashboardEx(Ui_MainWindow):
         self.pushButtonDkyHoivien.clicked.connect(self.process_dkyhoivien)
         self.pushButtonProfile.clicked.connect(self.process_profile)
         self.pushButtonLogOut.clicked.connect(self.process_logout)
-        self.pushButtonMember.clicked.connect(self.process_member)
+        # self.pushButtonMember.clicked.connect(self.process_member)
         self.pushButtonMyBooking.clicked.connect(self.mo_man_hinh_lich_su)
 
     # ----------------- Xử lý button -----------------
