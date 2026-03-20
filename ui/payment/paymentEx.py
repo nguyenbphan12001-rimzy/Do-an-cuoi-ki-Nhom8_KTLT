@@ -61,6 +61,9 @@ class PaymentEx(Ui_MainWindow):
         """Nhận dữ liệu từ màn hình Đăng ký truyền sang"""
         self.loai_thanh_toan = "membership"
         self.original_price = gia
+        # Vô hiệu hóa nút Cọc 50% vì Đăng ký hội viên phải trả 100%
+        if hasattr(self, 'radioButtonHalf'):
+            self.radioButtonHalf.setEnabled(False)
 
         # Gọt bỏ chữ "Gói " dư thừa
         clean_ten_goi = ten_goi.replace("Gói ", "").strip()
@@ -83,6 +86,9 @@ class PaymentEx(Ui_MainWindow):
         self.original_price = gia
         self.room_name = phong
 
+        # Kích hoạt lại nút Cọc 50%
+        if hasattr(self, 'radioButtonHalf'):
+            self.radioButtonHalf.setEnabled(True)
         # Gọt bỏ chữ "Gói " dư thừa
         clean_goi_tap = goi_tap.replace("Gói ", "").strip()
         self.lineEditPackage.setText(clean_goi_tap)
