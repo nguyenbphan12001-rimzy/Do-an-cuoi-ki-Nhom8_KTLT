@@ -105,6 +105,19 @@ class DashboardEx(Ui_MainWindow):
         self.member_window.showMaximized()
         self.MainWindow.hide()
 
+<<<<<<< HEAD
+=======
+
+    #
+    # def process_profile(self):
+    #     # Kiểm tra quyền Admin nếu cần thiết ở đây
+    #     self.admin_window = QMainWindow()
+    #     self.admin_ui = AdminEx()
+    #     self.admin_ui.setupUi(self.admin_window)
+    #     self.admin_window.showMaximized()
+    #     self.MainWindow.close()
+
+>>>>>>> 330e1b326300699b9366577908fc63846fdcbec4
 
     def process_profile(self):
         """Mở AdminEx (Profile)"""
@@ -112,7 +125,10 @@ class DashboardEx(Ui_MainWindow):
         self.admin_ui = AdminEx(self.username)
         self.admin_ui.setupUi(self.admin_window)
         self.admin_window.showMaximized()
+<<<<<<< HEAD
         self.MainWindow.hide()
+=======
+>>>>>>> 330e1b326300699b9366577908fc63846fdcbec4
 
     def process_logout(self):
         """Đăng xuất về HomeEx"""

@@ -1,6 +1,15 @@
 <RCC>
   <qresource prefix="pic">
+<<<<<<< HEAD
     <file>admin.png</file>
+=======
+    <file>diskette.png</file>
+    <file>dongluc.png</file>
+    <file>pencil.png</file>
+    <file>plus.png</file>
+    <file>remove.png</file>
+    <file>return.png</file>
+>>>>>>> 330e1b326300699b9366577908fc63846fdcbec4
     <file>Registration.png</file>
     <file>Thongke.png</file>
     <file>payments.png</file>
