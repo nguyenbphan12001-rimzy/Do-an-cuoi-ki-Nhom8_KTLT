@@ -9,9 +9,9 @@
             "gender": "M",
             "status": "Tự do",
             "available_dates": [
-                "18/03/2026",
-                "20/03/2026",
-                "22/03/2026"
+                "Thứ 4",
+                "Thứ 6",
+                "Chủ nhật"
             ],
             "available_times": [
                 "7h - 9h",
@@ -27,12 +27,12 @@
             "gender": "F",
             "status": "Yoga",
             "available_dates": [
-                "18/03/2026",
-                "19/03/2026",
-                "21/03/2026"
+                "Thứ 4",
+                "Thứ 5",
+                "Thứ 7"
             ],
             "available_times": [
-                "5h - 7h",
+                "9h - 11h",
                 "15h - 17h"
             ]
         },
@@ -45,9 +45,9 @@
             "gender": "M",
             "status": "Boxing",
             "available_dates": [
-                "19/03/2026",
-                "20/03/2026",
-                "22/03/2026"
+                "Thứ 5",
+                "Thứ 6",
+                "Chủ nhật"
             ],
             "available_times": [
                 "9h - 11h",
@@ -63,9 +63,9 @@
             "gender": "F",
             "status": "Pilates",
             "available_dates": [
-                "18/03/2026",
-                "21/03/2026",
-                "22/03/2026"
+                "Thứ 4",
+                "Thứ 7",
+                "Chủ nhật"
             ],
             "available_times": [
                 "7h - 9h",
@@ -81,9 +81,9 @@
             "gender": "M",
             "status": "Tự do",
             "available_dates": [
-                "20/03/2026",
-                "21/03/2026",
-                "23/03/2026"
+                "Thứ 2",
+                "Thứ 6",
+                "Thứ 7"
             ],
             "available_times": [
                 "15h - 17h",
@@ -99,9 +99,9 @@
             "gender": "M",
             "status": "Tự do",
             "available_dates": [
-                "18/03/2026",
-                "19/03/2026",
-                "21/03/2026"
+                "Thứ 4",
+                "Thứ 5",
+                "Thứ 7"
             ],
             "available_times": [
                 "9h - 11h",
@@ -118,14 +118,14 @@
             "gender": "F",
             "status": "Yoga",
             "available_dates": [
-                "22/03/2026",
-                "24/03/2026",
-                "18/03/2026"
+                "Thứ 3",
+                "Thứ 4",
+                "Chủ nhật"
             ],
             "available_times": [
+                "11h - 13h",
                 "17h - 19h",
-                "19h - 21h",
-                "5h - 7h"
+                "19h - 21h"
             ]
         },
         {
@@ -137,13 +137,13 @@
             "gender": "M",
             "status": "Boxing",
             "available_dates": [
-                "19/03/2026",
-                "20/03/2026",
-                "25/03/2026"
+                "Thứ 4",
+                "Thứ 5",
+                "Thứ 6"
             ],
             "available_times": [
-                "5h - 7h",
-                "7h - 9h"
+                "7h - 9h",
+                "9h - 11h"
             ]
         },
         {
@@ -155,9 +155,9 @@
             "gender": "F",
             "status": "Pilates",
             "available_dates": [
-                "18/03/2026",
-                "20/03/2026",
-                "22/03/2026"
+                "Thứ 4",
+                "Thứ 6",
+                "Chủ nhật"
             ],
             "available_times": [
                 "9h - 11h",
@@ -173,14 +173,14 @@
             "gender": "M",
             "status": "Tự do",
             "available_dates": [
-                "21/03/2026",
-                "22/03/2026",
-                "18/03/2026"
+                "Thứ 4",
+                "Thứ 7",
+                "Chủ nhật"
             ],
             "available_times": [
+                "7h - 9h",
                 "13h - 15h",
-                "17h - 19h",
-                "7h - 9h"
+                "17h - 19h"
             ]
         }
     ]
