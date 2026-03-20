@@ -2,7 +2,7 @@
     {
         "customer_name": "Nguyễn Minh Anh",
         "phone": "0912345678",
-        "package_details": "Gói: Tự do (HLV: Lý Trọng Bằng (Tự do)) - Không gian chung",
+        "package_details": "  Tự do (HLV: Lý Trọng Bằng (Tự do)) - Không gian chung",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "350,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -20,7 +20,7 @@
     {
         "customer_name": "Nguyễn Minh Anh",
         "phone": "0912345678",
-        "package_details": "Gói: Tự do (HLV: Lý Trọng Bằng (Tự do)) - Không gian chung",
+        "package_details": "  Tự do (HLV: Lý Trọng Bằng (Tự do)) - Không gian chung",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "350,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -29,7 +29,7 @@
     {
         "customer_name": "Phan Trần Gia Nguyên",
         "phone": "0909090909",
-        "package_details": "Gói: Tự do (HLV: Lý Trọng Bằng (Tự do)) - Không gian chung",
+        "package_details": "  Tự do (HLV: Lý Trọng Bằng (Tự do)) - Không gian chung",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -38,7 +38,7 @@
     {
         "customer_name": "Nghĩa",
         "phone": "6573481948",
-        "package_details": "Gói: Yoga (HLV: Trần Thị Hà (Yoga)) - Phòng Yoga Master Y02",
+        "package_details": "  Yoga (HLV: Trần Thị Hà (Yoga)) - Phòng Yoga Master Y02",
         "time": "15h - 17h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -47,7 +47,7 @@
     {
         "customer_name": "Nghĩa",
         "phone": "6573481948",
-        "package_details": "Gói: Tự do (HLV: Đinh Trọng Đại (Tự do)) - Không gian chung",
+        "package_details": "  Tự do (HLV: Đinh Trọng Đại (Tự do)) - Không gian chung",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -56,7 +56,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Tự do (HLV: Lý Trọng Bằng (Tự do)) - Không gian chung",
+        "package_details": "  Tự do (HLV: Lý Trọng Bằng (Tự do)) - Không gian chung",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -65,7 +65,7 @@
     {
         "customer_name": "kng",
         "phone": "0987654321",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "350,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -74,7 +74,7 @@
     {
         "customer_name": "kng",
         "phone": "0987654321",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "350,000 VNĐ",
         "payment_method": "Thẻ tín dụng",
@@ -83,7 +83,7 @@
     {
         "customer_name": "kng",
         "phone": "0987654321",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Thẻ tín dụng",
@@ -92,7 +92,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Tự do (HLV: Lý Trọng Bằng (Tự do)) - Không gian chung",
+        "package_details": "  Tự do (HLV: Lý Trọng Bằng (Tự do)) - Không gian chung",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -101,7 +101,7 @@
     {
         "customer_name": "kngan",
         "phone": "0124689999",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -110,7 +110,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -119,7 +119,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -128,7 +128,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -137,7 +137,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -146,7 +146,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -155,7 +155,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -164,7 +164,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -173,7 +173,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -182,7 +182,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -191,7 +191,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -200,7 +200,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -209,7 +209,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -218,7 +218,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -227,7 +227,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -236,7 +236,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -245,7 +245,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -254,7 +254,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -263,7 +263,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -272,7 +272,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -281,7 +281,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -290,7 +290,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -299,7 +299,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -308,7 +308,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -317,7 +317,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -326,7 +326,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -335,7 +335,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -344,7 +344,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -353,7 +353,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -362,7 +362,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -371,7 +371,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -380,7 +380,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -389,7 +389,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -398,7 +398,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -407,7 +407,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -416,7 +416,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
+        "package_details": "  Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
         "time": "7h - 9h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -425,7 +425,7 @@
     {
         "customer_name": "kngan",
         "phone": "0124689999",
-        "package_details": "Gói: Yoga (HLV: Trần Thị Hà (Yoga)) - Phòng Yoga Master Y01",
+        "package_details": "  Yoga (HLV: Trần Thị Hà (Yoga)) - Phòng Yoga Master Y01",
         "time": "15h - 17h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -434,7 +434,7 @@
     {
         "customer_name": "kngan",
         "phone": "0124689999",
-        "package_details": "Gói: Yoga (HLV: Trần Thị Hà (Yoga)) - Phòng Yoga Master Y01",
+        "package_details": "  Yoga (HLV: Trần Thị Hà (Yoga)) - Phòng Yoga Master Y01",
         "time": "15h - 17h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -443,7 +443,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Tự do (HLV: Đỗ Minh Khang (Tự do)) - Không gian chung",
+        "package_details": "  Tự do (HLV: Đỗ Minh Khang (Tự do)) - Không gian chung",
         "time": "9h - 11h ngày 18/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -452,7 +452,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Tự do (HLV: Phạm Quốc Việt (Tự do)) - Không gian chung",
+        "package_details": " Tự do (HLV: Phạm Quốc Việt (Tự do)) - Không gian chung",
         "time": "15h - 17h ngày 20/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
@@ -461,7 +461,7 @@
     {
         "customer_name": "Nguyên",
         "phone": "0826471772",
-        "package_details": "Gói: Pilates (HLV: Ngô Mai Phương (Pilates)) - Phòng Pilates P02",
+        "package_details": " Pilates (HLV: Ngô Mai Phương (Pilates)) - Phòng Pilates P02",
         "time": "15h - 17h ngày 20/03/2026",
         "total_paid": "700,000 VNĐ",
         "payment_method": "Ngân hàng",
