@@ -24,7 +24,6 @@ class StatisticMainWindowEx(Ui_MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.setupPlot()
-<<<<<<< HEAD
         self.pushButtonTKgoitap.clicked.connect(self.show_goitap)
         self.pushButtonTKdoanhthu.clicked.connect(self.show_doanhthu)
         self.pushButtonTKluongkhach.clicked.connect(self.show_luongkhach)
@@ -33,10 +32,8 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.pushButtonBoxing.clicked.connect(lambda :self.filter_users("Boxing"))
         self.pushButtonPilates.clicked.connect(lambda : self.filter_users("Pilates"))
         self.pushButtonYoga.clicked.connect(lambda :self.filter_users("Yoga"))
-=======
         self.setupSignalAndSLot()
         self.display_trainers()
->>>>>>> 1286e67864d3f991fe55d890f01cf37ed3c765cf
 
         current_dir = os.path.dirname(os.path.abspath(__file__))
         img_path = os.path.abspath(os.path.join(current_dir, "../../images/Thongke.png")).replace("\\", "/")
@@ -146,8 +143,6 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.dashboard_ui.setupUi(self.dashboard_window)
         self.dashboard_ui.showWindow()
 
-<<<<<<< HEAD
-
     #Danh sách khách hàng
     def filter_users(self, goitap):
         base_dir = os.path.dirname(__file__)
@@ -183,7 +178,6 @@ class StatisticMainWindowEx(Ui_MainWindow):
             self.tableWidget.setItem(row, 0, QTableWidgetItem(user.get("customer_name", "")))
             self.tableWidget.setItem(row, 1, QTableWidgetItem(user.get("phone", "")))
             self.tableWidget.setItem(row, 2, QTableWidgetItem(goitap))
-=======
     def display_trainers(self):
         self.tableWidgetPt.setRowCount(0)
 
@@ -286,4 +280,3 @@ class StatisticMainWindowEx(Ui_MainWindow):
 
 
 
->>>>>>> 1286e67864d3f991fe55d890f01cf37ed3c765cf
