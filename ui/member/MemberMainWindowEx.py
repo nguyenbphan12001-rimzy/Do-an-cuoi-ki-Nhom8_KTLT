@@ -146,61 +146,74 @@ class MemberMainWindowEx(Ui_MainWindow):
         self.pushButtonChinh.clicked.connect(self.save_changes)
     #Thêm chuc năng lưu
     def save_changes(self):
-        name = self.lineEditName.text().strip()
-        phone = self.lineEditPhone.text().strip()
-
-        if not name or not phone:
-            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng không để trống!")
-            return
-
-        gender = "M" if self.radioButtonMale.isChecked() else "F"
-        old_username = self.current_user.get("username")
-
-        member_to_update = None
-        for m in self.mb.list:
-            if m.username == old_username:
-                member_to_update = m
-                break
-
-        if not member_to_update:
-            QMessageBox.warning(self.MainWindow, "Lỗi", "Không tìm thấy dữ liệu!")
-            return
-
-        # 1. Cập nhật object trong bộ nhớ
-        member_to_update.username = name
-        member_to_update.phone_number = phone
-        member_to_update.gender = gender
-
-        # 2. Lưu lại file member.json
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        project_root = current_dir.split("ui")[0]
-        member_file = os.path.join(project_root, "Datasets", "member.json")
-        self.mb.export_json(member_file)
-
-        # 3. Cập nhật Session file (Để đổi tên đồng bộ các màn hình)
-        self.current_user["username"] = name
-        self.current_user["phone_number"] = phone
-        session_file = os.path.join(project_root, "datasets", "current_user.json")
         try:
+            name = self.lineEditName.text().strip()
+            phone = self.lineEditPhone.text().strip()
+
+            if not name or not phone:
+                QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng không để trống!")
+                return
+
+            gender = "M" if self.radioButtonMale.isChecked() else "F"
+
+            # Kiểm tra xem có lấy được current_user từ Dashboard không
+            if not getattr(self, "current_user", None):
+                QMessageBox.warning(self.MainWindow, "Lỗi", "Không tìm thấy session người dùng!")
+                return
+
+            old_username = self.current_user.get("username")
+
+            member_to_update = None
+            for m in self.mb.list:
+                if m.username == old_username:
+                    member_to_update = m
+                    break
+
+            if not member_to_update:
+                QMessageBox.warning(self.MainWindow, "Lỗi", "Không tìm thấy dữ liệu hồ sơ này để cập nhật!")
+                return
+
+            # 1. Cập nhật object trong bộ nhớ
+            member_to_update.username = name
+            member_to_update.phone_number = phone
+            member_to_update.gender = gender
+
+            # 2. Lưu lại file member.json - DÙNG CHỮ THƯỜNG 'datasets'
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            project_root = current_dir.split("ui")[0]
+            member_file = os.path.join(project_root, "datasets", "member.json")
+            self.mb.export_json(member_file)
+
+            # 3. Cập nhật Session file
+            self.current_user["username"] = name
+            self.current_user["phone_number"] = phone
+            session_file = os.path.join(project_root, "datasets", "current_user.json")
+
             import json
             with open(session_file, 'w', encoding='utf-8') as f:
                 json.dump(self.current_user, f, indent=4, ensure_ascii=False)
+
+            QMessageBox.information(self.MainWindow, "Thành công", "Đã lưu thay đổi!")
+
+            # 4. Khóa giao diện và đổi nút về CHỈNH SỬA
+            self.lineEditName.setReadOnly(True)
+            self.lineEditPhone.setReadOnly(True)
+            self.radioButtonMale.setEnabled(False)
+            self.radioButtonFemale.setEnabled(False)
+            self.pushButtonChinh.setText("CHỈNH SỬA HỒ SƠ")
+            try:
+                self.pushButtonChinh.clicked.disconnect()
+            except:
+                pass
+            self.pushButtonChinh.clicked.connect(self.process_chinhsua)
+
         except Exception as e:
-            print(f"Lỗi cập nhật session: {e}")
-
-        QMessageBox.information(self.MainWindow, "Thành công", "Đã lưu thay đổi!")
-
-        # 4. Khóa giao diện và đổi nút về CHỈNH SỬA
-        self.lineEditName.setReadOnly(True)
-        self.lineEditPhone.setReadOnly(True)
-        self.radioButtonMale.setEnabled(False)
-        self.radioButtonFemale.setEnabled(False)
-        self.pushButtonChinh.setText("CHỈNH SỬA HỒ SƠ")
-        try:
-            self.pushButtonChinh.clicked.disconnect()
-        except:
-            pass
-        self.pushButtonChinh.clicked.connect(self.process_chinhsua)
+            # Hiện thông báo lỗi cụ thể để dễ sửa thay vì tắt lịm
+            import traceback
+            error_msg = f"Không thể lưu do gặp lỗi:\n{str(e)}\n\n{traceback.format_exc()}"
+            print(error_msg)
+            QMessageBox.critical(self.MainWindow, "Lỗi Hệ Thống",
+                                 "Đã xảy ra lỗi trong quá trình lưu. Xem log trong terminal để biết thêm chi tiết.")
 
     def load_member_data(self):
         """Hàm tự động nạp thông tin hội viên lên giao diện"""
@@ -289,3 +302,7 @@ class MemberMainWindowEx(Ui_MainWindow):
             import traceback
             print("Lỗi load hồ sơ:", e)
             print(traceback.format_exc())
+
+    def showDashboard(self):
+        # Chỉ cần đóng màn hình Profile hiện tại, Dashboard gốc ở sau sẽ tự lộ diện
+        self.MainWindow.close()
