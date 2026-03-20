@@ -100,6 +100,12 @@ class DashboardEx(Ui_MainWindow):
         self.MainWindow.hide()
 
     def process_profile(self):
+        # Kiểm tra quyền Admin nếu cần thiết ở đây
+        self.profile_window = QMainWindow()
+        self.profile_ui = MemberMainWindowEx()
+        self.profile_ui.setupUi(self.profile_window)
+        self.profile_window.show()
+        self.MainWindow.close()
         """Mở AdminEx (Profile)"""
         self.admin_window = QMainWindow()
         self.admin_ui = MemberMainWindowEx(self.username)
