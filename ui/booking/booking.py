@@ -198,9 +198,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("Noto Sans HK Black")
         font.setPointSize(20)
-        font.setBold(False)
         font.setItalic(False)
-        font.setWeight(10)
         self.pushButtonDoneBooking.setFont(font)
         self.pushButtonDoneBooking.setStyleSheet("/* Trạng thái bình thường (Giữ nguyên 100% của mày) */\n"
 "QPushButton {\n"
@@ -236,9 +234,8 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         font.setBold(False)
         font.setItalic(False)
-        font.setWeight(50)
         self.comboBoxRoom.setFont(font)
-        self.comboBoxRoom.setMouseTracking(False)
+        self.comboBoxRoom.setMouseTracking(True)
         self.comboBoxRoom.setAutoFillBackground(False)
         self.comboBoxRoom.setStyleSheet("/* Trạng thái bình thường (Base gốc của mày) */\n"
 "QComboBox {\n"
@@ -282,14 +279,17 @@ class Ui_MainWindow(object):
         self.dateEdit = QtWidgets.QDateEdit(parent=self.groupBox_6)
         self.dateEdit.setMinimumSize(QtCore.QSize(0, 40))
         font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
         font.setPointSize(12)
+        font.setBold(False)
+        font.setItalic(False)
         self.dateEdit.setFont(font)
         self.dateEdit.setStyleSheet("background-color: rgb(203, 221, 209);\n"
 "border-radius: 15px;\n"
 "border: 3px solid  #58827d;\n"
 "padding-left: 10px;\n"
 "font: 12pt \"MS Shell Dlg 2\";")
-        self.dateEdit.setDateTime(QtCore.QDateTime(QtCore.QDate(2026, 1, 1), QtCore.QTime(0, 0, 0)))
+        self.dateEdit.setDateTime(QtCore.QDateTime(QtCore.QDate(2025, 12, 31), QtCore.QTime(17, 0, 0)))
         self.dateEdit.setCalendarPopup(True)
         self.dateEdit.setObjectName("dateEdit")
         self.verticalLayout_8.addWidget(self.dateEdit)
@@ -300,7 +300,6 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         font.setBold(False)
         font.setItalic(False)
-        font.setWeight(50)
         self.comboBoxTime.setFont(font)
         self.comboBoxTime.setStyleSheet("/* Trạng thái bình thường (Base gốc của mày) */\n"
 "QComboBox {\n"
@@ -378,9 +377,38 @@ class Ui_MainWindow(object):
 "}")
         self.comboBoxHuanLuyenVien.setObjectName("comboBoxHuanLuyenVien")
         self.verticalLayout_19.addWidget(self.comboBoxHuanLuyenVien)
+        self.pushButtonCancelBooking = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonCancelBooking.setGeometry(QtCore.QRect(1200, 710, 241, 61))
+        self.pushButtonCancelBooking.setMinimumSize(QtCore.QSize(0, 50))
+        font = QtGui.QFont()
+        font.setFamily("Noto Sans HK Black")
+        font.setPointSize(20)
+        font.setItalic(False)
+        self.pushButtonCancelBooking.setFont(font)
+        self.pushButtonCancelBooking.setStyleSheet("/* Trạng thái bình thường (Giữ nguyên 100% của mày) */\n"
+"QPushButton {\n"
+"    color: #f6f6e9;\n"
+"    background-color: #0f433d;\n"
+"    font: 87 20pt \"Noto Sans HK Black\";\n"
+"    border-radius: 30px;\n"
+"    border: 3px solid #58827d;\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) */\n"
+"QPushButton:hover {\n"
+"    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */\n"
+"    border: 3px solid #73a6a0; /* Viền cũng sáng lên một chút cho đồng bộ */\n"
+"}\n"
+"\n"
+"/* Thêm luôn trạng thái khi click (bấm xuống) cho nó xịn */\n"
+"QPushButton:pressed {\n"
+"    background-color: #0a2e2a; /* Nền tối đi khi bấm */\n"
+"    border: 3px solid #3d5e5b; /* Viền tối đi */\n"
+"}")
+        self.pushButtonCancelBooking.setObjectName("pushButtonCancelBooking")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1466, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1466, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
 
@@ -418,3 +446,4 @@ class Ui_MainWindow(object):
         self.comboBoxTime.setItemText(5, _translate("MainWindow", "17h - 19h"))
         self.comboBoxTime.setItemText(6, _translate("MainWindow", "19h - 21h"))
         self.groupBox_2.setTitle(_translate("MainWindow", "Huấn luyện viên"))
+        self.pushButtonCancelBooking.setText(_translate("MainWindow", "Hủy đặt lịch"))
