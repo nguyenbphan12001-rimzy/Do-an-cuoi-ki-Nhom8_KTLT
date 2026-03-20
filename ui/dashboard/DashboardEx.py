@@ -106,6 +106,7 @@ class DashboardEx(Ui_MainWindow):
         self.MainWindow.hide()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
     #
@@ -119,6 +120,8 @@ class DashboardEx(Ui_MainWindow):
 
 >>>>>>> 330e1b326300699b9366577908fc63846fdcbec4
 
+=======
+>>>>>>> 5561d390d43ad94b8540e7702a36a27ad08ffab9
     def process_profile(self):
         """Mở AdminEx (Profile)"""
         self.admin_window = QMainWindow()
