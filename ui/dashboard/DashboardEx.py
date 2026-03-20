@@ -125,7 +125,7 @@ class DashboardEx(Ui_MainWindow):
     def process_profile(self):
         """Mở AdminEx (Profile)"""
         self.admin_window = QMainWindow()
-        self.admin_ui = AdminEx(self.username)
+        self.admin_ui = MemberMainWindowEx(self.username)
         self.admin_ui.setupUi(self.admin_window)
         self.admin_window.showMaximized()
 <<<<<<< HEAD
