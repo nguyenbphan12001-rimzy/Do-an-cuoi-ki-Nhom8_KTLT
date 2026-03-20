@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'payment.ui'
+# Form implementation generated from reading ui file 'D:\DO AN KTLT\ui\payment\payment.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1292, 788)
+        MainWindow.resize(1094, 788)
         MainWindow.setStyleSheet("#centralwidget{\n"
 "border-image: url(:/pic/payments.png);\n"
 "}")
@@ -79,22 +79,22 @@ class Ui_MainWindow(object):
 "background-color: white;")
         self.lineEditName.setObjectName("lineEditName")
         self.gridLayout_2.addWidget(self.lineEditName, 0, 1, 1, 1)
-        self.lineEditID = QtWidgets.QLineEdit(parent=self.groupBox_1)
+        self.lineEditSDT = QtWidgets.QLineEdit(parent=self.groupBox_1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEditID.sizePolicy().hasHeightForWidth())
-        self.lineEditID.setSizePolicy(sizePolicy)
-        self.lineEditID.setMaximumSize(QtCore.QSize(900, 80))
+        sizePolicy.setHeightForWidth(self.lineEditSDT.sizePolicy().hasHeightForWidth())
+        self.lineEditSDT.setSizePolicy(sizePolicy)
+        self.lineEditSDT.setMaximumSize(QtCore.QSize(900, 80))
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.lineEditID.setFont(font)
-        self.lineEditID.setStyleSheet("border: 2px solid #143d3a; /* Màu xanh đậm của header */\n"
+        self.lineEditSDT.setFont(font)
+        self.lineEditSDT.setStyleSheet("border: 2px solid #143d3a; /* Màu xanh đậm của header */\n"
 "border-radius: 10px;\n"
 "padding: 5px;\n"
 "background-color: white;")
-        self.lineEditID.setObjectName("lineEditID")
-        self.gridLayout_2.addWidget(self.lineEditID, 1, 1, 1, 1)
+        self.lineEditSDT.setObjectName("lineEditSDT")
+        self.gridLayout_2.addWidget(self.lineEditSDT, 1, 1, 1, 1)
         self.verticalLayout_3.addLayout(self.gridLayout_2)
         self.gridLayout.addWidget(self.groupBox_1, 1, 0, 1, 1)
         self.groupBox_2 = QtWidgets.QGroupBox(parent=self.centralwidget)
@@ -328,7 +328,7 @@ class Ui_MainWindow(object):
 "    height: 18px;\n"
 "}")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../images/bank.jpg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("D:\\DO AN KTLT\\ui\\payment\\../../images/bank.jpg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.checkBoxBak.setIcon(icon)
         self.checkBoxBak.setIconSize(QtCore.QSize(60, 60))
         self.checkBoxBak.setObjectName("checkBoxBak")
@@ -426,7 +426,7 @@ class Ui_MainWindow(object):
 "    height: 18px;\n"
 "}")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../../images/visa.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap("D:\\DO AN KTLT\\ui\\payment\\../../images/visa.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.checkBoxCard.setIcon(icon1)
         self.checkBoxCard.setIconSize(QtCore.QSize(60, 60))
         self.checkBoxCard.setTristate(False)
@@ -479,7 +479,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.gridLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1292, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1094, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)

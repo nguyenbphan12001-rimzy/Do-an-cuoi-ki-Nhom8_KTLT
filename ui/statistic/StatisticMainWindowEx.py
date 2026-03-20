@@ -9,18 +9,22 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 import os
 
+from models.trainers import Trainers
 from ui.dashboard.DashboardEx import DashboardEx
 from ui.statistic.StatisticMainWindow import Ui_MainWindow
 
 
 class StatisticMainWindowEx(Ui_MainWindow):
     def __init__(self):
-        pass
+        self.tr = Trainers()
+        self.tr.import_json("../../Datasets/trainer.json")
+
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.setupPlot()
+<<<<<<< HEAD
         self.pushButtonTKgoitap.clicked.connect(self.show_goitap)
         self.pushButtonTKdoanhthu.clicked.connect(self.show_doanhthu)
         self.pushButtonTKluongkhach.clicked.connect(self.show_luongkhach)
@@ -29,6 +33,10 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.pushButtonBoxing.clicked.connect(lambda :self.filter_users("Boxing"))
         self.pushButtonPilates.clicked.connect(lambda : self.filter_users("Pilates"))
         self.pushButtonYoga.clicked.connect(lambda :self.filter_users("Yoga"))
+=======
+        self.setupSignalAndSLot()
+        self.display_trainers()
+>>>>>>> 1286e67864d3f991fe55d890f01cf37ed3c765cf
 
         current_dir = os.path.dirname(os.path.abspath(__file__))
         img_path = os.path.abspath(os.path.join(current_dir, "../../images/Thongke.png")).replace("\\", "/")
@@ -52,6 +60,18 @@ class StatisticMainWindowEx(Ui_MainWindow):
                 color: white;
             }}
         """)
+
+
+    def setupSignalAndSLot(self):
+        self.pushButtonTKgoitap.clicked.connect(self.show_goitap)
+        self.pushButtonTKdoanhthu.clicked.connect(self.show_doanhthu)
+        self.pushButtonTKluongkhach.clicked.connect(self.show_luongkhach)
+        self.pushButtonBack.clicked.connect(self.process_back)
+        self.pushButtonAdd.clicked.connect(self.process_add)
+        self.pushButtonChange.clicked.connect(self.process_update)
+        self.pushButtonDelete.clicked.connect(self.process_delete)
+        self.pushButtonSave.clicked.connect(self.process_save)
+        self.tableWidgetPt.itemSelectionChanged.connect(self.process_selection)
 
     def show(self):
         self.MainWindow.show()
@@ -127,6 +147,7 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.dashboard_ui.setupUi(self.dashboard_window)
         self.dashboard_ui.showWindow()
 
+<<<<<<< HEAD
 
     #Danh sách khách hàng
     def filter_users(self, goitap):
@@ -163,3 +184,121 @@ class StatisticMainWindowEx(Ui_MainWindow):
             self.tableWidget.setItem(row, 0, QTableWidgetItem(user.get("customer_name", "")))
             self.tableWidget.setItem(row, 1, QTableWidgetItem(user.get("phone", "")))
             self.tableWidget.setItem(row, 2, QTableWidgetItem(goitap))
+=======
+    def display_trainers(self):
+        self.tableWidgetPt.setRowCount(0)
+
+        for item in self.tr.list:
+            row = self.tableWidgetPt.rowCount()
+            self.tableWidgetPt.insertRow(row)
+
+            self.tableWidgetPt.setItem(row, 0, QTableWidgetItem(item.username))
+            self.tableWidgetPt.setItem(row, 1, QTableWidgetItem(""))  # không có tuổi
+            self.tableWidgetPt.setItem(row, 2, QTableWidgetItem(item.phone_number))
+            self.tableWidgetPt.setItem(row, 3, QTableWidgetItem(item.email))
+            self.tableWidgetPt.setItem(row, 4, QTableWidgetItem(item.gender))
+            self.tableWidgetPt.setItem(row, 5, QTableWidgetItem(item.status))
+
+            dates = ", ".join(item.available_dates)
+            times = ", ".join(item.available_times)
+
+            self.tableWidgetPt.setItem(row, 6, QTableWidgetItem(dates))
+            self.tableWidgetPt.setItem(row, 7, QTableWidgetItem(times))
+
+    def process_selection(self):
+        row = self.tableWidgetPt.currentRow()
+        if row < 0:
+            return
+
+        item = self.tr.list[row]
+
+        self.lineEditNamePt.setText(item.username)
+        self.lineEditAgePt.setText("")
+        self.lineEditPhonePt.setText(item.phone_number)
+        self.lineEditEmailPt.setText(item.email)
+        self.lineEditGenderPt.setText(item.gender)
+        self.lineEditRolePt.setText(item.status)
+        self.lineEditDatePt.setText(", ".join(item.available_dates))
+        self.lineEditTimePt.setText(", ".join(item.available_times))
+
+    def process_add(self):
+        self.lineEditNamePt.clear()
+        self.lineEditAgePt.clear()
+        self.lineEditPhonePt.clear()
+        self.lineEditEmailPt.clear()
+        self.lineEditGenderPt.clear()
+        self.lineEditRolePt.clear()
+        self.lineEditDatePt.clear()
+        self.lineEditTimePt.clear()
+
+    def process_save(self):
+        from models.trainer import Trainer
+
+        username = self.lineEditNamePt.text()
+        phone = self.lineEditPhonePt.text()
+        email = self.lineEditEmailPt.text()
+        gender = self.lineEditGenderPt.text()
+        status = self.lineEditRolePt.text()
+
+        # tách chuỗi thành list
+        dates = self.lineEditDatePt.text().split(",")
+        times = self.lineEditTimePt.text().split(",")
+
+        # strip cho sạch
+        dates = [d.strip() for d in dates]
+        times = [t.strip() for t in times]
+
+        trainer = Trainer(
+            username,
+            phone,
+            email,
+            gender,
+            status,
+            dates,
+            times
+        )
+
+        self.tr.save_item(trainer)
+        self.display_trainers()
+
+    def process_delete(self):
+        row = self.tableWidgetPt.currentRow()
+        if row < 0:
+            return
+
+        trainer = self.tr.list[row]
+        self.tr.remove_item(trainer.username)
+        self.display_trainers()
+
+    def process_update(self):
+        row = self.tableWidgetPt.currentRow()
+        if row < 0:
+            return
+
+        from models.trainer import Trainer
+
+        username = self.lineEditNamePt.text()
+        phone = self.lineEditPhonePt.text()
+        email = self.lineEditEmailPt.text()
+        gender = self.lineEditGenderPt.text()
+        status = self.lineEditRolePt.text()
+
+        dates = [d.strip() for d in self.lineEditDatePt.text().split(",")]
+        times = [t.strip() for t in self.lineEditTimePt.text().split(",")]
+
+        trainer = Trainer(
+            username,
+            phone,
+            email,
+            gender,
+            status,
+            dates,
+            times
+        )
+
+        self.tr.update_item(row, trainer)
+        self.display_trainers()
+
+
+
+>>>>>>> 1286e67864d3f991fe55d890f01cf37ed3c765cf
