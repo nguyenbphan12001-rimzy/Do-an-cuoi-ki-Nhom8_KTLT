@@ -79,7 +79,9 @@ class LoginEx(Ui_MainWindow):
             self.dashboard.current_user = user_found
         else:
             QMessageBox.warning(self.MainWindow, "Thất bại", "Sai tài khoản, mật khẩu hoặc role!")
-
+        current_user_file = os.path.join(os.path.dirname(__file__), "../../datasets/current_user.json")
+        with open(current_user_file, "w", encoding="utf-8") as f:
+            json.dump({"username": username}, f, indent=4, ensure_ascii=False)
     # --- Các hàm chuyển màn hình giữ nguyên ---
     def open_signup(self):
         self.signup_window = QMainWindow()
@@ -91,7 +93,7 @@ class LoginEx(Ui_MainWindow):
     def open_dashboard(self, role, username):
         from ui.dashboard.DashboardEx import DashboardEx
         self.dashboard_window = QMainWindow()
-        self.dashboard = DashboardEx()
+        self.dashboard = DashboardEx(username)
         self.dashboard.setupUi(self.dashboard_window)
         self.dashboard_window.showMaximized()
         self.MainWindow.hide()
