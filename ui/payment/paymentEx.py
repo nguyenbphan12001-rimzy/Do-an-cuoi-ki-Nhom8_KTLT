@@ -128,8 +128,8 @@ class PaymentEx(Ui_MainWindow):
 
             ten = self.lineEditName.text().strip()
             sdt = ""
-            if hasattr(self, 'lineEditID'):
-                sdt = self.lineEditID.text().strip()
+            if hasattr(self, 'lineEditSDT'):
+                sdt = self.lineEditSDT.text().strip()
             elif hasattr(self, 'lineEditSDT'):
                 sdt = self.lineEditSDT.text().strip()
 
@@ -250,9 +250,22 @@ class PaymentEx(Ui_MainWindow):
                     json.dump(member_data, f, indent=4, ensure_ascii=False)
 
             # 3. KẾT THÚC THÀNH CÔNG VÀ CHUYỂN MÀN HÌNH
-            QMessageBox.information(self.MainWindow, "Thành công", "Thanh toán thành công!")
-            self.mo_man_hinh_confirm()
+                    # Gom tất cả thông tin đã lấy được ở trên vào một chuỗi
+                    thong_tin_chi_tiet = (
+                        f"✅ THANH TOÁN THÀNH CÔNG!\n\n"
+                        f"👤 Khách hàng: {ten}\n"
+                        f"📞 Số điện thoại: {sdt}\n"
+                        f"📦 Gói dịch vụ: {self.lineEditPackage.text()}\n"
+                        f"⏰ Thời gian: {self.lineEditTime.text()}\n"
+                        f"💰 Tổng tiền: {self.lineEditTotalMoney.text()}\n"
+                        f"💳 Hình thức: {phuong_thuc}\n\n"
+                        f"Hệ thống đã cập nhật dữ liệu thành công."
+                    )
 
+                    # Hiển thị thông báo với đầy đủ chi tiết
+                    QMessageBox.information(self.MainWindow, "Xác nhận giao dịch", thong_tin_chi_tiet)
+
+                    self.mo_man_hinh_confirm()
         except Exception as e:
             import traceback
             QMessageBox.critical(self.MainWindow, "Lỗi Hệ Thống", f"Bị lỗi rồi bro ơi:\n{e}")
