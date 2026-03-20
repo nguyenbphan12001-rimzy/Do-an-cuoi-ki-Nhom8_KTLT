@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Nam1\KTLT\DoAn\ui\home\Home.ui'
+# Form implementation generated from reading ui file 'Home.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -29,11 +29,27 @@ class Ui_MainWindow(object):
         self.pushButtonLogin = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButtonLogin.setMinimumSize(QtCore.QSize(350, 70))
         self.pushButtonLogin.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.pushButtonLogin.setStyleSheet("color:#f6f6e9;\n"
-"background-color: #0f433d;\n"
-"font: 87 20pt \"Noto Sans HK Black\";\n"
-"border-radius: 30px;\n"
-"border: 3px solid  #58827d;")
+        self.pushButtonLogin.setStyleSheet("/* Trạng thái bình thường (Giữ nguyên 100% của mày) */\n"
+"QPushButton {\n"
+"    color: #f6f6e9;\n"
+"    background-color: #0f433d;\n"
+"    font: 87 20pt \"Noto Sans HK Black\";\n"
+"    border-radius: 30px;\n"
+"    border: 3px solid #58827d;\n"
+"font-weight:bold;\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) */\n"
+"QPushButton:hover {\n"
+"    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */\n"
+"    border: 3px solid #73a6a0; /* Viền cũng sáng lên một chút cho đồng bộ */\n"
+"}\n"
+"\n"
+"/* Thêm luôn trạng thái khi click (bấm xuống) cho nó xịn */\n"
+"QPushButton:pressed {\n"
+"    background-color: #0a2e2a; /* Nền tối đi khi bấm */\n"
+"    border: 3px solid #3d5e5b; /* Viền tối đi */\n"
+"}")
         self.pushButtonLogin.setIconSize(QtCore.QSize(30, 50))
         self.pushButtonLogin.setObjectName("pushButtonLogin")
         self.horizontalLayout.addWidget(self.pushButtonLogin)
@@ -41,11 +57,29 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addItem(spacerItem2)
         self.pushButtonSignUp = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButtonSignUp.setMinimumSize(QtCore.QSize(350, 70))
-        self.pushButtonSignUp.setStyleSheet("color:#0f433d;\n"
-"background-color: #f6f6e9;\n"
-"font: 87 20pt \"Noto Sans HK Black\";\n"
-"border-radius: 30px;\n"
-"border: 3px solid  #0f433d;")
+        self.pushButtonSignUp.setStyleSheet("/* Trạng thái bình thường (Code gốc của mày) */\n"
+"QPushButton {\n"
+"    color: #0f433d;\n"
+"    background-color: #f6f6e9;\n"
+"    font: 87 20pt \"Noto Sans HK Black\";\n"
+"    border-radius: 30px;\n"
+"    border: 3px solid #0f433d;\n"
+"font-weight:bold;\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) - Đảo màu cho xịn */\n"
+"QPushButton:hover {\n"
+"    background-color: #1a6b61; /* Nền biến thành xanh đậm */\n"
+"    color: #f6f6e9; /* Chữ sáng lên */\n"
+"    /* Viền giữ nguyên màu xanh đậm nên tao không cần viết lại ở đây */\n"
+"}\n"
+"\n"
+"/* Trạng thái khi click chuột bấm xuống (Pressed) */\n"
+"QPushButton:pressed {\n"
+"    background-color: #0a2e2a; /* Nền tối hơn một tông so với lúc hover */\n"
+"    border: 3px solid #0a2e2a; /* Viền cũng tối theo */\n"
+"    color: #f6f6e9;\n"
+"}")
         self.pushButtonSignUp.setObjectName("pushButtonSignUp")
         self.horizontalLayout.addWidget(self.pushButtonSignUp)
         spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
@@ -55,7 +89,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.horizontalLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1000, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1000, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
 

@@ -1,9 +1,9 @@
 {
-    "username": "kng",
-    "email": "kng@gmail.com",
-    "phone_number": "0987654321",
-    "password": "111",
+    "username": "Nguyên",
+    "email": "nguyen123@gmail.com",
+    "phone_number": "0826471772",
+    "password": "nguyen123",
     "role": "user",
-    "gender": "F",
+    "gender": "M",
     "status": "Không"
 }
