@@ -123,7 +123,6 @@
                 "Chủ nhật"
             ],
             "available_times": [
-                "11h - 13h",
                 "17h - 19h",
                 "19h - 21h"
             ]
@@ -171,8 +170,9 @@
             "phone_number": "0980000111",
             "email": "dai.thehinh@gmail.com",
             "gender": "M",
-            "status": "Tự do",
+            "status": "Boxing",
             "available_dates": [
+                "15/03/2026"
                 "Thứ 4",
                 "Thứ 7",
                 "Chủ nhật"

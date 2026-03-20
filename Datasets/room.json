@@ -10,7 +10,7 @@
         "room_id": "P02",
         "name": "Phòng Pilates P02",
         "category": "Pilates",
-        "current_user": 1,
+        "current_user": 0,
         "capacity": 20
     },
     {

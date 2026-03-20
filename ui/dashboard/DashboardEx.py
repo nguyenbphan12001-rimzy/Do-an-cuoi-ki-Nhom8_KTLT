@@ -1,14 +1,8 @@
 
 from PyQt6.QtWidgets import QMainWindow
 import json
-from ui.admin.adminEx import AdminEx
-from ui.admin.AdminHistoryEx import AdminHistoryEx
 import os
-
-# Import các màn hình con
-from ui.admin.adminEx import AdminEx
 from ui.admin.AdminHistoryEx import AdminHistoryEx
-from ui.booking.BookingMainWindowEx import BookingMainWindowEx
 from ui.dashboard.Dashboard import Ui_MainWindow
 from ui.member.MemberMainWindowEx import MemberMainWindowEx
 from ui.registration.Registration_formMainWindowEx import Registration_formMainWindowEx
@@ -85,7 +79,7 @@ class DashboardEx(Ui_MainWindow):
         self.booking_ui.current_user = getattr(self, "current_user", None)
         self.booking_window.showMaximized()
         self.booking_ui.showWindow()
-        # Dashboard vẫn là window gốc, không hide
+        self.MainWindow.hide()
 
     def process_dkyhoivien(self):
         self.hoivien_window = QMainWindow()
@@ -94,7 +88,7 @@ class DashboardEx(Ui_MainWindow):
         self.hoivien_ui.current_user = getattr(self, "current_user", None)
         self.hoivien_window.showMaximized()
         self.hoivien_ui.showWindow()
-        # Dashboard vẫn là window gốc
+        self.MainWindow.hide()
 
     def process_member(self):
         self.member_window = QMainWindow()
@@ -103,21 +97,15 @@ class DashboardEx(Ui_MainWindow):
         self.member_ui.current_user = getattr(self, "current_user", None)
         self.member_ui.load_member()
         self.member_window.showMaximized()
-        # self.MainWindow.hide()
-
-
-
-    #
-    # def process_profile(self):
-    #     # Kiểm tra quyền Admin nếu cần thiết ở đây
-    #     self.admin_window = QMainWindow()
-    #     self.admin_ui = AdminEx()
-    #     self.admin_ui.setupUi(self.admin_window)
-    #     self.admin_window.showMaximized()
-    #     self.MainWindow.close()
-
+        self.MainWindow.hide()
 
     def process_profile(self):
+        # Kiểm tra quyền Admin nếu cần thiết ở đây
+        self.profile_window = QMainWindow()
+        self.profile_ui = MemberMainWindowEx()
+        self.profile_ui.setupUi(self.profile_window)
+        self.profile_window.show()
+        self.MainWindow.close()
         """Mở AdminEx (Profile)"""
         self.admin_window = QMainWindow()
         self.admin_ui = MemberMainWindowEx(self.username)
@@ -128,10 +116,6 @@ class DashboardEx(Ui_MainWindow):
         self.admin_window.showMaximized()
 
         self.MainWindow.hide()
-
-        # self.MainWindow.hide()
-
-
 
     def process_logout(self):
         """Đăng xuất về HomeEx"""

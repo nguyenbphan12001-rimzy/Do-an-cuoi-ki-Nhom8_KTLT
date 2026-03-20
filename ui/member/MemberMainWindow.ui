@@ -407,6 +407,7 @@ font-weight:bold;</string>
                </property>
                <property name="styleSheet">
                 <string notr="true">color:rgb(0, 94, 69);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
 background-color: #f6f6e9;
 font: 12pt &quot;MS Shell Dlg 2&quot;;
 border-radius: 20px;
@@ -439,6 +440,7 @@ border: 3px solid  #58827d;</string>
                </property>
                <property name="styleSheet">
                 <string notr="true">color:#0f433d;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
 background-color: #cbddd1;
 font: 12pt &quot;MS Shell Dlg 2&quot;;
 border-radius: 20px;
@@ -465,6 +467,7 @@ border: 3px solid  #58827d;</string>
                </property>
                <property name="styleSheet">
                 <string notr="true">color:#0f433d;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
 background-color: #f6f6e9;
 font: 12pt &quot;MS Shell Dlg 2&quot;;
 border-radius: 20px;
