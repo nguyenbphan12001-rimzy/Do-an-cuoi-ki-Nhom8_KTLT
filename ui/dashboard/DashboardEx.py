@@ -1,36 +1,50 @@
+
 from PyQt6.QtWidgets import QMainWindow
-
 import json
-
 from ui.admin.adminEx import AdminEx
-
-
-
 from ui.admin.AdminHistoryEx import AdminHistoryEx
-
 import os
 
+from ui.admin.adminEx import AdminEx
+from ui.admin.AdminHistoryEx import AdminHistoryEx
+from ui.booking.BookingMainWindowEx import BookingMainWindowEx
 from ui.dashboard.Dashboard import Ui_MainWindow
 from ui.member.MemberMainWindowEx import MemberMainWindowEx
 from ui.registration.Registration_formMainWindowEx import Registration_formMainWindowEx
+from ui.home.HomeEx import HomeEx
 from ui.booking.BookingMainWindowEx import BookingMainWindowEx
 
 
 class DashboardEx(Ui_MainWindow):
+    def __init__(self, username=None):
+        super().__init__()
+        # Nếu không truyền username, tự load từ session
+        if username is None:
+            current_user_file = os.path.join(os.path.dirname(__file__), "../../datasets/current_user.json")
+            try:
+                with open(current_user_file, encoding="utf-8") as f:
+                    data = json.load(f)
+                    username = data.get("username")
+            except Exception:
+                username = None
+        self.username = username
+
+        # Load session data
+        self.load_session_data()
+
     def setupUi(self, MainWindow):
+        """Thiết lập UI chính và các signal"""
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
 
-        # 1. Tự động nạp lại user từ session khi Dashboard hiện lên
-        self.load_session_data()
-
-        # 2. Thiết lập giao diện
-        self.setupSignalAndSlot()
-
+        # Thiết lập background
         current_dir = os.path.dirname(os.path.abspath(__file__))
         project_root = current_dir.split("ui")[0]
         img_path = os.path.join(project_root, "images", "Dashboard.png").replace("\\", "/")
         self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
+
+        # Setup các signal cho button
+        self.setupSignalAndSlot()
 
     def load_session_data(self):
         """Đảm bảo Dashboard luôn có dữ liệu user mới nhất từ file session"""
@@ -52,71 +66,60 @@ class DashboardEx(Ui_MainWindow):
         self.MainWindow.show()
 
     def setupSignalAndSlot(self):
+        """Kết nối các button với function"""
         self.pushButtonDatlich.clicked.connect(self.process_booking)
         self.pushButtonDkyHoivien.clicked.connect(self.process_dkyhoivien)
         # self.pushButtonProfile.clicked.connect(self.process_profile)
         self.pushButtonLogOut.clicked.connect(self.process_logout)
         self.pushButtonMember.clicked.connect(self.process_member)
         self.pushButtonMyBooking.clicked.connect(self.mo_man_hinh_lich_su)
-
-
+    # ----------------- Xử lý button -----------------
     def process_booking(self):
         self.booking_window = QMainWindow()
         self.booking_ui = BookingMainWindowEx()
         self.booking_ui.setupUi(self.booking_window)
-        # Truyền user sang Booking nếu cần
         self.booking_ui.current_user = getattr(self, "current_user", None)
         self.booking_window.showMaximized()
         self.booking_ui.showWindow()
-        self.MainWindow.close()
+        self.MainWindow.hide()
 
     def process_dkyhoivien(self):
         self.hoivien_window = QMainWindow()
         self.hoivien_ui = Registration_formMainWindowEx()
         self.hoivien_ui.setupUi(self.hoivien_window)
-        # Truyền user từ Dashboard sang Registration
         self.hoivien_ui.current_user = getattr(self, "current_user", None)
         self.hoivien_window.showMaximized()
         self.hoivien_ui.showWindow()
-        self.MainWindow.close()
+        self.MainWindow.hide()
 
     def process_member(self):
-        """Khởi tạo màn hình Member, truyền dữ liệu và đóng Dashboard"""
         self.member_window = QMainWindow()
         self.member_ui = MemberMainWindowEx()
         self.member_ui.setupUi(self.member_window)
-
-        # Gán current_user từ Dashboard sang Member
         self.member_ui.current_user = getattr(self, "current_user", None)
-
-        # Gọi nạp dữ liệu lên giao diện Member
+        # Nạp dữ liệu lên giao diện Member
         self.member_ui.load_member()
         self.member_window.showMaximized()
+        self.MainWindow.hide()
+
 
     def process_profile(self):
-        # Kiểm tra quyền Admin nếu cần thiết ở đây
         self.admin_window = QMainWindow()
-        self.admin_ui = AdminEx()
+        self.admin_ui = AdminEx(self.username)
         self.admin_ui.setupUi(self.admin_window)
         self.admin_window.showMaximized()
+        self.MainWindow.hide()
 
     def process_logout(self):
-        from ui.home.HomeEx import HomeEx
-        self.MainWindow.close()
         self.logout_window = QMainWindow()
         self.logout_ui = HomeEx()
         self.logout_ui.setupUi(self.logout_window)
         self.logout_window.showMaximized()
-
         self.logout_ui.showWindow()
+        self.MainWindow.close()
 
     def mo_man_hinh_lich_su(self):
-        # Tạo màn hình lịch sử, truyền self.MainWindow để khi đóng nó hiện lại Dashboard
+        """Mở màn hình lịch sử Admin"""
         self.history_win = AdminHistoryEx(self.MainWindow)
         self.history_win.show()
         self.MainWindow.hide()
-
-
-
-
-
