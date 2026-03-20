@@ -3,7 +3,13 @@
     "email": "kngan@gmail.com",
     "phone_number": "0124689999",
     "password": "123",
+    "username": "Nguyên",
+    "email": "nguyen123@gmail.com",
+    "phone_number": "0826471772",
+    "password": "nguyen123",
     "role": "user",
     "gender": "F",
+    "status": "Không"
+    "gender": "M",
     "status": "Không"
 }
