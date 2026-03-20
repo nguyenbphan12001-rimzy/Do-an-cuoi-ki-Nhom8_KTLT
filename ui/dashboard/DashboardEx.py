@@ -56,6 +56,7 @@ class DashboardEx(Ui_MainWindow):
         self.pushButtonProfile.clicked.connect(self.process_profile)
         self.pushButtonLogOut.clicked.connect(self.process_logout)
         self.pushButtonMember.clicked.connect(self.process_member)
+        self.pushButtonMyBooking.clicked.connect(self.mo_man_hinh_lich_su)
 
     def process_booking(self):
         self.booking_window = QMainWindow()
@@ -116,5 +117,5 @@ class DashboardEx(Ui_MainWindow):
         self.history_win.show()
         self.MainWindow.hide()
 
-        self.logout_ui.showWindow()
+
 
