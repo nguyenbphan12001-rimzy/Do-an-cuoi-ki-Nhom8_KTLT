@@ -60,6 +60,7 @@ class LoginEx(Ui_MainWindow):
         if user_found:
             self.save_current_session(user_found)
 
+
             from ui.dashboard.DashboardEx import DashboardEx
 
             # Tạo instance Dashboard trước

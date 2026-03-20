@@ -47,8 +47,8 @@ class BookingMainWindowEx(Ui_MainWindow):
 
 
         # ... (các dòng kết nối nút Lĩnh vực) ...
-        # Thiết lập ngày mặc định là 18/03/2026
-        default_date = QDate(2026, 3, 18)
+        ## Thiết lập ngày mặc định luôn là NGÀY HÔM NAY (Thời gian thực)
+        default_date = QDate.currentDate()
         self.dateEdit.setDate(default_date)
     def SetupSignalAndSlots(self):
 
@@ -110,9 +110,17 @@ class BookingMainWindowEx(Ui_MainWindow):
         if mon_tap == "":
             return
 
-            # 3. Lấy giá trị Ngày và Giờ đang hiển thị
-        ngay_dang_chon = self.dateEdit.date().toString("dd/MM/yyyy")
+        # 3. LẤY NGÀY ĐANG CHỌN VÀ DỊCH SANG "THỨ"
+        qdate_dang_chon = self.dateEdit.date()  # Lấy đối tượng QDate
         gio_dang_chon = self.comboBoxTime.currentText()
+
+        # dayOfWeek() trả về số từ 1 (Thứ 2) đến 7 (Chủ nhật)
+        weekday_num = qdate_dang_chon.dayOfWeek()
+        thu_map = {
+            1: "Thứ 2", 2: "Thứ 3", 3: "Thứ 4",
+            4: "Thứ 5", 5: "Thứ 6", 6: "Thứ 7", 7: "Chủ nhật"
+        }
+        thu_dang_chon = thu_map.get(weekday_num)  # Ví dụ: ra được "Thứ 6"
 
         # Chặn tín hiệu để reset danh sách không bị lỗi
         self.comboBoxHuanLuyenVien.blockSignals(True)
@@ -121,12 +129,14 @@ class BookingMainWindowEx(Ui_MainWindow):
 
         self.comboBoxHuanLuyenVien.addItem(f"-- Chọn PT môn {mon_tap} --")
 
-        # 4. Quét JSON: Kiểm tra ĐÚNG MÔN + RẢNH NGÀY NÀY + RẢNH GIỜ NÀY
+        # 4. Quét JSON: Kiểm tra ĐÚNG MÔN + RẢNH 'THỨ' ĐÓ + RẢNH GIỜ NÀY
         for hlv in self.danh_sach_hlv.list:
             dieu_kien_mon = (hlv.status == mon_tap)
-            # Kiểm tra xem ngay_dang_chon có nằm trong mảng available_dates không
-            dieu_kien_ngay = (ngay_dang_chon in hlv.available_dates)
-            # Kiểm tra xem gio_dang_chon có nằm trong mảng available_times không
+
+            # 👉 Đổi chỗ này: So sánh THỨ đang chọn với lịch rảnh trong JSON
+            dieu_kien_ngay = (thu_dang_chon in hlv.available_dates)
+
+            # Giữ nguyên kiểm tra giờ
             dieu_kien_gio = (gio_dang_chon in hlv.available_times)
 
             # Nếu thỏa mãn cả 3 thì mới cho hiện lên bảng

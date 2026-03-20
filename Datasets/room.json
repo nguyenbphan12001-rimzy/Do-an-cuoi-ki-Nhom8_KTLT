@@ -24,7 +24,7 @@
         "room_id": "Y02",
         "name": "Phòng Yoga Master Y02",
         "category": "Yoga",
-        "current_user": 2,
+        "current_user": 1,
         "capacity": 15
     },
     {
@@ -38,14 +38,14 @@
         "room_id": "B2",
         "name": "Phòng Boxing B2",
         "category": "Boxing",
-        "current_user": 1,
+        "current_user": 0,
         "capacity": 20
     },
     {
         "room_id": "KG01",
         "name": "Không gian chung",
         "category": "Tự do",
-        "current_user": 4,
+        "current_user": 5,
         "capacity": 50
     }
 ]
