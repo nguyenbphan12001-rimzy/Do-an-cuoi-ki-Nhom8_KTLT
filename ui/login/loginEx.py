@@ -66,7 +66,7 @@ class LoginEx(Ui_MainWindow):
 
         if user_found:
             self.save_current_session(user_found)
-            QMessageBox.information(self.MainWindow, "Thành công", f"Xin chào {username}!")
+
 
             # Mở Dashboard
             from ui.dashboard.DashboardEx import DashboardEx
