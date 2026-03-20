@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="pic">
+    <file>admin.png</file>
     <file>Registration.png</file>
     <file>Thongke.png</file>
     <file>payments.png</file>
