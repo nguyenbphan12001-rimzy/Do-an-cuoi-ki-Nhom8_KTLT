@@ -172,7 +172,6 @@
             "gender": "M",
             "status": "Boxing",
             "available_dates": [
-
                 "Thứ 4",
                 "Thứ 7",
                 "Chủ nhật"
@@ -182,187 +181,187 @@
                 "13h - 15h",
                 "17h - 19h"
             ]
-        },[
-    {
-        "username": "Lê Văn Đạt",
-        "password": "vandat2024",
-        "role": "trainer",
-        "phone_number": "0911222333",
-        "email": "dat.crossfit@gmail.com",
-        "gender": "M",
-        "status": "Crossfit",
-        "available_dates": [
-            "Thứ 2",
-            "Thứ 3",
-            "Thứ 4"
-        ],
-        "available_times": [
-            "6h - 8h",
-            "17h - 19h"
-        ]
-    },
-    {
-        "username": "Phạm Trúc Ly",
-        "password": "truclyzumba",
-        "role": "trainer",
-        "phone_number": "0912333444",
-        "email": "ly.zumba@gmail.com",
-        "gender": "F",
-        "status": "Zumba",
-        "available_dates": [
-            "Thứ 5",
-            "Thứ 6",
-            "Chủ nhật"
-        ],
-        "available_times": [
-            "18h - 20h"
-        ]
-    },
-    {
-        "username": "Bùi Quốc Bảo",
-        "password": "quocbao999",
-        "role": "trainer",
-        "phone_number": "0913444555",
-        "email": "bao.powerlifting@gmail.com",
-        "gender": "M",
-        "status": "Powerlifting",
-        "available_dates": [
-            "Thứ 2",
-            "Thứ 4",
-            "Thứ 6"
-        ],
-        "available_times": [
-            "15h - 17h",
-            "19h - 21h"
-        ]
-    },
-    {
-        "username": "Nguyễn Mai Anh",
-        "password": "maianhaero",
-        "role": "trainer",
-        "phone_number": "0914555666",
-        "email": "maianh.aerobic@gmail.com",
-        "gender": "F",
-        "status": "Aerobic",
-        "available_dates": [
-            "Thứ 3",
-            "Thứ 5",
-            "Thứ 7"
-        ],
-        "available_times": [
-            "7h - 9h",
-            "17h - 19h"
-        ]
-    },
-    {
-        "username": "Trần Đình Trọng",
-        "password": "trongptvip",
-        "role": "trainer",
-        "phone_number": "0915666777",
-        "email": "trong.tudo@gmail.com",
-        "gender": "M",
-        "status": "Tự do",
-        "available_dates": [
-            "Thứ 2",
-            "Thứ 3",
-            "Thứ 4",
-            "Thứ 5",
-            "Thứ 6"
-        ],
-        "available_times": [
-            "9h - 11h",
-            "14h - 16h"
-        ]
-    },
-    {
-        "username": "Trịnh Tố Quyên",
-        "password": "quyenstretch",
-        "role": "trainer",
-        "phone_number": "0916777888",
-        "email": "quyen.stretching@gmail.com",
-        "gender": "F",
-        "status": "Stretching",
-        "available_dates": [
-            "Thứ 7",
-            "Chủ nhật"
-        ],
-        "available_times": [
-            "7h - 9h",
-            "15h - 17h"
-        ]
-    },
-    {
-        "username": "Vương Tuấn Kiệt",
-        "password": "tuankietbox",
-        "role": "trainer",
-        "phone_number": "0917888999",
-        "email": "kiet.boxing@gmail.com",
-        "gender": "M",
-        "status": "Boxing",
-        "available_dates": [
-            "Thứ 2",
-            "Thứ 4",
-            "Chủ nhật"
-        ],
-        "available_times": [
-            "17h - 19h",
-            "19h - 21h"
-        ]
-    },
-    {
-        "username": "Lý Thanh Trúc",
-        "password": "thanhtrucpilates",
-        "role": "trainer",
-        "phone_number": "0918999000",
-        "email": "truc.pilates@gmail.com",
-        "gender": "F",
-        "status": "Pilates",
-        "available_dates": [
-            "Thứ 3",
-            "Thứ 5",
-            "Thứ 7"
-        ],
-        "available_times": [
-            "11h - 13h",
-            "15h - 17h"
-        ]
-    },
-    {
-        "username": "Hồ Hoàng Nam",
-        "password": "hoangnamyoga",
-        "role": "trainer",
-        "phone_number": "0919000111",
-        "email": "nam.yoga@gmail.com",
-        "gender": "M",
-        "status": "Yoga",
-        "available_dates": [
-            "Thứ 2",
-            "Thứ 3",
-            "Thứ 4"
-        ],
-        "available_times": [
-            "6h - 8h"
-        ]
-    },
-    {
-        "username": "Phan Thị Mỹ Tâm",
-        "password": "mytamgym",
-        "role": "trainer",
-        "phone_number": "0920111222",
-        "email": "tam.tudo@gmail.com",
-        "gender": "F",
-        "status": "Tự do",
-        "available_dates": [
-            "Thứ 5",
-            "Thứ 6",
-            "Thứ 7",
-            "Chủ nhật"
-        ],
-        "available_times": [
-            "13h - 15h",
-            "18h - 20h"
-        ]
-    }
-]
+        },
+        {
+            "username": "Lê Văn Đạt",
+            "password": "vandat2024",
+            "role": "trainer",
+            "phone_number": "0911222333",
+            "email": "dat.crossfit@gmail.com",
+            "gender": "M",
+            "status": "Tự do",
+            "available_dates": [
+                "Thứ 2",
+                "Thứ 3",
+                "Thứ 4"
+            ],
+            "available_times": [
+                "7h - 9h",
+                "17h - 19h"
+            ]
+        },
+        {
+            "username": "Phạm Trúc Ly",
+            "password": "truclyzumba",
+            "role": "trainer",
+            "phone_number": "0912333444",
+            "email": "ly.zumba@gmail.com",
+            "gender": "F",
+            "status": "Yoga",
+            "available_dates": [
+                "Thứ 5",
+                "Thứ 6",
+                "Chủ nhật"
+            ],
+            "available_times": [
+                "17h - 19h",
+                "19h - 21h"
+            ]
+        },
+        {
+            "username": "Bùi Quốc Bảo",
+            "password": "quocbao999",
+            "role": "trainer",
+            "phone_number": "0913444555",
+            "email": "bao.powerlifting@gmail.com",
+            "gender": "M",
+            "status": "Tự do",
+            "available_dates": [
+                "Thứ 2",
+                "Thứ 4",
+                "Thứ 6"
+            ],
+            "available_times": [
+                "15h - 17h",
+                "19h - 21h"
+            ]
+        },
+        {
+            "username": "Nguyễn Mai Anh",
+            "password": "maianhaero",
+            "role": "trainer",
+            "phone_number": "0914555666",
+            "email": "maianh.aerobic@gmail.com",
+            "gender": "F",
+            "status": "Pilates",
+            "available_dates": [
+                "Thứ 3",
+                "Thứ 5",
+                "Thứ 7"
+            ],
+            "available_times": [
+                "7h - 9h",
+                "17h - 19h"
+            ]
+        },
+        {
+            "username": "Trần Đình Trọng",
+            "password": "trongptvip",
+            "role": "trainer",
+            "phone_number": "0915666777",
+            "email": "trong.tudo@gmail.com",
+            "gender": "M",
+            "status": "Tự do",
+            "available_dates": [
+                "Thứ 2",
+                "Thứ 3",
+                "Thứ 4",
+                "Thứ 5",
+                "Thứ 6"
+            ],
+            "available_times": [
+                "9h - 11h",
+                "13h - 15h"
+            ]
+        },
+        {
+            "username": "Trịnh Tố Quyên",
+            "password": "quyenstretch",
+            "role": "trainer",
+            "phone_number": "0916777888",
+            "email": "quyen.stretching@gmail.com",
+            "gender": "F",
+            "status": "Pilates",
+            "available_dates": [
+                "Thứ 7",
+                "Chủ nhật"
+            ],
+            "available_times": [
+                "7h - 9h",
+                "15h - 17h"
+            ]
+        },
+        {
+            "username": "Vương Tuấn Kiệt",
+            "password": "tuankietbox",
+            "role": "trainer",
+            "phone_number": "0917888999",
+            "email": "kiet.boxing@gmail.com",
+            "gender": "M",
+            "status": "Boxing",
+            "available_dates": [
+                "Thứ 2",
+                "Thứ 4",
+                "Chủ nhật"
+            ],
+            "available_times": [
+                "17h - 19h",
+                "19h - 21h"
+            ]
+        },
+        {
+            "username": "Lý Thanh Trúc",
+            "password": "thanhtrucpilates",
+            "role": "trainer",
+            "phone_number": "0918999000",
+            "email": "truc.pilates@gmail.com",
+            "gender": "F",
+            "status": "Pilates",
+            "available_dates": [
+                "Thứ 3",
+                "Thứ 5",
+                "Thứ 7"
+            ],
+            "available_times": [
+                "11h - 13h",
+                "15h - 17h"
+            ]
+        },
+        {
+            "username": "Hồ Hoàng Nam",
+            "password": "hoangnamyoga",
+            "role": "trainer",
+            "phone_number": "0919000111",
+            "email": "nam.yoga@gmail.com",
+            "gender": "M",
+            "status": "Yoga",
+            "available_dates": [
+                "Thứ 2",
+                "Thứ 3",
+                "Thứ 4"
+            ],
+            "available_times": [
+                "7h - 9h"
+            ]
+        },
+        {
+            "username": "Phan Thị Mỹ Tâm",
+            "password": "mytamgym",
+            "role": "trainer",
+            "phone_number": "0920111222",
+            "email": "tam.tudo@gmail.com",
+            "gender": "F",
+            "status": "Tự do",
+            "available_dates": [
+                "Thứ 5",
+                "Thứ 6",
+                "Thứ 7",
+                "Chủ nhật"
+            ],
+            "available_times": [
+                "13h - 15h",
+                "17h - 19h"
+            ]
+        }
     ]
 }
