@@ -1,13 +1,9 @@
 import json
 from datetime import datetime
 import os
-
 from PyQt6.QtWidgets import QMessageBox, QMainWindow
-
 from models.members import Members
 from ui.member.MemberMainWindow import Ui_MainWindow
-
-
 
 class MemberMainWindowEx(Ui_MainWindow):
     def __init__(self, member=None):
@@ -16,27 +12,25 @@ class MemberMainWindowEx(Ui_MainWindow):
         current_dir = os.path.dirname(os.path.abspath(__file__))
         project_root = current_dir.split("ui")[0]
         file_member = os.path.join(project_root, "Datasets", "member.json")
-
         self.mb = Members()
         # Nạp dữ liệu từ file
         self.mb.import_json(file_member)
-
         self.current_user = None  # Nhận dữ liệu từ dashboard
+
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.setupSignalAndSlot()
-
         current_dir = os.path.dirname(os.path.abspath(__file__))
-
         img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "hoivien_anh(update).jpg")).replace("\\", "/")
-
         self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
         self.load_member_data()
         #Không cho chỉnh sửa gói tập
         self.lineEditGoi.setReadOnly(True)
+
     def showWindow(self):
         self.MainWindow.show()
+
     def setupSignalAndSlot(self):
         self.pushButtonKhonggiahan.clicked.connect(self.process_khonggiahan)
         self.pushButtonGiahan.clicked.connect(self.process_giahan)
@@ -49,16 +43,14 @@ class MemberMainWindowEx(Ui_MainWindow):
             self.showDashboard()
 
     def showDashboard(self):
+        # Mang dòng import vào ĐÂY để phá vỡ vòng lặp import
         from ui.dashboard.DashboardEx import DashboardEx
         self.dashboard_window = QMainWindow()
         self.dashboard_ui = DashboardEx()
         self.dashboard_ui.setupUi(self.dashboard_window)
-
-        # Trả lại user cho Dashboard để Dashboard có thể mở lại Member lần nữa
         self.dashboard_ui.current_user = self.current_user
-
         self.dashboard_window.showMaximized()
-        self.MainWindow.close()  # Đóng Member khi về Dashboard
+        self.MainWindow.close()
 
     def process_giahan(self):
         from ui.registration.Registration_formMainWindowEx import Registration_formMainWindowEx
@@ -76,58 +68,70 @@ class MemberMainWindowEx(Ui_MainWindow):
         username = self.current_user.get("username")
         member = None
 
-        # 1. Tìm hội viên trong danh sách (mb.list)
+        # 1. Tìm hội viên trong danh sách
         for m in self.mb.list:
             if m.username == username:
                 member = m
                 break
 
-        # 2. Nếu không tìm thấy, báo lỗi và dừng hàm
+        # 2. XỬ LÝ CHO NGƯỜI DÙNG CHƯA ĐĂNG KÝ HỘI VIÊN
         if not member:
-            QMessageBox.warning(self.MainWindow, "Thông báo", "Bạn chưa đăng ký hội viên!")
+            # Đổ dữ liệu cơ bản từ session
+            self.lineEditName.setText(username)
+            self.lineEditPhone.setText(self.current_user.get("phone_number", ""))
+            self.lineEditGoi.setText("Chưa đăng ký gói nào")
+
+            # Ẩn các nút không cần thiết
+            self.pushButtonGiahan.hide()  # Ẩn nút Gia hạn
+            self.pushButtonKhonggiahan.hide()  # Ẩn nút Không gia hạn
+
+            # Làm mờ các nút trạng thái
+            self.pushButtonConhan.setEnabled(False)
+            self.pushButtonHethan.setEnabled(False)
+            self.pushButtonConhan.setStyleSheet("background-color: lightgray; color: gray; border-radius:10px;")
+            self.pushButtonHethan.setStyleSheet("background-color: lightgray; color: gray; border-radius:10px;")
             return
 
-        # 3. Đổ dữ liệu lên các ô nhập liệu
+            # 3. XỬ LÝ CHO HỘI VIÊN (HIỆN LẠI CÁC NÚT NẾU TRƯỚC ĐÓ BỊ ẨN)
+        self.pushButtonGiahan.show()
+        self.pushButtonKhonggiahan.show()
+
         self.member = member
         self.lineEditName.setText(member.username)
         self.lineEditPhone.setText(member.phone_number)
         self.lineEditGoi.setText(member.package)
 
-        # Hiển thị Giới tính
+        # Thiết lập Giới tính
         if member.gender == "M":
             self.radioButtonMale.setChecked(True)
         else:
             self.radioButtonFemale.setChecked(True)
 
-        # Khóa lại không cho sửa (chỉ cho sửa khi nhấn nút CHỈNH SỬA)
         self.radioButtonMale.setEnabled(False)
         self.radioButtonFemale.setEnabled(False)
 
-        # 4. Xử lý logic Ngày hết hạn và màu sắc Nút trạng thái
+        # 4. Logic kiểm tra thời hạn và đổi màu nút
         try:
             today = datetime.today().date()
             expire_date = member.expire_date
 
-            # Chuyển đổi chuỗi ngày thành object date để so sánh
             if isinstance(expire_date, str):
                 expire_date = datetime.strptime(expire_date, "%d/%m/%Y").date()
 
-            # Kiểm tra Còn hạn hay Hết hạn
             if expire_date >= today:
-                # Còn hạn: Nút Xanh sáng lên, nút Đỏ mờ đi
+                # Còn hạn
                 self.pushButtonConhan.setEnabled(True)
                 self.pushButtonHethan.setEnabled(False)
                 self.pushButtonConhan.setStyleSheet(
                     "background-color: rgb(78,170,28); color: white; font-weight: bold; border-radius:10px;")
                 self.pushButtonHethan.setStyleSheet("background-color: lightgray; color: gray; border-radius:10px;")
             else:
-                # Hết hạn: Nút Đỏ sáng lên, nút Xanh mờ đi
+                # Hết hạn
                 self.pushButtonConhan.setEnabled(False)
                 self.pushButtonHethan.setEnabled(True)
                 self.pushButtonConhan.setStyleSheet("background-color: lightgray; color: gray; border-radius:10px;")
                 self.pushButtonHethan.setStyleSheet(
                     "background-color: rgb(255,138,138); color: white; font-weight: bold; border-radius:10px;")
-
         except Exception as e:
             print(f"Lỗi xử lý ngày tháng: {e}")
 
@@ -144,6 +148,7 @@ class MemberMainWindowEx(Ui_MainWindow):
         except:
             pass
         self.pushButtonChinh.clicked.connect(self.save_changes)
+
     #Thêm chuc năng lưu
     def save_changes(self):
         try:
@@ -160,15 +165,12 @@ class MemberMainWindowEx(Ui_MainWindow):
             if not getattr(self, "current_user", None):
                 QMessageBox.warning(self.MainWindow, "Lỗi", "Không tìm thấy session người dùng!")
                 return
-
             old_username = self.current_user.get("username")
-
             member_to_update = None
             for m in self.mb.list:
                 if m.username == old_username:
                     member_to_update = m
                     break
-
             if not member_to_update:
                 QMessageBox.warning(self.MainWindow, "Lỗi", "Không tìm thấy dữ liệu hồ sơ này để cập nhật!")
                 return
@@ -303,6 +305,4 @@ class MemberMainWindowEx(Ui_MainWindow):
             print("Lỗi load hồ sơ:", e)
             print(traceback.format_exc())
 
-    def showDashboard(self):
-        # Chỉ cần đóng màn hình Profile hiện tại, Dashboard gốc ở sau sẽ tự lộ diện
-        self.MainWindow.close()
+
