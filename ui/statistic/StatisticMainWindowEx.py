@@ -149,8 +149,8 @@ class StatisticMainWindowEx(Ui_MainWindow):
         file_path = os.path.join(base_dir, "../../Datasets/booking_history.json")
 
         with open(file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)  # data là LIST
-
+            raw = json.load(f)  # data là LIST
+        data=raw.get("Datasets",[])
         users = []
 
         # Lọc theo gói tập trong chuỗi
