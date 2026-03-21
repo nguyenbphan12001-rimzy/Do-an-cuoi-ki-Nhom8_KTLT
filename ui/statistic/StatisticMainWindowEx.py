@@ -1,5 +1,4 @@
 import json
-
 import pandas as pd
 import seaborn as sns
 from PyQt6.QtWidgets import QMainWindow, QTableWidgetItem
@@ -145,39 +144,45 @@ class StatisticMainWindowEx(Ui_MainWindow):
 
     #Danh sách khách hàng
     def filter_users(self, goitap):
-        base_dir = os.path.dirname(__file__)
-        file_path = os.path.join(base_dir, "../../Datasets/booking_history.json")
+        try:
+            # 1. Khai báo đường dẫn
+            base_dir = os.path.dirname(__file__)
+            file_path = os.path.join(base_dir, "../../Datasets/booking_history.json")
 
-        with open(file_path, "r", encoding="utf-8") as f:
-            raw = json.load(f)  # data là LIST
-        data=raw.get("Datasets",[])
-        users = []
+            # 2. Đọc file JSON
+            with open(file_path, "r", encoding="utf-8") as f:
+                raw = json.load(f)
 
-        # Lọc theo gói tập trong chuỗi
-        for item in data:
-            package = item.get("package_details", "")
+            data = raw.get("Datasets", [])
+            users = []
 
-            if f"Gói: {goitap}" in package:
-                users.append(item)
+            # 3. Lọc dữ liệu theo gói tập
+            for item in data:
+                package = item.get("package_details", "")
+                if f"Gói: {goitap}" in package:
+                    users.append(item)
 
-        # Xóa trùng theo SĐT
-        unique_users = {}
-        for u in users:
-            unique_users[u["phone"]] = u
+            # 4. Xóa trùng theo SĐT (Phải thụt lề vào trong try)
+            unique_users = {}
+            for u in users:
+                unique_users[u["phone"]] = u
+            users = list(unique_users.values())
 
-        users = list(unique_users.values())
+            # 5. Hiển thị lên bảng (Phải thụt lề vào trong try)
+            self.tableWidget.setRowCount(len(users))
+            self.tableWidget.setColumnCount(3)
+            self.tableWidget.setHorizontalHeaderLabels(["Họ và tên", "SĐT", "Môn đăng ký"])
 
-        # Hiển thị lên bảng
-        self.tableWidget.setRowCount(len(users))
-        self.tableWidget.setColumnCount(3)
-        self.tableWidget.setHorizontalHeaderLabels(
-            ["Họ và tên", "SĐT", "Môn đăng ký"]
-        )
+            for row, user in enumerate(users):
+                self.tableWidget.setItem(row, 0, QTableWidgetItem(user.get("customer_name", "")))
+                self.tableWidget.setItem(row, 1, QTableWidgetItem(user.get("phone", "")))
+                self.tableWidget.setItem(row, 2, QTableWidgetItem(goitap))
 
-        for row, user in enumerate(users):
-            self.tableWidget.setItem(row, 0, QTableWidgetItem(user.get("customer_name", "")))
-            self.tableWidget.setItem(row, 1, QTableWidgetItem(user.get("phone", "")))
-            self.tableWidget.setItem(row, 2, QTableWidgetItem(goitap))
+        except Exception as e:
+            # Except phải thẳng hàng với Try
+            from PyQt6.QtWidgets import QMessageBox
+            QMessageBox.critical(self.MainWindow, "Lỗi dữ liệu", f"Không thể đọc file JSON!\nChi tiết: {e}")
+
     def display_trainers(self):
         self.tableWidgetPt.setRowCount(0)
 

@@ -2,7 +2,7 @@ from models.users import Users
 from models.user import User
 
 us = Users()
-us1 = User("Lâm Tâm Như", "lamtamnhu123","admin","0911172457", "nhulam123@gmail.com","F", "Không")
+us1 = User("admin", "admin123","admin","0911172457", "nhulam123@gmail.com","F", "Không")
 us2 = User("Nguyễn Minh Anh", "minhanh456","user", "0912345678", "minhanh@gmail.com", "F", "Yoga 1")
 us3 = User("Trần Quốc Bảo", "quocbao789","user", "0913456789", "quocbao@gmail.com", "M", "Tự do")
 us4 = User("Phạm Gia Huy", "giahuy321","user", "0914567890", "giahuy@gmail.com", "M", "Không")

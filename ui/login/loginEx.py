@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from ui.login.login import Ui_MainWindow
 from ui.signUp.signUpEx import SignUpEx
 
+
 class LoginEx(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
@@ -57,23 +58,32 @@ class LoginEx(Ui_MainWindow):
         user_found = next((u for u in data.get("Datasets", []) if
                            u.get("username") == username and u.get("password") == password and u.get("role") == role),
                           None)
+
         if user_found:
             self.save_current_session(user_found)
 
+            # CHỖ THAY ĐỔI CHÍNH Ở ĐÂY:
+            if role == "admin":
+                # Khởi tạo cửa sổ Thống kê (Statistic)
+                from ui.statistic.StatisticMainWindowEx import StatisticMainWindowEx
+                self.main_statistic_window = QMainWindow()
+                self.statistic_ui = StatisticMainWindowEx()
+                self.statistic_ui.setupUi(self.main_statistic_window)
 
-            from ui.dashboard.DashboardEx import DashboardEx
+                # Hiển thị cửa sổ mới
+                self.main_statistic_window.show()
+                print(f"✅ Admin {username} đã đăng nhập vào hệ thống Thống kê.")
+            else:
+                # Nếu là user bình thường, vẫn mở Dashboard cũ (nếu muốn)
+                from ui.dashboard.DashboardEx import DashboardEx
+                self.main_dashboard_window = QMainWindow()
+                self.dashboard_ui = DashboardEx(username)
+                self.dashboard_ui.setupUi(self.main_dashboard_window)
+                self.main_dashboard_window.showMaximized()
+                print(f"✅ User {username} đã đăng nhập vào Dashboard.")
 
-            # Tạo instance Dashboard trước
-            self.main_dashboard_window = QMainWindow()
-            self.dashboard_ui = DashboardEx(username)
-            self.dashboard_ui.setupUi(self.main_dashboard_window)
-
-            # Hiển thị Dashboard
-            self.main_dashboard_window.showMaximized()
-
-            # Ẩn Login thay vì Close ngay lập tức để tránh đứt luồng thread
+            # Ẩn cửa sổ Login
             self.MainWindow.hide()
-            print(f"✅ Đã chuyển sang Dashboard cho user: {username}")
         else:
             QMessageBox.warning(self.MainWindow, "Thất bại", "Sai tài khoản, mật khẩu hoặc role!")
 

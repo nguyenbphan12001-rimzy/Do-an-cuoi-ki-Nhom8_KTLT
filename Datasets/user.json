@@ -1,8 +1,8 @@
 {
     "Datasets": [
         {
-            "username": "Lâm Tâm Như",
-            "password": "lamtamnhu123",
+            "username": "admin",
+            "password": "admin123",
             "role": "admin",
             "phone_number": "0911172457",
             "email": "nhulam123@gmail.com",
@@ -88,87 +88,6 @@
             "phone_number": "0910123456",
             "email": "ducanh@gmail.com",
             "gender": "M",
-            "status": "Không"
-        },
-        {
-            "username": "Phan Trần Gia Nguyên",
-            "email": "nguyen@gmail.com",
-            "phone_number": "0909090909",
-            "password": "nguyen123",
-            "role": "user",
-            "gender": "M",
-            "status": "Không"
-        },
-        {
-            "username": "Trần Phạm Kim Ngân",
-            "email": "1222@gmail.com",
-            "phone_number": "0369614707",
-            "password": "123",
-            "role": "user",
-            "gender": "F",
-            "status": "Không"
-        },
-        {
-            "username": "kngan",
-            "email": "kngan@gmail.com",
-            "phone_number": "0124689999",
-            "password": "123",
-            "role": "user",
-            "gender": "F",
-            "status": "Không"
-        },
-        {
-            "username": "Nguyên",
-            "email": "nguyen12@gmail.com",
-            "phone_number": "1234567890",
-            "password": "1212",
-            "role": "user",
-            "gender": "M",
-            "status": "Không"
-        },
-        {
-            "username": "Hà",
-            "email": "ha1213@gmail.com",
-            "phone_number": "0987654321",
-            "password": "ha123",
-            "role": "user",
-            "gender": "F",
-            "status": "Không"
-        },
-        {
-            "username": "Nghĩa",
-            "email": "nghia78@gmail.com",
-            "phone_number": "6573481948",
-            "password": "nghia123",
-            "role": "user",
-            "gender": "M",
-            "status": "Không"
-        },
-        {
-            "username": "Nguyên",
-            "email": "nguyen123@gmail.com",
-            "phone_number": "0826471772",
-            "password": "nguyen123",
-            "role": "user",
-            "gender": "M",
-            "status": "Không"
-        },
-        {
-            "username": "Kim Ngân",
-            "email": "kng@gmail.com",
-            "phone_number": "0145678923",
-            "password": "111",
-            "role": "user",
-            "gender": "F",
-            "status": "Không"
-        },
-        {
-            "username": "Trần Phạm Kim Ngân",
-            "email": "ngantpk@gmail.com",
-            "phone_number": "0999888777",
-            "password": "11",
-            "role": "user",
-            "gender": "F",
             "status": "Không"
         }
     ]
