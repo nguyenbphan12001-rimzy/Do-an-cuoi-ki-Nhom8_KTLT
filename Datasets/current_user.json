@@ -4,6 +4,11 @@
     "phone_number": "0369613345",
     "password": "123",
     "role": "user",
+    "username": "Nguyễn Minh Anh",
+    "password": "minhanh456",
+    "role": "user",
+    "phone_number": "0912345678",
+    "email": "minhanh@gmail.com",
     "gender": "F",
-    "status": "Không"
+    "status": "Yoga 1"
 }
