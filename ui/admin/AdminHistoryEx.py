@@ -150,7 +150,7 @@ class AdminHistoryEx(QMainWindow):
 
         # Bảng hiển thị dữ liệu
         self.table_history = QTableWidget()
-        columns = ["Tên khách", "SĐT", "Gói tập & Phòng", "Thời gian tập", "PT / Ghi chú", "Thời gian mua"]
+        columns = ["Tên khách", "SĐT", "Gói tập & Phòng", "Thời gian tập", "Thời gian mua"]
         self.table_history.setColumnCount(len(columns))
         self.table_history.setHorizontalHeaderLabels(columns)
 
@@ -256,8 +256,8 @@ class AdminHistoryEx(QMainWindow):
             self.table_history.setItem(row, 1, QTableWidgetItem(str(bill.get("phone", ""))))
             self.table_history.setItem(row, 2, QTableWidgetItem(str(bill.get("package_details", ""))))
             self.table_history.setItem(row, 3, QTableWidgetItem(str(bill.get("time", ""))))
-            self.table_history.setItem(row, 4, QTableWidgetItem("N/A"))
-            self.table_history.setItem(row, 5, QTableWidgetItem(str(bill.get("payment_time", ""))))
+
+            self.table_history.setItem(row, 4, QTableWidgetItem(str(bill.get("payment_time", ""))))
 
             # Căn giữa nội dung cho tất cả các cột để nhìn ngăn nắp hơn
             for col in range(6):
