@@ -131,8 +131,8 @@ class PaymentEx(Ui_MainWindow):
             sdt = ""
             if hasattr(self, 'lineEditSDT'):
                 sdt = self.lineEditSDT.text().strip()
-            elif hasattr(self, 'lineEditSDT'):
-                sdt = self.lineEditSDT.text().strip()
+            elif hasattr(self, 'lineEditID'):
+                sdt = self.lineEditID.text().strip()
 
             if not self.checkBoxBak.isChecked() and not self.checkBoxCard.isChecked():
                 QMessageBox.warning(self.MainWindow, "Thông báo", "Vui lòng chọn phương thức thanh toán!")
@@ -151,9 +151,7 @@ class PaymentEx(Ui_MainWindow):
             # 👉 CHIA LÀM 2 NGÃ RẼ RÕ RÀNG:
 
             if loai == "booking":
-                # ---------------------------------------------------------
-                # HƯỚNG 1: ĐẶT LỊCH TẬP (Chỉ lưu vào booking_history.json và cập nhật room)
-                # ---------------------------------------------------------
+                # --- HƯỚNG 1: ĐẶT LỊCH TẬP PT ---
                 chi_tiet_goi = self.lineEditPackage.text()
                 if getattr(self, 'room_name', ''):
                     chi_tiet_goi = f"{chi_tiet_goi} - {self.room_name}"
@@ -168,21 +166,29 @@ class PaymentEx(Ui_MainWindow):
                     "payment_time": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
                 }
 
-                # Lưu vào booking_history
+                # Lưu vào booking_history.json
                 history_file = os.path.join(datasets_dir, "booking_history.json")
-                history_list = []
+                history_data = {"Datasets": []}
+
                 if os.path.exists(history_file):
                     try:
                         with open(history_file, 'r', encoding='utf-8') as f:
-                            history_list = json.load(f)
+                            loaded_data = json.load(f)
+                            if isinstance(loaded_data, dict):
+                                history_data = loaded_data
+                            elif isinstance(loaded_data, list):
+                                history_data["Datasets"] = loaded_data
                     except Exception:
                         pass
 
+                history_list = history_data.get("Datasets", [])
                 history_list.append(bill_data)
-                with open(history_file, 'w', encoding='utf-8') as f:
-                    json.dump(history_list, f, indent=4, ensure_ascii=False)
+                history_data["Datasets"] = history_list
 
-                # Cập nhật số người trong phòng
+                with open(history_file, 'w', encoding='utf-8') as f:
+                    json.dump(history_data, f, indent=4, ensure_ascii=False)
+
+                # Cập nhật số người trong phòng (room.json)
                 if hasattr(self, 'room_name') and self.room_name:
                     room_file = os.path.join(datasets_dir, "room.json")
                     if os.path.exists(room_file):
@@ -199,11 +205,10 @@ class PaymentEx(Ui_MainWindow):
                             pass
 
             elif loai == "membership":
-                # ---------------------------------------------------------
-                # HƯỚNG 2: ĐĂNG KÝ HỘI VIÊN (Chỉ lưu vào member.json)
-                # ---------------------------------------------------------
+                # --- HƯỚNG 2: ĐĂNG KÝ HỘI VIÊN MỚI ---
                 member_file = os.path.join(datasets_dir, "member.json")
                 member_data = {"Datasets": []}
+
                 if os.path.exists(member_file):
                     try:
                         with open(member_file, 'r', encoding='utf-8') as f:
@@ -222,6 +227,7 @@ class PaymentEx(Ui_MainWindow):
                 ngay_dang_ky = datetime.now()
                 ten_goi_tap = self.lineEditPackage.text()
 
+                # Tính ngày hết hạn
                 if "2 tuần" in ten_goi_tap:
                     ngay_het_han = ngay_dang_ky + timedelta(days=14)
                 elif "1 tháng" in ten_goi_tap:
@@ -247,11 +253,11 @@ class PaymentEx(Ui_MainWindow):
 
                 ds_hoi_vien.append(new_member)
                 member_data["Datasets"] = ds_hoi_vien
+
                 with open(member_file, 'w', encoding='utf-8') as f:
                     json.dump(member_data, f, indent=4, ensure_ascii=False)
 
-            # 3. KẾT THÚC THÀNH CÔNG VÀ CHUYỂN MÀN HÌNH
-                    # Gom tất cả thông tin đã lấy được ở trên vào một chuỗi
+            # --- KẾT THÚC THÀNH CÔNG VÀ CHUYỂN MÀN HÌNH ---
             thong_tin_chi_tiet = (
                 f"✅ THANH TOÁN THÀNH CÔNG!\n\n"
                 f"👤 Khách hàng: {ten}\n"
@@ -263,10 +269,9 @@ class PaymentEx(Ui_MainWindow):
                 f"Hệ thống đã cập nhật dữ liệu thành công."
             )
 
-            # Hiển thị thông báo với đầy đủ chi tiết
             QMessageBox.information(self.MainWindow, "Xác nhận giao dịch", thong_tin_chi_tiet)
-
             self.mo_man_hinh_confirm()
+
         except Exception as e:
             import traceback
             QMessageBox.critical(self.MainWindow, "Lỗi Hệ Thống", f"Bị lỗi rồi bro ơi:\n{e}")

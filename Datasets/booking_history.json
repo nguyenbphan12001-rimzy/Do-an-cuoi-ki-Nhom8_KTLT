@@ -189,7 +189,7 @@
             "phone_number": "0911222333",
             "email": "dat.crossfit@gmail.com",
             "gender": "M",
-            "status": "Crossfit",
+            "status": "Boxing",
             "available_dates": [
                 "Thứ 2",
                 "Thứ 3",
@@ -207,7 +207,7 @@
             "phone_number": "0912333444",
             "email": "ly.zumba@gmail.com",
             "gender": "F",
-            "status": "Zumba",
+            "status": "Yoga",
             "available_dates": [
                 "Thứ 5",
                 "Thứ 6",
@@ -224,7 +224,7 @@
             "phone_number": "0913444555",
             "email": "bao.powerlifting@gmail.com",
             "gender": "M",
-            "status": "Powerlifting",
+            "status": "Tự do",
             "available_dates": [
                 "Thứ 2",
                 "Thứ 4",
@@ -242,7 +242,7 @@
             "phone_number": "0914555666",
             "email": "maianh.aerobic@gmail.com",
             "gender": "F",
-            "status": "Aerobic",
+            "status": "Pilates",
             "available_dates": [
                 "Thứ 3",
                 "Thứ 5",
@@ -280,7 +280,7 @@
             "phone_number": "0916777888",
             "email": "quyen.stretching@gmail.com",
             "gender": "F",
-            "status": "Stretching",
+            "status": "Pilates",
             "available_dates": [
                 "Thứ 7",
                 "Chủ nhật"
