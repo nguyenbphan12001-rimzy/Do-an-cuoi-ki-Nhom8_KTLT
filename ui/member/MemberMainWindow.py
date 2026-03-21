@@ -13,6 +13,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1253, 712)
+        MainWindow.setMinimumSize(QtCore.QSize(1000, 700))
         MainWindow.setStyleSheet("QMainWindow{\n"
 "border-image:url(:/pic/hoivien_anh(update).jpg);\n"
 "background-iamge:rgb(0,255,255);}")
@@ -27,11 +28,27 @@ class Ui_MainWindow(object):
         self.pushButtonBack = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButtonBack.setMinimumSize(QtCore.QSize(150, 50))
         self.pushButtonBack.setMaximumSize(QtCore.QSize(100, 100))
-        self.pushButtonBack.setStyleSheet("color:#0f433d;\n"
-"background-color: #cbddd1;\n"
-"font: 18pt \"MS Shell Dlg 2\";\n"
-"border-radius: 20px;\n"
-"border: 3px solid  #58827d;")
+        self.pushButtonBack.setStyleSheet("/* Trạng thái bình thường */\n"
+"QPushButton {\n"
+"    background-color: #cbddd1;\n"
+"    color: #184e49;\n"
+"    font: bold 16pt \"Segoe UI\";\n"
+"    border-radius: 20px;\n"
+"    border: 3px solid #58827d;\n"
+"}\n"
+"\n"
+"/* Hiệu ứng lướt chuột qua */\n"
+"QPushButton:hover {\n"
+"    background-color: #dae5de; /* Sáng hơn màu gốc một chút */\n"
+"    border: 3px solid #184e49; /* Viền đậm hơn để nổi bật */\n"
+"}\n"
+"\n"
+"/* Hiệu ứng khi nhấn giữ */\n"
+"QPushButton:pressed {\n"
+"    background-color: #b8c9bd; /* Đậm hơn màu gốc để tạo cảm giác lún */\n"
+"    padding-left: 5px;\n"
+"    padding-top: 5px;\n"
+"}")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("D:\\DO AN KTLT\\ui\\member\\../../images/return.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonBack.setIcon(icon)
@@ -205,35 +222,65 @@ class Ui_MainWindow(object):
         self.pushButtonGiahan = QtWidgets.QPushButton(parent=self.widget)
         self.pushButtonGiahan.setMinimumSize(QtCore.QSize(170, 50))
         self.pushButtonGiahan.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.pushButtonGiahan.setStyleSheet("color:rgb(0, 94, 69);\n"
-"font: 75 8pt \"MS Shell Dlg 2\";\n"
-"background-color: #f6f6e9;\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"border-radius: 20px;\n"
-"border: 3px solid  #58827d;")
+        self.pushButtonGiahan.setStyleSheet("QPushButton {\n"
+"    background-color: #58827d;\n"
+"    color: white;\n"
+"    font: bold 14pt \"MS Shell Dlg 2\"; /* Tăng từ 10pt lên 14pt */\n"
+"    border-radius: 20px;\n"
+"    border: 2px solid #3e5c58;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #6a9690;\n"
+"    border: 2px solid #ffffff;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: #3e5c58;\n"
+"    padding-left: 5px;\n"
+"    padding-top: 5px;\n"
+"}")
         self.pushButtonGiahan.setIconSize(QtCore.QSize(30, 50))
         self.pushButtonGiahan.setObjectName("pushButtonGiahan")
         self.horizontalLayout_8.addWidget(self.pushButtonGiahan)
         self.pushButtonKhonggiahan = QtWidgets.QPushButton(parent=self.widget)
         self.pushButtonKhonggiahan.setMinimumSize(QtCore.QSize(170, 50))
         self.pushButtonKhonggiahan.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.pushButtonKhonggiahan.setStyleSheet("color:#0f433d;\n"
-"font: 75 8pt \"MS Shell Dlg 2\";\n"
-"background-color: #cbddd1;\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"border-radius: 20px;\n"
-"border: 3px solid  #58827d;")
+        self.pushButtonKhonggiahan.setStyleSheet("QPushButton {\n"
+"    background-color: #cbd5cf;\n"
+"    color: #4a635f;\n"
+"    font: bold 14pt \"MS Shell Dlg 2\";\n"
+"    border-radius: 20px;\n"
+"    border: 2px solid #a3b1aa;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #b8c4bd;\n"
+"    color: #184e49;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: #a3b1aa;\n"
+"    padding-left: 5px;\n"
+"    padding-top: 5px;\n"
+"}")
         self.pushButtonKhonggiahan.setIconSize(QtCore.QSize(30, 50))
         self.pushButtonKhonggiahan.setObjectName("pushButtonKhonggiahan")
         self.horizontalLayout_8.addWidget(self.pushButtonKhonggiahan)
         self.pushButtonChinh = QtWidgets.QPushButton(parent=self.widget)
         self.pushButtonChinh.setMinimumSize(QtCore.QSize(170, 50))
-        self.pushButtonChinh.setStyleSheet("color:#0f433d;\n"
-"font: 75 8pt \"MS Shell Dlg 2\";\n"
-"background-color: #f6f6e9;\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"border-radius: 20px;\n"
-"border: 3px solid  #0f433d;")
+        self.pushButtonChinh.setStyleSheet("QPushButton {\n"
+"    background-color: #f6f6e9;\n"
+"    color: #58827d;\n"
+"    font: bold 14pt \"MS Shell Dlg 2\";\n"
+"    border-radius: 20px;\n"
+"    border: 3px solid #cbd5cf;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #ffffff;\n"
+"    border: 3px solid #58827d;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: #e8e8d5;\n"
+"    padding-left: 5px;\n"
+"    padding-top: 5px;\n"
+"}")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("D:\\DO AN KTLT\\ui\\member\\../images/manager.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonChinh.setIcon(icon1)

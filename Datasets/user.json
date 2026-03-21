@@ -89,6 +89,15 @@
             "email": "ducanh@gmail.com",
             "gender": "M",
             "status": "Không"
+        },
+        {
+            "username": "kngan",
+            "email": "kngan",
+            "phone_number": "0369613345",
+            "password": "123",
+            "role": "user",
+            "gender": "F",
+            "status": "Không"
         }
     ]
 }
