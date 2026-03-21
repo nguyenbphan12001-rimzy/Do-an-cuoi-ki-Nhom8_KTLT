@@ -179,16 +179,26 @@ class PaymentEx(Ui_MainWindow):
                             # Nếu file cũ đúng cấu trúc Dict thì lấy, không thì giữ mặc định
                             if isinstance(temp_data, dict) and "Datasets" in temp_data:
                                 history_data = temp_data
+                            loaded_data = json.load(f)
+                            if isinstance(loaded_data, dict):
+                                history_data = loaded_data
+                            elif isinstance(loaded_data, list):
+                                history_data["Datasets"] = loaded_data
                     except Exception:
                         pass
 
                 # APPEND VÀO KEY DATASETS (Không append vào biến gốc)
                 history_data["Datasets"].append(bill_data)
 
+                history_list = history_data.get("Datasets", [])
+                history_list.append(bill_data)
+                history_data["Datasets"] = history_list
+
                 with open(history_file, 'w', encoding='utf-8') as f:
                     json.dump(history_data, f, indent=4, ensure_ascii=False)
 
                 # --- PHẦN CẬP NHẬT PHÒNG (CŨNG CẦN SỬA VÌ ROOM.JSON CŨNG LÀ DICT) ---
+                # Cập nhật số người trong phòng (room.json)
                 if hasattr(self, 'room_name') and self.room_name:
                     room_file = os.path.join(datasets_dir, "room.json")
                     if os.path.exists(room_file):
@@ -211,11 +221,10 @@ class PaymentEx(Ui_MainWindow):
                             print(f"Lỗi cập nhật phòng: {e}")
 
             elif loai == "membership":
-                # ---------------------------------------------------------
-                # HƯỚNG 2: ĐĂNG KÝ HỘI VIÊN (Chỉ lưu vào member.json)
-                # ---------------------------------------------------------
+                # --- HƯỚNG 2: ĐĂNG KÝ HỘI VIÊN MỚI ---
                 member_file = os.path.join(datasets_dir, "member.json")
                 member_data = {"Datasets": []}
+
                 if os.path.exists(member_file):
                     try:
                         with open(member_file, 'r', encoding='utf-8') as f:
@@ -234,6 +243,7 @@ class PaymentEx(Ui_MainWindow):
                 ngay_dang_ky = datetime.now()
                 ten_goi_tap = self.lineEditPackage.text()
 
+                # Tính ngày hết hạn
                 if "2 tuần" in ten_goi_tap:
                     ngay_het_han = ngay_dang_ky + timedelta(days=14)
                 elif "1 tháng" in ten_goi_tap:
@@ -259,11 +269,11 @@ class PaymentEx(Ui_MainWindow):
 
                 ds_hoi_vien.append(new_member)
                 member_data["Datasets"] = ds_hoi_vien
+
                 with open(member_file, 'w', encoding='utf-8') as f:
                     json.dump(member_data, f, indent=4, ensure_ascii=False)
 
-            # 3. KẾT THÚC THÀNH CÔNG VÀ CHUYỂN MÀN HÌNH
-                    # Gom tất cả thông tin đã lấy được ở trên vào một chuỗi
+            # --- KẾT THÚC THÀNH CÔNG VÀ CHUYỂN MÀN HÌNH ---
             thong_tin_chi_tiet = (
                 f"✅ THANH TOÁN THÀNH CÔNG!\n\n"
                 f"👤 Khách hàng: {ten}\n"
@@ -275,10 +285,9 @@ class PaymentEx(Ui_MainWindow):
                 f"Hệ thống đã cập nhật dữ liệu thành công."
             )
 
-            # Hiển thị thông báo với đầy đủ chi tiết
             QMessageBox.information(self.MainWindow, "Xác nhận giao dịch", thong_tin_chi_tiet)
-
             self.mo_man_hinh_confirm()
+
         except Exception as e:
             import traceback
             QMessageBox.critical(self.MainWindow, "Lỗi Hệ Thống", f"Bị lỗi rồi bro ơi:\n{e}")

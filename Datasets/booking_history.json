@@ -8,33 +8,5 @@
             "total_paid": "350,000 VNĐ",
             "payment_method": "Thẻ tín dụng",
             "payment_time": "21/03/2026 00:18:05"
-        },
-        {
-            "customer_name": "Nguyễn Minh Anh",
-            "phone": "0912345678",
-            "package_details": "Gói: Yoga (HLV: Trần Thị Hà (Yoga)) - Phòng Yoga Master Y01",
-            "time": "15h - 17h ngày 21/03/2026",
-            "total_paid": "700,000 VNĐ",
-            "payment_method": "Ngân hàng",
-            "payment_time": "21/03/2026 20:51:00"
-        },
-        {
-            "customer_name": "Nguyễn Minh Anh",
-            "phone": "0912345678",
-            "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
-            "time": "7h - 9h ngày 21/03/2026",
-            "total_paid": "700,000 VNĐ",
-            "payment_method": "Ngân hàng",
-            "payment_time": "21/03/2026 21:23:54"
-        },
-        {
-            "customer_name": "Nguyễn Minh Anh",
-            "phone": "0912345678",
-            "package_details": "Gói: Pilates (HLV: Lê Thị Ngọc (Pilates)) - Phòng Pilates P01",
-            "time": "7h - 9h ngày 21/03/2026",
-            "total_paid": "700,000 VNĐ",
-            "payment_method": "Ngân hàng",
-            "payment_time": "21/03/2026 21:23:54"
-        }
-    ]
+        }]
 }

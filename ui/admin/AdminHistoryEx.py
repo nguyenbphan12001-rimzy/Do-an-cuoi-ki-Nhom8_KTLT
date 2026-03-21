@@ -65,53 +65,62 @@ class AdminHistoryEx(QMainWindow):
 
     def load_history_data(self):
         """Phân quyền: Admin xem tất cả, User chỉ xem của mình"""
+        # --- SỬA LẠI ĐƯỜNG DẪN Ở ĐÂY ---
         current_file_path = os.path.abspath(__file__)
+        # Dùng split("ui")[0] giống như cách bạn đang dùng bên Dashboard để lấy đúng thư mục gốc
         project_root = current_file_path.split("ui")[0]
         datasets_dir = os.path.join(project_root, "datasets")
 
         history_file = os.path.join(datasets_dir, "booking_history.json")
         user_session_file = os.path.join(datasets_dir, "current_user.json")
 
-        # 1. Đọc thông tin User đang đăng nhập từ session
+        # 1. Đọc thông tin User
         curr_user_data = {}
         if os.path.exists(user_session_file):
             try:
                 with open(user_session_file, 'r', encoding='utf-8') as f:
                     curr_user_data = json.load(f)
-            except:
-                pass
+            except Exception as e:
+                print(f"Lỗi đọc current_user: {e}")
 
-        role = curr_user_data.get("role", "user")  # Lấy quyền (admin/user)
-        my_phone = str(curr_user_data.get("phone_number", ""))  # Lấy SĐT để lọc
+        role = curr_user_data.get("role", "user")
+        my_phone = str(curr_user_data.get("phone_number", ""))
 
         # 2. Đọc toàn bộ lịch sử
         all_history = []
         if os.path.exists(history_file):
             try:
                 with open(history_file, 'r', encoding='utf-8') as f:
-                    all_history = json.load(f)
-            except:
-                pass
+                    raw_data = json.load(f)
+                    # Lấy danh sách từ key "Datasets" trong file JSON
+                    if isinstance(raw_data, dict):
+                        all_history = raw_data.get("Datasets", [])
+                    else:
+                        all_history = raw_data
+            except Exception as e:
+                print(f"Lỗi đọc booking_history: {e}")
 
-        # 3. THỰC HIỆN LỌC DỮ LIỆU THEO QUYỀN
+        # 3. Lọc dữ liệu
         display_list = []
-
         if role == "admin":
-            # Nếu là Admin (như Lâm Tâm Như), hốt hết không chừa dòng nào
-            display_list = all_history
+            display_list = list(all_history)  # Lấy hết nếu là admin
             self.lbl_summary.setText(f"Chế độ Admin: Đang hiển thị toàn bộ {len(display_list)} bản ghi.")
         else:
-            # Nếu là User thường, chỉ lọc những dòng có SĐT trùng với mình
+            # Lọc theo số điện thoại nếu là user
             for item in all_history:
-                if str(item.get("phone")) == my_phone:
+                if isinstance(item, dict) and str(item.get("phone", "")) == my_phone:
                     display_list.append(item)
-            self.lbl_summary.setText(f"Xin chào {curr_user_data.get('username')}, bạn có {len(display_list)} lịch tập.")
+            self.lbl_summary.setText(
+                f"Xin chào {curr_user_data.get('username', 'Khách')}, bạn có {len(display_list)} lịch tập.")
 
-        # 4. Hiển thị lên TableWidget
-        display_list.reverse()  # Cái mới nhất hiện lên đầu
+        # 4. Hiển thị lên Table
+        display_list.reverse() # Mới nhất lên đầu
         self.table_history.setRowCount(0)
 
         for row, bill in enumerate(display_list):
+            if not isinstance(bill, dict):
+                continue
+
             self.table_history.insertRow(row)
             self.table_history.setItem(row, 0, QTableWidgetItem(str(bill.get("customer_name", ""))))
             self.table_history.setItem(row, 1, QTableWidgetItem(str(bill.get("phone", ""))))
