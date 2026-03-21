@@ -1,14 +1,9 @@
 {
-    "username": "kngan",
-    "email": "kngan",
-    "phone_number": "0369613345",
-    "password": "123",
-    "role": "user",
-    "username": "Nguyễn Minh Anh",
-    "password": "minhanh456",
-    "role": "user",
-    "phone_number": "0912345678",
-    "email": "minhanh@gmail.com",
+    "username": "admin",
+    "password": "admin123",
+    "role": "admin",
+    "phone_number": "0911172457",
+    "email": "nhulam123@gmail.com",
     "gender": "F",
-    "status": "Yoga 1"
+    "status": "Không"
 }

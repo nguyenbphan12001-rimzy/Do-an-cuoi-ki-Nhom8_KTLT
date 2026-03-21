@@ -26,5 +26,3 @@ mb20=Member("Trịnh Thu Trang","020","0914565777","F","1 năm","16/03/2026","16
 mb.add_items([mb1,mb2,mb3,mb4,mb5,mb6,mb7,mb8,mb9,mb10,mb11,mb12,mb13,mb14,mb15,mb16,mb17,mb18,mb19,mb20])
 print("Danh sách hội viên đã đăng ký:")
 mb.print_items()
-print("Xuất danh sách ra json file")
-mb.export_json("../Datasets/member.json")
