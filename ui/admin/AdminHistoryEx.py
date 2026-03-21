@@ -65,9 +65,10 @@ class AdminHistoryEx(QMainWindow):
 
     def load_history_data(self):
         """Phân quyền: Admin xem tất cả, User chỉ xem của mình"""
+        # --- SỬA LẠI ĐƯỜNG DẪN Ở ĐÂY ---
         current_file_path = os.path.abspath(__file__)
-        # Lùi 1 cấp thư mục thay vì dùng split("ui") rủi ro
-        project_root = os.path.dirname(os.path.dirname(current_file_path))
+        # Dùng split("ui")[0] giống như cách bạn đang dùng bên Dashboard để lấy đúng thư mục gốc
+        project_root = current_file_path.split("ui")[0]
         datasets_dir = os.path.join(project_root, "datasets")
 
         history_file = os.path.join(datasets_dir, "booking_history.json")
@@ -91,9 +92,8 @@ class AdminHistoryEx(QMainWindow):
             try:
                 with open(history_file, 'r', encoding='utf-8') as f:
                     raw_data = json.load(f)
-                    # Sửa lỗi lấy nhầm Dictionary thay vì List
+                    # Lấy danh sách từ key "Datasets" trong file JSON
                     if isinstance(raw_data, dict):
-                        # Thay "Datasets" bằng key thực tế trong file booking_history.json của bạn
                         all_history = raw_data.get("Datasets", [])
                     else:
                         all_history = raw_data
@@ -103,9 +103,10 @@ class AdminHistoryEx(QMainWindow):
         # 3. Lọc dữ liệu
         display_list = []
         if role == "admin":
-            display_list = list(all_history)  # Ép kiểu list để đảm bảo an toàn
+            display_list = list(all_history)  # Lấy hết nếu là admin
             self.lbl_summary.setText(f"Chế độ Admin: Đang hiển thị toàn bộ {len(display_list)} bản ghi.")
         else:
+            # Lọc theo số điện thoại nếu là user
             for item in all_history:
                 if isinstance(item, dict) and str(item.get("phone", "")) == my_phone:
                     display_list.append(item)
@@ -113,12 +114,12 @@ class AdminHistoryEx(QMainWindow):
                 f"Xin chào {curr_user_data.get('username', 'Khách')}, bạn có {len(display_list)} lịch tập.")
 
         # 4. Hiển thị lên Table
-        display_list.reverse()
+        display_list.reverse() # Mới nhất lên đầu
         self.table_history.setRowCount(0)
 
         for row, bill in enumerate(display_list):
             if not isinstance(bill, dict):
-                continue  # Bỏ qua nếu dữ liệu rác không phải dict
+                continue
 
             self.table_history.insertRow(row)
             self.table_history.setItem(row, 0, QTableWidgetItem(str(bill.get("customer_name", ""))))
