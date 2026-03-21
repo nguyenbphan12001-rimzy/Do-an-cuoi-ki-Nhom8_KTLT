@@ -64,10 +64,8 @@ class AdminHistoryEx(QMainWindow):
         event.accept()
 
     def load_history_data(self):
-        """Phân quyền: Admin xem tất cả, User chỉ xem của mình"""
-        # --- SỬA LẠI ĐƯỜNG DẪN Ở ĐÂY ---
+        """Phân quyền: Admin xem tất cả, User chỉ xem của mình + LỌC TRÙNG LẶP"""
         current_file_path = os.path.abspath(__file__)
-        # Dùng split("ui")[0] giống như cách bạn đang dùng bên Dashboard để lấy đúng thư mục gốc
         project_root = current_file_path.split("ui")[0]
         datasets_dir = os.path.join(project_root, "datasets")
 
@@ -81,7 +79,7 @@ class AdminHistoryEx(QMainWindow):
                 with open(user_session_file, 'r', encoding='utf-8') as f:
                     curr_user_data = json.load(f)
             except Exception as e:
-                print(f"Lỗi đọc current_user: {e}")
+                pass
 
         role = curr_user_data.get("role", "user")
         my_phone = str(curr_user_data.get("phone_number", ""))
@@ -92,35 +90,50 @@ class AdminHistoryEx(QMainWindow):
             try:
                 with open(history_file, 'r', encoding='utf-8') as f:
                     raw_data = json.load(f)
-                    # Lấy danh sách từ key "Datasets" trong file JSON
                     if isinstance(raw_data, dict):
                         all_history = raw_data.get("Datasets", [])
                     else:
                         all_history = raw_data
             except Exception as e:
-                print(f"Lỗi đọc booking_history: {e}")
+                pass
 
-        # 3. Lọc dữ liệu
+        # 3. Lọc dữ liệu VÀ LOẠI BỎ TRÙNG LẶP
         display_list = []
+        seen_records = set()  # Bộ nhớ tạm để đánh dấu các dòng đã nạp
+
+        for item in all_history:
+            if not isinstance(item, dict):
+                continue
+
+            # Tạo một cái "chữ ký" cho mỗi bản ghi (dựa vào SĐT, gói tập, giờ tập và giờ mua)
+            # Nếu 4 cái này y chang nhau thì chắc chắn là dữ liệu bị nhân đôi
+            record_signature = (
+                item.get("phone", ""),
+                item.get("package_details", ""),
+                item.get("time", ""),
+                item.get("payment_time", "")
+            )
+
+            # Phân quyền: Nếu là admin thì lấy hết, là user thì phải trùng SĐT
+            is_valid_user = (role == "admin") or (str(item.get("phone", "")) == my_phone)
+
+            # Nếu user hợp lệ VÀ bản ghi này chưa từng xuất hiện (chưa bị trùng)
+            if is_valid_user and record_signature not in seen_records:
+                seen_records.add(record_signature)  # Đánh dấu là đã thấy
+                display_list.append(item)  # Thêm vào danh sách hiển thị
+
+        # Cập nhật Label
         if role == "admin":
-            display_list = list(all_history)  # Lấy hết nếu là admin
-            self.lbl_summary.setText(f"Chế độ Admin: Đang hiển thị toàn bộ {len(display_list)} bản ghi.")
+            self.lbl_summary.setText(f"Chế độ Admin: Đang hiển thị {len(display_list)} bản ghi (đã ẩn trùng lặp).")
         else:
-            # Lọc theo số điện thoại nếu là user
-            for item in all_history:
-                if isinstance(item, dict) and str(item.get("phone", "")) == my_phone:
-                    display_list.append(item)
             self.lbl_summary.setText(
                 f"Xin chào {curr_user_data.get('username', 'Khách')}, bạn có {len(display_list)} lịch tập.")
 
         # 4. Hiển thị lên Table
-        display_list.reverse() # Mới nhất lên đầu
+        display_list.reverse()  # Mới nhất lên đầu
         self.table_history.setRowCount(0)
 
         for row, bill in enumerate(display_list):
-            if not isinstance(bill, dict):
-                continue
-
             self.table_history.insertRow(row)
             self.table_history.setItem(row, 0, QTableWidgetItem(str(bill.get("customer_name", ""))))
             self.table_history.setItem(row, 1, QTableWidgetItem(str(bill.get("phone", ""))))
