@@ -1,7 +1,8 @@
 import json
 import os
 from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel,
-                             QTableWidget, QTableWidgetItem, QHeaderView, QAbstractItemView, QFrame)
+                             QTableWidget, QTableWidgetItem, QHeaderView, QAbstractItemView, QFrame,
+                             QPushButton)  # Thêm QPushButton
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QIcon, QBrush, QColor, QPixmap
 
@@ -20,7 +21,7 @@ class AdminHistoryEx(QMainWindow):
         # Sử dụng QVBoxLayout chính để xếp các thành phần từ trên xuống dưới
         main_layout = QVBoxLayout(central_widget)
         main_layout.setContentsMargins(30, 30, 30, 30)
-        main_layout.setSpacing(20)
+        main_layout.setSpacing(15)  # Giảm spacing một chút để tổng thể cân đối hơn khi có nút back
 
         # --- STYLE TỔNG THỂ (QSS) ---
         # Tone màu mix: Kem nhạt (#F5F5EC), Mint nhạt (#D4E7DD), Xanh rêu đậm (#264E3D)
@@ -28,6 +29,23 @@ class AdminHistoryEx(QMainWindow):
             QMainWindow {
                 background-color: #F5F5EC;
             }
+            /* --- Style cho nút Quay lại --- */
+            QPushButton#btnBack {
+                background-color: #D4E7DD;
+                color: #264E3D;
+                border-radius: 15px;
+                padding: 8px 20px;
+                font-weight: bold;
+                font-size: 20px;
+                border: 1px solid #C1D8CD;
+            }
+            QPushButton#btnBack:hover {
+                background-color: #C1D8CD; /* Đậm hơn chút khi rê chuột vào */
+            }
+            QPushButton#btnBack:pressed {
+                background-color: #A3C5B5; /* Đậm hơn nữa khi click */
+            }
+            /* ------------------------------ */
             QFrame#headerPill {
                 background-color: #264E3D;
                 border-radius: 20px;
@@ -82,6 +100,17 @@ class AdminHistoryEx(QMainWindow):
                 border: none;
             }
         """)
+
+        # --- TẠO THANH ĐIỀU HƯỚNG TRÊN CÙNG (CHỨA NÚT BACK) ---
+        top_bar_layout = QHBoxLayout()
+        self.btn_back = QPushButton("← Back")
+        self.btn_back.setObjectName("btnBack")
+        self.btn_back.setCursor(Qt.CursorShape.PointingHandCursor)  # Thêm hiệu ứng bàn tay khi trỏ chuột vào
+        self.btn_back.clicked.connect(self.go_back)
+
+        top_bar_layout.addWidget(self.btn_back, alignment=Qt.AlignmentFlag.AlignLeft)
+        top_bar_layout.addStretch()  # Dùng stretch để đẩy nút về sát bên trái
+        main_layout.addLayout(top_bar_layout)
 
         # --- 2. Khối Tiêu đề (Nằm trong "viên thuốc" bo tròn) ---
         header_pill = QFrame()
@@ -140,6 +169,12 @@ class AdminHistoryEx(QMainWindow):
 
         # --- 5. Nạp dữ liệu ---
         self.load_history_data()
+
+    def go_back(self):
+        """Hàm xử lý khi bấm nút Quay Lại"""
+        if self.parent_window:
+            self.parent_window.show()  # Hiện lại Dashboard
+        self.close()  # Đóng cửa sổ Lịch sử
 
     def closeEvent(self, event):
         """Khi bấm dấu X tắt cửa sổ này, nó sẽ tự hiện lại màn hình Admin chính"""
