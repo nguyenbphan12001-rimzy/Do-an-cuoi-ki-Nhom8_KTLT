@@ -26,7 +26,7 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.pushButtonTKgoitap.clicked.connect(self.show_goitap)
         self.pushButtonTKdoanhthu.clicked.connect(self.show_doanhthu)
         self.pushButtonTKluongkhach.clicked.connect(self.show_luongkhach)
-        self.pushButtonBack.clicked.connect(self.process_back)
+
         self.pushButtonTudo.clicked.connect(lambda :self.filter_users("Tự do"))
         self.pushButtonBoxing.clicked.connect(lambda :self.filter_users("Boxing"))
         self.pushButtonPilates.clicked.connect(lambda : self.filter_users("Pilates"))
@@ -62,7 +62,7 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.pushButtonTKgoitap.clicked.connect(self.show_goitap)
         self.pushButtonTKdoanhthu.clicked.connect(self.show_doanhthu)
         self.pushButtonTKluongkhach.clicked.connect(self.show_luongkhach)
-        self.pushButtonBack.clicked.connect(self.process_back)
+
         self.pushButtonAdd.clicked.connect(self.process_add)
         self.pushButtonDelete.clicked.connect(self.process_delete)
         self.pushButtonSave.clicked.connect(self.process_save)
