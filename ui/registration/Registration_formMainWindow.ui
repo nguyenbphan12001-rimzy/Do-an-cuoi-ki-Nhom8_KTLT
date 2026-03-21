@@ -41,7 +41,6 @@ background-iamge:rgb(0,255,255);}</string>
      <font>
       <family>MS Shell Dlg 2</family>
       <pointsize>22</pointsize>
-      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -92,7 +91,6 @@ QPushButton:pressed {
      <font>
       <family>MS Shell Dlg 2</family>
       <pointsize>22</pointsize>
-      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -143,7 +141,6 @@ QPushButton:pressed {
      <font>
       <family>MS Shell Dlg 2</family>
       <pointsize>22</pointsize>
-      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -194,7 +191,6 @@ QPushButton:pressed {
      <font>
       <family>MS Shell Dlg 2</family>
       <pointsize>22</pointsize>
-      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -245,7 +241,6 @@ QPushButton:pressed {
      <font>
       <family>MS Shell Dlg 2</family>
       <pointsize>22</pointsize>
-      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -277,6 +272,55 @@ QPushButton:pressed {
      <string>2 tuần: 299K</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButtonback">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>50</y>
+      <width>241</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans HK Black</family>
+      <pointsize>20</pointsize>
+      <italic>false</italic>
+      <fontweight></fontweight>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Trạng thái bình thường (Giữ nguyên 100% của mày) */
+QPushButton {
+    color: #f6f6e9;
+    background-color: #0f433d;
+    font: 87 20pt &quot;Noto Sans HK Black&quot;;
+    border-radius: 30px;
+    border: 3px solid #58827d;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) */
+QPushButton:hover {
+    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */
+    border: 3px solid #73a6a0; /* Viền cũng sáng lên một chút cho đồng bộ */
+}
+
+/* Thêm luôn trạng thái khi click (bấm xuống) cho nó xịn */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối đi khi bấm */
+    border: 3px solid #3d5e5b; /* Viền tối đi */
+}</string>
+    </property>
+    <property name="text">
+     <string>Back</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -284,7 +328,7 @@ QPushButton:pressed {
      <x>0</x>
      <y>0</y>
      <width>1884</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

@@ -27,7 +27,6 @@ class Ui_MainWindow(object):
         font.setPointSize(22)
         font.setBold(False)
         font.setItalic(False)
-        font.setWeight(50)
         self.pushButtonBathang.setFont(font)
         self.pushButtonBathang.setStyleSheet("/* Trạng thái bình thường */\n"
 "QPushButton {\n"
@@ -59,7 +58,6 @@ class Ui_MainWindow(object):
         font.setPointSize(22)
         font.setBold(False)
         font.setItalic(False)
-        font.setWeight(50)
         self.pushButtonSauthang.setFont(font)
         self.pushButtonSauthang.setStyleSheet("/* Trạng thái bình thường */\n"
 "QPushButton {\n"
@@ -91,7 +89,6 @@ class Ui_MainWindow(object):
         font.setPointSize(22)
         font.setBold(False)
         font.setItalic(False)
-        font.setWeight(50)
         self.pushButtonMotnam.setFont(font)
         self.pushButtonMotnam.setStyleSheet("/* Trạng thái bình thường */\n"
 "QPushButton {\n"
@@ -123,7 +120,6 @@ class Ui_MainWindow(object):
         font.setPointSize(22)
         font.setBold(False)
         font.setItalic(False)
-        font.setWeight(50)
         self.pushButtonMotthang.setFont(font)
         self.pushButtonMotthang.setStyleSheet("/* Trạng thái bình thường */\n"
 "QPushButton {\n"
@@ -155,7 +151,6 @@ class Ui_MainWindow(object):
         font.setPointSize(22)
         font.setBold(False)
         font.setItalic(False)
-        font.setWeight(50)
         self.pushButtonHaituan.setFont(font)
         self.pushButtonHaituan.setStyleSheet("/* Trạng thái bình thường */\n"
 "QPushButton {\n"
@@ -179,9 +174,38 @@ class Ui_MainWindow(object):
 "    padding-left: 4px;\n"
 "}")
         self.pushButtonHaituan.setObjectName("pushButtonHaituan")
+        self.pushButtonback = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonback.setGeometry(QtCore.QRect(1200, 50, 241, 61))
+        self.pushButtonback.setMinimumSize(QtCore.QSize(0, 50))
+        font = QtGui.QFont()
+        font.setFamily("Noto Sans HK Black")
+        font.setPointSize(20)
+        font.setItalic(False)
+        self.pushButtonback.setFont(font)
+        self.pushButtonback.setStyleSheet("/* Trạng thái bình thường (Giữ nguyên 100% của mày) */\n"
+"QPushButton {\n"
+"    color: #f6f6e9;\n"
+"    background-color: #0f433d;\n"
+"    font: 87 20pt \"Noto Sans HK Black\";\n"
+"    border-radius: 30px;\n"
+"    border: 3px solid #58827d;\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) */\n"
+"QPushButton:hover {\n"
+"    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */\n"
+"    border: 3px solid #73a6a0; /* Viền cũng sáng lên một chút cho đồng bộ */\n"
+"}\n"
+"\n"
+"/* Thêm luôn trạng thái khi click (bấm xuống) cho nó xịn */\n"
+"QPushButton:pressed {\n"
+"    background-color: #0a2e2a; /* Nền tối đi khi bấm */\n"
+"    border: 3px solid #3d5e5b; /* Viền tối đi */\n"
+"}")
+        self.pushButtonback.setObjectName("pushButtonback")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1884, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1884, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
 
@@ -196,3 +220,4 @@ class Ui_MainWindow(object):
         self.pushButtonMotnam.setText(_translate("MainWindow", "1 năm: 4.799K"))
         self.pushButtonMotthang.setText(_translate("MainWindow", "1 tháng: 499K"))
         self.pushButtonHaituan.setText(_translate("MainWindow", "2 tuần: 299K"))
+        self.pushButtonback.setText(_translate("MainWindow", "Back"))
