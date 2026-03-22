@@ -193,7 +193,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.addWidget(self.radioButtonNo)
         self.verticalLayout_15.addLayout(self.verticalLayout_12)
         self.pushButtonDoneBooking = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonDoneBooking.setGeometry(QtCore.QRect(1200, 640, 241, 61))
+        self.pushButtonDoneBooking.setGeometry(QtCore.QRect(1200, 640, 261, 61))
         self.pushButtonDoneBooking.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Noto Sans HK Black")
@@ -222,7 +222,7 @@ class Ui_MainWindow(object):
 "}")
         self.pushButtonDoneBooking.setObjectName("pushButtonDoneBooking")
         self.groupBox_5 = QtWidgets.QGroupBox(parent=self.centralwidget)
-        self.groupBox_5.setGeometry(QtCore.QRect(1200, 530, 241, 91))
+        self.groupBox_5.setGeometry(QtCore.QRect(1200, 530, 171, 91))
         self.groupBox_5.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
         self.groupBox_5.setObjectName("groupBox_5")
         self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.groupBox_5)
@@ -269,7 +269,7 @@ class Ui_MainWindow(object):
         self.comboBoxRoom.addItem("")
         self.horizontalLayout_9.addWidget(self.comboBoxRoom)
         self.groupBox_6 = QtWidgets.QGroupBox(parent=self.centralwidget)
-        self.groupBox_6.setGeometry(QtCore.QRect(1200, 390, 241, 131))
+        self.groupBox_6.setGeometry(QtCore.QRect(1200, 390, 261, 131))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.groupBox_6.setFont(font)
@@ -289,7 +289,7 @@ class Ui_MainWindow(object):
 "border: 3px solid  #58827d;\n"
 "padding-left: 10px;\n"
 "font: 12pt \"MS Shell Dlg 2\";")
-        self.dateEdit.setDateTime(QtCore.QDateTime(QtCore.QDate(2025, 12, 31), QtCore.QTime(17, 0, 0)))
+        self.dateEdit.setDateTime(QtCore.QDateTime(QtCore.QDate(2025, 12, 30), QtCore.QTime(20, 0, 0)))
         self.dateEdit.setCalendarPopup(True)
         self.dateEdit.setObjectName("dateEdit")
         self.verticalLayout_8.addWidget(self.dateEdit)
@@ -378,7 +378,7 @@ class Ui_MainWindow(object):
         self.comboBoxHuanLuyenVien.setObjectName("comboBoxHuanLuyenVien")
         self.verticalLayout_19.addWidget(self.comboBoxHuanLuyenVien)
         self.pushButtonCancelBooking = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonCancelBooking.setGeometry(QtCore.QRect(1200, 710, 241, 61))
+        self.pushButtonCancelBooking.setGeometry(QtCore.QRect(1200, 710, 261, 61))
         self.pushButtonCancelBooking.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Noto Sans HK Black")
@@ -406,6 +406,28 @@ class Ui_MainWindow(object):
 "    border: 3px solid #3d5e5b; /* Viền tối đi */\n"
 "}")
         self.pushButtonCancelBooking.setObjectName("pushButtonCancelBooking")
+        self.groupBox_3 = QtWidgets.QGroupBox(parent=self.centralwidget)
+        self.groupBox_3.setGeometry(QtCore.QRect(1380, 530, 81, 91))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setItalic(False)
+        self.groupBox_3.setFont(font)
+        self.groupBox_3.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.groupBox_3.setObjectName("groupBox_3")
+        self.labelSoLuong = QtWidgets.QLabel(parent=self.groupBox_3)
+        self.labelSoLuong.setGeometry(QtCore.QRect(10, 30, 61, 51))
+        self.labelSoLuong.setStyleSheet("QLabel {\n"
+"    background-color: #1A483E; /* Xanh lá đậm cho tiệp màu với các nút */\n"
+"    color: white;              /* Chữ trắng cho nổi */\n"
+"    font-weight: bold;         /* In đậm */\n"
+"    font-size: 14px;           /* Kích cỡ chữ vừa vặn */\n"
+"    border-radius: 15px;        /* Bo góc cho mềm mại */\n"
+"    padding: 2px 8px;          /* Đệm viền xung quanh chữ */\n"
+"}")
+        self.labelSoLuong.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.labelSoLuong.setObjectName("labelSoLuong")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1466, 22))
@@ -447,3 +469,5 @@ class Ui_MainWindow(object):
         self.comboBoxTime.setItemText(6, _translate("MainWindow", "19h - 21h"))
         self.groupBox_2.setTitle(_translate("MainWindow", "Huấn luyện viên"))
         self.pushButtonCancelBooking.setText(_translate("MainWindow", "Hủy đặt lịch"))
+        self.groupBox_3.setTitle(_translate("MainWindow", "Số lượng:"))
+        self.labelSoLuong.setText(_translate("MainWindow", "..."))

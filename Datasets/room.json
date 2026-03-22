@@ -3,7 +3,7 @@
         "room_id": "P01",
         "name": "Phòng Pilates P01",
         "category": "Pilates",
-        "current_user": 40,
+        "current_user": 1,
         "capacity": 20
     },
     {
@@ -45,7 +45,7 @@
         "room_id": "KG01",
         "name": "Không gian chung",
         "category": "Tự do",
-        "current_user": 8,
+        "current_user": 10,
         "capacity": 50
     }
 ]

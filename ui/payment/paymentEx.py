@@ -262,7 +262,7 @@ class PaymentEx(Ui_MainWindow):
                     "id": f"{new_id_num:03d}",
                     "phone_number": sdt,
                     "gender": "Unknown",
-                    "serve": ten_goi_tap,
+                    "package": ten_goi_tap,
                     "register_date": ngay_dang_ky.strftime("%d/%m/%Y"),
                     "expire_date": ngay_het_han.strftime("%d/%m/%Y")
                 }

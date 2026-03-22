@@ -6,6 +6,7 @@ from ui.booking.booking import Ui_MainWindow
 from models.rooms import Rooms
 from PyQt6.QtCore import QDate  # Đảm bảo có QDate ở đây
 from ui.payment.paymentEx import PaymentEx
+import json
 
 class BookingMainWindowEx(Ui_MainWindow):
     def setupUi(self, MainWindow):
@@ -65,6 +66,8 @@ class BookingMainWindowEx(Ui_MainWindow):
         self.dateEdit.dateChanged.connect(self.xuly_loc_danh_sach_pt)
         # Với ComboBox thì xài currentTextChanged
         self.comboBoxTime.currentTextChanged.connect(self.xuly_loc_danh_sach_pt)
+        self.dateEdit.dateChanged.connect(self.cap_nhat_danh_sach_phong)
+        self.comboBoxTime.currentTextChanged.connect(self.cap_nhat_danh_sach_phong)
 
         # Bắt sự kiện khi thay đổi lựa chọn trong ComboBox HLV
         self.comboBoxHuanLuyenVien.currentTextChanged.connect(self.dong_bo_combobox_va_list)
@@ -75,6 +78,7 @@ class BookingMainWindowEx(Ui_MainWindow):
         self.radioButtonBoxing.toggled.connect(self.cap_nhat_danh_sach_phong)
         self.pushButtonDoneBooking.clicked.connect(self.mo_man_hinh_thanh_toan)
         self.pushButtonCancelBooking.clicked.connect(self.tro_ve_dashboard)
+
 
     def showWindow(self):
         self.MainWindow.show()
@@ -169,20 +173,28 @@ class BookingMainWindowEx(Ui_MainWindow):
         if mon_tap == "":
             return
 
-        # Đổi tên self.comboBoxRoom thành tên chuẩn trong Qt Designer của mày nếu khác nhé
+        # Chặn signal tạm thời để không bị lỗi khi clear()
+        self.comboBoxRoom.blockSignals(True)
         self.comboBoxRoom.clear()
 
-        # Quét data trong room.json, trùng môn nào thì ném tên phòng đó vào ComboBox
+        # Quét các phòng phù hợp với môn tập
         for phong in self.danh_sach_phong.list:
             if phong.category == mon_tap:
                 self.comboBoxRoom.addItem(phong.name)
+
+        self.comboBoxRoom.blockSignals(False)
+
+        # Sau khi nạp phòng xong, gọi luôn hàm cập nhật cái Label Số Lượng bên cạnh
+        self.cap_nhat_label_so_luong()
 
     def mo_man_hinh_thanh_toan(self):
         # 1. Lấy thông tin từ giao diện Đặt lịch
         mon_tap = self.get_mon_tap_dang_chon()
         ngay_tap = self.dateEdit.date().toString("dd/MM/yyyy")
         gio_tap = self.comboBoxTime.currentText()
-        phong = self.comboBoxRoom.currentText()
+
+        phong_text = self.comboBoxRoom.currentText()
+        phong = phong_text.split(" (")[0] if " (" in phong_text else phong_text
 
         # Validate xem người dùng đã chọn đủ chưa
         if mon_tap == "" or phong == "":
@@ -243,6 +255,53 @@ class BookingMainWindowEx(Ui_MainWindow):
             self.dashboard_ui.showWindow()
 
             self.MainWindow.close()
+
+    def cap_nhat_label_so_luong(self):
+        ten_phong = self.comboBoxRoom.currentText()
+
+        # Nhớ ĐỔI 'self.labelSoLuong' THÀNH TÊN ĐÚNG CỦA CÁI LABEL TRONG QT DESIGNER CỦA MÀY
+        if ten_phong == "":
+            self.labelSoLuong.setText("...")
+            return
+
+        # 1. Lấy thông tin ngày giờ đang chọn
+        ngay_tap = self.dateEdit.date().toString("dd/MM/yyyy")
+        gio_tap = self.comboBoxTime.currentText()
+        thoi_gian_dang_chon = f"{gio_tap} ngày {ngay_tap}"
+
+        # 2. Đọc file lịch sử booking để đếm số người
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        history_path = os.path.abspath(
+            os.path.join(current_dir, "..", "..", "Datasets", "booking_history.json")).replace("\\", "/")
+
+        booking_history = []
+        if os.path.exists(history_path):
+            with open(history_path, 'r', encoding='utf-8') as f:
+                try:
+                    data = json.load(f)
+                    booking_history = data.get("Datasets", [])
+                except Exception:
+                    pass
+
+        # 3. Đếm số người hiện tại
+        so_nguoi_hien_tai = 0
+        for b in booking_history:
+            if b.get("time") == thoi_gian_dang_chon and ten_phong in b.get("package_details", ""):
+                so_nguoi_hien_tai += 1
+
+        # 4. Lấy sức chứa tối đa của phòng từ room.json
+        capacity = 20  # Mặc định
+        for phong in self.danh_sach_phong.list:
+            if phong.name == ten_phong:
+                capacity = phong.capacity
+                break
+
+        # 5. Đẩy kết quả ra Label
+        hien_thi = f"{so_nguoi_hien_tai}/{capacity}"
+        if so_nguoi_hien_tai >= capacity:
+            hien_thi += " (ĐẦY)"
+
+        self.labelSoLuong.setText(hien_thi)
 
 
 
