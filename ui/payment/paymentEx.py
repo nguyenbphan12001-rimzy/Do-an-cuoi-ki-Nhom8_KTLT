@@ -188,14 +188,12 @@ class PaymentEx(Ui_MainWindow):
                         pass
 
                 # APPEND VÀO KEY DATASETS (Không append vào biến gốc)
-                history_data["Datasets"].append(bill_data)
+                        # Chèn data mới vào (CHỈ 1 LẦN DUY NHẤT)
+                        history_data["Datasets"].append(bill_data)
 
-                history_list = history_data.get("Datasets", [])
-                history_list.append(bill_data)
-                history_data["Datasets"] = history_list
-
-                with open(history_file, 'w', encoding='utf-8') as f:
-                    json.dump(history_data, f, indent=4, ensure_ascii=False)
+                        # Ghi đè lại vào file
+                        with open(history_file, 'w', encoding='utf-8') as f:
+                            json.dump(history_data, f, indent=4, ensure_ascii=False)
 
                 # --- PHẦN CẬP NHẬT PHÒNG (CŨNG CẦN SỬA VÌ ROOM.JSON CŨNG LÀ DICT) ---
                 # Cập nhật số người trong phòng (room.json)
