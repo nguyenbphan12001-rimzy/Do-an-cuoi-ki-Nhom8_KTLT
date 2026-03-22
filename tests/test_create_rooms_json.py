@@ -14,5 +14,3 @@ rm.add_items([
 ])
 
 print("Đang xuất danh sách phòng ra file room.json...")
-rm.export_json("../Datasets/room.json")
-print("Tạo file room.json thành công!")

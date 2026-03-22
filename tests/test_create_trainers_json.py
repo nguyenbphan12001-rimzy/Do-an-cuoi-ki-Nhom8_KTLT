@@ -28,5 +28,3 @@ tr10 = Trainer("Đinh Trọng Đại", "trongdai258", "trainer", "0980000111", "
 tr.add_items([tr1, tr2, tr3, tr4, tr5, tr6, tr7, tr8, tr9, tr10])
 
 print("\nĐang xuất danh sách ra file trainer.json...")
-tr.export_json("../Datasets/trainer.json")
-print("Cập nhật lại HLV chuẩn 4 môn thành công!")
