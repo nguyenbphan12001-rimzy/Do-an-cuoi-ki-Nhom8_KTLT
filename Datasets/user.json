@@ -107,6 +107,15 @@
             "role": "user",
             "gender": "M",
             "status": "Không"
+        },
+        {
+            "username": "Nguyễn Hồng Nga",
+            "email": "ngamy@gmail.com",
+            "phone_number": "0998877889",
+            "password": "123",
+            "role": "user",
+            "gender": "F",
+            "status": "Không"
         }
     ]
 }
