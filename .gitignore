@@ -19,3 +19,6 @@ venv/
 ENV/
 .idea/
 .venv/
+build/
+dist/
+QuanLyGym.spec

@@ -7,6 +7,7 @@ from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as Navigatio
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 import os
+import sys
 
 from models.trainers import Trainers
 from ui.dashboard.DashboardEx import DashboardEx
@@ -15,9 +16,17 @@ from ui.statistic.StatisticMainWindow import Ui_MainWindow
 
 class StatisticMainWindowEx(Ui_MainWindow):
     def __init__(self):
-        self.tr = Trainers()
-        self.tr.import_json("../../Datasets/trainer.json")
+        if getattr(sys, 'frozen', False):
+            # Nếu đang chạy bằng file .exe
+            self.BASE_DIR = os.path.dirname(sys.executable)
+        else:
+            self.BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
+        self.DATASETS_DIR = os.path.join(self.BASE_DIR, "Datasets")
+
+        self.tr = Trainers()
+        trainer_path = os.path.join(self.DATASETS_DIR, "trainer.json")
+        self.tr.import_json(trainer_path)
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
@@ -27,19 +36,18 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.pushButtonTKdoanhthu.clicked.connect(self.show_doanhthu)
         self.pushButtonTKluongkhach.clicked.connect(self.show_luongkhach)
 
-        self.pushButtonTudo.clicked.connect(lambda :self.filter_users("Tự do"))
-        self.pushButtonBoxing.clicked.connect(lambda :self.filter_users("Boxing"))
-        self.pushButtonPilates.clicked.connect(lambda : self.filter_users("Pilates"))
-        self.pushButtonYoga.clicked.connect(lambda :self.filter_users("Yoga"))
+        self.pushButtonTudo.clicked.connect(lambda: self.filter_users("Tự do"))
+        self.pushButtonBoxing.clicked.connect(lambda: self.filter_users("Boxing"))
+        self.pushButtonPilates.clicked.connect(lambda: self.filter_users("Pilates"))
+        self.pushButtonYoga.clicked.connect(lambda: self.filter_users("Yoga"))
         self.setupSignalAndSLot()
         self.display_trainers()
 
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        img_path = os.path.abspath(os.path.join(current_dir, "../../images/Thongke.png")).replace("\\", "/")
+        img_path = os.path.join(self.BASE_DIR, "images", "Thongke.png").replace("\\", "/")
 
         self.MainWindow.setStyleSheet(f"""
             QMainWindow {{
-                border-image: url({img_path}) 0 0 0 0 stretch stretch;
+                border-image: url('{img_path}') 0 0 0 0 stretch stretch;
             }}
             #centralwidget, #widget, #widget_2, #widget_3, #groupBox, #verticalLayoutChart {{
                 background-color: transparent !important;
@@ -56,7 +64,6 @@ class StatisticMainWindowEx(Ui_MainWindow):
                 color: white;
             }}
         """)
-
 
     def setupSignalAndSLot(self):
         self.pushButtonTKgoitap.clicked.connect(self.show_goitap)
@@ -79,8 +86,7 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.verticalLayoutChart.addWidget(self.canvas)
 
     def show_goitap(self):
-        base_dir = os.path.dirname(__file__)
-        file_path = os.path.join(base_dir, '../../Datasets/pie_data.csv')
+        file_path = os.path.join(self.DATASETS_DIR, 'pie_data.csv')
         df = pd.read_csv(file_path)
         self.figure.clear()
         ax = self.figure.add_subplot(111)
@@ -92,8 +98,7 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.canvas.draw()
 
     def show_luongkhach(self):
-        base_dir = os.path.dirname(__file__)
-        file_path = os.path.join(base_dir, '../../Datasets/line_data.csv')
+        file_path = os.path.join(self.DATASETS_DIR, 'line_data.csv')
         df = pd.read_csv(file_path)
         self.figure.clear()
         self.figure.set_facecolor('#cbddd1')
@@ -117,9 +122,7 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.canvas.draw()
 
     def show_doanhthu(self):
-        # Đọc dữ liệu
-        base_dir = os.path.dirname(__file__)
-        file_path = os.path.join(base_dir, '../../Datasets/bar_data.csv')
+        file_path = os.path.join(self.DATASETS_DIR, 'bar_data.csv')
         df = pd.read_csv(file_path)
         self.figure.clear()
         self.figure.set_facecolor('#cbddd1')
@@ -142,12 +145,9 @@ class StatisticMainWindowEx(Ui_MainWindow):
         self.dashboard_ui.setupUi(self.dashboard_window)
         self.dashboard_ui.showWindow()
 
-    #Danh sách khách hàng
     def filter_users(self, goitap):
         try:
-            # 1. Khai báo đường dẫn
-            base_dir = os.path.dirname(__file__)
-            file_path = os.path.join(base_dir, "../../Datasets/booking_history.json")
+            file_path = os.path.join(self.DATASETS_DIR, "booking_history.json")
 
             # 2. Đọc file JSON
             with open(file_path, "r", encoding="utf-8") as f:
@@ -156,19 +156,16 @@ class StatisticMainWindowEx(Ui_MainWindow):
             data = raw.get("Datasets", [])
             users = []
 
-            # 3. Lọc dữ liệu theo gói tập
             for item in data:
                 package = item.get("package_details", "")
                 if f"Gói: {goitap}" in package:
                     users.append(item)
 
-            # 4. Xóa trùng theo SĐT (Phải thụt lề vào trong try)
             unique_users = {}
             for u in users:
                 unique_users[u["phone"]] = u
             users = list(unique_users.values())
 
-            # 5. Hiển thị lên bảng (Phải thụt lề vào trong try)
             self.tableWidget.setRowCount(len(users))
             self.tableWidget.setColumnCount(3)
             self.tableWidget.setHorizontalHeaderLabels(["Họ và tên", "SĐT", "Môn đăng ký"])
@@ -179,7 +176,6 @@ class StatisticMainWindowEx(Ui_MainWindow):
                 self.tableWidget.setItem(row, 2, QTableWidgetItem(goitap))
 
         except Exception as e:
-            # Except phải thẳng hàng với Try
             from PyQt6.QtWidgets import QMessageBox
             QMessageBox.critical(self.MainWindow, "Lỗi dữ liệu", f"Không thể đọc file JSON!\nChi tiết: {e}")
 
@@ -249,7 +245,6 @@ class StatisticMainWindowEx(Ui_MainWindow):
             QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập tên trước khi lưu mới!")
             return
 
-        # Tạo object mới hoàn toàn
         new_trainer = Trainer(
             username=name,
             phone_number=self.lineEditPhonePt.text(),
@@ -262,15 +257,13 @@ class StatisticMainWindowEx(Ui_MainWindow):
             role="trainer"
         )
 
-        # Thêm vào cuối danh sách
         self.tr.save_item(new_trainer)
 
-        # LƯU XUỐNG JSON
-        self.tr.export_json("../../Datasets/trainer.json")
+        trainer_path = os.path.join(self.DATASETS_DIR, "trainer.json")
+        self.tr.export_json(trainer_path)
 
         self.display_trainers()
-        self.process_add()  # Tự động xóa trắng các ô sau khi lưu xong
-
+        self.process_add()
         from PyQt6.QtWidgets import QMessageBox
         QMessageBox.information(self.MainWindow, "Thông báo", "Đã lưu thông tin nhân viên thành công!")
 
@@ -281,7 +274,8 @@ class StatisticMainWindowEx(Ui_MainWindow):
 
         trainer = self.tr.list[row]
         self.tr.remove_item(trainer.username)
+
+        trainer_path = os.path.join(self.DATASETS_DIR, "trainer.json")
+        self.tr.export_json(trainer_path)
+
         self.display_trainers()
-
-
-

@@ -1,3 +1,5 @@
+import sys
+
 from PyQt6.QtWidgets import QMainWindow
 
 from ui.home.Home import Ui_MainWindow
@@ -11,11 +13,15 @@ class HomeEx(Ui_MainWindow):
         self.MainWindow = MainWindow
         self.setupSignalAndSlot()
 
-        current_dir = os.path.dirname(os.path.abspath(__file__))
+        if getattr(sys, 'frozen', False):
+            BASE_DIR = os.path.dirname(sys.executable)
+        else:
+            BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
-        img_path = os.path.abspath(os.path.join(current_dir, "..", "..", "images", "Home.png")).replace("\\", "/")
+        img_path = os.path.join(BASE_DIR, "images", "Home.png").replace("\\", "/")
 
-        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
+        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url('{img_path}'); }}")
+        # -------------------------------------
     def showWindow(self):
         self.MainWindow.show()
 

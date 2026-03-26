@@ -2,27 +2,36 @@ from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from ui.admin.admin import Ui_MainWindow
 import json
 import os
+import sys
 
 class AdminEx(Ui_MainWindow):
     def __init__(self, username=None):
         super().__init__()
         self.username = username
 
-        # Path file JSON user
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        self.file_path = os.path.join(current_dir, "../../datasets/user.json").replace("\\", "/")
+        # --- ĐOẠN KHỞI TẠO ĐƯỜNG DẪN CHUẨN ---
+        if getattr(sys, 'frozen', False):
+            # Nếu đang chạy bằng file .exe
+            self.BASE_DIR = os.path.dirname(sys.executable)
+        else:
+            # Nếu đang chạy code bình thường
+            self.BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+
+        self.DATASETS_DIR = os.path.join(self.BASE_DIR, "Datasets")
+        # Path file JSON user chuẩn
+        self.file_path = os.path.join(self.DATASETS_DIR, "user.json")
+        # ---------------------------------------
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.MainWindow.resize(900, 600)
 
-        # Background
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        img_path = os.path.join(current_dir, "../../images/fit lifestyle.jpg").replace("\\", "/")
+        # Background - Đã dùng đường dẫn chuẩn và THÊM NHÁY ĐƠN
+        img_path = os.path.join(self.BASE_DIR, "images", "fit lifestyle.jpg").replace("\\", "/")
         self.centralwidget.setStyleSheet(f"""
         #centralwidget {{
-            background-image: url({img_path});
+            background-image: url('{img_path}');
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;

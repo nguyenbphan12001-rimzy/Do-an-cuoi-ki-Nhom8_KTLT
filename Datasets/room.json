@@ -38,7 +38,7 @@
         "room_id": "B2",
         "name": "Phòng Boxing B2",
         "category": "Boxing",
-        "current_user": 0,
+        "current_user": 1,
         "capacity": 20
     },
     {

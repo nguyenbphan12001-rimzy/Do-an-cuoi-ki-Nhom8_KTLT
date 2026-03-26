@@ -2,7 +2,7 @@ import json
 import os
 from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel,
                              QTableWidget, QTableWidgetItem, QHeaderView, QAbstractItemView, QFrame,
-                             QPushButton)  # Thêm QPushButton
+                             QPushButton)
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QIcon, QBrush, QColor, QPixmap
 
@@ -18,13 +18,12 @@ class AdminHistoryEx(QMainWindow):
         # --- 1. Central Widget và Main Layout ---
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
-        # Sử dụng QVBoxLayout chính để xếp các thành phần từ trên xuống dưới
+
         main_layout = QVBoxLayout(central_widget)
         main_layout.setContentsMargins(30, 30, 30, 30)
-        main_layout.setSpacing(15)  # Giảm spacing một chút để tổng thể cân đối hơn khi có nút back
+        main_layout.setSpacing(15)
 
-        # --- STYLE TỔNG THỂ (QSS) ---
-        # Tone màu mix: Kem nhạt (#F5F5EC), Mint nhạt (#D4E7DD), Xanh rêu đậm (#264E3D)
+
         self.setStyleSheet("""
             QMainWindow {
                 background-color: #F5F5EC;
@@ -101,7 +100,7 @@ class AdminHistoryEx(QMainWindow):
             }
         """)
 
-        # --- TẠO THANH ĐIỀU HƯỚNG TRÊN CÙNG (CHỨA NÚT BACK) ---
+
         top_bar_layout = QHBoxLayout()
         self.btn_back = QPushButton("← Back")
         self.btn_back.setObjectName("btnBack")
@@ -112,13 +111,13 @@ class AdminHistoryEx(QMainWindow):
         top_bar_layout.addStretch()  # Dùng stretch để đẩy nút về sát bên trái
         main_layout.addLayout(top_bar_layout)
 
-        # --- 2. Khối Tiêu đề (Nằm trong "viên thuốc" bo tròn) ---
+
         header_pill = QFrame()
         header_pill.setObjectName("headerPill")  # Áp dụng style QSS
         header_layout = QHBoxLayout(header_pill)
         header_layout.setContentsMargins(15, 10, 15, 10)
 
-        # Logo (Bạn có thể nhét logo app vào đây)
+        # Logo )
         lbl_logo = QLabel()
         if os.path.exists("images/logo_icon.png"):  # Thử load logo icon nhỏ
             pixmap = QPixmap("images/logo_icon.png").scaled(35, 35, Qt.AspectRatioMode.KeepAspectRatio)
@@ -157,12 +156,12 @@ class AdminHistoryEx(QMainWindow):
         header = self.table_history.horizontalHeader()
         header.setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
 
-        # Ẩn cột số thứ tự bên trái cho đỡ rối mắt
+
         self.table_history.verticalHeader().setVisible(False)
         self.table_history.setAlternatingRowColors(True)
         self.table_history.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.table_history.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.table_history.setShowGrid(False)  # Tắt grid mặc định, dùng grid của QSS để làm viền mờ
+        self.table_history.setShowGrid(False)
 
         table_layout.addWidget(self.table_history)
         main_layout.addWidget(table_container)
@@ -171,96 +170,103 @@ class AdminHistoryEx(QMainWindow):
         self.load_history_data()
 
     def go_back(self):
-        """Hàm xử lý khi bấm nút Quay Lại"""
+
         if self.parent_window:
             self.parent_window.show()  # Hiện lại Dashboard
-        self.close()  # Đóng cửa sổ Lịch sử
+        self.close()
 
     def closeEvent(self, event):
-        """Khi bấm dấu X tắt cửa sổ này, nó sẽ tự hiện lại màn hình Admin chính"""
+
         if self.parent_window:
             self.parent_window.show()
         event.accept()
 
     def load_history_data(self):
-        """Phân quyền và Lọc Trùng Lặp - GIỮ NGUYÊN LOGIC CỦA BẠN"""
-        current_file_path = os.path.abspath(__file__)
-        project_root = current_file_path.split("ui")[0]
-        datasets_dir = os.path.join(project_root, "datasets")
+        import sys
+
+        if getattr(sys, 'frozen', False):
+            # Nếu chạy từ file .exe
+            base_dir = os.path.dirname(sys.executable)
+        else:
+
+            base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+
+
+        datasets_dir = os.path.join(base_dir, "Datasets")
 
         history_file = os.path.join(datasets_dir, "booking_history.json")
         user_session_file = os.path.join(datasets_dir, "current_user.json")
 
-        # 1. Đọc thông tin User
+        print(f"DEBUG: Dang tim file tai: {history_file}")
+
+
         curr_user_data = {}
         if os.path.exists(user_session_file):
             try:
                 with open(user_session_file, 'r', encoding='utf-8') as f:
                     curr_user_data = json.load(f)
-            except Exception:
-                pass
+            except Exception as e:
+                print(f"Loi doc session: {e}")
 
         role = curr_user_data.get("role", "user")
         my_phone = str(curr_user_data.get("phone_number", ""))
 
-        # 2. Đọc toàn bộ lịch sử
         all_history = []
         if os.path.exists(history_file):
             try:
                 with open(history_file, 'r', encoding='utf-8') as f:
                     raw_data = json.load(f)
+                    # Kiểm tra cấu trúc JSON (Dữ liệu của mày nằm trong key "Datasets")
                     if isinstance(raw_data, dict):
                         all_history = raw_data.get("Datasets", [])
                     else:
                         all_history = raw_data
-            except Exception:
-                pass
+            except Exception as e:
+                print(f"Loi doc history: {e}")
+        else:
+            print("LOI: Khong tim thay file booking_history.json!")
 
-        # 3. Lọc dữ liệu VÀ LOẠI BỎ TRÙNG LẶP (Logic Giữ Nguyên)
+
         display_list = []
         seen_records = set()
 
         for item in all_history:
-            if not isinstance(item, dict):
-                continue
+            if not isinstance(item, dict): continue
 
+            # Tạo signature để lọc trùng
             record_signature = (
-                item.get("phone", ""),
-                item.get("package_details", ""),
-                item.get("time", ""),
-                item.get("payment_time", "")
+                str(item.get("phone", "")),
+                str(item.get("package_details", "")),
+                str(item.get("time", "")),
+                str(item.get("payment_time", ""))
             )
 
+            # Check quyền: Admin thấy hết, User chỉ thấy của mình
             is_valid_user = (role == "admin") or (str(item.get("phone", "")) == my_phone)
 
             if is_valid_user and record_signature not in seen_records:
                 seen_records.add(record_signature)
                 display_list.append(item)
 
-        # Cập nhật Label
+        # Cập nhật Label thông báo
         if role == "admin":
             self.lbl_summary.setText(f"Chế độ Admin: Đang hiển thị {len(display_list)} bản ghi.")
         else:
-            self.lbl_summary.setText(
-                f"Xin chào {curr_user_data.get('username', 'Khách')}, bạn có {len(display_list)} lịch tập.")
+            name = curr_user_data.get('username', 'Khách')
+            self.lbl_summary.setText(f"Xin chào {name}, bạn có {len(display_list)} lịch tập.")
 
-        # 4. Hiển thị lên Table
-        display_list.reverse()
-        self.table_history.setRowCount(0)
+        # Đưa lên bảng
+        display_list.reverse()  # Cái mới nhất hiện lên đầu
+        self.table_history.setRowCount(len(display_list))
 
         for row, bill in enumerate(display_list):
-            self.table_history.insertRow(row)
-
-            # Gán dữ liệu vào từng ô
             self.table_history.setItem(row, 0, QTableWidgetItem(str(bill.get("customer_name", ""))))
             self.table_history.setItem(row, 1, QTableWidgetItem(str(bill.get("phone", ""))))
             self.table_history.setItem(row, 2, QTableWidgetItem(str(bill.get("package_details", ""))))
             self.table_history.setItem(row, 3, QTableWidgetItem(str(bill.get("time", ""))))
-
             self.table_history.setItem(row, 4, QTableWidgetItem(str(bill.get("payment_time", ""))))
 
-            # Căn giữa nội dung cho tất cả các cột để nhìn ngăn nắp hơn
-            for col in range(6):
-                item = self.table_history.item(row, col)
-                if item:
-                    item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
+            # Căn giữa cho đẹp
+            for col in range(5):
+                it = self.table_history.item(row, col)
+                if it: it.setTextAlignment(Qt.AlignmentFlag.AlignCenter)

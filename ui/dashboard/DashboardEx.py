@@ -1,6 +1,8 @@
 from PyQt6.QtWidgets import QMainWindow
 import json
 import os
+import sys
+
 from ui.admin.AdminHistoryEx import AdminHistoryEx
 from ui.dashboard.Dashboard import Ui_MainWindow
 from ui.member.MemberMainWindowEx import MemberMainWindowEx
@@ -14,9 +16,19 @@ class DashboardEx(Ui_MainWindow):
         super().__init__()
         self.username = username
 
-        # Nếu không truyền username, tự load từ session
+        if getattr(sys, 'frozen', False):
+            # Nếu đang chạy bằng file .exe
+            self.BASE_DIR = os.path.dirname(sys.executable)
+        else:
+            # Nếu đang chạy code bình thường
+            self.BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+
+        self.DATASETS_DIR = os.path.join(self.BASE_DIR, "Datasets")
+        # ---------------------------------------
+
         if username is None:
-            current_user_file = os.path.join(os.path.dirname(__file__), "../../datasets/current_user.json")
+            # Thay vì "../../datasets/current_user.json", dùng luôn đường dẫn chuẩn
+            current_user_file = os.path.join(self.DATASETS_DIR, "current_user.json")
             try:
                 with open(current_user_file, encoding="utf-8") as f:
                     data = json.load(f)
@@ -28,24 +40,17 @@ class DashboardEx(Ui_MainWindow):
         self.load_session_data()
 
     def setupUi(self, MainWindow):
-        """Thiết lập UI chính và các signal"""
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
 
-        # Thiết lập background
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        project_root = current_dir.split("ui")[0]
-        img_path = os.path.join(project_root, "images", "Dashboard.png").replace("\\", "/")
-        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
+        img_path = os.path.join(self.BASE_DIR, "images", "Dashboard.png").replace("\\", "/")
+        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url('{img_path}'); }}")
 
-        # Setup các signal cho button
         self.setupSignalAndSlot()
 
     def load_session_data(self):
-        """Đảm bảo Dashboard luôn có dữ liệu user mới nhất từ file session"""
         try:
-            project_root = os.path.abspath(__file__).split("ui")[0]
-            session_file = os.path.join(project_root, "datasets", "current_user.json")
+            session_file = os.path.join(self.DATASETS_DIR, "current_user.json")
 
             if os.path.exists(session_file):
                 with open(session_file, 'r', encoding='utf-8') as f:
@@ -58,11 +63,9 @@ class DashboardEx(Ui_MainWindow):
             self.current_user = None
 
     def showWindow(self):
-        """Hiển thị Dashboard"""
         self.MainWindow.show()
 
     def setupSignalAndSlot(self):
-        """Kết nối các button với function"""
         self.pushButtonDatlich.clicked.connect(self.process_booking)
         self.pushButtonDkyHoivien.clicked.connect(self.process_dkyhoivien)
         self.pushButtonProfile.clicked.connect(self.process_profile)
@@ -70,7 +73,6 @@ class DashboardEx(Ui_MainWindow):
         # self.pushButtonMember.clicked.connect(self.process_member)
         self.pushButtonMyBooking.clicked.connect(self.mo_man_hinh_lich_su)
 
-    # ----------------- Xử lý button -----------------
     def process_booking(self):
         self.booking_window = QMainWindow()
         self.booking_ui = BookingMainWindowEx()
@@ -99,7 +101,6 @@ class DashboardEx(Ui_MainWindow):
         self.MainWindow.hide()
 
     def process_profile(self):
-        """Mở màn hình Profile (MemberMainWindowEx)"""
         self.member_window = QMainWindow()
         # Khởi tạo UI và truyền username
         self.member_ui = MemberMainWindowEx(self.username)
@@ -113,7 +114,6 @@ class DashboardEx(Ui_MainWindow):
         self.MainWindow.hide()
 
     def process_logout(self):
-        """Đăng xuất về HomeEx"""
         self.logout_window = QMainWindow()
         self.logout_ui = HomeEx()
         self.logout_ui.setupUi(self.logout_window)
@@ -123,7 +123,6 @@ class DashboardEx(Ui_MainWindow):
         self.MainWindow.close()
 
     def mo_man_hinh_lich_su(self):
-        """Mở màn hình lịch sử Admin"""
         self.history_win = AdminHistoryEx(self.MainWindow)
         self.history_win.show()
         self.MainWindow.hide()

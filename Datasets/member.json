@@ -59,7 +59,7 @@
         {
             "username": "Nguyên",
             "phone_number": "0909090909",
-            "gender": "Unknown",
+            "gender": "M",
             "package": "2 tuần",
             "register_date": "22/03/2026",
             "expire_date": "05/04/2026"
@@ -67,7 +67,7 @@
         {
             "username": "Nguyên",
             "phone_number": "0909090909",
-            "gender": "Unknown",
+            "gender": "M",
             "package": "2 tuần",
             "register_date": "23/03/2026",
             "expire_date": "06/04/2026"

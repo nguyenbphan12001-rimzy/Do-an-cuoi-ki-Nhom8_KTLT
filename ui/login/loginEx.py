@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from ui.login.login import Ui_MainWindow
 from ui.signUp.signUpEx import SignUpEx
@@ -11,16 +12,22 @@ class LoginEx(Ui_MainWindow):
         self.MainWindow = MainWindow
         self.SetupSignalAndSlot()
 
-        # Thiết lập thư mục datasets
-        self.BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-        self.DATASETS_DIR = os.path.abspath(os.path.join(self.BASE_DIR, "../../datasets"))
+
+        if getattr(sys, 'frozen', False):
+            self.BASE_DIR = os.path.dirname(sys.executable)
+        else:
+
+            self.BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+
+        self.DATASETS_DIR = os.path.join(self.BASE_DIR, "Datasets")
         self.file_path = os.path.join(self.DATASETS_DIR, "user.json")
+
         if not os.path.exists(self.DATASETS_DIR):
             os.makedirs(self.DATASETS_DIR)
 
-        # Background
-        img_path = os.path.join(self.BASE_DIR, "../../images/login.png").replace("\\","/")
-        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url({img_path}); }}")
+
+        img_path = os.path.join(self.BASE_DIR, "images", "login.png").replace("\\", "/")
+        self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url('{img_path}'); }}")
 
     def SetupSignalAndSlot(self):
         self.pushButtonSignUp.clicked.connect(self.open_signup)
@@ -51,8 +58,9 @@ class LoginEx(Ui_MainWindow):
         try:
             with open(self.file_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-        except Exception:
-            QMessageBox.critical(self.MainWindow, "Lỗi", "Không tìm thấy file dữ liệu user.json")
+        except Exception as e:
+            # Code này sẽ hiện ra chính xác là lỗi gì và nó đang tìm ở đường dẫn nào
+            QMessageBox.critical(self.MainWindow, "Lỗi", f"Gặp sự cố đọc file!\nLỗi: {e}\nĐường dẫn: {self.file_path}")
             return
 
         user_found = next((u for u in data.get("Datasets", []) if
@@ -62,7 +70,6 @@ class LoginEx(Ui_MainWindow):
         if user_found:
             self.save_current_session(user_found)
 
-            # CHỖ THAY ĐỔI CHÍNH Ở ĐÂY:
             if role == "admin":
                 # Khởi tạo cửa sổ Thống kê (Statistic)
                 from ui.statistic.StatisticMainWindowEx import StatisticMainWindowEx
@@ -70,11 +77,9 @@ class LoginEx(Ui_MainWindow):
                 self.statistic_ui = StatisticMainWindowEx()
                 self.statistic_ui.setupUi(self.main_statistic_window)
 
-                # Hiển thị cửa sổ mới
                 self.main_statistic_window.show()
                 print(f"✅ Admin {username} đã đăng nhập vào hệ thống Thống kê.")
             else:
-                # Nếu là user bình thường, vẫn mở Dashboard cũ (nếu muốn)
                 from ui.dashboard.DashboardEx import DashboardEx
                 self.main_dashboard_window = QMainWindow()
                 self.dashboard_ui = DashboardEx(username)
@@ -82,7 +87,6 @@ class LoginEx(Ui_MainWindow):
                 self.main_dashboard_window.showMaximized()
                 print(f"✅ User {username} đã đăng nhập vào Dashboard.")
 
-            # Ẩn cửa sổ Login
             self.MainWindow.hide()
         else:
             QMessageBox.warning(self.MainWindow, "Thất bại", "Sai tài khoản, mật khẩu hoặc role!")
