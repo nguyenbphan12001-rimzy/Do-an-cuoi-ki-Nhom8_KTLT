@@ -1,9 +1,9 @@
 {
-    "username": "Nguyên",
-    "email": "nguyen123@gmail.com",
-    "phone_number": "0909090909",
-    "password": "nguyen123",
+    "username": "Ngọc",
+    "email": "ngoc123@gmail.com",
+    "phone_number": "0202020202",
+    "password": "ngoc123",
     "role": "user",
-    "gender": "M",
+    "gender": "F",
     "status": "Không"
 }

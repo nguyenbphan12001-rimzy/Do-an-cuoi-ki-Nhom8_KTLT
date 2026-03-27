@@ -87,6 +87,7 @@ class BookingMainWindowEx(Ui_MainWindow):
         self.radioButtonBoxing.toggled.connect(self.cap_nhat_danh_sach_phong)
         self.pushButtonDoneBooking.clicked.connect(self.mo_man_hinh_thanh_toan)
         self.pushButtonCancelBooking.clicked.connect(self.tro_ve_dashboard)
+        self.comboBoxRoom.currentTextChanged.connect(self.cap_nhat_label_so_luong)
 
     def showWindow(self):
         self.MainWindow.show()
@@ -258,42 +259,23 @@ class BookingMainWindowEx(Ui_MainWindow):
     def cap_nhat_label_so_luong(self):
         ten_phong = self.comboBoxRoom.currentText()
 
-        # Nhớ ĐỔI 'self.labelSoLuong' THÀNH TÊN ĐÚNG CỦA CÁI LABEL TRONG QT DESIGNER CỦA MÀY
+
         if ten_phong == "":
             self.labelSoLuong.setText("...")
             return
 
-        # 1. Lấy thông tin ngày giờ đang chọn
-        ngay_tap = self.dateEdit.date().toString("dd/MM/yyyy")
-        gio_tap = self.comboBoxTime.currentText()
-        thoi_gian_dang_chon = f"{gio_tap} ngày {ngay_tap}"
-
-        # 2. Đọc file lịch sử booking bằng đường dẫn chuẩn
-        history_path = os.path.join(self.DATASETS_DIR, "booking_history.json")
-
-        booking_history = []
-        if os.path.exists(history_path):
-            with open(history_path, 'r', encoding='utf-8') as f:
-                try:
-                    data = json.load(f)
-                    booking_history = data.get("Datasets", [])
-                except Exception:
-                    pass
-
-        # 3. Đếm số người hiện tại
         so_nguoi_hien_tai = 0
-        for b in booking_history:
-            if b.get("time") == thoi_gian_dang_chon and ten_phong in b.get("package_details", ""):
-                so_nguoi_hien_tai += 1
+        capacity = 20
 
-        # 4. Lấy sức chứa tối đa của phòng từ room.json
-        capacity = 20  # Mặc định
+
         for phong in self.danh_sach_phong.list:
             if phong.name == ten_phong:
-                capacity = phong.capacity
+
+                so_nguoi_hien_tai = getattr(phong, 'current_user', 0)
+                capacity = getattr(phong, 'capacity', 20)
                 break
 
-        # 5. Đẩy kết quả ra Label
+
         hien_thi = f"{so_nguoi_hien_tai}/{capacity}"
         if so_nguoi_hien_tai >= capacity:
             hien_thi += " (ĐẦY)"

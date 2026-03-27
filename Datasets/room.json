@@ -31,14 +31,14 @@
         "room_id": "B1",
         "name": "Phòng Boxing B1",
         "category": "Boxing",
-        "current_user": 3,
+        "current_user": 5,
         "capacity": 20
     },
     {
         "room_id": "B2",
         "name": "Phòng Boxing B2",
         "category": "Boxing",
-        "current_user": 1,
+        "current_user": 3,
         "capacity": 20
     },
     {
