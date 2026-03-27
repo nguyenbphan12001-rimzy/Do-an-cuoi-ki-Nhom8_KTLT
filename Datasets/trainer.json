@@ -237,38 +237,21 @@
             ]
         },
         {
-            "username": "Nguyễn Mai Anh",
-            "password": "maianhaero",
+            "username": "Nguyễn Quốc Nam",
+            "password": "123",
             "role": "trainer",
-            "phone_number": "0914555666",
-            "email": "maianh.aerobic@gmail.com",
-            "gender": "F",
-            "status": "Pilates",
+            "phone_number": "0279748263",
+            "email": "nam@gmail.com",
+            "gender": "M",
+            "status": "Boxing",
             "available_dates": [
+                "Thứ 2",
                 "Thứ 3",
-                "Thứ 5",
                 "Thứ 7"
             ],
             "available_times": [
                 "7h - 9h",
-                "17h - 19h"
-            ]
-        },
-        {
-            "username": "Trần Phạm Kim Ngân",
-            "password": "123",
-            "role": "trainer",
-            "phone_number": "0404040404",
-            "email": "ngantran@gmail.com",
-            "gender": "F",
-            "status": "Pilates",
-            "available_dates": [
-                "Thứ 7",
-                "Chủ nhật"
-            ],
-            "available_times": [
-                "7h - 9h",
-                "15h - 17h"
+                "13h - 15h"
             ]
         }
     ]

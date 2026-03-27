@@ -43,11 +43,27 @@ background-image:rbg(0,255,255);}</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">color:#f6f6e9;
-background-color: #0f433d;
-font: 87 18pt &quot;Noto Sans HK Black&quot;;
-border-radius: 30px;
-border: 3px solid  #58827d;</string>
+         <string notr="true">/* Trạng thái bình thường (Giữ nguyên 100% của mày) */
+QPushButton {
+    color: #f6f6e9;
+    background-color: #0f433d;
+    font: 87 20pt &quot;Noto Sans HK Black&quot;;
+    border-radius: 30px;
+    border: 3px solid #58827d;
+font-weight:bold;
+}
+
+/* Trạng thái khi rê chuột vào (Hover) */
+QPushButton:hover {
+    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */
+    border: 3px solid #73a6a0; /* Viền cũng sáng lên một chút cho đồng bộ */
+}
+
+/* Thêm luôn trạng thái khi click (bấm xuống) cho nó xịn */
+QPushButton:pressed {
+    background-color: #0a2e2a; /* Nền tối đi khi bấm */
+    border: 3px solid #3d5e5b; /* Viền tối đi */
+}</string>
         </property>
         <property name="text">
          <string>Quay về trang chủ</string>
@@ -63,7 +79,7 @@ border: 3px solid  #58827d;</string>
       <item row="2" column="1">
        <spacer name="verticalSpacer">
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -76,7 +92,7 @@ border: 3px solid  #58827d;</string>
       <item row="4" column="1">
        <spacer name="verticalSpacer_2">
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -89,7 +105,7 @@ border: 3px solid  #58827d;</string>
       <item row="1" column="1">
        <spacer name="verticalSpacer_3">
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -102,7 +118,7 @@ border: 3px solid  #58827d;</string>
       <item row="3" column="0">
        <spacer name="horizontalSpacer">
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -115,7 +131,7 @@ border: 3px solid  #58827d;</string>
       <item row="3" column="2">
        <spacer name="horizontalSpacer_2">
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -128,7 +144,7 @@ border: 3px solid  #58827d;</string>
       <item row="0" column="1">
        <spacer name="verticalSpacer_4">
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -148,7 +164,7 @@ border: 3px solid  #58827d;</string>
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

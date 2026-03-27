@@ -17,7 +17,7 @@
         "room_id": "Y01",
         "name": "Phòng Yoga Master Y01",
         "category": "Yoga",
-        "current_user": 11,
+        "current_user": 12,
         "capacity": 20
     },
     {
@@ -31,7 +31,7 @@
         "room_id": "B1",
         "name": "Phòng Boxing B1",
         "category": "Boxing",
-        "current_user": 5,
+        "current_user": 6,
         "capacity": 20
     },
     {

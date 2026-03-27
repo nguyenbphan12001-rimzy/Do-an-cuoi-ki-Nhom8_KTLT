@@ -161,6 +161,24 @@
             "role": "user",
             "gender": "F",
             "status": "Không"
+        },
+        {
+            "username": "Nhàn",
+            "email": "nhan@gmail.com",
+            "phone_number": "0808080808",
+            "password": "nhan123",
+            "role": "user",
+            "gender": "M",
+            "status": "Không"
+        },
+        {
+            "username": "Nam",
+            "email": "nam@gmail.com",
+            "phone_number": "0676767667",
+            "password": "nam123",
+            "role": "user",
+            "gender": "M",
+            "status": "Không"
         }
     ]
 }

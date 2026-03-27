@@ -26,11 +26,27 @@ class Ui_MainWindow(object):
         self.pushButtonQuayVe = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButtonQuayVe.setMinimumSize(QtCore.QSize(300, 60))
         self.pushButtonQuayVe.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.pushButtonQuayVe.setStyleSheet("color:#f6f6e9;\n"
-"background-color: #0f433d;\n"
-"font: 87 18pt \"Noto Sans HK Black\";\n"
-"border-radius: 30px;\n"
-"border: 3px solid  #58827d;")
+        self.pushButtonQuayVe.setStyleSheet("/* Trạng thái bình thường (Giữ nguyên 100% của mày) */\n"
+"QPushButton {\n"
+"    color: #f6f6e9;\n"
+"    background-color: #0f433d;\n"
+"    font: 87 20pt \"Noto Sans HK Black\";\n"
+"    border-radius: 30px;\n"
+"    border: 3px solid #58827d;\n"
+"font-weight:bold;\n"
+"}\n"
+"\n"
+"/* Trạng thái khi rê chuột vào (Hover) */\n"
+"QPushButton:hover {\n"
+"    background-color: #1a6b61; /* Màu xanh sáng hơn một chút để nổi bật */\n"
+"    border: 3px solid #73a6a0; /* Viền cũng sáng lên một chút cho đồng bộ */\n"
+"}\n"
+"\n"
+"/* Thêm luôn trạng thái khi click (bấm xuống) cho nó xịn */\n"
+"QPushButton:pressed {\n"
+"    background-color: #0a2e2a; /* Nền tối đi khi bấm */\n"
+"    border: 3px solid #3d5e5b; /* Viền tối đi */\n"
+"}")
         self.pushButtonQuayVe.setIconSize(QtCore.QSize(30, 50))
         self.pushButtonQuayVe.setObjectName("pushButtonQuayVe")
         self.gridLayout.addWidget(self.pushButtonQuayVe, 3, 1, 1, 1)
@@ -49,7 +65,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.gridLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1000, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1000, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
 
