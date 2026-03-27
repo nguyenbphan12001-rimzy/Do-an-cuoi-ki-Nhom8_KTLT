@@ -15,7 +15,7 @@ class AdminHistoryEx(QMainWindow):
         self.resize(1100, 700)  # Tăng nhẹ kích thước để bảng đẹp hơn
         self.setWindowIcon(QIcon("images/icon_app.png"))
 
-        # --- 1. Central Widget và Main Layout ---
+
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
 
@@ -124,7 +124,7 @@ class AdminHistoryEx(QMainWindow):
             lbl_logo.setPixmap(pixmap)
         header_layout.addWidget(lbl_logo, 0, Qt.AlignmentFlag.AlignVCenter)
 
-        # Văn bản tiêu đề
+
         lbl_title = QLabel("LỊCH SỬ ĐĂNG KÝ LỊCH TẬP")
         lbl_title.setObjectName("headerTitle")
         title_font = QFont("Arial", 20, QFont.Weight.Bold)
@@ -135,19 +135,19 @@ class AdminHistoryEx(QMainWindow):
 
         main_layout.addWidget(header_pill, 0, Qt.AlignmentFlag.AlignCenter)  # Failsafe align center
 
-        # --- 3. Label hiển thị thông báo ---
+
         self.lbl_summary = QLabel("Đang tải dữ liệu...")
         self.lbl_summary.setObjectName("SummaryLabel")
         self.lbl_summary.setAlignment(Qt.AlignmentFlag.AlignCenter)
         main_layout.addWidget(self.lbl_summary)
 
-        # --- 4. Container chứa bảng (giúp tạo bo góc khối mượt) ---
+
         table_container = QFrame()
         table_container.setObjectName("TableContainer")
         table_layout = QVBoxLayout(table_container)
         table_layout.setContentsMargins(1, 1, 1, 1)  # Sát viền
 
-        # Bảng hiển thị dữ liệu
+
         self.table_history = QTableWidget()
         columns = ["Tên khách", "SĐT", "Gói tập & Phòng", "Thời gian tập", "Thời gian mua"]
         self.table_history.setColumnCount(len(columns))
@@ -166,7 +166,7 @@ class AdminHistoryEx(QMainWindow):
         table_layout.addWidget(self.table_history)
         main_layout.addWidget(table_container)
 
-        # --- 5. Nạp dữ liệu ---
+
         self.load_history_data()
 
     def go_back(self):
@@ -248,15 +248,15 @@ class AdminHistoryEx(QMainWindow):
                 seen_records.add(record_signature)
                 display_list.append(item)
 
-        # Cập nhật Label thông báo
+
         if role == "admin":
             self.lbl_summary.setText(f"Chế độ Admin: Đang hiển thị {len(display_list)} bản ghi.")
         else:
             name = curr_user_data.get('username', 'Khách')
             self.lbl_summary.setText(f"Xin chào {name}, bạn có {len(display_list)} lịch tập.")
 
-        # Đưa lên bảng
-        display_list.reverse()  # Cái mới nhất hiện lên đầu
+
+        display_list.reverse()
         self.table_history.setRowCount(len(display_list))
 
         for row, bill in enumerate(display_list):

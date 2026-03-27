@@ -59,7 +59,7 @@ class LoginEx(Ui_MainWindow):
             with open(self.file_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
         except Exception as e:
-            # Code này sẽ hiện ra chính xác là lỗi gì và nó đang tìm ở đường dẫn nào
+
             QMessageBox.critical(self.MainWindow, "Lỗi", f"Gặp sự cố đọc file!\nLỗi: {e}\nĐường dẫn: {self.file_path}")
             return
 
@@ -71,7 +71,7 @@ class LoginEx(Ui_MainWindow):
             self.save_current_session(user_found)
 
             if role == "admin":
-                # Khởi tạo cửa sổ Thống kê (Statistic)
+
                 from ui.statistic.StatisticMainWindowEx import StatisticMainWindowEx
                 self.main_statistic_window = QMainWindow()
                 self.statistic_ui = StatisticMainWindowEx()

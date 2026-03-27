@@ -1,9 +1,9 @@
 {
-    "username": "admin",
-    "password": "admin123",
-    "role": "admin",
-    "phone_number": "0911172457",
-    "email": "nhulam123@gmail.com",
+    "username": "Ngọc",
+    "email": "ngoc123@gmail.com",
+    "phone_number": "0202020202",
+    "password": "ngoc123",
+    "role": "user",
     "gender": "F",
     "status": "Không"
 }

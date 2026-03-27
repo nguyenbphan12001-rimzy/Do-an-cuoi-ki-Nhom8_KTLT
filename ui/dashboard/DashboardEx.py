@@ -17,17 +17,17 @@ class DashboardEx(Ui_MainWindow):
         self.username = username
 
         if getattr(sys, 'frozen', False):
-            # Nếu đang chạy bằng file .exe
+
             self.BASE_DIR = os.path.dirname(sys.executable)
         else:
-            # Nếu đang chạy code bình thường
+
             self.BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
         self.DATASETS_DIR = os.path.join(self.BASE_DIR, "Datasets")
-        # ---------------------------------------
+
 
         if username is None:
-            # Thay vì "../../datasets/current_user.json", dùng luôn đường dẫn chuẩn
+
             current_user_file = os.path.join(self.DATASETS_DIR, "current_user.json")
             try:
                 with open(current_user_file, encoding="utf-8") as f:
@@ -36,7 +36,7 @@ class DashboardEx(Ui_MainWindow):
             except Exception:
                 self.username = None
 
-        # Load session data
+
         self.load_session_data()
 
     def setupUi(self, MainWindow):
@@ -70,7 +70,7 @@ class DashboardEx(Ui_MainWindow):
         self.pushButtonDkyHoivien.clicked.connect(self.process_dkyhoivien)
         self.pushButtonProfile.clicked.connect(self.process_profile)
         self.pushButtonLogOut.clicked.connect(self.process_logout)
-        # self.pushButtonMember.clicked.connect(self.process_member)
+
         self.pushButtonMyBooking.clicked.connect(self.mo_man_hinh_lich_su)
 
     def process_booking(self):
@@ -102,14 +102,14 @@ class DashboardEx(Ui_MainWindow):
 
     def process_profile(self):
         self.member_window = QMainWindow()
-        # Khởi tạo UI và truyền username
+
         self.member_ui = MemberMainWindowEx(self.username)
         self.member_ui.setupUi(self.member_window)
-        # Truyền session user sang để Member có dữ liệu xử lý
+
         self.member_ui.current_user = getattr(self, "current_user", None)
-        # Nạp dữ liệu hội viên lên giao diện
+
         self.member_ui.load_member_data()
-        # Hiển thị Member và ẨN Dashboard
+
         self.member_window.showMaximized()
         self.MainWindow.hide()
 
@@ -119,7 +119,7 @@ class DashboardEx(Ui_MainWindow):
         self.logout_ui.setupUi(self.logout_window)
         self.logout_window.showMaximized()
         self.logout_ui.showWindow()
-        # Đóng Dashboard
+
         self.MainWindow.close()
 
     def mo_man_hinh_lich_su(self):

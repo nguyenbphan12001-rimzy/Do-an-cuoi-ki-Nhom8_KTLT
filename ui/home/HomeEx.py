@@ -21,7 +21,7 @@ class HomeEx(Ui_MainWindow):
         img_path = os.path.join(BASE_DIR, "images", "Home.png").replace("\\", "/")
 
         self.centralwidget.setStyleSheet(f"#centralwidget {{ border-image: url('{img_path}'); }}")
-        # -------------------------------------
+
     def showWindow(self):
         self.MainWindow.show()
 

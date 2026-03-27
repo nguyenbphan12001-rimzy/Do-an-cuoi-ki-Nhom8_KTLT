@@ -179,6 +179,15 @@
             "role": "user",
             "gender": "M",
             "status": "Không"
+        },
+        {
+            "username": "Nhã",
+            "email": "nha@gmail.com",
+            "phone_number": "0897655467",
+            "password": "nha123",
+            "role": "user",
+            "gender": "M",
+            "status": "Không"
         }
     ]
 }

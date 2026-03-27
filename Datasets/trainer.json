@@ -237,21 +237,20 @@
             ]
         },
         {
-            "username": "Nguyễn Quốc Nam",
+            "username": "Trần Phương Thanh",
             "password": "123",
             "role": "trainer",
-            "phone_number": "0279748263",
-            "email": "nam@gmail.com",
-            "gender": "M",
-            "status": "Boxing",
+            "phone_number": "0983647483",
+            "email": "thanh@gmail.com",
+            "gender": "F",
+            "status": "Pilates",
             "available_dates": [
-                "Thứ 2",
-                "Thứ 3",
-                "Thứ 7"
+                "Thứ 4",
+                "Thứ 6"
             ],
             "available_times": [
                 "7h - 9h",
-                "13h - 15h"
+                "15h 17h"
             ]
         }
     ]
