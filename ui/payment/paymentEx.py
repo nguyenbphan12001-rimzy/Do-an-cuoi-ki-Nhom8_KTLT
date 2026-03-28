@@ -124,8 +124,9 @@ class PaymentEx(Ui_MainWindow):
                 QMessageBox.warning(self.MainWindow, "Thông báo", "Vui lòng chọn phương thức thanh toán!")
                 return
 
-            if not ten:
-                QMessageBox.warning(self.MainWindow, "Thông báo", "Thiếu thông tin khách hàng!")
+            # Đã fix thêm lỗi thiếu số điện thoại để báo cáo cho xịn
+            if not ten or not sdt:
+                QMessageBox.warning(self.MainWindow, "Thông báo", "Thiếu thông tin tên hoặc số điện thoại khách hàng!")
                 return
 
             phuong_thuc = "Ngân hàng" if self.checkBoxBak.isChecked() else "Thẻ tín dụng"
@@ -161,12 +162,10 @@ class PaymentEx(Ui_MainWindow):
                     except Exception:
                         pass
 
-
                 history_data["Datasets"].append(bill_data)
 
                 with open(history_file, 'w', encoding='utf-8') as f:
                     json.dump(history_data, f, indent=4, ensure_ascii=False)
-
 
                 if hasattr(self, 'room_name') and self.room_name:
                     room_file = os.path.join(self.DATASETS_DIR, "room.json")
@@ -175,7 +174,8 @@ class PaymentEx(Ui_MainWindow):
                             with open(room_file, 'r', encoding='utf-8') as f:
                                 room_json = json.load(f)
 
-                            ds_phong = room_json.get("Datasets", room_json) if isinstance(room_json, dict) else room_json
+                            ds_phong = room_json.get("Datasets", room_json) if isinstance(room_json,
+                                                                                          dict) else room_json
 
                             for r in ds_phong:
                                 if r.get("name") == self.room_name:
@@ -239,13 +239,54 @@ class PaymentEx(Ui_MainWindow):
                 with open(member_file, 'w', encoding='utf-8') as f:
                     json.dump(member_data, f, indent=4, ensure_ascii=False)
 
+            #Xử lý 50%deposit, lưu lại để có cơ sở tính nợ với khách
+            if hasattr(self, 'radioButtonHalf') and self.radioButtonHalf.isChecked():
+                tien_da_tra = self.original_price / 2
+                tien_con_no = self.original_price - tien_da_tra
+
+
+                chi_tiet = self.lineEditPackage.text()
+                if getattr(self, 'room_name', ''):
+                    chi_tiet += f" - {self.room_name}"
+
+                debt_data = {
+                    "customer_name": ten,
+                    "phone": sdt,
+                    "package_details": chi_tiet,
+                    "total_price": self.original_price,
+                    "paid_amount": tien_da_tra,
+                    "remaining_debt": tien_con_no,
+                    "date": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+                    "status": "Pending"
+                }
+
+                deposit_file = os.path.join(self.DATASETS_DIR, "50%deposit.json")
+                deposit_json = {"Datasets": []}
+
+                if os.path.exists(deposit_file):
+                    try:
+                        with open(deposit_file, 'r', encoding='utf-8') as f:
+                            loaded_deposit = json.load(f)
+                            if isinstance(loaded_deposit, dict) and "Datasets" in loaded_deposit:
+                                deposit_json = loaded_deposit
+                            elif isinstance(loaded_deposit, list):
+                                deposit_json["Datasets"] = loaded_deposit
+                    except Exception:
+                        pass
+
+                deposit_json["Datasets"].append(debt_data)
+
+                with open(deposit_file, 'w', encoding='utf-8') as f:
+                    json.dump(deposit_json, f, indent=4, ensure_ascii=False)
+
+
             thong_tin_chi_tiet = (
                 f"✅ THANH TOÁN THÀNH CÔNG!\n\n"
                 f"👤 Khách hàng: {ten}\n"
                 f"📞 Số điện thoại: {sdt}\n"
                 f"📦 Gói dịch vụ: {self.lineEditPackage.text()}\n"
                 f"⏰ Thời gian: {self.lineEditTime.text()}\n"
-                f"💰 Tổng tiền: {self.lineEditTotalMoney.text()}\n"
+                f"💰 Tổng tiền đã trả: {self.lineEditTotalMoney.text()}\n"
                 f"💳 Hình thức: {phuong_thuc}\n\n"
                 f"Hệ thống đã cập nhật dữ liệu thành công."
             )
