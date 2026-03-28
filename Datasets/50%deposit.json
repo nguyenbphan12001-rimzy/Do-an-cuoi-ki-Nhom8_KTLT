@@ -1,0 +1,14 @@
+{
+    "Datasets": [
+        {
+            "customer_name": "Ngọc",
+            "phone": "0202020202",
+            "package_details": "Gói: Boxing (HLV: Đinh Trọng Đại (Boxing)) - Phòng Boxing B1",
+            "total_price": 700000,
+            "paid_amount": 350000.0,
+            "remaining_debt": 350000.0,
+            "date": "28/03/2026 07:26:23",
+            "status": "Pending"
+        }
+    ]
+}

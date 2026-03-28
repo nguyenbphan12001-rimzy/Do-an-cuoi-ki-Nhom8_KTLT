@@ -124,7 +124,7 @@ class PaymentEx(Ui_MainWindow):
                 QMessageBox.warning(self.MainWindow, "Thông báo", "Vui lòng chọn phương thức thanh toán!")
                 return
 
-            # Đã fix thêm lỗi thiếu số điện thoại để báo cáo cho xịn
+            # Đã fix thêm lỗi thiếu số điện thoại
             if not ten or not sdt:
                 QMessageBox.warning(self.MainWindow, "Thông báo", "Thiếu thông tin tên hoặc số điện thoại khách hàng!")
                 return

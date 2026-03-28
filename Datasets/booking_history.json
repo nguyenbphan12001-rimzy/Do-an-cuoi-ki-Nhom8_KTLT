@@ -296,6 +296,15 @@
             "total_paid": "700,000 VNĐ",
             "payment_method": "Thẻ tín dụng",
             "payment_time": "27/03/2026 14:32:24"
+        },
+        {
+            "customer_name": "Ngọc",
+            "phone": "0202020202",
+            "package_details": "Gói: Boxing (HLV: Đinh Trọng Đại (Boxing)) - Phòng Boxing B1",
+            "time": "7h - 9h ngày 28/03/2026",
+            "total_paid": "350,000 VNĐ",
+            "payment_method": "Ngân hàng",
+            "payment_time": "28/03/2026 07:26:23"
         }
     ]
 }

@@ -94,10 +94,19 @@ class SignUpEx(Ui_MainWindow):
 
         users = data.get("Datasets", [])
 
+
         for u in users:
+
             if u.get("email") == email:
-                QMessageBox.warning(self.MainWindow, "Error", "Account already exists")
+                QMessageBox.warning(self.MainWindow, "Lỗi đăng ký", "Email này đã tồn tại trong hệ thống!")
                 return
+
+
+            if u.get("phone_number") == phone:
+                QMessageBox.warning(self.MainWindow, "Lỗi đăng ký",
+                                    f"Số điện thoại {phone} đã được đăng ký cho tài khoản khác. Vui lòng kiểm tra lại!")
+                return
+
 
         new_user = {
             "username": name,
