@@ -216,7 +216,7 @@ class AdminHistoryEx(QMainWindow):
             try:
                 with open(history_file, 'r', encoding='utf-8') as f:
                     raw_data = json.load(f)
-                    # Kiểm tra cấu trúc JSON (Dữ liệu của mày nằm trong key "Datasets")
+
                     if isinstance(raw_data, dict):
                         all_history = raw_data.get("Datasets", [])
                     else:

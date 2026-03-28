@@ -253,25 +253,34 @@ class BookingMainWindowEx(Ui_MainWindow):
     def cap_nhat_label_so_luong(self):
         ten_phong = self.comboBoxRoom.currentText()
 
-
         if ten_phong == "":
             self.labelSoLuong.setText("...")
+            # Nếu chưa chọn phòng thì cũng nên khóa nút cho chắc cốp
+            if hasattr(self, 'pushButtonDoneBooking'):
+                self.pushButtonDoneBooking.setEnabled(False)
             return
 
         so_nguoi_hien_tai = 0
         capacity = 20
 
-
         for phong in self.danh_sach_phong.list:
             if phong.name == ten_phong:
-
                 so_nguoi_hien_tai = getattr(phong, 'current_user', 0)
                 capacity = getattr(phong, 'capacity', 20)
                 break
 
-
         hien_thi = f"{so_nguoi_hien_tai}/{capacity}"
+
+       #Xử lý phòng đầy
         if so_nguoi_hien_tai >= capacity:
             hien_thi += " (ĐẦY)"
+
+            self.pushButtonDoneBooking.setEnabled(False)
+
+            self.pushButtonDoneBooking.setToolTip("Phòng này đã đầy, vui lòng chọn phòng hoặc giờ khác!")
+        else:
+
+            self.pushButtonDoneBooking.setEnabled(True)
+            self.pushButtonDoneBooking.setToolTip("")
 
         self.labelSoLuong.setText(hien_thi)
